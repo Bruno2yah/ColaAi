@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import * as Animado from 'react-native-animatable';

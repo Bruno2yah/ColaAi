@@ -1,18 +1,18 @@
 import React from 'react';
 import { View, Text,  TouchableOpacity, StyleSheet } from 'react-native';
-
+import * as Animado from 'react-native-animatable';
 
 export default function Cadastro({ navigation }){
   return (
     <View style={styles.container}>
         <View style={styles.container}>
-          <Text style={styles.title}>Vamos começar o seu cadastro?</Text>
-          <Text style={styles.description}>Ao clicar em Cadastre-se, você aceita o Contrato do Usuário, a Política de Privacidade e a Política de Cookies do Cola Aí.</Text>
-          <View style={styles.buttonColumn}>
+          <Animado.Text style={styles.title} animation="bounceInDown" duration={1500}>Vamos começar o seu cadastro?</Animado.Text>
+          <Animado.Text style={styles.description} animation="bounceInUp" delay={700} duration={1500}>Ao clicar em Cadastre-se, você aceita o Contrato do Usuário, a Política de Privacidade e a Política de Cookies do Cola Aí.</Animado.Text>
+          <Animado.View style={styles.buttonColumn} animation="flipInY" duration={2000} delay={1000}>
           <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('Cnpj')}>
             <Text style={styles.buttonText2}>Cadastre-se</Text>
           </TouchableOpacity>
-          </View>
+          </Animado.View>
         </View>
     </View>
   );

@@ -1,27 +1,27 @@
-
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity,  } from 'react-native';
+import * as Animado from 'react-native-animatable';
 
 const CodigoDeAcessoEmail = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Adicione o código de acesso</Text>
-      <Text style={styles.description}>
+      <Animado.Text style={styles.title} animation="fadeInRight" duration={1500}>Adicione o código de acesso</Animado.Text>
+      <Animado.Text style={styles.description} animation="fadeInRight" duration={1500}>
       Será enviado no seu e-mail um código de {'\n'}acesso para garantir um login seguro.
-      </Text>
-      <View style={styles.inputContainer}>
+      </Animado.Text>
+      <Animado.View style={styles.inputContainer} animation="zoomIn" delay={500}>
         <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
         <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
         <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
         <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
         <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-      </View>
-      <View style={styles.buttonColumn}>
+      </Animado.View>
+      <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
         <Text style={styles.codigo}>Reenviar código</Text>
         <TouchableOpacity style={styles.button2}>
           <Text style={styles.buttonText2} >Enviar</Text>
         </TouchableOpacity>
-      </View>
+      </Animado.View>
     </View>
   );
 };

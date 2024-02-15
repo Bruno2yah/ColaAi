@@ -1,6 +1,7 @@
 // LoginTelefone.jsx
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import * as Animado from 'react-native-animatable';
 
 export default function LoginTelefone({ navigation }) {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -18,10 +19,10 @@ export default function LoginTelefone({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.container}>
-        <Text style={styles.title}>Entrar com número de telefone</Text>
-        <Text style={styles.description}>
+        <Animado.Text style={styles.title} animation="fadeInRight" duration={1500}>Entrar com número de telefone</Animado.Text>
+        <Animado.Text style={styles.description} animation="fadeInRight" duration={1500}>
           Digite o seu número de telefone {'\n'}já utilizado em uma conta existente
-        </Text>
+        </Animado.Text>
         <TextInput
           style={styles.input}
           placeholder="(xx) xxxxx-xxxx"
@@ -30,11 +31,11 @@ export default function LoginTelefone({ navigation }) {
           maxLength={15}
           onChangeText={(text) => formatPhoneNumber(text)}
         />
-        <View style={styles.buttonColumn}>
+        <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
           <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('CodigoDeAcessoTelefone')}>
             <Text style={styles.buttonText2}>Prosseguir</Text>
           </TouchableOpacity>
-        </View>
+        </Animado.View>
       </View>
     </View>
   );
@@ -122,5 +123,3 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   });
-
- 
