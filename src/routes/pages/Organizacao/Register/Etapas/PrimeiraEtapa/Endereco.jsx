@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import * as Animado from 'react-native-animatable';
 
 export default function SobreNome({ navigation }) {
   const [endereco, setEndereco] = useState('');
@@ -17,7 +18,7 @@ export default function SobreNome({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Qual é o endereço da sua organização?</Text>
+      <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o endereço da sua organização?</Animado.Text>
       
       <View style={styles.inputContainer}>
         <TextInput

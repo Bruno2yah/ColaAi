@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text,  TouchableOpacity, StyleSheet, TextInput } from 'react-native';
-
+import * as Animado from 'react-native-animatable';
 
 export default function TelaFinal({ navigation }) {
   return (
     <View style={styles.container}>
         <View style={styles.container}>
-          <Text style={styles.title}>A sua conta foi criada com sucesso!  </Text>
+          <Animado.Text style={styles.title} animation="tada">A sua conta foi criada com sucesso!  </Animado.Text>
           <Text style={styles.description}>Agora vamos atualizar o perfil da sua Organização.</Text>
           <View style={styles.buttonColumn}>
           <TouchableOpacity style={styles.button2}>

@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text,  TouchableOpacity, StyleSheet, TextInput } from 'react-native';
-
+import * as Animado from 'react-native-animatable';
 
 export default function Email({ navigation }) {
   return (
     <View style={styles.container}>
         <View style={styles.container}>
-          <Text style={styles.title}>Qual é o e-mail da organização?</Text>
-          <Text style={styles.description}>Escolha um e-mail usual e verifique de que os dados digitados estão corretos.</Text>
+          <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o e-mail da organização?</Animado.Text>
+          <Animado.Text style={styles.description} animation="flash" iterationCount={'infinite'} duration={2000} delay={1000}>Escolha um e-mail usual e verifique de que os dados digitados estão corretos.</Animado.Text>
           <TextInput
             style={styles.input}
             placeholder="Digite o  e-mail da organização"

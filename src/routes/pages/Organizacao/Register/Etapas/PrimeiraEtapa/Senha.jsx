@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import * as Animado from 'react-native-animatable';
 
 export default function Senha({ navigation }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -8,8 +9,8 @@ export default function Senha({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Crie uma senha</Text>
-      <Text style={styles.description}>Escolha uma senha forte entre 8 e 20 dígitos e contendo caracteres especiais, como: $ % # @ / </Text>
+      <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Crie uma senha</Animado.Text>
+      <Animado.Text style={styles.description} animation="flash" iterationCount={'infinite'} duration={2000} delay={1000}>Escolha uma senha forte entre 8 e 20 dígitos e contendo caracteres especiais, como: $ % # @ / </Animado.Text>
       <View style={styles.passwordContainer}>
         <TextInput
           style={styles.input}
