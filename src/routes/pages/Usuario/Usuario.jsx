@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import * as Animado from 'react-native-animatable';
 
 export default function Usuario({ navigation }) {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -31,21 +32,27 @@ export default function Usuario({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem vindo(a)!</Text>
-      <Text style={styles.description}>
+      <Animado.Text style={styles.title} animation="fadeInRight">Bem vindo(a)!</Animado.Text>
+      <Animado.Text style={styles.description} animation="fadeInRight">
         Entre com a sua conta e desfrute de todos os benefícios do Cola Aí.
-      </Text>
+      </Animado.Text>
       <View style={styles.buttonContainer}>
         <View style={styles.buttonColumn}>
-          <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress(0)}>
-            <Text style={styles.buttonText}>Entrar com google</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button1} onPress={() => handleButtonPress(1)}>
-            <Text style={styles.buttonText}>Entrar com e-mail</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress(2)}>
-            <Text style={styles.buttonText}>Entrar com telefone</Text>
-          </TouchableOpacity>
+          <Animado.View animation="fadeInRight" delay={500} duration={800}>
+            <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress(0)}>
+              <Text style={styles.buttonText}>Entrar com google</Text>
+            </TouchableOpacity>
+          </Animado.View>
+          <Animado.View animation="fadeInRight" delay={1000} duration={800}>
+            <TouchableOpacity style={styles.button1} onPress={() => handleButtonPress(1)}>
+              <Text style={styles.buttonText}>Entrar com e-mail</Text>
+            </TouchableOpacity>
+          </Animado.View>
+          <Animado.View animation="fadeInRight" delay={1500} duration={800}>
+            <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress(2)}>
+              <Text style={styles.buttonText}>Entrar com telefone</Text>
+            </TouchableOpacity>
+          </Animado.View>
           <TouchableOpacity onPress={() => handleButtonPress(3)}>
             <Text style={styles.linkText}>Cadastre-se</Text>
           </TouchableOpacity>
