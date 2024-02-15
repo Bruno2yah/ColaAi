@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; // Importa o ícone do Expo
+import * as Animado from 'react-native-animatable';
+
 export default function LoginEmail() {
   const navigation = useNavigation();
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -26,9 +28,9 @@ export default function LoginEmail() {
     <View style={styles.container}>
       {showLoginForm && selectedForm === 1 && <CodigoDeAcessoEmail />}
       {!showLoginForm && (
-        <View style={styles.container}>
-          <Text style={styles.title}>Entrar com e-mail</Text>
-          <Text style={styles.description}>Digite dados de login já existentes.</Text>
+        <Animado.View style={styles.container} >
+          <Animado.Text style={styles.title} animation="fadeInRight">Entrar com e-mail</Animado.Text>
+          <Animado.Text style={styles.description} animation="slideInRight">Digite dados de login já existentes.</Animado.Text>
           <TextInput
             style={styles.input}
             placeholder="Digite seu e-mail"
@@ -56,12 +58,12 @@ export default function LoginEmail() {
           <TouchableOpacity>
             <Text style={styles.esqueci}>esqueci a senha</Text>
           </TouchableOpacity>
-          <View style={styles.buttonColumn}>
+          <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={500}>
             <TouchableOpacity style={styles.button2} onPress={handleButtonPress}>
               <Text style={styles.buttonText2}>Prosseguir</Text>
             </TouchableOpacity>
-          </View>
-        </View>
+          </Animado.View>
+        </Animado.View>
       )}
     </View>
   );
