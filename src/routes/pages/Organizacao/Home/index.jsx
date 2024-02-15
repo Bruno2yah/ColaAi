@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, Image, ScrollView } from 'react-native';
-
 import styles from '../../../../Components/Styles/Home/homeStyle';
-
 import NavBar from '../../../../Components/NavBar/navbar';
+
 
 export default function Home() {
   return (

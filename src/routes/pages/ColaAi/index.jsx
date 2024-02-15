@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import * as Animado from 'react-native-animatable';
 
 const ColaAi = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Acessar</Text>
+      <Animado.Text style={styles.titulo} animation="fadeInDown" duration={2000}>Acessar</Animado.Text>
       <TouchableOpacity style={styles.buttonOrganizacao} onPress={() => navigation.navigate('Organizacao')}>
         <Text style={styles.buttonTextOrganizacao}>Organização</Text>
       </TouchableOpacity>
