@@ -6,12 +6,16 @@ const ColaAi = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Animado.Text style={styles.titulo} animation="fadeInDown" duration={2000}>Acessar</Animado.Text>
-      <TouchableOpacity style={styles.buttonOrganizacao} onPress={() => navigation.navigate('Organizacao')}>
-        <Text style={styles.buttonTextOrganizacao}>Organização</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.buttonUsuario} onPress={() => navigation.navigate('Usuario')}>
-        <Text style={styles.buttonTextUsuario}>Usuario</Text>
-      </TouchableOpacity>
+      <Animado.View animation="fadeInRight" delay={500}>
+        <TouchableOpacity style={styles.buttonOrganizacao} onPress={() => navigation.navigate('Organizacao')}>
+          <Text style={styles.buttonTextOrganizacao}>Organização</Text>
+        </TouchableOpacity>
+      </Animado.View>
+      <Animado.View animation="fadeInRight" delay={1000}>
+        <TouchableOpacity style={styles.buttonUsuario} onPress={() => navigation.navigate('Usuario')}>
+          <Text style={styles.buttonTextUsuario}>Usuario</Text>
+        </TouchableOpacity>
+      </Animado.View>
       <TouchableOpacity onPress={() => navigation.navigate('AcessoSemLogin')}>
         <Text style={styles.linkText}>Acesso sem login</Text>
       </TouchableOpacity>
