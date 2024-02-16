@@ -1,0 +1,9 @@
+body{
+    height: 100vh;
+}
+
+.menu{
+    font-size: 17pt;
+    font-weight: 600;
+    color: #a6a6a6;
+}
