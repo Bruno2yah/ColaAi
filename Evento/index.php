@@ -13,7 +13,7 @@
       include('../Componentes/Header.php'); 
     ?>
     <div class = "container-fluid" style = "height: 90%">
-      <div class = "row h-100 linha">
+      <div class = "row h-100">
         <?php
           include('../Componentes/menu.php') 
         ?>

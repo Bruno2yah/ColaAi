@@ -2,8 +2,22 @@ body{
     height: 100vh;
 }
 
+.linha{
+    padding: 0;
+}
+
 .menu{
     font-size: 17pt;
     font-weight: 600;
     color: #a6a6a6;
+}
+
+.menuItems{
+    cursor: pointer;
+    color: #a6a6a6;
+    transition: 0.5s;
+}
+
+.menuItems:hover{
+    background-color: #a3f664;
 }
