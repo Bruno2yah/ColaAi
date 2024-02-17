@@ -1,0 +1,28 @@
+body{
+    background-image: url("../img/Login/fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo{
+    width: 80%;
+    height: 30%;
+    margin-top: -5%;
+}
+
+span{
+    font-size: 22pt;
+    color: #a6a6a6;
+    margin-top: -5%;
+}
+
+.box{
+    background-color: #FFFBE7;
+    border-radius: 8%;
+    width: 60%;
+    height: 60%;
+    box-shadow: -20px 22px rgb(225 239 239);
+}
