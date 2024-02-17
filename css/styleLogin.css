@@ -19,10 +19,56 @@ span{
     margin-top: -5%;
 }
 
+label{
+    font-size: 22pt;
+    color: #a6a6a6;
+}
+
+input{
+    height: 2rem;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #a6a6a6;
+    outline: 0;
+    padding: 3%;
+    color: #a6a6a6;
+    font-size: 16;
+}
+
+button{
+    border-radius: 6px;
+    color: #6d9eaf;
+    background-color: #e6aeb2;
+    border: 0;
+    height: 3rem;
+    width: 9rem;
+}
+
 .box{
     background-color: #FFFBE7;
     border-radius: 8%;
     width: 60%;
     height: 60%;
-    box-shadow: -20px 22px rgb(225 239 239);
+    box-shadow: -16px 16px rgb(225 239 239);
+}
+
+.imageLogin{
+    width: 40%;
+    height: 30%;
+}
+
+.orgSenha{
+    position: relative;
+}
+
+.orgSenha i{
+    font-size: 16pt;
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
+    color: #a6a6a6;
+}
+
+.inputSenha{
+    width: 100%;
 }
