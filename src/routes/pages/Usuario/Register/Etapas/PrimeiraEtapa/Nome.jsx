@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text,  TouchableOpacity, StyleSheet, TextInput } from 'react-native';
-
+import * as Animado from 'react-native-animatable';
 
 export default function Nome({ navigation }) {
   return (
     <View style={styles.container}>
         <View style={styles.container}>
-          <Text style={styles.title}>Qual é o seu nome?</Text>
+        <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o seu nome?</Animado.Text>
           <TextInput
             style={styles.input}
             placeholder="Digite o seu nome"
