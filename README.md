@@ -3,6 +3,7 @@
 npm install @react-navigation/native <br>
 npm install @react-navigation/stack <br>
 npx expo install expo-image-picker <br>
+npm install react-native-animatable <br>
 -- Dependencias -- <hr>
 
 <h3>-- Importante --</h3>
