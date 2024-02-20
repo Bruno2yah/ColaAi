@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         height: '65%',
         width: '100%',
-        top: "65%",
+        top: "52%",
         borderStartStartRadius: 40,
         borderStartEndRadius: 40,
         //borderTopWidth: 5,
@@ -31,44 +31,42 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems:'center',
         justifyContent:'center',
-        height: '30vw',
+        height: '40%',
         width: '100%',
-        marginTop: '23vw',
+        marginTop: '10%',
         //backgroundColor: '#ff1',
     },
 
     //Botões Coloridos
     buttonsArea: {
         flexDirection:'row',
-        height: '30vw',
+        height: '10%',
         width: '90%',
         alignSelf: 'center',
         position: 'relative',
-        marginTop: '4vh',
         marginLeft: 30,
         marginRight: 30,
-        marginBottom: 5,
-        padding: 8,
+        paddingTop: '7%',
+        marginBottom: '5%',
         justifyContent: 'center',
         alignItems: 'center',
+        flex: 1,
     },
     buttons: {
-        flex: 1,
-        heigh: 70,
-        width: 50,
+        heigh: '100%',
+        width: '100%',
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems: 'center',
         alignSelf: 'center',
-        padding: 10,
         marginTop: 20,
-        marginBottom: 20
+        marginBottom: 20,
     },
 
     //Exemplos de centros educacionais
     fabricasArea: {
-        marginTop: '4vh',
-        height: '30vw',
+        marginTop: '2%',
+        height: '30%',
         padding: 8,
         width: '90%',
         backgroundColor: '#a5f866',
@@ -79,8 +77,9 @@ const styles = StyleSheet.create({
         flexDirection:'row',
     },
     CentrosArea: {
-        marginTop: '4vh',
-        height: '30vw',
+        marginTop: '5%',
+        marginBottom: '5%',
+        height: '34%',
         padding: 8,
         width: '90%',
         backgroundColor: '#EBD574',
@@ -91,8 +90,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
     },
     CentrosFoto: {
-        height: '25vw',
-        width: '25vw',
+        height: 100,
+        width: 100,
         borderRadius: 90,
     },
     CentrosTextos: {
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
 export default styles;
 
 /*Azul - #6d9eaf
-Rosa - #
+Rosa - #e6aeb2
 Amarelo - #ffd932
 Verde - #a5f866
 Vermelho - #fd5620

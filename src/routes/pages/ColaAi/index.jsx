@@ -20,7 +20,7 @@ const ColaAi = ({ navigation }) => {
               <Text style={styles.buttonTextUsuario}>Usuario</Text>
             </TouchableOpacity>
           </Animado.View>
-          <TouchableOpacity onPress={() => navigation.navigate('AcessoSemLogin')}>
+          <TouchableOpacity onPress={() => navigation.navigate('HomeUsuario')}>
             <Text style={styles.linkText}>Acesso sem login</Text>
           </TouchableOpacity>
       </View>
