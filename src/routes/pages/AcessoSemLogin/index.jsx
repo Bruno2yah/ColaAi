@@ -12,7 +12,7 @@ export default function AcessoSemLogin({ navigation }) {
         <View style={styles.buttonColumn}>
           <TouchableOpacity
             style={styles.button2}
-            onPress={() => navigation.navigate('Home')}
+            onPress={() => navigation.navigate('HomeUsuario')}
           >
             <Text style={styles.buttonText2}>Entrar como convidado</Text>
           </TouchableOpacity>
