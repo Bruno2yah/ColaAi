@@ -4,6 +4,8 @@ npm install @react-navigation/native <br>
 npm install @react-navigation/stack <br>
 npx expo install expo-image-picker <br>
 npm install react-native-animatable <br>
+npm install react-native-vector-icons <br>
+
 -- Dependencias -- <hr>
 
 <h3>-- Importante --</h3>
