@@ -1,4 +1,4 @@
-import {Text, View, Image, StyleSheet } from 'react-native';
+import {Text, View, Image, StyleSheet, Pressable } from 'react-native';
 
 export default function navBar() {
   return (
@@ -6,34 +6,45 @@ export default function navBar() {
         <View style={styles.buttonsArea}>
             <View style={styles.buttons}>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
+                <Pressable style={styles.buttonNav} >
                     <Image
                         style={{width: '16vw', height: '16vw', tintColor: '#FFD932'}}
                         source={require('../../../assets/img/NavBar/home.png')}
                     />
+                    </Pressable>
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
-                    <Image
-                        style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
-                        source={require('../../../assets/img/NavBar/ingressos.png')}
-                    />
+                    <Pressable style={styles.buttonNav} >
+                        <Image
+                            style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
+                            source={require('../../../assets/img/NavBar/ingressos.png')}
+                        />
+                    </Pressable>
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
+                    <Pressable style={styles.buttonNav} >
                     <Image
                         style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
                         source={require('../../../assets/img/NavBar/local.png')}
                     />
+                    </Pressable>
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
+                    <Pressable style={styles.buttonNav} >
                     <Image
                         style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
                         source={require('../../../assets/img/NavBar/notif.png')}
                     />
+                    </Pressable>
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
-                    <Image
-                        style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
-                        source={require('../../../assets/img/NavBar/perfil.png')}
-                    />
+                    <Pressable style={styles.buttonNav} >
+                        <Image
+                            style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
+                            source={require('../../../assets/img/NavBar/perfil.png')}
+                        />
+                    </Pressable>
+                    
                 </View>
             
             </View>
@@ -72,4 +83,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
     },
+    buttonNav: {
+        alignItems: 'center',
+        padding: 5,
+        width: '100%',
+        justifyContent:'space-evenly',
+
+      },
 })
