@@ -3,7 +3,7 @@ import {View, StyleSheet} from 'react-native';
 
 // npm install react-native-maps
 import MapView, { Marker } from 'react-native-maps';
-// npx expo install expo-locationgit status
+// npx expo install expo-location
 import * as Location from 'expo-location';
 import {
   requestForegroundPermissionsAsync,
