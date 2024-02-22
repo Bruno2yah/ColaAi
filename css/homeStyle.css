@@ -8,7 +8,7 @@
 }
 
 .cover-Image {
-    background-image: url('./img/Cover.png'); 
+    background-image: url('../img/Cover.png'); 
     background-size: cover;
     background-position: 65% 100%;
     min-height: 100vh; 
@@ -23,6 +23,13 @@
 }
 .cover-3 {
   background-color: #eee; 
+  background-size: cover;
+  background-position: center center;
+  z-index: 5;
+}
+
+.cover-4 {
+  background-color: black; 
   background-size: cover;
   background-position: center center;
   z-index: 5;
@@ -110,13 +117,11 @@
 .personBottom {
   position:absolute;
   right: 0;
-
   margin-bottom: 20%;
   width: 400px; 
   max-width: 60%; 
   height: auto; 
 }
-
   /*-------------------------------------------------------------------NavBar--------------------------------------------------*/
 
 .navbar{

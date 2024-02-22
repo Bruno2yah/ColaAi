@@ -73,14 +73,14 @@
             <p class="text-center" style="font-size: 50px; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Nossos Projetos</p>
             <div class="row d-flex justify-content-center d-flex align-items-center">
                 <div class="col-xs-3 col-sm-3 col-md-3">
-                  <img src="./img/projeto.png" alt="plataformas" style="width: 800px; max-width: 100%; height: auto; padding-top: 35px;">
+                  <img src="./img/breve.png" alt="plataformas" style="width: 800px; max-width: 100%; height: auto; border-width:20px; border-radius: 20px;">
                 </div>
                 <div class="col-xs-3 col-sm-3 col-md-3">
-                  <img src="./img/projeto.png" alt="plataformas" style="width: 800px; max-width: 100%; height: auto; padding-top: 35px;">
+                  <img src="./img/prjColaAi.png" alt="plataformas" style="width: 800px; max-width: 100%; height: auto; border-width:20px; border-radius: 20px;">
                 </div>
                 <div class="col-xs-3 col-sm-3 col-md-3">
-                  <img src="./img/projeto.png" alt="plataformas" style="width: 800px; max-width: 100%; height: auto; padding-top: 35px;">
-                </div>  
+                  <img src="./img/breve.png" alt="plataformas" style="width: 800px; max-width: 100%; height: auto; border-width:20px; border-radius: 20px;">
+              </div>
             </div>
         </main>
       </div>
