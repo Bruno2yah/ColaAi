@@ -4,6 +4,11 @@ npm install @react-navigation/native <br>
 npm install @react-navigation/stack <br>
 npx expo install expo-image-picker <br>
 npm install react-native-animatable <br>
+
+Para o Mapa:
+ npm install react-native-maps
+ npx expo install expo-location
+ npm install react-native-gesture-handler
 -- Dependencias -- <hr>
 
 <h3>-- Importante --</h3>
