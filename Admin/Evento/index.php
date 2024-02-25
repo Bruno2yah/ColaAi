@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Usuário</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Home</title>
 </head>
 <body>
     <?php
-      include('../Componentes/Header.php'); 
+      include('../../Componentes/Header.php'); 
     ?>
     <div class = "container-fluid" style = "height: 90%">
-      <div class = "row h-100">
+      <div class = "row h-100 linha">
         <?php
-          include('../Componentes/menu.php') 
+          include('../../Componentes/menu.php') 
         ?>
         <div class = "col-md-10">
     

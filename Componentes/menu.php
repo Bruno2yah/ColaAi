@@ -1,12 +1,12 @@
 <div class="col-md-2 linha pt-1" style="background-color:#e8fdd8;">
   <ul class="nav flex-column menu linha">
-    <a class="menuItems w-100 p-1 ps-2" href="../Home" style="text-decoration: none; color: #a6a6a6;">
+    <a class="menuItems w-100 p-1 ps-2" href="../../Admin/Home/index.php" style="text-decoration: none; color: #a6a6a6;">
       <li class="">
         <i class="bi bi-house"></i>
         Home
       </li>
     </a>
-    <a class="menuItems w-100 p-1 ps-2" href="../Admin" style="text-decoration: none; color: #a6a6a6;">
+    <a class="menuItems w-100 p-1 ps-2" href="../../Admin/User/index.php" style="text-decoration: none; color: #a6a6a6;">
       <li class="">
         <i class="bi bi-person-fill"></i>
         Administrador

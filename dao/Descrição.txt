@@ -1,0 +1,9 @@
+
+O padrão de projeto DAO surgiu com a necessidade de separarmos a lógica de negócios da lógica 
+de persistência de dados. Este padrão permite que possamos mudar a forma de persistência sem que 
+isso influencie em nada na lógica de negócio, além de tornar nossas classes mais legíveis.
+
+Classes DAO são responsáveis por trocar informações com o SGBD e fornecer operações CRUD e de 
+pesquisas,elas devem ser capazes de buscar dados no banco e transformar esses em objetos ou lista de 
+objetos, fazendo uso de listas genéricas , também deverão receber os objetos, converter em 
+instruções SQL e mandar para o banco de dados.

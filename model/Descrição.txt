@@ -1,0 +1,5 @@
+Na programação, um objeto representa a abstração de uma entidade do mundo real, 
+de modo que informação e comportamento estão ligados. Nesse sentido, informações e comportamentos 
+são traduzidos para a programação como atributos e métodos.
+
+*********Estrutura do banco de dados
