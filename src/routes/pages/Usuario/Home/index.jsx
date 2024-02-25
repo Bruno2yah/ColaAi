@@ -122,12 +122,12 @@ export default function UsuarioHome({ navigation }) {
               source={require('../../../../../assets/img/Home/fabricas.jpg')}
             />
             <View style={styles.CentrosTextos}>
-              <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#fd5620',textAlign: 'center', }}>
+              <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#fd5620',textAlign: 'center', }}>
                 FÁBRICAS DE CULTURA
               </Text>
               <Text
                 style={{
-                  fontSize: 14,
+                  fontSize: 12,
                   textAlign: 'justify',
                   color: '#000',
                   paddingLeft: 10,
@@ -154,7 +154,7 @@ export default function UsuarioHome({ navigation }) {
               </Text>
               <Text
                 style={{
-                  fontSize: 14,
+                  fontSize: 12,
                   textAlign: 'justify',
                   color: '#000',
                   paddingLeft: 10,

@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     //Botão
     button: {
         backgroundColor: '#E6AEB2',
-        padding: 10,
         margin: 10,
         borderRadius: 17,
         width: 190,
@@ -37,14 +36,12 @@ const styles = StyleSheet.create({
 
     //Exemplos de centros educacionais
     EventoArea: {
-        height: 400,
         width: '85%',
         //backgroundColor: '#D0F1B7',
         alignSelf: 'center',
         borderRadius: 20,
         alignItems: 'center',
-        paddingBottom: 15,
-        top: 150,
+        marginTop: 120
     },
     Foto: {
         height: 150,
@@ -69,14 +66,14 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center',
         flexDirection:'row',
-        margin: 4
+        marginLeft: 6,
+        marginRight: 6
     },
     InfosText:
     {
         fontSize: 16,
         textAlign: 'center',
         color: '#A6A6A6',
-        margin: 4,
         textAlign: 'justify',
     },
     InfosRows:

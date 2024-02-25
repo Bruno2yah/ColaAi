@@ -81,6 +81,41 @@ export default function Teatros({ navigation }) {
               </TouchableOpacity>
             </View>
           </View>
+
+          <View style={styles.TeatrosArea}>
+            <Image
+              style={styles.TeatrosFoto}
+              source={require('../../../../../assets/img/Teatros/teatro_1.png')}
+            />
+            <View style={styles.TeatrosLocal}>
+              <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
+                TEATRO GAZETA
+              </Text>
+              <View style = {{flexDirection:'row', height: 75}}>
+                <Image
+                    style={{ height: 30, width: 20, marginLeft: 10 }}
+                    source={require('../../../../../assets/img/Teatros/Point.png')}
+                />
+                <Text
+                    style={{
+                    fontSize: 20,
+                    textAlign: 'center',
+                    color: '#A6A6A6',
+                    marginRight: 20
+                    }}
+                >
+                  Av. Paulista, 900 - Bela Vista, 
+                  São Paulo - Sp, 01310-100
+                </Text>
+              </View>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('Evento')}
+              >
+                <Text style={styles.buttonText}>Saber mais</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </ScrollView>
       <NavBar />

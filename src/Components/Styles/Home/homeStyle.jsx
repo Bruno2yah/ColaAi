@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         //borderTopWidth: 5,
         //borderColor: '#CCCCCC',
         flex: 1,
-        marginTop: 300,
+        marginTop: 275,
     },
     fundo: {
         position: 'absolute',

@@ -32,7 +32,7 @@ export default function Eventos({ navigation }) {
             </View>
             <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
               <Image
-                style={{ height: 220, width: 50, marginBottom: 80}}
+                style={{ height: 170, width: 40, marginBottom: 80}}
                 source={require('../../../../../assets/img/Evento/inferiorDireito.png')}
               />
             </View>

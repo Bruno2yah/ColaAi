@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
         //backgroundColor: '#ff1',
         height: '100%',
         width: '100%',
-        top: "60%",
         flex: 1,
+        marginTop: 150
     },
     fundo: {
         position: 'absolute',
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     //Botão
     button: {
         backgroundColor: '#E6AEB2',
-        padding: 10,
         margin: 10,
         borderRadius: 17,
         width: 215,
@@ -53,6 +52,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 15,
         paddingBottom: 15,
+        marginTop: 50
     },
     TeatrosFoto: {
         height: '50%',
