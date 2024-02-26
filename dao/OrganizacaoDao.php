@@ -3,7 +3,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
 
     class OrganizacaoDao{
         public static function insert($org){
-            // Ajuste para obter o ID corretamente usando o método getId()
+            
             $id = $org->getId();
             $nome = $org->getNome();
             $cnpj = $org->getCnpj();

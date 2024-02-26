@@ -12,9 +12,10 @@
     $cidade_Org = $organizacaoDao['cidadeOrganizacaoEvento'];
     $uf_Org = $organizacaoDao['ufOrganizacaoEvento'];
     $email_Org = $organizacaoDao['emailOrganizacaoEvento'];
+    $senha_Org = $organizacaoDao['senhaOrganizacaoEvento'];
     $linkSite_Org = $organizacaoDao['linkSiteOrganizacaoEvento'];
     $telefone_Org = $organizacaoDao['telOrganizacaoEvento'];
-    $imagem_Org = $organizacaoDao['imagemOrganizacaoEvento'];
+    $imagem_Org = $organizacaoDao['idImagemOrganizacaoEvento'];
 }else{
     $nome_Org = '';
     $cnpj_Org = '';
@@ -25,6 +26,7 @@
     $cidade_Org = '';
     $uf_Org = '';
     $email_Org = '';
+    $senha_Org = '';
     $linkSite_Org = '';
     $telefone_Org = '';
     $imagem_Org = '';
@@ -66,7 +68,7 @@
             <strong>INFORMAÇÕES DA ORGANIZAÇÃO</strong>
             <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id" value="<?=$id_Org?>">
             <input type="hidden" name="imagemOrganizacaoEvento" id="imagemOrganizacaoEvento" placeholder="nome foto" value="<?=$imagem_Org?>">
-            <input type="hidden" value="<?=$id_Admin?'ATUALIZAR':'SALVAR'?>" name="acao" >
+            <input type="text" value="<?=$id_Org?'ATUALIZAR':'SALVAR'?>" name="acao" >
           </div>
           <div class="card-body row justify-content-center align-items-center">
             <div class="col-md-2   text-center">
@@ -138,9 +140,13 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12 needs-validation">
+                <div class="col-md-8 needs-validation">
                   <label for="link" class="col-form-label">Link:</label>
                   <input type="text" class="form-control" name="linkOrganizacaoEvento" maxlength="100" id="linkOrganizacaoEvento" value="<?=$linkSite_Org?>" required>
+                </div>
+                <div class="col-md-4 needs-validation">
+                  <label for="telefone" class="col-form-label">Telefone:</label>
+                  <input type="text" class="form-control" name="telOrganizacaoEvento" maxlength="100" id="telOrganizacaoEvento" value="<?=$telefone_Org?>" required>
                 </div>
               </div>
               <div class="row">
