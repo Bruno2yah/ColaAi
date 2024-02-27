@@ -9,6 +9,14 @@ npm i react-native-shadow-2 <br>
 
 -- Dependencias -- <hr>
 
+<h3>-- Para resolver o problema de gesture--handler no expo go --</h3><br>
+importar isso no primeiro arquivo do projeto no arquivo index.jsx import 'react-native-gesture-handler';<br>
+-- Dependencias -- <br>
+expo install react-native-gesture-handler<br>
+ npm install react-native-gesture-handler<br>
+
+-- Dependencias -- <hr>
+
 <h3>-- Importante --</h3>
 Não Criem do zero os arquivos do app, pois pode dar conflito na hora de dar merge(Mesclar), deem "git clone https://github.com/Bruno2yah/ColaAi.git" para baixarem o arquivo da Main, que é a branch principal. Façam isso dentro da pasta expo<br>
 Sigam o Passo a passo:<br>
