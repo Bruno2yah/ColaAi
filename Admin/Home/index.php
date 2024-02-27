@@ -1,3 +1,8 @@
+<?php 
+  require_once '../../dao/UserDao.php'; 
+ 
+ $totalClientes = UserDao::getTotalClientes();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +38,24 @@
           include('../../Componentes/menu.php') 
         ?>
         <div class = "col-md-10">
+        <div class="row align-items-center mb-4">
+          <div class="col fs-3 fw-semibold">
+            Dashboard - Home
+          </div>
+        </div>
+        <div class="row">
+       
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Total de Usuários Registrados</h5>
+                <p class="card-text"><?php echo $totalClientes; ?></p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
     
         </div>
       </div>

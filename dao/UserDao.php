@@ -1,36 +1,35 @@
 <?php 
 require_once (__DIR__ . '../../model/Conexao.php');
 
-    class UserAdmDao{
+    class UserDao{
         public static function insert($user){
             // Ajuste para obter o ID corretamente usando o método getId()
-            $id = $user->getId();
             $nome = $user->getNome();
             $sobrenome = $user->getSobrenome();
             $email = $user->getEmail();
-            $senha = $user->getSenha(); // Corrigido o nome do método para getSenha()
+            $senha = $user->getSenha(); 
             $imagem = $user->getImagem();
             
             $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
             
-            $stmt = $conn->prepare("INSERT INTO tbusuario (idUsuario, nomeUsuario, sobrenomeUsuario, emailUsuario, senhaUsuario, imagemUsuario) 
-                            VALUES (:id, :nome, :sobrenome, :nasc, :email, :senha, :imagem)");
-        
-            $stmt->bindParam(':id', $id);
+            $stmt = $conn->prepare("INSERT INTO tbusuario (nomeUsuario, sobrenomeUsuario, emailUsuario, senhaUsuario, imagemUsuario) 
+                            VALUES (:nome, :sobrenome, :email, :senha, :imagem)");
+            
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':sobrenome', $sobrenome);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
             $stmt->bindParam(':imagem', $imagem);
-        
+            
             $result = $stmt->execute();
-        
+            
             if ($result) {
                 return true; // Inserção bem-sucedida
             } else {
                 return false; // Erro na inserção
             }
         }
+        
         
         public static function selectAll(){
             $conexao = Conexao::conectar();
@@ -68,7 +67,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
                 sobrenomeUsuario = :sobrenome,
                 emailUsuario = :email, 
                 senhaUsuario = :senha, 
-                imagemUsuario = :imagem, 
+                imagemUsuario = :imagem
                 WHERE idUsuario = :id";
             
             $stmt = $conexao->prepare($query);
@@ -99,7 +98,23 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
+        public static function getTotalClientes(){
+            $conexao = Conexao::conectar();
+            $query = "SELECT COUNT(*) as totalUsuários FROM tbusuario";
+            $stmt = $conexao->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            return $result['totalClientes']; 
     }
-
-
+    /*public static function checkCredentials($email, $senha){
+        $conexao = Conexao::conectar();
+        $query = "SELECT * FROM tbcliente WHERE emailCliente = :email and senhaEmailCliente = :senha";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':senha', $senha);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }*/
+}
 ?>

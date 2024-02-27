@@ -1,7 +1,7 @@
 <?php 
   require_once '../../dao/UserDao.php'; 
   require_once '../../model/Mensagem.php'; 
-  $users = UserAdmDao::selectAll();
+  $users = UserDao::selectAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">

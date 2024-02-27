@@ -63,7 +63,7 @@ $orgs = OrganizacaoDao::selectAll();
               </tr>
               <?php foreach ($orgs as $Org) : ?>
                 <tr>
-                  <td><?= $Org['idOrganizacaoEvento ']; ?></td>
+                  <td><?= $Org['idOrganizacaoEvento']; ?></td>
                   <td><?= $Org['nomeOrganizacaoEvento']; ?></td>
                   <td><?= $Org['emailOrganizacaoEvento']; ?></td>
                   <td><?= $Org['cnpjOrganizacaoEvento']; ?></td>
@@ -71,13 +71,13 @@ $orgs = OrganizacaoDao::selectAll();
                   <td class="text-center">
                     <form action="process.php" method="POST">
                       <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
-                      <input type="hidden" class="form-control" id="id" name="id" value="<?= $Org['idOrganizacaoEvento '] ?>">
+                      <input type="hidden" class="form-control" id="id" name="id" value="<?= $Org['idOrganizacaoEvento'] ?>">
                       <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary"></i>
                       </button>
                     </form>
                   </td>
                   <td class="text-center">
-                    <a class="dropdown-item" onclick="modalRemover(<?= $Org['idOrganizacaoEvento '] ?>,'idDeletar')">
+                    <a class="dropdown-item" onclick="modalRemover(<?= $Org['idOrganizacaoEvento'] ?>,'idDeletar')">
                       <i class="fas fa-trash-alt fa-lg text-danger"></i>
                     </a>
                   </td>

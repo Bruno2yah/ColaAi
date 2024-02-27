@@ -3,8 +3,6 @@ require_once (__DIR__ . '../../model/Conexao.php');
 
     class OrganizacaoDao{
         public static function insert($org){
-            
-            $id = $org->getId();
             $nome = $org->getNome();
             $cnpj = $org->getCnpj();
             $cep = $org->getCep();
@@ -21,12 +19,9 @@ require_once (__DIR__ . '../../model/Conexao.php');
             
             $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
         
-            $stmt = $conn->prepare("INSERT INTO tborganizacaoevento (idOrganizacaoEvento, nomeOrganizacaoEvento, cnpjOrganizacaoEvento, 
-            cepOrganizacaoEvento, logradouroOrganizacaoEvento, bairroOrganizacaoEvento, numeroOrganizacaoEvento, cidadeOrganizcaoEvento, 
-            ufOrganizacaoEvento, emailOrganizacaoEvento, senhaOrganizacaoEvento, linkSiteOrganizacaoEvento, telOrganizacaoEvento, imagemOrganizacaoEvento) 
-                            VALUES (:id, :nome, :cnpj, :cep, :log, :bairro, :num, :cidade, :uf, :email, :senha, :link, :tel, :imagem)");
+            $stmt = $conn->prepare("INSERT INTO tborganizacaoevento (nomeOrganizacaoEvento, cnpjOrganizacaoEvento, cepOrganizacaoEvento, logradouroOrganizacaoEvento, bairroOrganizacaoEvento, numeroOrganizacaoEvento, cidadeOrganizacaoEvento, ufOrganizacaoEvento, emailOrganizacaoEvento, senhaOrganizacaoEvento, linkSiteOrganizacaoEvento, telOrganizacaoEvento, imagemOrganizacaoEvento) 
+                            VALUES (:nome, :cnpj, :cep, :log, :bairro, :num, :cidade, :uf, :email, :senha, :link, :tel, :imagem)");
         
-            $stmt->bindParam(':id', $id);
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':cnpj', $cnpj);
             $stmt->bindParam(':cep', $cep);
@@ -49,6 +44,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
                 return false; // Erro na inserção
             }
         }
+        
         
         public static function selectAll(){
             $conexao = Conexao::conectar();
@@ -88,7 +84,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
                logradouroOrganizacaoEvento = :log,
                bairroOrganizacaoEvento = :bairro,
                numeroOrganizacaoEvento = :num,
-               cidadeOrganizcaoEvento = :cidade,
+               cidadeOrganizacaoEvento = :cidade,
                ufOrganizacaoEvento = :uf,
                emailOrganizacaoEvento = :email, 
                senhaOrganizacaoEvento = :senha, 

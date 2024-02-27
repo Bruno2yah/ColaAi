@@ -3,7 +3,6 @@ require_once (__DIR__ . '../../model/Conexao.php');
 
     class UserAdmDao{
         public static function insert($userAdm){
-            // Ajuste para obter o ID corretamente usando o método getId()
             $id = $userAdm->getId();
             $nome = $userAdm->getNome();
             $cpf = $userAdm->getCpf();
