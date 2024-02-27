@@ -6,7 +6,7 @@
         Home
       </li>
     </a>
-    <a class="menuItems w-100 p-1 ps-2" href="../../Admin/User/index.php" style="text-decoration: none; color: #a6a6a6;">
+    <a class="menuItems w-100 p-1 ps-2" href="../../Admin/UserAdm/index.php" style="text-decoration: none; color: #a6a6a6;">
       <li class="">
         <i class="bi bi-person-fill"></i>
         Administrador

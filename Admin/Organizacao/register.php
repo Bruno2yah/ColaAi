@@ -15,7 +15,7 @@
     $senha_Org = $organizacaoDao['senhaOrganizacaoEvento'];
     $linkSite_Org = $organizacaoDao['linkSiteOrganizacaoEvento'];
     $telefone_Org = $organizacaoDao['telOrganizacaoEvento'];
-    $imagem_Org = $organizacaoDao['idImagemOrganizacaoEvento'];
+    $imagem_Org = $organizacaoDao['imagemOrganizacaoEvento'];
 }else{
     $nome_Org = '';
     $cnpj_Org = '';

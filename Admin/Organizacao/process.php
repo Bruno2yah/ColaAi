@@ -30,7 +30,7 @@ switch ($_POST["acao"]) {
         $org->setSenha($_POST['senhaOrganizacaoEvento']);
         $org->setLink($_POST['linkSiteOrganizacaoEvento']);
         $org->setTel($_POST['telOrganizacaoEvento']);
-        $org->setImagem($org->salvarImagem(($_POST['idImagemOrganizacaoEvento'])));
+        $org->setImagem($org->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
         try {
             $organizacaoDao = OrganizacaoDao::insert($org);
             $msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
@@ -56,7 +56,7 @@ switch ($_POST["acao"]) {
               $org->setSenha($_POST['senhaOrganizacaoEvento']);
               $org->setLink($_POST['linkSiteOrganizacaoEvento']);
               $org->setTel($_POST['telOrganizacaoEvento']);
-              $org->setImagem($org->salvarImagem(($_POST['idImagemOrganizacaoEvento'])));
+              $org->setImagem($org->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
               try {
                 $organizacaoDao = OrganizacaoDao::update($_POST["idOrganizacaoevento"], $org);
                 $msg->setMensagem("Usuário Atualizado com sucesso.", "bg-success");

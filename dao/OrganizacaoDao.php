@@ -23,7 +23,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
         
             $stmt = $conn->prepare("INSERT INTO tborganizacaoevento (idOrganizacaoEvento, nomeOrganizacaoEvento, cnpjOrganizacaoEvento, 
             cepOrganizacaoEvento, logradouroOrganizacaoEvento, bairroOrganizacaoEvento, numeroOrganizacaoEvento, cidadeOrganizcaoEvento, 
-            ufOrganizacaoEvento, emailOrganizacaoEvento, senhaOrganizacaoEvento, linkSiteOrganizacaoEvento, telOrganizacaoEvento, idImagemOrganizacaoEvento) 
+            ufOrganizacaoEvento, emailOrganizacaoEvento, senhaOrganizacaoEvento, linkSiteOrganizacaoEvento, telOrganizacaoEvento, imagemOrganizacaoEvento) 
                             VALUES (:id, :nome, :cnpj, :cep, :log, :bairro, :num, :cidade, :uf, :email, :senha, :link, :tel, :imagem)");
         
             $stmt->bindParam(':id', $id);
@@ -94,7 +94,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
                senhaOrganizacaoEvento = :senha, 
                linkSiteOrganizacaoEvento = :link,
                telOrganizacaoEvento = :tel,
-               idImagemOrganizacaoEvento = :imagem 
+               imagemOrganizacaoEvento = :imagem 
                 WHERE idOrganizacaoevento = :id";
             
             $stmt = $conexao->prepare($query);

@@ -1,5 +1,5 @@
 <?php 
-  require_once '../../dao/UserDao.php'; 
+  require_once '../../dao/userAdmDao.php'; 
   require_once '../../model/Mensagem.php'; 
   $users = UserAdmDao::selectAll();
 ?>
@@ -11,7 +11,7 @@
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Lista de Usuários</title>
+    <title>Lista de Administradores</title>
     <!-- icon -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> <!-- CSS Projeto -->
 </head>
@@ -41,7 +41,7 @@
         <div class="col-md-10  p-4 borber">
         <div class="row align-items-center mb-4">
           <div class="col fs-3 fw-semibold">
-            Lista de Usuários Registrados
+            Lista de Administradores
           </div>
           <div class="col text-end ">
             <a class="btn btn-success px-3" role="button" aria-disabled="true" href="register.php"><i class="fas fa-plus" aria-hidden="true"></i></a>
@@ -53,27 +53,29 @@
               <tr>
                 <th class="col-md-1">ID</th>
                 <th class="col-md-2">Nome </th>
-                <th class="col-md-3">Sobrenome</th>
                 <th class="col-md-3">E-mail</th>
+                <th class="col-md-2">CPF</th>
+                <th class="col-md-1">Data Nascimento</th>
                 <th class="text-center col-md-1">Alterar</th>
                 <th class="text-center col-md-1">Excluir</th>
               </tr>
             <?php foreach($users as $User): ?>
              <tr> 
-              <td><?=$User['idUsuario'];?></td>
-              <td><?=$User['nomeUsuario'];?></td>
-              <td><?=$User['sobrenomeUsuario'];?></td>
-              <td><?=$User['emailUsuario'];?></td>
+              <td><?=$User['idAdmin'];?></td>
+              <td><?=$User['nomeAdmin'];?></td>
+              <td><?=$User['emailAdmin'];?></td>
+              <td><?=$User['cpfAdmin'];?></td>
+              <td><?=$User['dataNascAdmin'];?></td>
               <td class="text-center">
                   <form action="process.php" method="POST">
                     <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
-                    <input type="hidden" class="form-control" id="id" name="id" value="<?=$User['idUsuario']?>">
+                    <input type="hidden" class="form-control" id="id" name="id" value="<?=$User['idAdmin']?>">
                     <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary"></i>
                     </button>
                   </form>
                 </td>
                 <td class="text-center">
-                  <a class="dropdown-item" onclick="modalRemover(<?=$User['idUsuario']?>,'idDeletar')">
+                  <a class="dropdown-item" onclick="modalRemover(<?=$User['idAdmin']?>,'idDeletar')">
                     <i class="fas fa-trash-alt fa-lg text-danger"></i>
                   </a>
                 </td>
