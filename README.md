@@ -10,7 +10,7 @@ npm i react-native-shadow-2 <br>
 -- Dependencias -- <hr>
 
 <h3>-- Para resolver o problema de gesture--handler no expo go --</h3><br>
-importar isso no primeiro arquivo do projeto no arquivo index.jsx:<br>
+importar isso no primeiro arquivo do projeto no arquivo App.tsx:<br>
 import 'react-native-gesture-handler';<br>
 -- Dependencias -- <br>
 expo install react-native-gesture-handler<br>
