@@ -1,12 +1,14 @@
 import {View, Image, StyleSheet, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function navBar() {
+export default function navBar(  ) {
+const navigation = useNavigation();
   return (
     <View style={styles.container}>
         <View style={styles.buttonsArea}>
             <View style={styles.buttons}>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
-                <Pressable style={styles.buttonNav} >
+                <Pressable style={styles.buttonNav} onPress={() => navigation.navigate('Home')}>
                     <Image
                         style={{width: 61, height: 61, tintColor: '#FFD932'}}
                         source={require('../../../assets/img/NavBar/home.png')}
@@ -22,7 +24,7 @@ export default function navBar() {
                     </Pressable>
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
-                    <Pressable style={styles.buttonNav} >
+                    <Pressable style={styles.buttonNav} onPress={() => navigation.navigate('Mapa')} >
                         <Image
                             style={{width: 61, height: 61, tintColor: '#A6A6A6'}}
                             source={require('../../../assets/img/NavBar/local.png')}
@@ -38,7 +40,7 @@ export default function navBar() {
                     </Pressable>
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
-                    <Pressable style={styles.buttonNav} >
+                    <Pressable style={styles.buttonNav} onPress={() => navigation.navigate('Perfil')} >
                         <Image
                             style={{width: 61, height: 61, tintColor: '#A6A6A6'}}
                             source={require('../../../assets/img/NavBar/perfil.png')}

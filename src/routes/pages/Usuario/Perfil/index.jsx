@@ -17,13 +17,13 @@ export default function Perfil() {
       <Pressable style={styles.menuButton} onPress={toggleDrawer}>
         <Image
           style={{ width: 30, height: 30 }}
-          source={require('../../../../../assets/img/User/menu.png')} // Coloque o caminho para o ícone do menu hamburguer
+          source={require('../../../../../assets/img/User/menu.png')}
         />
       </Pressable>
       <View style={styles.capaPerfilBox}>
-        <ImageBackground source={require('../../../../../assets/img/User/capa.jpg')} resizeMode="cover" style={styles.imageCapa}>
+      <ImageBackground source={require('../../../../../assets/img/User/user.png')} resizeMode="cover" style={styles.imageCapa}>
+      </ImageBackground>
 
-        </ImageBackground>
       </View>
       <View style={styles.perfilUser}>
         <Image
@@ -40,15 +40,16 @@ export default function Perfil() {
       {isDrawerOpen && (
         <View style={styles.drawerContainer}>
           {/* Conteúdo do menu hamburguer aqui */}
-          <Text>Conta</Text>
+          <View><Text>Conta</Text></View>
           <View style={styles.dadoPessoal}>
             <View>
-            <Image
-          style={{width: 20, height: 20}}
-          source={require('../../../../../assets/img/User/profile-user.png')}
-        />
+              <Image
+                style={{ width: 20, height: 20 }}
+                source={require('../../../../../assets/img/User/profile-user.png')}
+              />
             </View>
-            <View>Dados Pessoais</View>
+            <View>
+              <Text>Dados Pessoais</Text></View>
 
           </View>
         </View>
@@ -103,9 +104,10 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
   },
-  dadoPessoal:{
-    flexDirection:'row',
-    justifyContent:'space-evenly',
-    alignItems:'center',
+  dadoPessoal: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    width:'100%'
   }
 });
