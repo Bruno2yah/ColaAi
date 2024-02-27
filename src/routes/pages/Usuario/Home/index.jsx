@@ -66,7 +66,7 @@ export default function UsuarioHome({ navigation }) {
                     justifyContent: 'center',
                     borderRadius: 20,
                   }}
-                  onPress={() => navigation.navigate('Teatros')}>
+                  onPress={() => navigation.navigate('PerfilOrganizacao')}>
                   <Image style={{ width: 90, height: 80 }}
                   source={require('../../../../../assets/img/Home/teatro_img.png')} />
                 </TouchableOpacity>

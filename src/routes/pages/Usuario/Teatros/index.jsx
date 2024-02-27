@@ -110,7 +110,7 @@ export default function Teatros({ navigation }) {
               </View>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('Evento')}
+                onPress={() => navigation.navigate('PerfilOrg')}
               >
                 <Text style={styles.buttonText}>Saber mais</Text>
               </TouchableOpacity>

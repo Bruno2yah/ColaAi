@@ -190,7 +190,7 @@ export default function Eventos({ navigation }) {
             
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigation.navigate('Usuario')}
+              onPress={() => navigation.navigate('PerfilOrg')}
             >
               <Text style={styles.buttonText}>Abrir</Text>
             </TouchableOpacity>
