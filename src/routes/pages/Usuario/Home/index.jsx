@@ -41,7 +41,6 @@ export default function UsuarioHome({ navigation }) {
             </View>
           </View>
         </View>
-
         {/* Imagem do Cola ai */}
         <View style={styles.fundo}>
           <Image
@@ -49,9 +48,7 @@ export default function UsuarioHome({ navigation }) {
             source={require('../../../../../assets/img/Home/cola_ai_home.png')}
           />
         </View>
-
         {/* Elementos */}
-        
         <View style={styles.background}>
           <Shadow distance={10} startColor={'#000'} sides={'top'} stretch={true} style={{borderTopLeftRadius:40, borderTopRightRadius:40,}}>
           <View style={styles.buttonsArea}>
@@ -115,7 +112,6 @@ export default function UsuarioHome({ navigation }) {
               {/* Adicione os outros blocos de código semelhantes para os botões restantes */}
             </View>
           </View>
-
           <View style={styles.fabricasArea}>
             <Image
               style={styles.CentrosFoto}
@@ -139,7 +135,6 @@ export default function UsuarioHome({ navigation }) {
               </Text>
             </View>
           </View>
-
           <View style={styles.CentrosArea}>
             <View style={styles.CentrosTextos}>
               <Text

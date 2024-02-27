@@ -19,10 +19,8 @@ export default function Teatros({ navigation }) {
         </View>
 
         <View style={{width: '90%', alignSelf: 'center', borderRadius: 20, alignItems: 'center', justifyContent: 'flex-end',flexDirection:'row',}}>
-            <TouchableOpacity
-            style={styles.btnSeguir}
-            >
-            <Text style={styles.buttonText}>Seguir</Text>
+            <TouchableOpacity style={styles.btnSeguir}>
+              <Text style={styles.buttonText}>Seguir</Text>
             </TouchableOpacity>
         </View>
 
@@ -39,6 +37,9 @@ export default function Teatros({ navigation }) {
         </View>
 
         <View style={styles.cards}>
+          <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#A6A6A6', paddingLeft: '10%',textAlign: 'left', alignSelf: 'flex-start', position: 'absolute', marginTop: 25}}>
+              Últimos 30 dias
+          </Text>
           <View style={styles.TeatrosArea}>
             <View style={styles.TeatrosLocal}>
               <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
