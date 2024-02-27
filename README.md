@@ -5,6 +5,8 @@ npm install @react-navigation/stack <br>
 npx expo install expo-image-picker <br>
 npm install react-native-animatable <br>
 npm install react-native-vector-icons <br>
+npx expo install react-native-svg <br>
+npm i react-native-shadow-2 <br>
 
 -- Dependencias -- <hr>
 
