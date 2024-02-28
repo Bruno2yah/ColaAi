@@ -8,14 +8,12 @@ const styles = StyleSheet.create({
         heigh: '100%',
     },
     fundo: {
-        position: 'absolute',
         alignSelf: 'center',
         alignItems:'center',
         justifyContent:'center',
-        height: 200,
+        flexDirection:'row',
         width: '100%',
-        marginTop: '10%',
-        //backgroundColor: '#ff1',
+        marginTop: 50
     },
 
     imageBanner:{
@@ -70,7 +68,7 @@ const styles = StyleSheet.create({
     },
 
     //Exemplos de centros educacionais
-    TeatrosArea: {
+    FotosArea: {
         height: 400,
         width: '85%',
         backgroundColor: '#FDE681',

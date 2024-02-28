@@ -33,14 +33,32 @@ export default function Teatros({ navigation }) {
                     Uma breve descrição sobre a empresa.
                 </Text>
             </View>
-            
         </View>
+
+        <View style={styles.fundo}>
+          <View style={{alignItems: 'flex-start', justifyContent: 'flex-start', width: '100%', position: 'absolute',}}>
+            <Image
+              style={{ height: 130, width: 80}}
+              source={require('../../../../../assets/img/Perfil Organização/detailEsquerda.png')}
+            />
+          </View>
+            <Image
+              style={{ height: 32, width: 210, alignSelf: 'center', marginBottom: 20  }}
+              source={require('../../../../../assets/img/Perfil Organização/publicacoesTxt.png')}
+            />
+            <View style={{alignItems: 'flex-end', justifyContent: 'flex-end', width: '100%', position: 'absolute', paddingBottom: 50}}>
+            <Image
+              style={{ height: 130, width: 80}}
+              source={require('../../../../../assets/img/Perfil Organização/detailDireita.png')}
+            />
+            </View>
+          </View>
 
         <View style={styles.cards}>
           <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#A6A6A6', paddingLeft: '10%',textAlign: 'left', alignSelf: 'flex-start', position: 'absolute', marginTop: 25}}>
               Últimos 30 dias
           </Text>
-          <View style={styles.TeatrosArea}>
+          <View style={styles.FotosArea}>
             <View style={styles.TeatrosLocal}>
               <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
                 TEATRO GAZETA
@@ -71,6 +89,7 @@ export default function Teatros({ navigation }) {
             </View>
           </View>
         </View>
+        
       </ScrollView>
       <NavBar />
     </View>
