@@ -68,7 +68,7 @@
             <strong>INFORMAÇÕES DA ORGANIZAÇÃO</strong>
             <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id" value="<?=$id_Org?>">
             <input type="hidden" name="imagemOrganizacaoEvento" id="imagemOrganizacaoEvento" placeholder="nome foto" value="<?=$imagem_Org?>">
-            <input type="text" value="<?=$id_Org?'ATUALIZAR':'SALVAR'?>" name="acao" >
+            <input type="hidden" value="<?=$id_Org?'ATUALIZAR':'SALVAR'?>" name="acao" >
           </div>
           <div class="card-body row justify-content-center align-items-center">
             <div class="col-md-2   text-center">
@@ -146,7 +146,7 @@
                 </div>
                 <div class="col-md-4 needs-validation">
                   <label for="telefone" class="col-form-label">Telefone:</label>
-                  <input type="text" class="form-control" name="telOrganizacaoEvento" maxlength="100" id="telOrganizacaoEvento" value="<?=$telefone_Org?>" required>
+                  <input type="text" class="form-control" name="telOrganizacaoEvento"  data-mask="00-00000-0000" maxlength="100" id="telOrganizacaoEvento" value="<?=$telefone_Org?>" required>
                 </div>
               </div>
               <div class="row">

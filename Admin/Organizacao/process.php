@@ -23,12 +23,12 @@ switch ($_POST["acao"]) {
         $org->setBairro($_POST['bairroOrganizacaoEvento']);
         $org->setNum($_POST['numeroOrganizacaoEvento']);
         $org->setCidade($_POST['cidadeOrganizacaoEvento']);
-        $org->setUf($_POST['ufOrganizacaoEvento']); // Corrigido o nome do campo
+        $org->setUf($_POST['ufOrganizacaoEvento']);
         $org->setEmail($_POST['emailOrganizacaoEvento']);
         $org->setSenha($_POST['senhaOrganizacaoEvento']);
         $org->setLink($_POST['linkSiteOrganizacaoEvento']);
         $org->setTel($_POST['telOrganizacaoEvento']);
-        $org->setImagem($org->salvarImagem($_POST['imagemOrganizacaoEvento'])); // Corrigido o nome do campo
+        $org->setImagem($org->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
         try {
             $organizacaoDao = OrganizacaoDao::insert($org);
             $msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
@@ -49,12 +49,12 @@ switch ($_POST["acao"]) {
         $org->setBairro($_POST['bairroOrganizacaoEvento']);
         $org->setNum($_POST['numeroOrganizacaoEvento']);
         $org->setCidade($_POST['cidadeOrganizacaoEvento']);
-        $org->setUf($_POST['ufOrganizacaoEvento']); // Corrigido o nome do campo
+        $org->setUf($_POST['ufOrganizacaoEvento']); 
         $org->setEmail($_POST['emailOrganizacaoEvento']);
         $org->setSenha($_POST['senhaOrganizacaoEvento']);
         $org->setLink($_POST['linkSiteOrganizacaoEvento']);
         $org->setTel($_POST['telOrganizacaoEvento']);
-        $org->setImagem($org->salvarImagem($_POST['imagemOrganizacaoEvento'])); // Corrigido o nome do campo
+        $org->setImagem($org->salvarImagem($_POST['imagemOrganizacaoEvento'])); 
         try {
             $organizacaoDao = OrganizacaoDao::update($_POST["idOrganizacaoEvento"], $org);
             $msg->setMensagem("Usuário Atualizado com sucesso.", "bg-success");

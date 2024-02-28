@@ -105,7 +105,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
     
-            return $result['totalClientes']; 
+            return $result['totalUsuários']; 
     }
     /*public static function checkCredentials($email, $senha){
         $conexao = Conexao::conectar();
