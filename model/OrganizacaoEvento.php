@@ -37,7 +37,7 @@
         public function getBairro(){
             return $this->bairro;
         }
-        public function setbairro($bairro){
+        public function setBairro($bairro){
             $this-> bairro = $bairro;
         }
         public function getNum(){

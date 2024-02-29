@@ -6,6 +6,8 @@ require_once '../../model/Mensagem.php';
 $org = new OrganizacaoEvento();
 $msg = new Mensagem();
 
+var_dump($_POST);
+
 switch ($_POST["acao"]) {
     case 'DELETE':
         try {
@@ -34,7 +36,7 @@ switch ($_POST["acao"]) {
             $msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
             header("Location: index.php");
         } catch (Exception $e) {
-            // Se houver um erro na inserção, você pode lidar com isso aqui
+           
             echo 'Exceção capturada: ',  $e->getMessage(), "\n";
             $msg->setMensagem("Verifique os dados Digitados.", "bg-danger");
             header("Location: register.php");
@@ -54,7 +56,7 @@ switch ($_POST["acao"]) {
         $org->setSenha($_POST['senhaOrganizacaoEvento']);
         $org->setLink($_POST['linkSiteOrganizacaoEvento']);
         $org->setTel($_POST['telOrganizacaoEvento']);
-        $org->setImagem($org->salvarImagem($_POST['imagemOrganizacaoEvento'])); 
+        $org->setImagem($org->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
         try {
             $organizacaoDao = OrganizacaoDao::update($_POST["idOrganizacaoEvento"], $org);
             $msg->setMensagem("Usuário Atualizado com sucesso.", "bg-success");
