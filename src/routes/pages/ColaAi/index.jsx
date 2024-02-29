@@ -1,31 +1,28 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, ScrollView,Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, ScrollView, Image, TextInput, } from 'react-native';
 import * as Animado from 'react-native-animatable';
+import NavBar from '../../../../src/Components/NavBar/navbar';
 
 const ColaAi = ({ navigation }) => {
   return (
       <View style={styles.container}>
-        <ImageBackground source={require('../../../../../ColaAi/assets/img/cadastro/superiorEsquerdo.png')} style={styles.superiorEsquerdo} /> 
-        <ImageBackground source={require('../../../../../ColaAi/assets/img/cadastro/superiorDireito.png')}style={styles.superiorDireito} />
-        <ImageBackground source={require('../../../../../ColaAi/assets/img/cadastro/inferiorEsquerdo.png')}style={styles.inferiorEsquerdo} />
-        <ImageBackground source={require('../../../../../ColaAi/assets/img/cadastro/inferiorDireito.png')}style={styles.inferiorDireito} />
-        <Image
-          style={{ bottom:110 ,height:90, width: 230 }}
-          source={require('../../../../assets/img/cadastro/acessar.png')}
-        />
-          <Animado.View animation="fadeInRight" delay={500}>
-            <TouchableOpacity style={styles.buttonOrganizacao} onPress={() => navigation.navigate('Organizacao')}>
-              <Text style={styles.buttonTextOrganizacao}>Organização</Text>
-            </TouchableOpacity>
-          </Animado.View>
-          <Animado.View animation="fadeInRight" delay={1000}>
-            <TouchableOpacity style={styles.buttonUsuario} onPress={() => navigation.navigate('Usuario')}>
-              <Text style={styles.buttonTextUsuario}>Usuario</Text>
-            </TouchableOpacity>
-          </Animado.View>
-          <TouchableOpacity onPress={() => navigation.navigate('HomeUsuario')}>
-            <Text style={styles.linkText}>Acesso sem login</Text>
-          </TouchableOpacity>
+
+        <View style={styles.contato}>
+          <Text style={styles.titulo}>Contato</Text>
+          <Text style={styles.texto}>Entre em contato com a nossa equipe de colaboradores e seja atendido por profissionais capacitados e interessados para oferecer a melhor vivência no Cola Aí</Text>
+        </View>
+
+        <View style={styles.formulario}>
+          <Text style={styles.texto}>Nome</Text>
+          <TextInput placeholder='Nome do usuário' style={styles.input}></TextInput>
+          <Text style={styles.texto}>Email</Text>
+          <TextInput placeholder='Email do usuário' style={styles.input}></TextInput>
+          <Text style={styles.texto}>Motivo do Contato</Text>
+          <Text style={styles.texto}>Comentário</Text>
+          <TextInput placeholder='Escreva sua experiência com o aplicativo, podendo ser sugestões' style={styles.comentario}></TextInput>
+
+        </View>
+      <NavBar/>
       </View>
   );
 };
@@ -36,73 +33,34 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: 'white',
+      padding: 20
     },
     titulo: {
       fontSize: 40,
+      fontWeight: 'bold',
+      color: 'grey'
     },
-    buttonTextUsuario: {
-      fontSize: 28,
-      color: '#6D9EAF',
-      textAlign: 'center',
+    texto: {
+      fontSize: 20,
+      color: 'grey'
     },
-    buttonTextOrganizacao: {
-      fontSize: 26,
-      color: '#FABDC1',
-      textAlign: 'center',
+    contato: {
+      flex: 1,
+      height: '70%'
     },
-    buttonOrganizacao: {
-      backgroundColor: '#6D9EAF',
-      padding: 10,
-      margin: 10,
-      borderRadius: 15,
-      width: 200,
-      height: 60,
+    formulario: {
+      flex: 1,
+      justifyContent: 'flex-start',
     },
-    buttonUsuario: {
-      backgroundColor: '#FABDC1',
-      padding: 10,
-      margin: 10,
-      borderRadius: 15,
-      width: 200,
-      height: 60,
+    input: {
+      marginBottom: 10,
+      borderBottomWidth: 2
     },
-    linkText: {
-      fontSize: 16,
-      color: 'blue',
-      marginTop: 10,
-    },
-    superiorEsquerdo: {
-      position: 'absolute',
-      resizeMode: 'contain',
-      top: 0,
-      left: 0,
-      width: 200,
-      height: 200,
-    },
-    superiorDireito: {
-      position: 'absolute',
-      resizeMode: 'contain',
-      top: 0,
-      right: -20, // Corrigido (mudado de left para right)
-      width: 290,
-      height: 290,
-    },
-    inferiorEsquerdo: {
-      position: 'absolute',
-      resizeMode: 'contain',
-      bottom: 0,
-      left: 0,
-      width: 200, // Corrigido
-      height: 200,
-    },
-    inferiorDireito: {
-      position: 'absolute',
-      resizeMode: 'contain',
-      bottom: 0,
-      right: 0, // Corrigido (mudado de left para right)
-      width: 200,
-      height: 200,
-    },
+    comentario: {
+      borderWidth: 2,
+      borderRadius: 7,
+      height: 80
+    }
   });
 
 export default ColaAi;

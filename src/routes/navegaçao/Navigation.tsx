@@ -11,7 +11,7 @@ import Teatros from '../pages/Usuario/Teatros';
 import Museus from '../pages/Usuario/Museus';
 import Parques from '../pages/Usuario/Parques';
 import Evento from '../pages/Usuario/Evento';
-import PerfilOrg from '../pages/Usuario/PerfilOrganizazao'
+import PerfilOrg from '../pages/Usuario/PerfilOrganizazao';
 
 const Stack = createStackNavigator();
 
