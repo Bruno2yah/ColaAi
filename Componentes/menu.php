@@ -19,12 +19,12 @@
       </li>
     </a>
     <p class="d-inline-flex menuItems w-100 p-1 ps-2" style="margin-bottom: 0">
-      <a class="w-100" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
+      <a class="w-100" data-bs-toggle="collapse" href="#collapseOrg" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
         <i class="bi bi-building-fill"></i>
         Organização
       </a>
     </p>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" id="collapseOrg">
       <li class="menuItems w-100 p-1 ps-4">
         <a class="" href="../../Admin/Organizacao/index.php" style="text-decoration: none; color: #a6a6a6;">
           <i class="bi bi-person-fill"></i>
@@ -40,12 +40,12 @@
 
     </div>
     <p class="d-inline-flex menuItems w-100 p-1 ps-2" style="margin-bottom: 0">
-      <a class="w-100" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
+      <a class="w-100" data-bs-toggle="collapse" href="#collapseEvento" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
         <i class="bi bi-calendar-event"></i>
         Eventos
       </a>
     </p>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" id="collapseEvento">
       <li class="menuItems w-100 p-1 ps-4">
         <a class="" href="../User" style="text-decoration: none; color: #a6a6a6;">
           <i class="bi bi-alarm-fill"></i>

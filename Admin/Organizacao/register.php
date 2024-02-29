@@ -46,7 +46,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- icon -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> <!-- CSS Projeto -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
@@ -68,7 +68,7 @@
             <strong>INFORMAÇÕES DA ORGANIZAÇÃO</strong>
             <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id" value="<?=$id_Organizacao?>">
             <input type="hidden" name="imagemOrganizacaoEvento" id="imagemOrganizacaoEvento" placeholder="nome foto" value="<?=$imagem_Organizacao?>">
-            <input type="hidden" value="<?=$id_Organizacao?'ATUALIZAR':'SALVAR'?>" name="acao" >
+            <input type="text" value="<?=$id_Organizacao?'ATUALIZAR':'SALVAR'?>" name="acao" >
           </div>
           <div class="card-body row justify-content-center align-items-center">
             <div class="col-md-2   text-center">
@@ -161,7 +161,7 @@
               </div>
               <div class="row mt-5">
                 <div class="col-md-3">
-                  <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input">
+                  <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input form-control">
                 </div>
               </div>
               <div class=" text-end p-3">

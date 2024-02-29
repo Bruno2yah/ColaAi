@@ -25,21 +25,21 @@ switch ($_POST["acao"]) {
         $org->setBairro($_POST['bairroOrganizacaoEvento']);
         $org->setNum($_POST['numeroOrganizacaoEvento']);
         $org->setCidade($_POST['cidadeOrganizacaoEvento']);
-        $org->setUf($_POST['ufOrganizacaoEvento']);
+        $org->setUf($_POST['ufOrganizacaoEvento']); 
         $org->setEmail($_POST['emailOrganizacaoEvento']);
         $org->setSenha($_POST['senhaOrganizacaoEvento']);
         $org->setLink($_POST['linkSiteOrganizacaoEvento']);
         $org->setTel($_POST['telOrganizacaoEvento']);
         $org->setImagem($org->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
+        var_dump($org);
         try {
             $organizacaoDao = OrganizacaoDao::insert($org);
             $msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
             header("Location: index.php");
         } catch (Exception $e) {
-           
             echo 'Exceção capturada: ',  $e->getMessage(), "\n";
             $msg->setMensagem("Verifique os dados Digitados.", "bg-danger");
-            header("Location: register.php");
+            // header("Location: register.php");
         } 
         break;
     case 'ATUALIZAR':
