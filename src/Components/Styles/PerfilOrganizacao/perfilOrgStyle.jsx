@@ -69,20 +69,25 @@ const styles = StyleSheet.create({
 
     //Exemplos de centros educacionais
     FotosArea: {
-        height: 400,
+        height: 475,
         width: '85%',
         backgroundColor: '#FDE681',
         alignSelf: 'center',
         borderRadius: 20,
         alignItems: 'center',
+        justifyContent: 'center',
         paddingTop: 15,
         paddingBottom: 15,
-        marginTop: 50
+        marginTop: 25
     },
-    TeatrosFoto: {
-        height: '50%',
+    FotoMaior: {
+        height: 200,
         width: '85%',
-        borderRadius: 10,
+    },
+    FotoMenor: {
+        height: 175,
+        width: '40%',
+        margin: 7
     },
     TeatrosLocal: {
         alignItems: 'center',

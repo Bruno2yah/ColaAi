@@ -12,8 +12,8 @@ export default function Teatros({ navigation }) {
         <View style={styles.imageBanner}>
             <View style={styles.imagePerfil}>
                 <Image
-                  style={{ height: 20, width: 20, marginLeft: 1, marginBottom: 1 }}
-                  source={require('../../../../../assets/img/Evento/perfil.png')}
+                  style={{ height: 75, width: 75, marginLeft: 1, marginBottom: 1 }}
+                  source={require('../../../../../assets/img/Perfil Organização/perfil.png')}
                 />
             </View>
         </View>
@@ -55,37 +55,35 @@ export default function Teatros({ navigation }) {
           </View>
 
         <View style={styles.cards}>
-          <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#A6A6A6', paddingLeft: '10%',textAlign: 'left', alignSelf: 'flex-start', position: 'absolute', marginTop: 25}}>
+          <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#A6A6A6', paddingLeft: '10%',textAlign: 'left', alignSelf: 'flex-start', position: 'absolute',}}>
               Últimos 30 dias
           </Text>
           <View style={styles.FotosArea}>
             <View style={styles.TeatrosLocal}>
-              <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
-                TEATRO GAZETA
-              </Text>
-              <View style = {{flexDirection:'row', height: 75}}>
-                <Image
-                    style={{ height: 30, width: 20, marginLeft: 10 }}
-                    source={require('../../../../../assets/img/Teatros/Point.png')}
-                />
-                <Text
-                    style={{
-                    fontSize: 20,
-                    textAlign: 'center',
-                    color: '#A6A6A6',
-                    marginRight: 20
-                    }}
-                >
-                  Av. Paulista, 900 - Bela Vista, 
-                  São Paulo - Sp, 01310-100
-                </Text>
-              </View>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate('Evento')}
+              <Text
+                  style={{
+                  fontSize: 16,
+                  textAlign: 'left',
+                  color: '#A6A6A6',
+                  marginBottom: 10,
+                  }}
               >
-                <Text style={styles.buttonText}>Saber mais</Text>
-              </TouchableOpacity>
+                Área de posts sobre eventos que ocorrem ou estão ocorrendo
+              </Text>
+              <Image
+                style={styles.FotoMaior}
+                source={require('../../../../../assets/img/Perfil Organização/publi1.png')}
+              />
+              <View style = {{flexDirection:'row', width: '100%', alignItems: 'center', justifyContent: 'center', marginTop: 5}}>
+                <Image
+                  style={styles.FotoMenor}
+                  source={require('../../../../../assets/img/Perfil Organização/publi3.png')}
+                />
+                <Image
+                  style={styles.FotoMenor}
+                  source={require('../../../../../assets/img/Perfil Organização/publi2.png')}
+                />
+              </View>
             </View>
           </View>
         </View>
