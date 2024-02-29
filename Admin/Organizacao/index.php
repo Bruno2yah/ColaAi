@@ -57,7 +57,7 @@ $orgs = OrganizacaoDao::selectAll();
                 <th class="col-md-2">Nome </th>
                 <th class="col-md-3">E-mail</th>
                 <th class="col-md-2">CNPJ</th>
-                <th class="col-md-1">Telefone</th>
+                <th class="col-md-2">Telefone</th>
                 <th class="text-center col-md-1">Alterar</th>
                 <th class="text-center col-md-1">Excluir</th>
               </tr>

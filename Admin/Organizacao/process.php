@@ -6,7 +6,7 @@ require_once '../../model/Mensagem.php';
 $org = new OrganizacaoEvento();
 $msg = new Mensagem();
 
-var_dump($_POST);
+//var_dump($_POST);
 
 switch ($_POST["acao"]) {
     case 'DELETE':

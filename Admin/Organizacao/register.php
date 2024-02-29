@@ -142,7 +142,7 @@
               <div class="row">
                 <div class="col-md-8 needs-validation">
                   <label for="link" class="col-form-label">Link:</label>
-                  <input type="text" class="form-control" name="linkOrganizacaoEvento" maxlength="100" id="linkOrganizacaoEvento" value="<?=$linkSite_Organizacao?>" required>
+                  <input type="text" class="form-control" name="linkSiteOrganizacaoEvento" maxlength="100" id="linkSiteOrganizacaoEvento" value="<?=$linkSite_Organizacao?>" required>
                 </div>
                 <div class="col-md-4 needs-validation">
                   <label for="telefone" class="col-form-label">Telefone:</label>
