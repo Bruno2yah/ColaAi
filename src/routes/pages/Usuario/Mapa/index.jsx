@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Pressable, Text, Modal, SafeAreaView, TextInput} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 // npm install react-native-maps
 import MapView, { Marker } from 'react-native-maps';
 // npx expo install expo-location
-//npm install react-native-gesture-handler
-import * as Location from 'expo-location'; // verificar o pq desse não estar sendo usado 
+import * as Location from 'expo-location'; 
+
 
 import {
   requestForegroundPermissionsAsync,
@@ -15,6 +15,10 @@ import {
 } from 'expo-location';
 
 export default function Mapa() {
+  const [number, onChangeNumber] = React.useState('');
+
+  const [visu, setVisu] = useState(false);
+
   const navigation = useNavigation();
 
   const [location, setLocation] = useState(null);
@@ -48,6 +52,14 @@ export default function Mapa() {
     }
   }, [location]);
 
+  function openModalFilter() {
+    setVisu(true)
+  }
+  function closeModalFilter() {
+    setVisu(false)
+  }
+
+
   return (
     <View style={styles.container}>
       {location && location.coords && (
@@ -70,7 +82,39 @@ export default function Mapa() {
         </MapView>
       )}
       <View style={styles.search}>
+        <Pressable style={styles.buttonFiltter} onPress={()=>openModalFilter()}>
+          <Text style={styles.buttonText}>Filtrar Locais</Text>
+        </Pressable>
       </View>
+
+      <Modal style={styles.modalContainer} visible={visu} animationType='slide'>
+        <View style={styles.modalContent}>
+            <View style={styles.title}>
+              <Text style={styles.modalTitle}>Faixa Etária</Text>
+            </View>
+            <View style={styles.inputsAge}>
+              <TextInput
+                style={styles.input}
+                onChangeText={onChangeNumber}
+                value={number}
+                placeholder="Idade"
+                keyboardType="numeric"
+              />
+              <Text style={styles.parametros}>Min.</Text>
+              <TextInput
+                style={styles.input}
+                onChangeText={onChangeNumber}
+                value={number}
+                placeholder="Idade"
+                keyboardType="numeric"
+              />
+              <Text style={styles.parametros}>Máx.</Text>
+            </View>
+            <View style={styles.title}>
+              <Text style={styles.modalTitle}>Distâ</Text>
+            </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -90,9 +134,55 @@ const styles = StyleSheet.create ({
     },
   
     search:{
-        height: '30%',
-        width: '100%',
-        backgroundColor: '#666',
-    }
+      height: '30%',
+      width: '100%',
+      backgroundColor: '#fff',
+      alignItems:'center',
+      borderTopRightRadius:20,
+      borderTopLeftRadius:20,
+    },
+
+    buttonFiltter: {
+      alignItems:'center',
+      backgroundColor:'#fabdc2',
+      padding:15,
+      borderRadius:20,
+      width:'80%',
+      marginBottom:20
+    },
+
+    buttonText: {
+      fontSize:20,
+      color:'#6d9eaf'
+    },
+
+    modalContainer:{
+      backgroundColor:'#ccc',
+      flex:2,
+
+    },
+
+    modalContent: {
+      width:'100%'
+    },
+
+    modalTitle:{
+      fontSize:15,
+      padding:15,
+      color:'#a6a6a6',
+    },
+    inputsAge: {
+      alignItems:'center',
+
+      flexDirection:'row'
+    },
+
+    input: {
+      height: 35,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
+      width:'20%',
+    },
 
 })
