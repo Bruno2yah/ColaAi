@@ -63,7 +63,7 @@
       <img src="./img/detailLeft.png" class="detailLeft">
       <img src="./img/detailRight.png" class="detailRight">
       <main class="px-3 p-5">
-        <p class="text-center" style="font-size: 50px; font-family: 'Josefin Sans', sans-serif; font-weight: bold; padding-top:100px">Quem somos</p>
+        <p class="text-center" style="font-size: 50px; font-family: 'Josefin Sans', sans-serif; font-weight: bold; padding-top:30px">Quem somos</p>
         <div class="row d-flex justify-content-center d-flex align-items-center">
           <div class="col-xs-7 col-sm-7 col-md-7">
             <p class="lead m-4" style="color: black; font-size: 2.5vh; font-weight: normal; font-family: 'Josefin Sans', sans-serif; text-align: justify;">A Magma é uma empresa voltada ao setor de técnologia da informação, sendo especializada no desenvolvimento de
@@ -80,7 +80,7 @@
   <div class="d-flex justify-content-center d-flex align-items-center">
     <div class="cover-3 d-flex w-100 h-100 flex-column mx-auto d-flex justify-content-center d-flex align-items-center">
       <main class="px-5 p-5">
-        <p class="text-center" style="font-size: 50px; font-family: 'Josefin Sans', sans-serif; font-weight: bold; padding-top:100px; padding-bottom:20px;">Nossos Projetos</p>
+        <p class="text-center" style="font-size: 50px; font-family: 'Josefin Sans', sans-serif; font-weight: bold; padding-top:50px; padding-bottom:20px;">Nossos Projetos</p>
         <div class="row d-flex justify-content-center d-flex align-items-center" style="padding-bottom: 70px;">
           <div class="col-xs-3 col-sm-3 col-md-3" style="margin:10px;">
             <img src="./img/breve.png" alt="plataformas" style="width: 800px; max-width: 100%; height: auto; border-width:20px; border-radius: 20px;">
@@ -98,7 +98,7 @@
   </div>
   <div class="d-flex justify-content-center d-flex align-items-center">
     <div class="cover-2 d-flex w-100 h-100 flex-column mx-auto d-flex justify-content-center d-flex align-items-center">
-      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style="padding: 30px; font-family: 'Josefin Sans', sans-serif; font-weight: bold; font-size: 50px; padding-top:100px;">Equipe</h1>
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style="padding: 30px; font-family: 'Josefin Sans', sans-serif; font-weight: bold; font-size: 50px; padding-top:30px;">Equipe</h1>
       <div id="carouselExampleInterval" class="carousel carousel-dark slide w-100 h-100" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="5000">
@@ -299,7 +299,7 @@
       </div>
       <img src="./img/detailLeft2.png" class="detailLeft2" style="width: 200px; max-width: 40%; height: auto; ">
       <main class="px-4">
-        <p class="text-center" style="font-size: 50px; font-family: 'Josefin Sans', sans-serif; font-weight: bold; padding-bottom: 0px;padding-top: 240px; ">Fale Conosco</p>
+        <p class="text-center" style="font-size: 50px; font-family: 'Josefin Sans', sans-serif; font-weight: bold ;padding-top: 100px; ">Fale Conosco</p>
         <div class="row d-flex justify-content-center d-flex align-items-center">
           <div class="col-xs-6 col-sm-6 col-md-6">
             <form class="row">

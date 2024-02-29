@@ -38,7 +38,7 @@
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="index.php"><img src="./img/logo2.png" class="img-fluid" alt="logo" style="width: 200px;"></a>
+                            <a href="#Quemsomos"><img src="./img/logo2.png" class="img-fluid" alt="logo" style="width: 200px;"></a>
                         </div>
                         <div class="footer-text">
                             <p class="fs-6" style="text-align:justify;">A empresa Magma é voltada ao setor de tecnologia da informação e é especializada no desenvolvimento de sistemas web, app e softwares sob medida para empresas de pequeno e médio porte. </p>
@@ -54,14 +54,14 @@
                             <li><a href="#Quemsomos">Sobre</a></li>
                             <li><a href="#Dispositivos">Compatibilidade</a></li>
                             <li><a href="#Equipe">Desenvolvedores</a></li>
-                            <li><a href="#FaleConosco">Contate-nos</a></li>
+                            <li><a href="#Faleconosco">Contate-nos</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-10">
                 <div class="footer-social-icon">
                         <div class="footer-widget-heading">
-                            <h3>Follow us</h3>
+                            <h3>Siga-nos!</h3>
                         </div>
                         <a href="#"><i class="fa fa-github"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
