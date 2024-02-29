@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {View, StyleSheet, Pressable, Text, Modal, TextInput} from 'react-native';
+import {View, StyleSheet, Pressable, Text, Modal, SafeAreaView, TextInput} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 // npm install react-native-maps
 import MapView, { Marker } from 'react-native-maps';
@@ -118,6 +118,7 @@ export default function Mapa() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create ({
     container: {
