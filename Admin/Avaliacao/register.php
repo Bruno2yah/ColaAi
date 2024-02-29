@@ -3,12 +3,12 @@
   require_once '../../dao/AvaliacaoDao.php';
   if(!empty($_POST)){
     $id_Avaliacao = $avaliacaoDao['idAvaliacao'];
-    $titulo_Usuario =  $userDao['nomeUsuario'];
-    $des_Usuario = $userDao['sobrenomeUsuario'];
+    $titulo_Avaliacao =  $avaliacaoDao['tituloAvaliacao'];
+    $desc_Avaliacao = $avaliacaoDao['descAvaliacao'];
 }else{
-    $nome_Usuario = '';
-    $sobrenome_Usuario = '';
-    $id_Usuario = '';
+    $titulo_Avaliacao = '';
+    $desc_Avaliacao = '';
+    $id_Avaliacao = '';
 }
 ?>
 
@@ -44,15 +44,15 @@
       <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="card-header">
             <strong>INFORMAÇÕES SOBRE AVALIAÇÕES</strong>
-            <input type="hidden" name="idUsuario" id="idUsuario" placeholder="id" value="<?=$id_Usuario?>">
-            <input type="hidden" value="<?=$id_Usuario?'ATUALIZAR':'SALVAR'?>" name="acao" >
+            <input type="hidden" name="idAvaliacao" id="idAvaliacao" placeholder="id" value="<?=$id_Avaliacao?>">
+            <input type="hidden" value="<?=$id_Avaliacao?'ATUALIZAR':'SALVAR'?>" name="acao" >
           </div>
           <div class="card-body row justify-content-center align-items-center">
             <div class=" col-md-10 ">
               <div class="row">
                 <div class="col-md-12 mb-3 needs-validation">
-                  <label for="nome" class="col-form-label">Titulo:</label>
-                  <input type="text" class="form-control " name="nomeUsuario" maxlength="50" id="nomeUsuario" value="<?=$nome_Usuario?>" required>
+                  <label for="titulo" class="col-form-label">Titulo:</label>
+                  <input type="text" class="form-control " name="tituloAvaliacao" maxlength="50" id="nomeUsuario" value="<?=$titulo_Avaliacao?>" required>
                   <div class="invalid-feedback">
                     Preencha este campo
                   </div>
@@ -60,8 +60,8 @@
               </div>
               <div class="row">
                 <div class="col-md-12 mb-3 needs-validation">
-                  <label for="sobrenome" class="col-form-label">Descrição:</label>
-                  <textarea type="text-area" class="form-control"  name="sobrenomeUsuario" maxlength="50" id="sobrenomeUsuario" value="<?=$sobrenome_Usuario?>" required></textarea>
+                  <label for="descrição" class="col-form-label">Descrição:</label>
+                  <textarea type="text-area" class="form-control"  name="descAvaliacao" maxlength="50" id="sobrenomeUsuario" value="<?=$desc_Avaliacao?>" required></textarea>
                   <div class="invalid-feedback">
                     Preencha este campo
                   </div>

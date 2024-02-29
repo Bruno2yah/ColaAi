@@ -54,7 +54,7 @@
                 <th class="col-md-1">ID</th>
                 <th class="col-md-2">Titúlo </th>
                 <th class="col-md-3">Descrição</th>
-                <th class="col-md-3">ID Organização</th>
+                <th class="col-md-3">Nome Organização</th>
                 <th class="text-center col-md-1">Alterar</th>
                 <th class="text-center col-md-1">Excluir</th>
               </tr>

@@ -1,7 +1,8 @@
 <?php 
   require_once '../../dao/UserDao.php'; 
- 
+  require_once '../../dao/AvaliacaoDao.php';
  $totalClientes = UserDao::getTotalClientes();
+ $totalAvaliacoes = AvaliacaoDao::getTotalAvalicoes();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +51,15 @@
               <div class="card-body">
                 <h5 class="card-title">Total de Usuários Registrados</h5>
                 <p class="card-text"><?php echo $totalClientes; ?></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Total de Avaliações Registradas</h5>
+                <p class="card-text"><?php echo $totalAvaliacoes; ?></p>
               </div>
             </div>
           </div>

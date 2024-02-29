@@ -80,9 +80,9 @@ require_once (__DIR__ . '../../model/Conexao.php');
             return $stmt->execute();
         }
        
-        public static function getTotalClientes(){
+        public static function getTotalAvalicoes(){
             $conexao = Conexao::conectar();
-            $query = "SELECT COUNT(*) as totalAvaliacoes FROM tbAvaliacao";
+            $query = "SELECT COUNT(*) as totalAvaliacoes FROM tbavaliacao";
             $stmt = $conexao->prepare($query);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
