@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28/02/2024 às 23:16
+-- Tempo de geração: 29/02/2024 às 13:24
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -162,7 +162,7 @@ CREATE TABLE `tbinteresseevento` (
 CREATE TABLE `tborganizacaoevento` (
   `idOrganizacaoEvento` int(11) NOT NULL,
   `nomeOrganizacaoEvento` varchar(40) NOT NULL,
-  `cnpjOrganizacaoEvento` int(14) NOT NULL,
+  `cnpjOrganizacaoEvento` varchar(20) NOT NULL,
   `cepOrganizacaoEvento` varchar(20) NOT NULL,
   `logradouroOrganizacaoEvento` varchar(30) NOT NULL,
   `bairroOrganizacaoEvento` varchar(40) NOT NULL,
@@ -171,10 +171,17 @@ CREATE TABLE `tborganizacaoevento` (
   `ufOrganizacaoEvento` char(2) NOT NULL,
   `emailOrganizacaoEvento` varchar(60) NOT NULL,
   `senhaOrganizacaoEvento` varchar(30) NOT NULL,
-  `linkSiteOrganizacaoEvento` varchar(75) NOT NULL,
-  `telOrganizacaoEvento` int(10) NOT NULL,
+  `linkSiteOrganizacaoEvento` varchar(1000) NOT NULL,
+  `telOrganizacaoEvento` varchar(20) NOT NULL,
   `imagemOrganizacaoEvento` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tborganizacaoevento`
+--
+
+INSERT INTO `tborganizacaoevento` (`idOrganizacaoEvento`, `nomeOrganizacaoEvento`, `cnpjOrganizacaoEvento`, `cepOrganizacaoEvento`, `logradouroOrganizacaoEvento`, `bairroOrganizacaoEvento`, `numeroOrganizacaoEvento`, `cidadeOrganizacaoEvento`, `ufOrganizacaoEvento`, `emailOrganizacaoEvento`, `senhaOrganizacaoEvento`, `linkSiteOrganizacaoEvento`, `telOrganizacaoEvento`, `imagemOrganizacaoEvento`) VALUES
+(2, 'dsadasdsda', '44.444.444/4444-44', '55.555-555', 'xcfczxczxczxc', 'vxvfsd', '45', 'SÃO PAULO', 'sp', 'testenovo@gmail.com', '123', 'http://localhost/ColaAiAdm/Admin/Organizacao/register.php', '11-25026-748', '');
 
 -- --------------------------------------------------------
 
@@ -342,7 +349,7 @@ ALTER TABLE `tbinteresseevento`
 -- AUTO_INCREMENT de tabela `tborganizacaoevento`
 --
 ALTER TABLE `tborganizacaoevento`
-  MODIFY `idOrganizacaoEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idOrganizacaoEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbusuario`
