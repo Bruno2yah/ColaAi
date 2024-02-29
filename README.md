@@ -15,6 +15,8 @@ import 'react-native-gesture-handler';<br>
 -- Dependencias -- <br>
 expo install react-native-gesture-handler<br>
  npm install react-native-gesture-handler<br>
+npx expo install react-native-svg <br>
+npm i react-native-shadow-2 <br>
 
 -- Dependencias -- <hr>
 

@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, Image, ScrollView, Pressable } from 'react-native';
 
 import styles from '../../../../Components/Styles/Evento/EventoStyle';
 
@@ -32,7 +32,7 @@ export default function Eventos({ navigation }) {
             </View>
             <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
               <Image
-                style={{ height: 220, width: 50, marginBottom: 80}}
+                style={{ height: 170, width: 40, marginBottom: 80}}
                 source={require('../../../../../assets/img/Evento/inferiorDireito.png')}
               />
             </View>
@@ -49,13 +49,14 @@ export default function Eventos({ navigation }) {
         </View>
 
         <View style={styles.EventoArea}>
-          <View style={{
+          <Pressable style={{
               width: '90%',
               alignSelf: 'center',
               alignItems: 'center',
               flexDirection:'row',
               paddingBottom: 5
-          }}>
+          }}
+          onPress={() => navigation.navigate('PerfilOrganizacao')}>
               <View style={{
               width: 35,
               height: 35,
@@ -73,7 +74,7 @@ export default function Eventos({ navigation }) {
               <Text style={{ fontSize: 20, color: '#6D9EAF',textAlign: 'justify', paddingLeft: 10}}>
                   Organização Eventos
               </Text>
-          </View>
+          </Pressable>
           
           <Image
             style={styles.Foto}
@@ -188,12 +189,12 @@ export default function Eventos({ navigation }) {
               </Text>
             </View>
             
-            <TouchableOpacity
+            <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate('Usuario')}
+              onPress={() => navigation.navigate('PerfilOrg')}
             >
               <Text style={styles.buttonText}>Abrir</Text>
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </View>
       </ScrollView>
