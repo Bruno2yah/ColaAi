@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import * as Animado from 'react-native-animatable';
 
@@ -9,8 +9,16 @@ export default function Senha({ navigation }) {
 
   return (
     <View style={styles.container}>
+       <ImageBackground
+            source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+            style={styles.superiorDireito}
+          />
+        <View style={styles.contentContainer}>
+
+       <View style={styles.text}>
       <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Crie uma senha</Animado.Text>
-      <Animado.Text style={styles.description} animation="flash" iterationCount={'infinite'} duration={2000} delay={1000}>Escolha uma senha forte entre 8 e 20 dígitos e contendo caracteres especiais, como: $ % # @ / </Animado.Text>
+      <Animado.Text style={styles.description} animation="flash"  duration={2000} delay={1000}>Escolha uma senha forte entre 8 e 20 dígitos e contendo caracteres especiais, como: $ % # @ / </Animado.Text>
+      </View>
       <View style={styles.passwordContainer}>
         <TextInput
           style={styles.input}
@@ -18,7 +26,7 @@ export default function Senha({ navigation }) {
           secureTextEntry={!passwordVisible}
           onChangeText={(text) => setPassword(text)}
           keyboardType="numeric"
-        />
+          />
         <TouchableOpacity
           style={styles.eyeIcon}
           onPress={() => setPasswordVisible(!passwordVisible)}
@@ -35,6 +43,11 @@ export default function Senha({ navigation }) {
           <Text style={styles.buttonText2} onPress={() => navigation.navigate('TelaFinal')}>Enviar</Text>
         </TouchableOpacity>
       </View>
+      </View>
+      <ImageBackground
+        style={styles.inferiorDireito}
+        source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+        />
     </View>
   );
 }
@@ -51,12 +64,22 @@ const styles = StyleSheet.create({
     
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "left",
-
-
+  },
+  text:{
+    width: '100%',
+    alignItems: "flex-start",
+    right: -20,
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    bottom:80
   },
   description: {
     marginBottom: 20,
@@ -99,7 +122,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#aaa',
     fontSize: 16,
     marginBottom: 20,
-    width: 300,
+    width: '77%',
     height: 50,
   },
   passwordContainer: {
@@ -116,6 +139,22 @@ const styles = StyleSheet.create({
   },
   eyeIcon: {
     padding: 10,
+  },
+  inferiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 50,
+    right: 0,
+    width: 200,
+    height: 200,
+  },
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: 0,
+    right: -10,
+    width: 140,
+    height: 140,
   },
 
   });

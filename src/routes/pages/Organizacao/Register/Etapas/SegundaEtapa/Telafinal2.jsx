@@ -1,19 +1,29 @@
 import React from 'react';
-import { View, Text,  TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import { View, Text,  TouchableOpacity, StyleSheet, TextInput, ImageBackground} from 'react-native';
 
 
 export default function TelaFinal2({ navigation }) {
   return (
     <View style={styles.container}>
-        <View style={styles.container}>
-          <Text style={styles.title}>Perfil atualizado com sucesso!</Text>
-          <Text style={styles.description}>Caso necessite fazer atualizações acesse a aba de perfil, podendo assim editar o perfil da organização  qualquer momento.</Text>
+       <ImageBackground
+            source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+            style={styles.superiorDireito}
+          />
+        <View style={styles.contentContainer}>
+        <View style={styles.Text}>
+          <Text style={styles.title}>Perfil atualizado {'\n'}com sucesso!</Text>
+          <Text style={styles.description}>Caso necessite fazer atualizações acesse a aba {'\n'} de perfil, podendo assim editar o perfil da {'\n'} organização  qualquer momento.</Text>
+        </View>
           <View style={styles.buttonColumn}>
           <TouchableOpacity style={styles.button2}>
             <Text style={styles.buttonText2} onPress={() => navigation.navigate('Home')}>Acessar</Text>
           </TouchableOpacity>
           </View>
         </View>
+        <ImageBackground
+        style={styles.inferiorEsquerdo}
+        source={require('../../../../../../../assets/img/cadastro/login/InferiorEsquerda.png')}
+        />
     </View>
   );
 }
@@ -27,15 +37,24 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     padding: 10,
-    
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    bottom: 80
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "left",
-
-
+  },
+  text:{
+    width: '100%',
+    alignItems: "flex-start",
+    right: -20,
   },
   description: {
     marginBottom: 20,
@@ -87,8 +106,39 @@ const styles = StyleSheet.create({
     height:'100%',
     position:'absolute',
     bottom:20
-
-  }
+  },
+  inferiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 50,
+    right: -30,
+    width: 200,
+    height: 200,
+  },
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: 0,
+    right: -10,
+    width: 140,
+    height: 140,
+  },
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: 0,
+    right: -10,
+    width: 140,
+    height: 140,
+  },
+  inferiorEsquerdo: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 100,
+    left: -20,
+    width: 200,
+    height: 200,
+  },
 
   });
 
