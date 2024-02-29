@@ -1,8 +1,8 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-body-tertiary mb-5">
+    <nav class="navbar nav-underline navbar-expand-lg navbar-light fixed-top bg-body-tertiary mb-5">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="./img/logo2.png" alt="Logo" width="150" height="45">
+            <a class="navbar-brand" href="#Magma">
+                <img src="./img/logo2.png"  alt="Logo" width="150" height="45">
             </a>
             <a class="navbar-brand" href="#"> </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -12,19 +12,19 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="#Home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quem somos</a>
+                        <a class="nav-link" href="#Quemsomos">Quem somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Equipe</a>
+                        <a class="nav-link" href="#Projetos">Projetos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projetos</a>
+                        <a class="nav-link" href="#Equipe">Equipe</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Fale conosco</a>
+                        <a class="nav-link" href="#Faleconosco">Fale conosco</a>
                     </li>
                 </ul>
             </div>

@@ -51,12 +51,10 @@
                             <h3>Links</h3>
                         </div>
                         <ul>
-                            <li><a href="#">Sobre</a></li>
-                            <li><a href="#">Serviços</a></li>
-                            <li><a href="#">Portfólio</a></li>
-                            <li><a href="#">Contato</a></li>
-                            <li><a href="#">Desenvolvedores</a></li>
-                            <li><a href="#">Contate-nos</a></li>
+                            <li><a href="#Quemsomos">Sobre</a></li>
+                            <li><a href="#Dispositivos">Compatibilidade</a></li>
+                            <li><a href="#Equipe">Desenvolvedores</a></li>
+                            <li><a href="#FaleConosco">Contate-nos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,8 +63,7 @@
                         <div class="footer-widget-heading">
                             <h3>Follow us</h3>
                         </div>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
@@ -84,11 +81,8 @@
                 <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Termos</a></li>
-                            <li><a href="#">Privacidade</a></li>
-                            <li><a href="#">Política</a></li>
-                            <li><a href="#">Contato</a></li>
+                            <li><a href="#Home">Home</a></li>
+                            <li><a href="#Faleconosco">Contate-nos</a></li>
                         </ul>
                     </div>
                 </div>
