@@ -4,28 +4,38 @@
     "slug": "tcc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/img/icon.png",
+    "icon": "./assets/icon.jpg",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/img/slash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/img/adaptive-icon.png",
+        "foregroundImage": "./assets/adaptive-icon.jpg",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.phanie.tcc"
     },
     "web": {
-      "favicon": "./assets/img/favicon.png"
+      "favicon": "./assets/favicon.png"
     },
     "asset": {
-      "fonts": ["./assets/fonts"]
+      "fonts": [
+        "./assets/fonts"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "962b0e5b-4871-43d1-9148-5d4cbe41ceff"
+      }
     }
   }
 }
