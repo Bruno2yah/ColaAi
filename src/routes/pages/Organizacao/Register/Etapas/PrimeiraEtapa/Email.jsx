@@ -1,13 +1,19 @@
 import React from 'react';
-import { View, Text,  TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import { View, Text,  TouchableOpacity, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 export default function Email({ navigation }) {
   return (
     <View style={styles.container}>
-        <View style={styles.container}>
+       <ImageBackground
+            source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+            style={styles.superiorDireito}
+          />
+        <View style={styles.contentContainer}>
+        <View style={styles.text}>
           <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o e-mail da organização?</Animado.Text>
-          <Animado.Text style={styles.description} animation="flash" iterationCount={'infinite'} duration={2000} delay={1000}>Escolha um e-mail usual e verifique de que os dados digitados estão corretos.</Animado.Text>
+          <Animado.Text style={styles.description} animation="zoomIn"  duration={2000} delay={1000}>Escolha um e-mail usual e verifique de que os dados digitados estão corretos.</Animado.Text>
+          </View>
           <TextInput
             style={styles.input}
             placeholder="Digite o  e-mail da organização"
@@ -19,6 +25,10 @@ export default function Email({ navigation }) {
           </TouchableOpacity>
           </View>
         </View>
+        <ImageBackground
+        style={styles.inferiorDireito}
+        source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+      />
     </View>
   );
 }
@@ -34,8 +44,20 @@ const styles = StyleSheet.create({
     padding: 10,
     
   },
+  text:{
+    width: '100%',
+    alignItems: "flex-start",
+    right: -20,
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    bottom:100
+  },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "left",
@@ -83,8 +105,24 @@ const styles = StyleSheet.create({
     borderBottomColor: '#aaa',
     fontSize: 16,
     marginBottom: 20,
-    width: '100%',
+    width: '90%',
     height: 50,
+  },
+  inferiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 50,
+    right: 0,
+    width: 200,
+    height: 200,
+  },
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: 0,
+    right: -10,
+    width: 140,
+    height: 140,
   },
 
   });

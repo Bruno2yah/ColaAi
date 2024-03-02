@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; // Importa o ícone do Expo
 import * as Animado from 'react-native-animatable';
@@ -8,13 +8,13 @@ export default function LoginEmail() {
   const navigation = useNavigation();
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [selectedForm, setSelectedForm] = useState(0);
-  const [passwordVisible, setPasswordVisible] = useState(false); // Adiciona estado para controlar a visibilidade da senha
-  const [email, setEmail] = useState(''); // Adiciona estado para o email
-  const [password, setPassword] = useState(''); // Adiciona estado para a senha
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleButtonPress = () => {
     setShowLoginForm(true);
-      navigation.navigate('CodigoDeAcessoEmail');
+    navigation.navigate('CodigoDeAcessoEmail');
 
     if (!email.includes('@') || !email.includes('.com')) {
       Alert.alert('Erro', 'Por favor, insira um endereço de e-mail válido.');
@@ -26,11 +26,16 @@ export default function LoginEmail() {
 
   return (
     <View style={styles.container}>
-      {showLoginForm && selectedForm === 1 && <CodigoDeAcessoEmail />}
-      {!showLoginForm && (
-        <Animado.View style={styles.container} >
-          <Animado.Text style={styles.title} animation="fadeInRight">Entrar com e-mail</Animado.Text>
-          <Animado.Text style={styles.description} animation="slideInRight">Digite dados de login já existentes.</Animado.Text>
+      <ImageBackground
+        source={require('../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+        style={styles.superiorDireito}
+      />
+      <Animado.View style={styles.centeredContent}>
+        <Animado.View style={styles.formContainer}>
+          <Animado.View style={styles.text}>
+            <Animado.Text style={styles.title} animation="fadeInRight">Entrar com e-mail</Animado.Text>
+            <Animado.Text style={styles.description} animation="slideInRight">Digite dados de login já existentes.</Animado.Text>
+          </Animado.View>
           <TextInput
             style={styles.input}
             placeholder="Digite seu e-mail"
@@ -40,10 +45,10 @@ export default function LoginEmail() {
             <TextInput
               style={styles.input}
               placeholder="Digite sua senha"
-              secureTextEntry={!passwordVisible} // Oculta ou revela a senha com base no estado
+              secureTextEntry={!passwordVisible}
               onChangeText={(text) => setPassword(text)}
               keyboardType="numeric"
-            />
+            ></TextInput>
             <TouchableOpacity
               style={styles.eyeIcon}
               onPress={() => setPasswordVisible(!passwordVisible)}
@@ -56,7 +61,7 @@ export default function LoginEmail() {
             </TouchableOpacity>
           </View>
           <TouchableOpacity>
-            <Text style={styles.esqueci}>esqueci a senha</Text>
+            <Text style={styles.esqueci}>Esqueci a senha</Text>
           </TouchableOpacity>
           <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={500}>
             <TouchableOpacity style={styles.button2} onPress={handleButtonPress}>
@@ -64,33 +69,47 @@ export default function LoginEmail() {
             </TouchableOpacity>
           </Animado.View>
         </Animado.View>
-      )}
+      </Animado.View>
+      <ImageBackground
+        style={styles.inferiorDireito}
+        source={require('../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+      />
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "white",
-    height: '100%',
+    padding: 10,
+  },
+  centeredContent: {
     width: '100%',
-    padding:10,
+    alignItems: 'center',
     
   },
+  formContainer: {
+    width: '80%', // ou o valor desejado para a largura do formulário
+    alignItems: 'center',
+    bottom:80,
+  },
+  text:{
+    width: '100%',
+    alignItems: "flex-start",
+
+  },
   title: {
-    fontSize: 24,
+    fontSize: 35,
     fontWeight: "bold",
-    marginBottom: 10,
-    textAlign: "left",
-
-
+      textAlign: "left",
   },
   description: {
     marginBottom: 20,
-    textAlign:"left",
+    textAlign: "left",
     fontSize: 16,
   },
   buttonText1: {
@@ -120,9 +139,9 @@ const styles = StyleSheet.create({
     height: 50,
   },
   buttonColumn: {
-    width:330,
+    width: 330,
     height: 50,
-    alignItems:"flex-end"
+    alignItems: "flex-end"
   },
   inputContainer: {
     width: '90%',
@@ -140,10 +159,10 @@ const styles = StyleSheet.create({
     width: 300,
     height: 50,
   },
-  esqueci:{
-    width:300,
+  esqueci: {
+    width: 300,
     height: 50,
-    alignItems:"flex-start", 
+    alignItems: "flex-start",
     fontSize: 16,
     color: 'blue',
     marginTop: 10,
@@ -162,8 +181,23 @@ const styles = StyleSheet.create({
   },
   eyeIcon: {
     padding: 10,
+      position: 'absolute',
+      right: -10,
   },
-
-  });
-
-
+  inferiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 50,
+    right: 0,
+    width: 200,
+    height: 200,
+  },
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: 0,
+    right: -10,
+    width: 140,
+    height: 140,
+  },
+});

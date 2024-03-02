@@ -11,6 +11,7 @@ import Teatros from '../pages/Usuario/Teatros';
 import Museus from '../pages/Usuario/Museus';
 import Parques from '../pages/Usuario/Parques';
 import Evento from '../pages/Usuario/Evento';
+import PerfilOrg from '../pages/Usuario/PerfilOrganizazao'
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ export default function Navigation() {
         <Stack.Screen name="Museus" component={Museus} />
         <Stack.Screen name="Parques" component={Parques} />
         <Stack.Screen name="Evento" component={Evento} />
+        <Stack.Screen name="PerfilOrganizacao" component={PerfilOrg} />
       </Stack.Navigator>
     </NavigationContainer>
   );

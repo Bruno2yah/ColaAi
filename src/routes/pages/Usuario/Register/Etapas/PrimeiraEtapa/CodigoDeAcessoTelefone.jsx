@@ -23,13 +23,15 @@ const CodigoDeAcessoTelefone = ({ navigation }) => {
           <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
           <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
         </Animado.View>
-        <Animado.Text style={styles.esqueci} animation="fadeInRight" delay={1000}>Reenviar código</Animado.Text>
         <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
-          <TouchableOpacity style={styles.button2}>
-            <Text style={styles.buttonText2} >Enviar</Text>
+        <TouchableOpacity style={styles.button2}>
+            <Text style={styles.buttonText2} onPress={() => navigation.navigate('Senha')}>Prosseguir</Text>
           </TouchableOpacity>
         </Animado.View>
-      </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Banner')}>
+            <Text style={styles.linkText}>Reenviar código</Text>
+          </TouchableOpacity>       
+        </View>
         <ImageBackground
           style={styles.inferiorDireito}
           source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
@@ -59,6 +61,12 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: "flex-start",
     right: -20,
+  },
+  linkText: {
+    fontSize: 16,
+    color: 'blue',
+    marginTop: 10,
+    top:80
   },
   title: {
     fontSize: 36,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 export default function SobreNome({ navigation }) {
@@ -18,15 +18,22 @@ export default function SobreNome({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o endereço da sua organização?</Animado.Text>
-      
+    <ImageBackground
+            source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+            style={styles.superiorDireito}
+          />
+      <View style={styles.contentContainer}>
+
+      <View style={styles.text}>
+      <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o endereço da {'\n'}sua organização?</Animado.Text>
+      </View>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
           placeholder="Digite o endereço"
           value={endereco}
           onChangeText={handleEnderecoChange}
-        />
+          />
         
         <TextInput
           style={styles.input2}
@@ -35,7 +42,7 @@ export default function SobreNome({ navigation }) {
           onChangeText={handleNumeroChange}
           keyboardType="numeric"
           maxLength={5}
-        />
+          />
       </View>
       
       <View style={styles.buttonColumn}>
@@ -45,6 +52,11 @@ export default function SobreNome({ navigation }) {
           </Text>
         </TouchableOpacity>
       </View>
+    </View>
+      <ImageBackground
+        style={styles.inferiorDireito}
+        source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+        />
     </View>
   );
 }
@@ -59,8 +71,20 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 10,
   },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    bottom:100
+  },
+  text:{
+    width: '100%',
+    alignItems: "flex-start",
+    right: -20,
+  },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "left",
@@ -69,22 +93,26 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
+    margin:'5'
+    
   },
   input: {
     borderBottomWidth: 1,
     borderBottomColor: '#aaa',
     fontSize: 16,
     marginBottom: 20,
-    width: '75%', // Ajuste a largura conforme necessário
+    width: '69%', // Ajuste a largura conforme necessário
     height: 50,
+    left:20
   },
   input2: {
     borderBottomWidth: 1,
     borderBottomColor: '#aaa',
     fontSize: 16,
     marginBottom: 20,
-    width: '20%', // Ajuste a largura conforme necessário
+    width: '15%', // Ajuste a largura conforme necessário
     height: 50,
+    right:15
   },
   buttonText2: {
     fontSize: 22,
@@ -103,5 +131,21 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     alignItems: "flex-end",
+  },
+  inferiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 50,
+    right: 0,
+    width: 200,
+    height: 200,
+  },
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: 0,
+    right: -10,
+    width: 140,
+    height: 140,
   },
 });

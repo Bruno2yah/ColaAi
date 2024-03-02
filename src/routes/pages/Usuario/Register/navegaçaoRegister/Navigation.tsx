@@ -6,6 +6,9 @@ import Cadastro from '../Etapas/PrimeiraEtapa/Cadastro';
 import Nome from '../Etapas/PrimeiraEtapa/Nome';
 import SobreNome from '../Etapas/PrimeiraEtapa/SobreNome';
 import Email from '../Etapas/PrimeiraEtapa/Email';
+import CodigoDeAcessoEmail from '../Etapas/PrimeiraEtapa/CodigoDeAcessoEmail';
+import Telefone from '../Etapas/PrimeiraEtapa/Telefone'
+import CodigoDeAcessoTelefone from '../Etapas/PrimeiraEtapa/CodigoDeAcessoTelefone';
 import Senha from '../Etapas/PrimeiraEtapa/Senha';
 import TelaFinal from '../Etapas/PrimeiraEtapa/TelaFinal';
 import Home from '../../Home';
@@ -24,6 +27,9 @@ export default function Navigation() {
         <Stack.Screen name="Nome" component={Nome}  options={{ headerShown: false }} />
         <Stack.Screen name="SobreNome" component={SobreNome}  options={{ headerShown: false }} />
         <Stack.Screen name="Email" component={Email}  options={{ headerShown: false }} />
+        <Stack.Screen name="CodigoDeAcessoEmail" component={CodigoDeAcessoEmail}  options={{ headerShown: false }} />
+        <Stack.Screen name="Telefone" component={Telefone}  options={{ headerShown: false }} />
+        <Stack.Screen name="CodigoDeAcessoTelefone" component={CodigoDeAcessoTelefone}  options={{ headerShown: false }} />
         <Stack.Screen name="Senha" component={Senha}  options={{ headerShown: false }} />
         <Stack.Screen name="TelaFinal" component={TelaFinal}  options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={Home}  options={{ headerShown: false }} />

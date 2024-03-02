@@ -19,7 +19,7 @@ export default function LoginTelefone({ navigation }) {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+        source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
         style={styles.superiorDireito}
       />
       <View style={styles.contentContainer}>
@@ -43,7 +43,7 @@ export default function LoginTelefone({ navigation }) {
       </View>
       <ImageBackground
         style={styles.inferiorDireito}
-        source={require('../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+        source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
       />
     </View>
   );

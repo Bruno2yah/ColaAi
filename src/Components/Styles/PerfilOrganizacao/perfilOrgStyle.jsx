@@ -7,22 +7,47 @@ const styles = StyleSheet.create({
         overflow: "hidden",
         heigh: '100%',
     },
-    cards: {
-        //backgroundColor: '#ff1',
-        height: '100%',
-        width: '100%',
-        flex: 1,
-        marginTop: 150
-    },
     fundo: {
-        position: 'absolute',
         alignSelf: 'center',
         alignItems:'center',
         justifyContent:'center',
-        height: 200,
+        flexDirection:'row',
         width: '100%',
-        marginTop: '10%',
-        //backgroundColor: '#ff1',
+        marginTop: 50
+    },
+
+    imageBanner:{
+        width: '100%',
+        height: 160,
+        backgroundColor: '#FDE681',
+        top: 0,
+    },
+    imagePerfil: {
+        width: 125,
+        height: 125,
+        backgroundColor: '#6d9eaf',
+        alignSelf: 'flex-start',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 90,
+        position: 'absolute',
+        marginTop: 85,
+        marginLeft: 30
+    },
+    descOrganizacao: {
+        width: '85%',
+        alignSelf: 'center',
+        alignItems: 'center',
+        flexDirection:'row',
+    },
+    btnSeguir: {
+        backgroundColor: '#E6AEB2',
+        marginTop: 10,
+        borderRadius: 10,
+        width: 110,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
     //Botão
@@ -36,28 +61,33 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     buttonText: {
-        fontSize: 35,
+        fontSize: 20,
         color: '#6D9EAF',
         textAlign: 'center',
         alignSelf: 'center'
     },
 
     //Exemplos de centros educacionais
-    TeatrosArea: {
-        height: 400,
+    FotosArea: {
+        height: 475,
         width: '85%',
-        backgroundColor: '#D0F1B7',
+        backgroundColor: '#FDE681',
         alignSelf: 'center',
         borderRadius: 20,
         alignItems: 'center',
+        justifyContent: 'center',
         paddingTop: 15,
         paddingBottom: 15,
-        marginTop: 50
+        marginTop: 25
     },
-    TeatrosFoto: {
-        height: '50%',
+    FotoMaior: {
+        height: 200,
         width: '85%',
-        borderRadius: 10,
+    },
+    FotoMenor: {
+        height: 175,
+        width: '40%',
+        margin: 7
     },
     TeatrosLocal: {
         alignItems: 'center',
@@ -74,4 +104,4 @@ Rosa - #e6aeb2
 Amarelo - #ffd932
 Verde - #a5f866
 Vermelho - #fd5620
-Laranja - #EBD574*/
+Laranja - #FDE681*/

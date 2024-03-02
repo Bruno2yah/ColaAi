@@ -1,4 +1,5 @@
 import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Shadow } from 'react-native-shadow-2';
 
 import styles from '../../../../Components/Styles/Home/homeStyle';
 
@@ -10,7 +11,7 @@ export default function UsuarioHome({ navigation }) {
     <View style={styles.container}>
       <ScrollView>
         {/* Imagens dos cantos */}
-        <View style={{ position: 'absolute', width: '100%', height: '60%'}}>
+        <View style={{ position: 'absolute', width: '100%', height: '20%'}}>
           <View style={{ justifyContent: 'flex-start' }}>
             <View style={{ position: 'absolute', alignSelf: 'flex-start', }}>
               <Image
@@ -18,7 +19,7 @@ export default function UsuarioHome({ navigation }) {
                 source={require('../../../../../assets/img/Home/superiorEsquerdo.png')}
               />
             </View>
-            <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
+            <View style={{ position: 'sticky', alignSelf: 'flex-end' }}>
               <Image
                 style={{ height: 150, width: 91 }}
                 source={require('../../../../../assets/img/Home/superiorDireito.png')}
@@ -40,7 +41,6 @@ export default function UsuarioHome({ navigation }) {
             </View>
           </View>
         </View>
-
         {/* Imagem do Cola ai */}
         <View style={styles.fundo}>
           <Image
@@ -48,17 +48,17 @@ export default function UsuarioHome({ navigation }) {
             source={require('../../../../../assets/img/Home/cola_ai_home.png')}
           />
         </View>
-
         {/* Elementos */}
         <View style={styles.background}>
+          <Shadow distance={10} startColor={'#000'} sides={'top'} stretch={true} style={{borderTopLeftRadius:40, borderTopRightRadius:40,}}>
           <View style={styles.buttonsArea}>
             <View style={styles.buttons}>
               <View style={{ justifyContent: 'center', alignItems: 'center', height: '100%',}}>
                 <TouchableOpacity 
                   style={{
                     backgroundColor: '#e6aeb2',
-                    width: '100%',
-                    height: '100%',
+                    width: 100,
+                    height: 100,
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 20,
@@ -75,8 +75,8 @@ export default function UsuarioHome({ navigation }) {
                 <TouchableOpacity 
                   style={{
                     backgroundColor: '#a5f866',
-                    width: '100%',
-                    height: '100%',
+                    width: 100,
+                    height: 100,
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 20,
@@ -94,8 +94,8 @@ export default function UsuarioHome({ navigation }) {
                 <TouchableOpacity 
                   style={{
                     backgroundColor: '#6d9eaf',
-                    width: 90,
-                    height: 80,
+                    width: 100,
+                    height: 100,
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 20,
@@ -112,19 +112,18 @@ export default function UsuarioHome({ navigation }) {
               {/* Adicione os outros blocos de código semelhantes para os botões restantes */}
             </View>
           </View>
-
           <View style={styles.fabricasArea}>
             <Image
               style={styles.CentrosFoto}
               source={require('../../../../../assets/img/Home/fabricas.jpg')}
             />
             <View style={styles.CentrosTextos}>
-              <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#fd5620',textAlign: 'center', }}>
+              <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#fd5620',textAlign: 'center', }}>
                 FÁBRICAS DE CULTURA
               </Text>
               <Text
                 style={{
-                  fontSize: 14,
+                  fontSize: 12,
                   textAlign: 'justify',
                   color: '#000',
                   paddingLeft: 10,
@@ -136,7 +135,6 @@ export default function UsuarioHome({ navigation }) {
               </Text>
             </View>
           </View>
-
           <View style={styles.CentrosArea}>
             <View style={styles.CentrosTextos}>
               <Text
@@ -151,7 +149,7 @@ export default function UsuarioHome({ navigation }) {
               </Text>
               <Text
                 style={{
-                  fontSize: 14,
+                  fontSize: 12,
                   textAlign: 'justify',
                   color: '#000',
                   paddingLeft: 10,
@@ -167,6 +165,7 @@ export default function UsuarioHome({ navigation }) {
               source={require('../../../../../assets/img/Home/ceu.png')}
             />
           </View>
+          </Shadow>
         </View>
       </ScrollView>
       <NavBar />

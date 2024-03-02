@@ -1,4 +1,4 @@
-import {Text, View, Image, StyleSheet, Pressable } from 'react-native';
+import {View, Image, StyleSheet, Pressable } from 'react-native';
 
 export default function navBar() {
   return (
@@ -8,7 +8,7 @@ export default function navBar() {
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
                 <Pressable style={styles.buttonNav} >
                     <Image
-                        style={{width: '16vw', height: '16vw', tintColor: '#FFD932'}}
+                        style={{width: 61, height: 61, tintColor: '#FFD932'}}
                         source={require('../../../assets/img/NavBar/home.png')}
                     />
                     </Pressable>
@@ -16,37 +16,35 @@ export default function navBar() {
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
                     <Pressable style={styles.buttonNav} >
                         <Image
-                            style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
+                            style={{width: 59, height: 59, tintColor: '#A6A6A6'}}
                             source={require('../../../assets/img/NavBar/ingressos.png')}
                         />
                     </Pressable>
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
                     <Pressable style={styles.buttonNav} >
-                    <Image
-                        style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
-                        source={require('../../../assets/img/NavBar/local.png')}
-                    />
-                    </Pressable>
-                </View>
-                <View style={{ justifyContent: 'center', alignItems: 'center',}}>
-                    <Pressable style={styles.buttonNav} >
-                    <Image
-                        style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
-                        source={require('../../../assets/img/NavBar/notif.png')}
-                    />
+                        <Image
+                            style={{width: 61, height: 61, tintColor: '#A6A6A6'}}
+                            source={require('../../../assets/img/NavBar/local.png')}
+                        />
                     </Pressable>
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center',}}>
                     <Pressable style={styles.buttonNav} >
                         <Image
-                            style={{width: '16vw', height: '16vw', tintColor: '#A6A6A6'}}
+                            style={{width: 61, height: 61, tintColor: '#A6A6A6'}}
+                            source={require('../../../assets/img/NavBar/notif.png')}
+                        />
+                    </Pressable>
+                </View>
+                <View style={{ justifyContent: 'center', alignItems: 'center',}}>
+                    <Pressable style={styles.buttonNav} >
+                        <Image
+                            style={{width: 61, height: 61, tintColor: '#A6A6A6'}}
                             source={require('../../../assets/img/NavBar/perfil.png')}
                         />
                     </Pressable>
-                    
                 </View>
-            
             </View>
         </View>
     </View>
@@ -57,7 +55,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
         overflow: "hidden",
-        height: '16vw',
         width: '100%',
         position: 'relative',
         bottom: 0,
@@ -68,7 +65,6 @@ const styles = StyleSheet.create({
 
     buttonsArea: {
         flexDirection:'row',
-        height: '10vw',
         width: '90%',
         alignSelf: 'center',
         position: 'relative',
@@ -83,11 +79,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
     },
-    buttonNav: {
-        alignItems: 'center',
-        padding: 5,
-        width: '100%',
-        justifyContent:'space-evenly',
-
-      },
 })

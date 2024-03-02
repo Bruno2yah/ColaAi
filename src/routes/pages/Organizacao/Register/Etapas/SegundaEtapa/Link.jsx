@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
 
-export default function Nome({ navigation }) {
-  const [cnpj, setCnpj] = useState('');
+export default function Link({ navigation }) {
+  const [Link, setLink] = useState('');
 
-  const formatCnpj = (text) => {
+  const formatLink = (text) => {
     // Remove non-numeric characters
     const numericOnly = text.replace(/\D/g, '');
 
-    // Format CNPJ: 11.222.333/0001-44
-    const formattedCnpj = numericOnly.replace(
+    // Format Link: 11.222.333/0001-44
+    const formattedLink = numericOnly.replace(
       /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/,
       '$1.$2.$3/$4-$5'
     );
 
-    // Update the state with the formatted CNPJ
-    setCnpj(formattedCnpj);
+    // Update the state with the formatted Link
+    setLink(formattedLink);
   };
 
   return (
@@ -27,27 +27,33 @@ export default function Nome({ navigation }) {
           />
       <View style={styles.contentContainer}>
         <View style={styles.text}>
-        <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o CNPJ da organização?</Animado.Text>
+        <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o link do site da sua organização?</Animado.Text>
+        <Animado.Text style={styles.description} animation="zoomIn" duration={800}>Coloque o link atualizado da sua página web para assim os usuários buscarem informações detalhadas ou formas de contato.</Animado.Text>
         </View>
         <TextInput
           style={styles.input}
-          placeholder="Digite o CNPJ da organização"
-          value={cnpj}
-          onChangeText={(text) => formatCnpj(text)}
+          placeholder="Digite ou cole o link aqui"
+          value={Link}
+          onChangeText={(text) => formatLink(text)}
           maxLength={18} 
 
         />
         <View style={styles.buttonColumn}>
           <TouchableOpacity style={styles.button2}>
-            <Text style={styles.buttonText2} onPress={() => navigation.navigate('Nome')}>
+            <Text style={styles.buttonText2} onPress={() => navigation.navigate('TelaFinal2')}>
               Prosseguir
             </Text>
           </TouchableOpacity>
         </View>
+      <View style={styles.buttonPular}>
+        <TouchableOpacity onPress={() => navigation.navigate('TelaFinal2')}>
+          <Text style={styles.linkText}>adicionar mais tarde</Text>
+        </TouchableOpacity>
+      </View>
       </View>
       <ImageBackground
-        style={styles.inferiorDireito}
-        source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+        style={styles.inferiorEsquerdo}
+        source={require('../../../../../../../assets/img/cadastro/login/InferiorEsquerda.png')}
       />
     </View>
   );
@@ -82,8 +88,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "left",
-
-
   },
   description: {
     marginBottom: 20,
@@ -121,6 +125,21 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems:"flex-end"
   },
+  linkText: {
+    fontSize: 20,
+    color: 'blue',
+    marginTop: 10,
+    bottom:10,
+    left:10
+  },
+  buttonPular: {
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    bottom: 20,
+  },
   input: {
     borderBottomWidth: 1,
     borderBottomColor: '#aaa',
@@ -129,11 +148,11 @@ const styles = StyleSheet.create({
     width: '90%',
     height: 50,
   },
-  inferiorDireito: {
+  inferiorEsquerdo: {
     position: 'absolute',
     resizeMode: 'contain',
-    bottom: 50,
-    right: 0,
+    bottom: 100,
+    left: -20,
     width: 200,
     height: 200,
   },

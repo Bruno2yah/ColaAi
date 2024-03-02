@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
 import * as Animado from 'react-native-animatable';
 
-const CodigoDeAcessoTelefone = ({ navigation }) => {
+const CodigoDeAcessoEmail = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <ImageBackground
@@ -23,13 +23,15 @@ const CodigoDeAcessoTelefone = ({ navigation }) => {
           <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
           <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
         </Animado.View>
-        <Animado.Text style={styles.esqueci} animation="fadeInRight" delay={1000}>Reenviar código</Animado.Text>
         <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
-          <TouchableOpacity style={styles.button2}>
-            <Text style={styles.buttonText2} >Enviar</Text>
+        <TouchableOpacity style={styles.button2}>
+            <Text style={styles.buttonText2} onPress={() => navigation.navigate('Telefone')}>Prosseguir</Text>
           </TouchableOpacity>
         </Animado.View>
-      </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Banner')}>
+            <Text style={styles.linkText}>Reenviar código</Text>
+          </TouchableOpacity>      
+          </View>
         <ImageBackground
           style={styles.inferiorDireito}
           source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
@@ -107,13 +109,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     keyboardType: 'numeric',
   },
-  esqueci: {
-    width: 300,
-    height: 50,
-    alignItems: "flex-start",
+  linkText: {
     fontSize: 16,
     color: 'blue',
     marginTop: 10,
+    top:80
   },
   inferiorDireito: {
     position: 'absolute',
@@ -133,4 +133,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CodigoDeAcessoTelefone;
+export default CodigoDeAcessoEmail;
