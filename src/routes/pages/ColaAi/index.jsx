@@ -14,12 +14,12 @@ const ColaAi = ({ navigation }) => {
 
         <View style={styles.formulario}>
           <Text style={styles.texto}>Nome</Text>
-          <TextInput placeholder='Nome do usuário' style={styles.input}></TextInput>
+          <TextInput placeholder='Nome do usuário' placeholderTextColor={'grey'} style={styles.input}></TextInput>
           <Text style={styles.texto}>Email</Text>
-          <TextInput placeholder='Email do usuário' style={styles.input}></TextInput>
+          <TextInput placeholder='Email do usuário' placeholderTextColor={'grey'} style={styles.input}></TextInput>
           <Text style={styles.texto}>Motivo do Contato</Text>
           <Text style={styles.texto}>Comentário</Text>
-          <TextInput placeholder='Escreva sua experiência com o aplicativo, podendo ser sugestões' style={styles.comentario}></TextInput>
+          <TextInput placeholder='Descreva o motivo do seu contato' placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
 
         </View>
       <NavBar/>
@@ -45,21 +45,24 @@ const styles = StyleSheet.create({
       color: 'grey'
     },
     contato: {
-      flex: 1,
+      flex: 0.5,
       height: '70%'
     },
     formulario: {
       flex: 1,
       justifyContent: 'flex-start',
+      width: '80%'
     },
     input: {
       marginBottom: 10,
-      borderBottomWidth: 2
+      borderBottomWidth: 2,
+      borderColor: 'grey'
     },
     comentario: {
       borderWidth: 2,
       borderRadius: 7,
-      height: 80
+      height: 80,
+      borderColor: 'grey'
     }
   });
 
