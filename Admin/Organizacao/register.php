@@ -146,7 +146,7 @@
                 </div>
                 <div class="col-md-4 needs-validation">
                   <label for="telefone" class="col-form-label">Telefone:</label>
-                  <input type="text" class="form-control" name="telOrganizacaoEvento"  data-mask="00-00000-0000" maxlength="100" id="telOrganizacaoEvento" value="<?=$telefone_Organizacao?>" required>
+                  <input type="text" class="form-control" name="telOrganizacaoEvento"  data-mask="00-0000-0000" maxlength="100" id="telOrganizacaoEvento" value="<?=$telefone_Organizacao?>" required>
                 </div>
               </div>
               <div class="row">
