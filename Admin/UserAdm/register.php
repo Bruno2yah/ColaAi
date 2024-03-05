@@ -94,8 +94,8 @@
                 </div>
               </div>
               <div class="row mt-5">
-                <div class="col-md-3">
-                  <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input">
+                <div class="col-md-6">
+                  <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input form-control">
                 </div>
               </div>
               <div class=" text-end p-3">

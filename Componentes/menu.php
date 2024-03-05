@@ -55,7 +55,7 @@
       <li class="menuItems w-100 p-1 ps-4">
         <a class="" href="../User" style="text-decoration: none; color: #a6a6a6;">
           <i class="bi bi-calendar-event"></i>
-          Horários
+          Locais
         </a>
       </li>
 

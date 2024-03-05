@@ -39,6 +39,16 @@
           include('../../Componentes/menu.php') 
         ?>
         <div class="col-md-10  p-4 borber">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="GET" class="form-inline">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Pesquisar" name="search">
+                <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
         <div class="row align-items-center mb-4">
           <div class="col fs-3 fw-semibold">
             Lista de Administradores

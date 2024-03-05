@@ -138,6 +138,20 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
+
+        public static function search($termoPesquisa) {
+            $conexao = Conexao::conectar();
+            $query = "SELECT * FROM tborganizacaoevento WHERE 
+                        nomeOrganizacaoEvento LIKE :termo OR 
+                        emailOrganizacaoEvento LIKE :termo OR 
+                        cnpjOrganizacaoEvento LIKE :termo";
+            $stmt = $conexao->prepare($query);
+            $termo = "%$termoPesquisa%"; // Adiciona % para pesquisa parcial
+            $stmt->bindParam(':termo', $termo);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+        
     }
 
 

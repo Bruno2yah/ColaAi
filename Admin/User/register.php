@@ -57,7 +57,7 @@
           <div class="card-body row justify-content-center align-items-center">
             <div class="col-md-2   text-center">
               <div class="bg-white rounded">
-                <img id="preview" src="../../img/Admin/<?=$imagem_Usuario!="" ? $imagem_Usuario : 'userPadrao.jpg';?>" alt="imagem padrão" class=" w-75">
+                <img id="preview" src="../../img/User/<?=$imagem_Usuario!="" ? $imagem_Usuario : 'userPadrao.jpg';?>" alt="imagem padrão" class=" w-75">
               </div>
             </div>
             <div class=" col-md-10">
@@ -88,8 +88,8 @@
                 </div>
               </div>
               <div class="row mt-5">
-                <div class="col-md-3">
-                  <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input">
+                <div class="col-md-6">
+                  <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input form-control">
                 </div>
               </div>
               <div class=" text-end p-3">

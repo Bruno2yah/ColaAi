@@ -68,7 +68,7 @@
             <strong>INFORMAÇÕES DA ORGANIZAÇÃO</strong>
             <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id" value="<?=$id_Organizacao?>">
             <input type="hidden" name="imagemOrganizacaoEvento" id="imagemOrganizacaoEvento" placeholder="nome foto" value="<?=$imagem_Organizacao?>">
-            <input type="text" value="<?=$id_Organizacao?'ATUALIZAR':'SALVAR'?>" name="acao" >
+            <input type="hidden" value="<?=$id_Organizacao?'ATUALIZAR':'SALVAR'?>" name="acao" >
           </div>
           <div class="card-body row justify-content-center align-items-center">
             <div class="col-md-2   text-center">
@@ -160,7 +160,7 @@
                 </div>
               </div>
               <div class="row mt-5">
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input form-control">
                 </div>
               </div>
