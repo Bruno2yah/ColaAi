@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, ScrollView, Image, TextInput, } from 'react-native';
 import * as Animado from 'react-native-animatable';
 import NavBar from '../../../../src/Components/NavBar/navbar';
+import DropDownPicker from 'react-native-dropdown-picker';
 
 const ColaAi = ({ navigation }) => {
+
+  const [selectedValue, setSelectedValue] = useState(null);
+
   return (
       <View style={styles.container}>
 
@@ -15,9 +19,23 @@ const ColaAi = ({ navigation }) => {
         <View style={styles.formulario}>
           <Text style={styles.texto}>Nome</Text>
           <TextInput placeholder='Nome do usuário' placeholderTextColor={'grey'} style={styles.input}></TextInput>
+
           <Text style={styles.texto}>Email</Text>
           <TextInput placeholder='Email do usuário' placeholderTextColor={'grey'} style={styles.input}></TextInput>
+
           <Text style={styles.texto}>Motivo do Contato</Text>
+          <DropDownPicker
+          items={[
+            { label: 'Suporte técnico', value: 'Suporte técnico' },
+            { label: 'Denúncia', value: 'Denúncia' },
+            { label: 'Outros', value: 'Outros' },
+          ]}
+          defaultValue={selectedValue}
+          dropDownStyle={{ backgroundColor: 'grey' }}
+          onChangeItem={item => setSelectedValue(item.value)}
+          style={{borderWidth: 2, borderColor: 'grey'}}
+          />
+
           <Text style={styles.texto}>Comentário</Text>
           <TextInput placeholder='Descreva o motivo do seu contato' placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
 
