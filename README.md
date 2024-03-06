@@ -7,6 +7,11 @@ npm install react-native-animatable <br>
 npm install react-native-vector-icons <br>
 npx expo install react-native-svg <br>
 npm i react-native-shadow-2 <br>
+expo install react-native-gesture-handler <br>
+npm install react-native-gesture-handler <br>
+npm install @react-native-community/slider --save <br>
+<br>
+Importar no app.tsx: import 'react-native-gesture-handler'; <br>
 
 -- Dependencias -- <hr>
 
