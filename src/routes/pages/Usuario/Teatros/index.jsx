@@ -58,7 +58,7 @@ export default function Teatros({ navigation }) {
               </Text>
               <View style = {{flexDirection:'row', height: 75}}>
                 <Image
-                    style={{ height: 30, width: 20, marginLeft: 10 }}
+                    style={{ height: 30, width: 20, marginLeft: 5 }}
                     source={require('../../../../../assets/img/Teatros/Point.png')}
                 />
                 <Text
@@ -66,7 +66,6 @@ export default function Teatros({ navigation }) {
                     fontSize: 20,
                     textAlign: 'center',
                     color: '#A6A6A6',
-                    marginRight: 20
                     }}
                 >
                   Av. Paulista, 900 - Bela Vista, 
@@ -110,7 +109,7 @@ export default function Teatros({ navigation }) {
               </View>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('PerfilOrg')}
+                onPress={() => navigation.navigate('Evento')}
               >
                 <Text style={styles.buttonText}>Saber mais</Text>
               </TouchableOpacity>

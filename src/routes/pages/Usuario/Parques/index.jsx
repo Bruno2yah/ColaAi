@@ -56,17 +56,16 @@ export default function Parques({ navigation }) {
               <Text style={{ fontSize: 27, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
                 PARQUE ECOLÓGICO
               </Text>
-              <View style = {{flexDirection:'row', height: 75}}>
+              <View style = {{flexDirection:'row', height: 78}}>
                 <Image
-                    style={{ height: 30, width: 20, marginLeft: 10 }}
+                    style={{ height: 30, width: 20, }}
                     source={require('../../../../../assets/img/Parques/Point.png')}
                 />
                 <Text
                     style={{
-                    fontSize: 20,
+                    fontSize: 19,
                     textAlign: 'center',
                     color: '#A6A6A6',
-                    marginRight: 20
                     }}
                 >
                   Via Parque, 8055 - Vila Santo Henrique, 

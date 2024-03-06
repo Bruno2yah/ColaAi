@@ -56,17 +56,16 @@ export default function Museus({ navigation }) {
               <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
                 MUSEU CATAVENTO
               </Text>
-              <View style = {{flexDirection:'row', height: 75}}>
+              <View style = {{flexDirection:'row', height: 78}}>
                 <Image
-                    style={{ height: 30, width: 20, marginLeft: 10 }}
+                    style={{ height: 30, width: 22, marginLeft: 5}}
                     source={require('../../../../../assets/img/Museus/Point.png')}
                 />
                 <Text
                     style={{
-                    fontSize: 20,
+                    fontSize: 19,
                     textAlign: 'center',
                     color: '#A6A6A6',
-                    marginRight: 20
                     }}
                 >
                   Avenida Mercúrio, Parque Dom Pedro II,
