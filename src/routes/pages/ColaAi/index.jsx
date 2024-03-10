@@ -5,7 +5,7 @@ import NavBar from '../../../../src/Components/NavBar/navbar';
 import DropDownPicker from 'react-native-dropdown-picker';
 import * as ImagePicker from 'expo-image-picker';
 
-const ColaAi = ({ navigation }) => {
+const ColaAi = ({}) => {
 
   const [selectedValue, setSelectedValue] = useState(null);
   const [image, setImage] = useState(null);
@@ -23,6 +23,10 @@ const ColaAi = ({ navigation }) => {
       setImage(result.assets[0].uri);
     }
   };
+
+  const [openCategoria, setOpenCategoria] = useState(false);
+  const [openMotivo, setOpenMotivo] = useState(false);
+  const [value, setValue] = useState(null);
 
   return (
       <View style={styles.container}>
@@ -50,24 +54,35 @@ const ColaAi = ({ navigation }) => {
           dropDownStyle={{ backgroundColor: 'grey' }}
           onChangeItem={item => setSelectedValue(item.value)}
           style={{borderWidth: 2, borderColor: 'grey'}}
+          placeholder='Selecionar'
+          open={openMotivo}
+          setOpen={setOpenMotivo}
+          value={value}
+          textStyle={{color: 'grey'}}
           />
+
+          <Text style={styles.texto}>Descrição</Text>
+          <TextInput placeholder='Descreva o motivo do seu contato' placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
 
           <Text style={styles.texto}>Categoria da denuncia</Text>
           <DropDownPicker
           items={[
-            { label: 'Suporte técnico', value: 'Suporte técnico' },
-            { label: 'Denúncia', value: 'Denúncia' },
+            { label: 'Organização', value: 'Suporte técnico' },
+            { label: 'Publicação', value: 'Publicação' },
+            { label: 'Evento', value: 'Evento' },
             { label: 'Outros', value: 'Outros' },
           ]}
           defaultValue={selectedValue}
           dropDownStyle={{ backgroundColor: 'grey' }}
           onChangeItem={item => setSelectedValue(item.value)}
           style={{borderWidth: 2, borderColor: 'grey'}}
+          placeholder='Selecionar'
+          open={openCategoria}
+          setOpen={setOpenCategoria}
+          value={value}
+          textStyle={{color: 'grey'}}
           />
 
-          <Text style={styles.texto}>Descrição</Text>
-          <TextInput placeholder='Descreva o motivo do seu contato' placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
-          
           <Text style={styles.texto}>Inserir imagem</Text>
 
           <Pressable onPress={() => setModalVisible(true)}>
@@ -130,7 +145,8 @@ const styles = StyleSheet.create({
     contato: {
       flex: 0.5,
       height: '70%',
-      marginBottom: 10
+      marginBottom: 10,
+      marginTop: 20
     },
     formulario: {
       flex: 1,
@@ -155,7 +171,7 @@ const styles = StyleSheet.create({
     comentario: {
       borderWidth: 2,
       borderRadius: 7,
-      height: 80,
+      height: 200,
       borderColor: 'grey'
     },
     image: {
