@@ -26,14 +26,14 @@ export default function Navigation() {
         <Stack.Screen name="Usuario" component={Usuario} options={{ headerShown: false }}/>
         <Stack.Screen name="AcessoSemLogin" component={HomeUsuario} options={{ headerShown: false }}/> 
 
-        <Stack.Screen name="HomeUsuario" component={HomeUsuario} />
+        <Stack.Screen name="HomeUsuario" component={HomeUsuario} options={{ headerShown: false }}/>
         <Stack.Screen name="Teatros" component={Teatros} />
         <Stack.Screen name="Museus" component={Museus} />
         <Stack.Screen name="Parques" component={Parques} />
         <Stack.Screen name="Evento" component={Evento} />
         <Stack.Screen name="Perfil" component={Perfil}  options={{ headerShown: false }}/>
         <Stack.Screen name="PerfilOrganizacao" component={PerfilOrg} />
-        <Stack.Screen name="ProgramacaoCultural" component={ProgramacaoCult} />
+        <Stack.Screen name="ProgramacaoCultural" component={ProgramacaoCult} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

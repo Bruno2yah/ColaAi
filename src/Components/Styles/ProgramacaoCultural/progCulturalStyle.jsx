@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems:'center',
         justifyContent:'center',
-        height: 200,
+        height: 170,
         width: '100%',
         marginTop: '10%',
         //backgroundColor: '#ff1',
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
 
-    TeatrosArea: {
-        height: 425,
+    ProgArea: {
+        height: 400,
         width: '85%',
         backgroundColor: '#D0F1B7',
         alignSelf: 'center',
@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 15,
         paddingBottom: 15,
-        marginTop: 50
+        marginTop: 30
     },
-    TeatrosFoto: {
+    Foto: {
         height: '40%',
         width: '85%',
         borderRadius: 15,
     },
-    TeatrosLocal: {
+    Titulo: {
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
         height: 100,
         alignSelf: 'center',
         alignItems: 'center',
-        margin: 10
     },
     Infos:
     {

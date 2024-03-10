@@ -114,66 +114,44 @@ export default function Eventos({ navigation }) {
 
             <View style = {styles.InfosArea}>
               <View style = {styles.InfosRows}>
-                <View style = {styles.Infos}>
+                    <View style = {styles.Infos}>
+                        <Image
+                        style={{ height: 26, width: 25 }}
+                        source={require('../../../../../assets/img/Programação Cultural/classificacao.png')}
+                        />
+                        <Text style = {styles.InfosText}>
+                        Faixa etária: +6
+                        </Text>
+                    </View>
+                    <View style = {styles.Infos}>
                     <Image
-                      style={{ height: 30, width: 20 }}
-                      source={require('../../../../../assets/img/Evento/pessoas.png')}
+                        style={{ height: 26, width: 26 }}
+                        source={require('../../../../../assets/img/Programação Cultural/valor.png')}
                     />
                     <Text style = {styles.InfosText}>
-                      Classificação: livre
+                        Valor: Gratuito
                     </Text>
-                </View>
-                <View style = {styles.Infos}>
-                  <Image
-                    style={{ height: 25, width: 25 }}
-                    source={require('../../../../../assets/img/Evento/relogio.png')}
-                  />
-                  <Text style = {styles.InfosText}>
-                    Duração: 01h30
-                  </Text>
-                </View>
+                    </View>
               </View>
               <View style = {styles.InfosRows}>
-                <View style = {styles.Infos}>
+                  <View style = {styles.Infos}>
+                      <Image
+                      style={{ height: 27, width: 26 }}
+                      source={require('../../../../../assets/img/Programação Cultural/point.png')}
+                      />
+                      <Text style = {styles.InfosText}>
+                          Local: Teatro São Paulo/SP
+                      </Text>
+                  </View>
+                  <View style = {styles.Infos}>
                   <Image
-                    style={{ height: 25, width: 25 }}
-                    source={require('../../../../../assets/img/Evento/relogio.png')}
+                      style={{ height: 26, width: 26 }}
+                      source={require('../../../../../assets/img/Programação Cultural/relogio.png')}
                   />
                   <Text style = {styles.InfosText}>
-                    Sáb. 15 de jan, 14:00 – 15:30
+                      Turno: Verspetino
                   </Text>
-                </View>
-              </View>
-              <View style = {styles.InfosRows}>
-                <View style = {styles.Infos}>
-                    <Image
-                      style={{ height: 28, width: 18 }}
-                      source={require('../../../../../assets/img/Evento/poltrona.png')}
-                    />
-                    <Text style = {styles.InfosText}>
-                      Lugares disponiveis
-                    </Text>
-                </View>
-                <View style = {styles.Infos}>
-                  <Image
-                    style={{ height: 23, width: 35 }}
-                    source={require('../../../../../assets/img/Evento/dinheiro.png')}
-                  />
-                  <Text style = {styles.InfosText}>
-                    Gratuito
-                  </Text>
-                </View>
-              </View>
-              <View style = {styles.InfosRows}>
-                <View style = {styles.Infos}>
-                  <Image
-                    style={{ height: 27, width: 19 }}
-                    source={require('../../../../../assets/img/Evento/lugar.png')}
-                  />
-                  <Text style = {styles.InfosText}>
-                    Teatro - São Paulo/SP
-                  </Text>
-                </View>
+                  </View>
               </View>
             </View>
             
@@ -191,7 +169,7 @@ export default function Eventos({ navigation }) {
             
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate('PerfilOrg')}
+              onPress={() => navigation.navigate('HomeUsuario')}
             >
               <Text style={styles.buttonText}>Abrir</Text>
             </Pressable>

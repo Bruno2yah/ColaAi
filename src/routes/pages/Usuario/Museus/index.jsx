@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, Image, ScrollView, Pressable } from 'react-native';
 
 import styles from '../../../../Components/Styles/Categorias/CategoriasStyle';
 
@@ -72,12 +72,12 @@ export default function Museus({ navigation }) {
                   s/n, São Paulo - SP, 03003-060
                 </Text>
               </View>
-              <TouchableOpacity
+              <Pressable
                 style={styles.button}
-                onPress={() => navigation.navigate('Evento')}
+                onPress={() => navigation.navigate('HomeUsuario')}
               >
                 <Text style={styles.buttonText}>Saber mais</Text>
-              </TouchableOpacity>
+              </Pressable>
             </View>
           </View>
         </View>

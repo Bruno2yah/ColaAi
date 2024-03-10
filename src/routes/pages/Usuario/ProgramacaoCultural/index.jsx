@@ -46,12 +46,12 @@ export default function ProgramacaoCultural({ navigation }) {
         </View>
       <ScrollView>
         <View style={styles.cards}>
-          <View style={styles.TeatrosArea}>
+          <View style={styles.ProgArea}>
             <Image
-              style={styles.TeatrosFoto}
+              style={styles.Foto}
               source={require('../../../../../assets/img/Programação Cultural/showDeDesenhos.png')}
             />
-            <View style={styles.TeatrosLocal}>
+            <View style={styles.Titulo}>
               <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
                 SHOW DE DESENHOS
               </Text>
@@ -79,7 +79,7 @@ export default function ProgramacaoCultural({ navigation }) {
                 <View style = {styles.InfosRows}>
                     <View style = {styles.Infos}>
                         <Image
-                        style={{ height: 26, width: 26 }}
+                        style={{ height: 27, width: 26 }}
                         source={require('../../../../../assets/img/Programação Cultural/point.png')}
                         />
                         <Text style = {styles.InfosText}>
@@ -88,11 +88,70 @@ export default function ProgramacaoCultural({ navigation }) {
                     </View>
                     <View style = {styles.Infos}>
                     <Image
-                        style={{ height: 23, width: 35 }}
+                        style={{ height: 26, width: 26 }}
                         source={require('../../../../../assets/img/Programação Cultural/relogio.png')}
                     />
                     <Text style = {styles.InfosText}>
-                        Gratuito
+                        Turno: Verspetino
+                    </Text>
+                    </View>
+                </View>
+              </View>
+              <Pressable
+                style={styles.button}
+                onPress={() => navigation.navigate('Evento')}
+              >
+                <Text style={styles.buttonText}>Saber mais</Text>
+              </Pressable>
+            </View>
+          </View>
+          <View style={styles.ProgArea}>
+            <Image
+              style={styles.Foto}
+              source={require('../../../../../assets/img/Programação Cultural/showDeDesenhos.png')}
+            />
+            <View style={styles.Titulo}>
+              <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
+                SHOW DE DESENHOS
+              </Text>
+              <View style = {styles.InfosArea}>
+                <View style = {styles.InfosRows}>
+                    <View style = {styles.Infos}>
+                        <Image
+                        style={{ height: 26, width: 25 }}
+                        source={require('../../../../../assets/img/Programação Cultural/classificacao.png')}
+                        />
+                        <Text style = {styles.InfosText}>
+                        Faixa etária: +6
+                        </Text>
+                    </View>
+                    <View style = {styles.Infos}>
+                    <Image
+                        style={{ height: 26, width: 26 }}
+                        source={require('../../../../../assets/img/Programação Cultural/valor.png')}
+                    />
+                    <Text style = {styles.InfosText}>
+                        Valor: Gratuito
+                    </Text>
+                    </View>
+                </View>
+                <View style = {styles.InfosRows}>
+                    <View style = {styles.Infos}>
+                        <Image
+                        style={{ height: 27, width: 26 }}
+                        source={require('../../../../../assets/img/Programação Cultural/point.png')}
+                        />
+                        <Text style = {styles.InfosText}>
+                            Local: Teatro São Paulo/SP
+                        </Text>
+                    </View>
+                    <View style = {styles.Infos}>
+                    <Image
+                        style={{ height: 26, width: 26 }}
+                        source={require('../../../../../assets/img/Programação Cultural/relogio.png')}
+                    />
+                    <Text style = {styles.InfosText}>
+                        Turno: Verspetino
                     </Text>
                     </View>
                 </View>

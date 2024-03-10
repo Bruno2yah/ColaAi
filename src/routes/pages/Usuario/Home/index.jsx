@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, Image, ScrollView, Pressable } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
 
 import styles from '../../../../Components/Styles/Home/homeStyle';
@@ -54,7 +54,7 @@ export default function UsuarioHome({ navigation }) {
           <View style={styles.buttonsArea}>
             <View style={styles.buttons}>
               <View style={{ justifyContent: 'center', alignItems: 'center', height: '100%',}}>
-                <TouchableOpacity 
+                <Pressable 
                   style={{
                     backgroundColor: '#e6aeb2',
                     width: 100,
@@ -66,13 +66,13 @@ export default function UsuarioHome({ navigation }) {
                   onPress={() => navigation.navigate('Teatros')}>
                   <Image style={{ width: 90, height: 80 }}
                   source={require('../../../../../assets/img/Home/teatro_img.png')} />
-                </TouchableOpacity>
+                </Pressable>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#fd5620', top: 5 }}>
                   TEATROS
                 </Text>
               </View>
               <View style={{ justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                <TouchableOpacity 
+                <Pressable 
                   style={{
                     backgroundColor: '#a5f866',
                     width: 100,
@@ -85,13 +85,13 @@ export default function UsuarioHome({ navigation }) {
                   <Image
                   style={{ width: 90, height: 80 }}
                   source={require('../../../../../assets/img/Home/parque_img.png')}/>                  
-                </TouchableOpacity>
+                </Pressable>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#6d9eaf', top: 5 }}>
                   PARQUES
                 </Text>
               </View>
               <View style={{ justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                <TouchableOpacity 
+                <Pressable 
                   style={{
                     backgroundColor: '#6d9eaf',
                     width: 100,
@@ -104,7 +104,7 @@ export default function UsuarioHome({ navigation }) {
                   <Image
                   style={{ width: 80, height: 70 }}
                   source={require('../../../../../assets/img/Home/museu_img.png')}/>
-                </TouchableOpacity>
+                </Pressable>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#e6aeb2', top: 5 }}>
                   MUSEUS
                 </Text>
