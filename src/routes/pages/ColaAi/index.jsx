@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import { View, Text, Pressable, StyleSheet, Image, TextInput, Modal } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Image, TextInput, Modal, StatusBar, ScrollView } from 'react-native';
 import * as Animado from 'react-native-animatable';
 import NavBar from '../../../../src/Components/NavBar/navbar';
 import DropDownPicker from 'react-native-dropdown-picker';
 import * as ImagePicker from 'expo-image-picker';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const ColaAi = () => {
+const ColaAi = ({navigation}) => {
 
   const [selectedValue, setSelectedValue] = useState(null);
   const [image, setImage] = useState(null);
@@ -31,7 +31,8 @@ const ColaAi = () => {
 
   return (
       <View style={styles.container}>
-        
+        <ScrollView>
+        <StatusBar/>
         <View style={styles.voltar}>
           <Pressable onPress={() => navigation.navigate('Configuracoes')}>
           <AntDesign name='arrowleft' color={'grey'} size={40}></AntDesign>
@@ -44,67 +45,68 @@ const ColaAi = () => {
         </View>
 
         <View style={styles.formulario}>
-          <Text style={styles.texto}>Nome</Text>
-          <TextInput placeholder='Nome do usuário' placeholderTextColor={'grey'} style={styles.input}></TextInput>
 
-          <Text style={styles.texto}>Email</Text>
-          <TextInput placeholder='Email do usuário' placeholderTextColor={'grey'} style={styles.input}></TextInput>
+            <Text style={styles.texto}>Nome</Text>
+            <TextInput placeholder='Nome do usuário' placeholderTextColor={'grey'} style={styles.input}></TextInput>
 
-          <Text style={styles.texto}>Motivo do Contato</Text>
-          <DropDownPicker
-          items={[
-            { label: 'Suporte técnico', value: 'Suporte técnico' },
-            { label: 'Denúncia', value: 'Denúncia' },
-            { label: 'Outros', value: 'Outros' },
-          ]}
-          defaultValue={selectedValue}
-          dropDownStyle={{ backgroundColor: 'grey' }}
-          onChangeItem={item => setSelectedValue(item.value)}
-          style={{borderWidth: 2, borderColor: 'grey'}}
-          placeholder='Selecionar'
-          open={openMotivo}
-          setOpen={setOpenMotivo}
-          value={value}
-          textStyle={{color: 'grey'}}
-          />
+            <Text style={styles.texto}>Email</Text>
+            <TextInput placeholder='Email do usuário' placeholderTextColor={'grey'} style={styles.input}></TextInput>
 
-          <Text style={styles.texto}>Descrição</Text>
-          <TextInput placeholder='Descreva o motivo do seu contato' placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
+            <Text style={styles.texto}>Motivo do contato</Text>
+            <DropDownPicker
+            items={[
+              { label: 'Suporte técnico', value: 'Suporte técnico' },
+              { label: 'Denúncia', value: 'Denúncia' },
+              { label: 'Outros', value: 'Outros' },
+            ]}
+            defaultValue={selectedValue}
+            dropDownStyle={{ backgroundColor: 'grey' }}
+            onChangeItem={item => setSelectedValue(item.value)}
+            style={{borderWidth: 2, borderColor: 'grey'}}
+            placeholder='Selecionar'
+            open={openMotivo}
+            setOpen={setOpenMotivo}
+            value={value}
+            textStyle={{color: 'grey'}}
+            />
 
-          <Text style={styles.texto}>Categoria da denuncia</Text>
-          <DropDownPicker
-          items={[
-            { label: 'Organização', value: 'Suporte técnico' },
-            { label: 'Publicação', value: 'Publicação' },
-            { label: 'Evento', value: 'Evento' },
-            { label: 'Outros', value: 'Outros' },
-          ]}
-          defaultValue={selectedValue}
-          dropDownStyle={{ backgroundColor: 'grey' }}
-          onChangeItem={item => setSelectedValue(item.value)}
-          style={{borderWidth: 2, borderColor: 'grey'}}
-          placeholder='Selecionar'
-          open={openCategoria}
-          setOpen={setOpenCategoria}
-          value={value}
-          textStyle={{color: 'grey'}}
-          />
+            <Text style={styles.texto}>Descrição</Text>
+            <TextInput placeholder='Descreva o motivo do seu contato' placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
 
-          <Text style={styles.texto}>Inserir imagem</Text>
+            <Text style={styles.texto}>Categoria da denúncia</Text>
+            <DropDownPicker
+            items={[
+              { label: 'Organização', value: 'Suporte técnico' },
+              { label: 'Publicação', value: 'Publicação' },
+              { label: 'Evento', value: 'Evento' },
+              { label: 'Outros', value: 'Outros' },
+            ]}
+            defaultValue={selectedValue}
+            dropDownStyle={{ backgroundColor: 'grey' }}
+            onChangeItem={item => setSelectedValue(item.value)}
+            style={{borderWidth: 2, borderColor: 'grey'}}
+            placeholder='Selecionar'
+            open={openCategoria}
+            setOpen={setOpenCategoria}
+            value={value}
+            textStyle={{color: 'grey'}}
+            />
 
-          <Pressable onPress={() => setModalVisible(true)}>
-            <View style={styles.input2}>
-              <Text style={styles.texto}>Carregar imagem</Text>
-              <Text style={styles.texto}>+</Text>
-            </View>
-          </Pressable>
+            <Text style={styles.texto}>Inserir imagem</Text>
 
-          <Text style={{color: '#6d9eaf', marginBottom: 10}}>As imagens serão reservadas e sem fins lucrativas, serão apenas para auxílio na resolução dos problemas.</Text>
+            <Pressable onPress={() => setModalVisible(true)}>
+              <View style={styles.input2}>
+                <Text style={styles.texto}>Carregar imagem</Text>
+                <Text style={styles.texto}>+</Text>
+              </View>
+            </Pressable>
 
-          <Pressable style={styles.enviar}>
-            <Text style={{color: '#6d9eaf'}}>Enviar</Text>
-          </Pressable>
-          
+            <Text style={{color: '#6d9eaf', marginBottom: 10}}>As imagens serão reservadas e sem fins lucrativas, serão apenas para auxílio na resolução dos problemas.</Text>
+
+            <Pressable style={styles.enviar}>
+              <Text style={{color: '#6d9eaf'}}>Enviar</Text>
+            </Pressable>
+
           <Modal animationType="fade" transparent={true} visible={modalVisible}>
             <View style={styles.fundoModal}>
               <View style={styles.conteudoModal}>
@@ -126,6 +128,7 @@ const ColaAi = () => {
           </Modal>
 
         </View>
+        </ScrollView>
         <NavBar/>
       </View> 
   );
@@ -136,6 +139,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: 'white',
+      flex: 1
     },
     titulo: {
       fontSize: 40,
@@ -143,7 +147,7 @@ const styles = StyleSheet.create({
       color: 'grey'
     },
     texto: {
-      fontSize: 20,
+      fontSize: 25,
       color: 'grey',
       marginBottom: 3,
       fontWeight: 'bold'
@@ -154,14 +158,15 @@ const styles = StyleSheet.create({
       marginBottom: 3,
     },
     contato: {
-      backgroundColor: 'red',
       paddingHorizontal: 10,
-      marginBottom: 15
+      marginBottom: 15,
+      flex: 1
     },
     formulario: {
-      backgroundColor: 'blue',
       width: '100%',
       paddingHorizontal: 10,
+      flex: 2,
+      marginBottom: 3
     },
     input: {
       marginBottom: 10,
@@ -182,7 +187,8 @@ const styles = StyleSheet.create({
       borderWidth: 2,
       borderRadius: 7,
       height: 200,
-      borderColor: 'grey'
+      borderColor: 'grey',
+      paddingHorizontal: 2
     },
     image: {
       width: 200,
@@ -231,6 +237,7 @@ const styles = StyleSheet.create({
       alignItems: 'flex-start',
       justifyContent: 'center',
       paddingHorizontal: 10,
+      flex: 0.25,
     }
   });
 
