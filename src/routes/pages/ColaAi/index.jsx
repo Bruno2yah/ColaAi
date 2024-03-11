@@ -1,3 +1,6 @@
+//Página de contato
+
+
 import React, {useState} from 'react';
 import { View, Text, Pressable, StyleSheet, Image, TextInput, Modal, StatusBar, ScrollView } from 'react-native';
 import * as Animado from 'react-native-animatable';
@@ -102,10 +105,12 @@ const ColaAi = ({navigation}) => {
             </Pressable>
 
             <Text style={{color: '#6d9eaf', marginBottom: 10}}>As imagens serão reservadas e sem fins lucrativas, serão apenas para auxílio na resolução dos problemas.</Text>
-
+            
+            <View style={{alignItems: 'flex-end'}}>
             <Pressable style={styles.enviar}>
               <Text style={{color: '#6d9eaf'}}>Enviar</Text>
             </Pressable>
+            </View>
 
           <Modal animationType="fade" transparent={true} visible={modalVisible}>
             <View style={styles.fundoModal}>
@@ -226,7 +231,7 @@ const styles = StyleSheet.create({
     },
     enviar: {
       height: 40,
-      width: 60,
+      width: 120,
       backgroundColor: '#e6aeb2',
       borderRadius: 10,
       justifyContent: 'center',
