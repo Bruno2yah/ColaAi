@@ -4,8 +4,9 @@ import * as Animado from 'react-native-animatable';
 import NavBar from '../../../../src/Components/NavBar/navbar';
 import DropDownPicker from 'react-native-dropdown-picker';
 import * as ImagePicker from 'expo-image-picker';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const ColaAi = ({}) => {
+const ColaAi = () => {
 
   const [selectedValue, setSelectedValue] = useState(null);
   const [image, setImage] = useState(null);
@@ -30,10 +31,16 @@ const ColaAi = ({}) => {
 
   return (
       <View style={styles.container}>
+        
+        <View style={styles.voltar}>
+          <Pressable onPress={() => navigation.navigate('Configuracoes')}>
+          <AntDesign name='arrowleft' color={'grey'} size={40}></AntDesign>
+          </Pressable>
+        </View>
 
         <View style={styles.contato}>
           <Text style={styles.titulo}>Contato</Text>
-          <Text style={styles.texto}>Entre em contato com a nossa equipe de colaboradores e seja atendido por profissionais capacitados e interessados para oferecer a melhor vivência no Cola Aí</Text>
+          <Text style={styles.texto2}>Entre em contato com a nossa equipe de colaboradores e seja atendido por profissionais capacitados e interessados para oferecer a melhor vivência no Cola Aí</Text>
         </View>
 
         <View style={styles.formulario}>
@@ -126,11 +133,9 @@ const ColaAi = ({}) => {
 // Estilos
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: 'white',
-      padding: 20
     },
     titulo: {
       fontSize: 40,
@@ -140,18 +145,23 @@ const styles = StyleSheet.create({
     texto: {
       fontSize: 20,
       color: 'grey',
-      marginBottom: 3
+      marginBottom: 3,
+      fontWeight: 'bold'
+    },
+    texto2: {
+      fontSize: 20,
+      color: 'grey',
+      marginBottom: 3,
     },
     contato: {
-      flex: 0.5,
-      height: '70%',
-      marginBottom: 10,
-      marginTop: 20
+      backgroundColor: 'red',
+      paddingHorizontal: 10,
+      marginBottom: 15
     },
     formulario: {
-      flex: 1,
-      justifyContent: 'flex-start',
-      width: '80%'
+      backgroundColor: 'blue',
+      width: '100%',
+      paddingHorizontal: 10,
     },
     input: {
       marginBottom: 10,
@@ -210,11 +220,17 @@ const styles = StyleSheet.create({
     },
     enviar: {
       height: 40,
-      width: '20%',
+      width: 60,
       backgroundColor: '#e6aeb2',
       borderRadius: 10,
       justifyContent: 'center',
       alignItems: 'center'
+    },
+    voltar: {
+      width: '100%',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      paddingHorizontal: 10,
     }
   });
 
