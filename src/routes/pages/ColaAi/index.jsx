@@ -32,6 +32,19 @@ const ColaAi = ({navigation}) => {
   const [openMotivo, setOpenMotivo] = useState(false);
   const [value, setValue] = useState(null);
 
+  const [itemsMotivo, setItemsMotivo] = useState([
+    { label: 'Suporte técnico', value: 'Suporte técnico' },
+    { label: 'Denúncia', value: 'Denúncia' },
+    { label: 'Outros', value: 'OutrosMotivo' },
+  ]);
+
+  const [itemsCategoria, setItemsCategoria] = useState([
+    { label: 'Organização', value: 'Organização' },
+    { label: 'Publicação', value: 'Publicação' },
+    { label: 'Evento', value: 'Evento' },
+    { label: 'Outros', value: 'OutrosCategoria' },
+  ]);
+
   return (
       <View style={styles.container}>
         <ScrollView>
@@ -44,7 +57,7 @@ const ColaAi = ({navigation}) => {
 
         <View style={styles.contato}>
           <Text style={styles.titulo}>Contato</Text>
-          <Text style={styles.texto2}>Entre em contato com a nossa equipe de colaboradores e seja atendido por profissionais capacitados e interessados para oferecer a melhor vivência no Cola Aí</Text>
+          <Text style={styles.texto2}>Entre em contato com a nossa equipe de colaboradores e seja atendido por profissionais capacitados e interessados para oferecer a melhor vivência no Cola Aí.</Text>
         </View>
 
         <View style={styles.formulario}>
@@ -57,20 +70,18 @@ const ColaAi = ({navigation}) => {
 
             <Text style={styles.texto}>Motivo do contato</Text>
             <DropDownPicker
-            items={[
-              { label: 'Suporte técnico', value: 'Suporte técnico' },
-              { label: 'Denúncia', value: 'Denúncia' },
-              { label: 'Outros', value: 'Outros' },
-            ]}
             defaultValue={selectedValue}
             dropDownStyle={{ backgroundColor: 'grey' }}
-            onChangeItem={item => setSelectedValue(item.value)}
+            onChangeItem={itemsMotivo => setSelectedValue(itemsMotivo.value)}
             style={{borderWidth: 2, borderColor: 'grey'}}
             placeholder='Selecionar'
             open={openMotivo}
             setOpen={setOpenMotivo}
             value={value}
+            items={itemsMotivo}
+            setItems={setItemsMotivo}
             textStyle={{color: 'grey'}}
+            setValue={setValue}
             />
 
             <Text style={styles.texto}>Descrição</Text>
@@ -78,21 +89,18 @@ const ColaAi = ({navigation}) => {
 
             <Text style={styles.texto}>Categoria da denúncia</Text>
             <DropDownPicker
-            items={[
-              { label: 'Organização', value: 'Suporte técnico' },
-              { label: 'Publicação', value: 'Publicação' },
-              { label: 'Evento', value: 'Evento' },
-              { label: 'Outros', value: 'Outros' },
-            ]}
             defaultValue={selectedValue}
             dropDownStyle={{ backgroundColor: 'grey' }}
-            onChangeItem={item => setSelectedValue(item.value)}
+            onChangeItem={itemsCategoria => setSelectedValue(itemsCategoria.value)}
             style={{borderWidth: 2, borderColor: 'grey'}}
             placeholder='Selecionar'
             open={openCategoria}
             setOpen={setOpenCategoria}
             value={value}
+            items={itemsCategoria}
+            setItems={setItemsCategoria}
             textStyle={{color: 'grey'}}
+            setValue={setValue}
             />
 
             <Text style={styles.texto}>Inserir imagem</Text>
