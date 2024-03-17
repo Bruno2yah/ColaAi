@@ -1,27 +1,39 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 const CodigoDeAcessoTelefone = ({ navigation }) => {
-    return (
+  return (
     <View style={styles.container}>
-      <Animado.Text style={styles.title} animation="fadeInRight" duration={1500}>Adicione o código de acesso</Animado.Text>
-      <Animado.Text style={styles.description} animation="fadeInRight" duration={1500}>
-       Será enviado na sua caixa de mensagens um {'\n'}SMS com um código de acesso para garantir{'\n'}um login seguro.
-      </Animado.Text>
-      <Animado.View style={styles.inputContainer} animation="zoomIn" delay={500}>
-        <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
-        <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1}/>
-        <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1}/>
-        <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1}/>
-        <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1}/>
-      </Animado.View>
-      <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
-        <Text style={styles.codigo}>Reenviar código</Text>
-        <TouchableOpacity style={styles.button2}>
-          <Text style={styles.buttonText2}>Enviar</Text>
-        </TouchableOpacity>
-      </Animado.View>
+        <ImageBackground
+          source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+          style={styles.superiorDireito}
+        />
+      <View style={styles.contentContainer}>
+        <Animado.View style={styles.text}>
+          <Animado.Text style={styles.title} animation="fadeInRight" duration={1500}>Adicione o  {'\n'}código de acesso</Animado.Text>
+          <Animado.Text style={styles.description} animation="fadeInRight" duration={1500}>
+            Será enviado no seu e-mail um código de {'\n'}acesso para garantir um login seguro.
+          </Animado.Text>
+        </Animado.View>
+        <Animado.View style={styles.inputContainer} animation="zoomIn" delay={500}>
+          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
+        </Animado.View>
+        <Animado.Text style={styles.esqueci} animation="fadeInRight" delay={1000}>Reenviar código</Animado.Text>
+        <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
+          <TouchableOpacity style={styles.button2}>
+            <Text style={styles.buttonText2} >Enviar</Text>
+          </TouchableOpacity>
+        </Animado.View>
+      </View>
+        <ImageBackground
+          style={styles.inferiorDireito}
+          source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+        />
     </View>
   );
 };
@@ -30,15 +42,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'flex-start',
+    alignItems: 'center', // Center content horizontally
     backgroundColor: 'white',
     height: '100%',
     width: '100%',
     padding: 10,
-    
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    bottom:80
+  },
+  text:{
+    width: '100%',
+    alignItems: "flex-start",
+    right: -20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 36,
     fontWeight: 'bold',
     width: '80%',
     textAlign: 'left',
@@ -60,38 +83,54 @@ const styles = StyleSheet.create({
     marginTop: 5,
     borderRadius: 10,
     width: 170,
+    right: 20,
     height: 50,
   },
   buttonColumn: {
-    width: 330,
-    height: 50,
-    alignItems: 'flex-end',
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'flex-end',
+    marginTop: 10,
   },
   inputContainer: {
-    flexDirection: 'row', // Align inputs horizontally
+    flexDirection: 'row',
     marginBottom: 20,
   },
   inputCode: {
     borderWidth: 1,
     borderRadius: 5,
     borderBottomColor: '#aaa',
-    fontSize: 28, // Aumente o tamanho do número dentro do input
+    fontSize: 28,
     marginRight: 10,
     width: '15%',
     height: 70,
-    textAlign: 'center', // Centralize o texto dentro do input
+    textAlign: 'center',
     keyboardType: 'numeric',
   },
-  codigo: {
-    width: "100%",
+  esqueci: {
+    width: 300,
     height: 50,
-    alignItems: 'flex-start',  
+    alignItems: "flex-start",
     fontSize: 16,
     color: 'blue',
     marginTop: 10,
   },
-  
+  inferiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 50,
+    right: 0,
+    width: 200,
+    height: 200,
+  },
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: 0,
+    right: -10,
+    width: 140,
+    height: 140,
+  },
 });
 
 export default CodigoDeAcessoTelefone;
-

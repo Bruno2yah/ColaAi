@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollView, StatusBar, StyleSheet, Text, View, ImageBackground, Image, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import NavBar from '../../../../Components/NavBar/navbar';
 
 export default function Perfil() {
   const navigation = useNavigation();
@@ -21,7 +22,7 @@ export default function Perfil() {
         />
       </Pressable>
       <View style={styles.capaPerfilBox}>
-      <ImageBackground source={require('../../../../../assets/img/User/user.png')} resizeMode="cover" style={styles.imageCapa}>
+      <ImageBackground source={require('../../../../../assets/img/User/capa.png')} resizeMode="cover" style={styles.imageCapa}>
       </ImageBackground>
 
       </View>
@@ -44,7 +45,7 @@ export default function Perfil() {
           <View style={styles.dadoPessoal}>
             <View>
               <Image
-                style={{ width: 20, height: 20 }}
+                style={{ width: 30, height: 30 }}
                 source={require('../../../../../assets/img/User/profile-user.png')}
               />
             </View>
@@ -54,6 +55,7 @@ export default function Perfil() {
           </View>
         </View>
       )}
+    
     </ScrollView>
   );
 }
@@ -109,5 +111,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     width:'100%'
-  }
+  },
 });

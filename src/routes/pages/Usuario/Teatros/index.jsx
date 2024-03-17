@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, Image, ScrollView, Pressable } from 'react-native';
 
 import styles from '../../../../Components/Styles/Categorias/CategoriasStyle';
 
@@ -58,7 +58,7 @@ export default function Teatros({ navigation }) {
               </Text>
               <View style = {{flexDirection:'row', height: 75}}>
                 <Image
-                    style={{ height: 30, width: 20, marginLeft: 10 }}
+                    style={{ height: 30, width: 20, marginLeft: 5 }}
                     source={require('../../../../../assets/img/Teatros/Point.png')}
                 />
                 <Text
@@ -66,19 +66,18 @@ export default function Teatros({ navigation }) {
                     fontSize: 20,
                     textAlign: 'center',
                     color: '#A6A6A6',
-                    marginRight: 20
                     }}
                 >
                   Av. Paulista, 900 - Bela Vista, 
                   São Paulo - Sp, 01310-100
                 </Text>
               </View>
-              <TouchableOpacity
+              <Pressable
                 style={styles.button}
-                onPress={() => navigation.navigate('Evento')}
+                onPress={() => navigation.navigate('HomeUsuario')}
               >
                 <Text style={styles.buttonText}>Saber mais</Text>
-              </TouchableOpacity>
+              </Pressable>
             </View>
           </View>
 
@@ -108,12 +107,12 @@ export default function Teatros({ navigation }) {
                   São Paulo - Sp, 01310-100
                 </Text>
               </View>
-              <TouchableOpacity
+              <Pressable
                 style={styles.button}
-                onPress={() => navigation.navigate('Evento')}
+                onPress={() => navigation.navigate('HomeUsuario')}
               >
                 <Text style={styles.buttonText}>Saber mais</Text>
-              </TouchableOpacity>
+              </Pressable>
             </View>
           </View>
         </View>

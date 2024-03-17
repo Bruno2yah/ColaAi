@@ -1,19 +1,29 @@
 import React from 'react';
-import { View, Text,  TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 export default function Cadastro({ navigation }){
   return (
     <View style={styles.container}>
-        <View style={styles.container}>
-          <Animado.Text style={styles.title} animation="bounceInDown" duration={1500}>Vamos começar o seu cadastro?</Animado.Text>
-          <Animado.Text style={styles.description} animation="bounceInUp" delay={700} duration={1500}>Ao clicar em Cadastre-se, você aceita o Contrato do Usuário, a Política de Privacidade e a Política de Cookies do Cola Aí.</Animado.Text>
-          <Animado.View style={styles.buttonColumn} animation="flipInY" duration={2000} delay={1000}>
+          <ImageBackground
+            source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+            style={styles.superiorDireito}
+          />
+        <View style={styles.contentContainer}>
+        <View style={styles.text}>
+          <Animado.Text style={styles.title} animation="fadeInRight" duration={1500}>Vamos começar o {'\n'}seu cadastro?</Animado.Text>
+          <Animado.Text style={styles.description} animation="fadeInRight" delay={700} duration={1500}>Ao clicar em Cadastre-se, você aceita {'\n'} o Contrato do Usuário, a Política de {'\n'} Privacidade e a Política de Cookies do {'\n'} Cola Aí.</Animado.Text>
+        </View>
+          <Animado.View style={styles.buttonColumn} animation="fadeInRight" duration={2000} delay={1000}>
           <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('Nome')}>
             <Text style={styles.buttonText2}>Cadastre-se</Text>
           </TouchableOpacity>
           </Animado.View>
         </View>
+        <ImageBackground
+        style={styles.inferiorDireito}
+        source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+      />
     </View>
   );
 }
@@ -28,8 +38,20 @@ const styles = StyleSheet.create({
     padding: 10,
     
   },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    bottom:80
+  },
+  text:{
+    width: '100%',
+    alignItems: "flex-start",
+    right: -20,
+  },
   title: {
-    fontSize: 24,
+    fontSize: 34,
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "left",
@@ -71,6 +93,22 @@ const styles = StyleSheet.create({
     width:'100%',
     height: 50,
     alignItems:"flex-end"
+  },
+  inferiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 50,
+    right: 0,
+    width: 200,
+    height: 200,
+  },
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: 0,
+    right: -10,
+    width: 140,
+    height: 140,
   },
 
   });

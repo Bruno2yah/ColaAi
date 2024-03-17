@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, Image, ScrollView, Pressable } from 'react-native';
 
 import styles from '../../../../Components/Styles/Categorias/CategoriasStyle';
 
@@ -56,29 +56,28 @@ export default function Museus({ navigation }) {
               <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#A6A6A6',textAlign: 'center', }}>
                 MUSEU CATAVENTO
               </Text>
-              <View style = {{flexDirection:'row', height: 75}}>
+              <View style = {{flexDirection:'row', height: 78}}>
                 <Image
-                    style={{ height: 30, width: 20, marginLeft: 10 }}
+                    style={{ height: 30, width: 22, marginLeft: 5}}
                     source={require('../../../../../assets/img/Museus/Point.png')}
                 />
                 <Text
                     style={{
-                    fontSize: 20,
+                    fontSize: 19,
                     textAlign: 'center',
                     color: '#A6A6A6',
-                    marginRight: 20
                     }}
                 >
                   Avenida Mercúrio, Parque Dom Pedro II,
                   s/n, São Paulo - SP, 03003-060
                 </Text>
               </View>
-              <TouchableOpacity
+              <Pressable
                 style={styles.button}
-                onPress={() => navigation.navigate('Evento')}
+                onPress={() => navigation.navigate('HomeUsuario')}
               >
                 <Text style={styles.buttonText}>Saber mais</Text>
-              </TouchableOpacity>
+              </Pressable>
             </View>
           </View>
         </View>

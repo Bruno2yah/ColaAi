@@ -1,6 +1,6 @@
 // LoginTelefone.jsx
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 export default function LoginTelefone({ navigation }) {
@@ -18,10 +18,14 @@ export default function LoginTelefone({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
-        <Animado.Text style={styles.title} animation="fadeInRight" duration={1500}>Entrar com número de telefone</Animado.Text>
+      <ImageBackground
+        source={require('../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+        style={styles.superiorDireito}
+      />
+      <View style={styles.contentContainer}>
+        <Animado.Text style={styles.title} animation="fadeInRight" duration={1500}>Entrar com número {'\n'}de telefone</Animado.Text>
         <Animado.Text style={styles.description} animation="fadeInRight" duration={1500}>
-          Digite o seu número de telefone {'\n'}já utilizado em uma conta existente
+          Digite o seu número de telefone já utilizado em {'\n'}uma conta existente
         </Animado.Text>
         <TextInput
           style={styles.input}
@@ -37,6 +41,10 @@ export default function LoginTelefone({ navigation }) {
           </TouchableOpacity>
         </Animado.View>
       </View>
+      <ImageBackground
+        style={styles.inferiorDireito}
+        source={require('../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+      />
     </View>
   );
 }
@@ -45,38 +53,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems: "center",  
     backgroundColor: "white",
     padding: 10,
-
-    
+  },
+  contentContainer: {
+    bottom: 80,
   },
   title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 10,
-    width:"80%",
-    textAlign:"left",
-
+    fontSize: 30,
+    fontWeight: 'bold',
+    width: '80%',
+    textAlign: 'left',
   },
   description: {
     marginBottom: 20,
-    width:"100%",
-    textAlign:"left",
+    width: '100%',
+    textAlign: 'left',
     fontSize: 16,
-  },
-  buttonText1: {
-    fontSize: 22,
-    color: '#FABDC1',
-    textAlign: 'center',
-  },
-  button1: {
-    backgroundColor: '#6D9EAF',
-    padding: 10,
-    margin: 10,
-    borderRadius: 10,
-    width: 300,
-    height: 50,
   },
   buttonText2: {
     fontSize: 22,
@@ -92,17 +86,9 @@ const styles = StyleSheet.create({
     height: 50,
   },
   buttonColumn: {
-    width:330,
+    width: 330,
     height: 50,
-    alignItems:"flex-end"
-  },
-  inputContainer: {
-    width: '90%',
-    marginTop: 20,
-  },
-  label: {
-    color: '#666',
-    marginTop: 10,
+    alignItems: 'flex-end', 
   },
   input: {
     borderBottomWidth: 1,
@@ -112,14 +98,20 @@ const styles = StyleSheet.create({
     width: 320,
     height: 50,
   },
-  esqueci:{
-    width:300,
-    height: 50,
-    alignItems:"flex-start",
+  inferiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    bottom: 50,
+    right: 0,
+    width: 200,
+    height: 200,
   },
-  linkText: {
-    fontSize: 16,
-    color: 'blue',
-    marginTop: 10,
+  superiorDireito: {
+    position: 'absolute',
+    resizeMode: 'contain',
+    top: -10,
+    right: -20,
+    width: 140,
+    height: 140,
   },
-  });
+});

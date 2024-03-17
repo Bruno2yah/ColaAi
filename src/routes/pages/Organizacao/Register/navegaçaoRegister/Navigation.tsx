@@ -15,6 +15,7 @@ import Home from '../../Home';
 import Foto from '../Etapas/SegundaEtapa/Foto';
 import Banner from '../Etapas/SegundaEtapa/Banner';
 import Descricao from '../Etapas/SegundaEtapa/Descricao';
+import Link from '../Etapas/SegundaEtapa/Link';
 import TelaFinal2 from '../Etapas/SegundaEtapa/Telafinal2';
 const Stack = createStackNavigator();
 
@@ -34,6 +35,7 @@ export default function Navigation() {
         <Stack.Screen name="Foto" component={Foto}  options={{ headerShown: false }} />
         <Stack.Screen name="Banner" component={Banner}  options={{ headerShown: false }} />
         <Stack.Screen name="Descricao" component={Descricao}  options={{ headerShown: false }} />
+        <Stack.Screen name="Link" component={Link}  options={{ headerShown: false }} />
         <Stack.Screen name="TelaFinal2" component={TelaFinal2}  options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>

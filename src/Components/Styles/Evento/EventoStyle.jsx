@@ -66,15 +66,17 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center',
         flexDirection:'row',
-        marginLeft: 6,
-        marginRight: 6
+        marginLeft: 10,
+        marginRight: 10,
+        width: '40%',
     },
     InfosText:
     {
-        fontSize: 16,
+        fontSize: 13,
         textAlign: 'center',
         color: '#A6A6A6',
         textAlign: 'justify',
+        marginLeft: 5,
     },
     InfosRows:
     {

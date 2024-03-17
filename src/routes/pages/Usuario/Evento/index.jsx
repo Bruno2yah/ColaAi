@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, Image, ScrollView, Pressable } from 'react-native';
 
 import styles from '../../../../Components/Styles/Evento/EventoStyle';
 
@@ -49,13 +49,14 @@ export default function Eventos({ navigation }) {
         </View>
 
         <View style={styles.EventoArea}>
-          <View style={{
+          <Pressable style={{
               width: '90%',
               alignSelf: 'center',
               alignItems: 'center',
               flexDirection:'row',
               paddingBottom: 5
-          }}>
+          }}
+          onPress={() => navigation.navigate('PerfilOrganizacao')}>
               <View style={{
               width: 35,
               height: 35,
@@ -73,7 +74,7 @@ export default function Eventos({ navigation }) {
               <Text style={{ fontSize: 20, color: '#6D9EAF',textAlign: 'justify', paddingLeft: 10}}>
                   Organização Eventos
               </Text>
-          </View>
+          </Pressable>
           
           <Image
             style={styles.Foto}
@@ -113,66 +114,44 @@ export default function Eventos({ navigation }) {
 
             <View style = {styles.InfosArea}>
               <View style = {styles.InfosRows}>
-                <View style = {styles.Infos}>
+                    <View style = {styles.Infos}>
+                        <Image
+                        style={{ height: 26, width: 25 }}
+                        source={require('../../../../../assets/img/Programação Cultural/classificacao.png')}
+                        />
+                        <Text style = {styles.InfosText}>
+                        Faixa etária: +6
+                        </Text>
+                    </View>
+                    <View style = {styles.Infos}>
                     <Image
-                      style={{ height: 30, width: 20 }}
-                      source={require('../../../../../assets/img/Evento/pessoas.png')}
+                        style={{ height: 26, width: 26 }}
+                        source={require('../../../../../assets/img/Programação Cultural/valor.png')}
                     />
                     <Text style = {styles.InfosText}>
-                      Classificação: livre
+                        Valor: Gratuito
                     </Text>
-                </View>
-                <View style = {styles.Infos}>
-                  <Image
-                    style={{ height: 25, width: 25 }}
-                    source={require('../../../../../assets/img/Evento/relogio.png')}
-                  />
-                  <Text style = {styles.InfosText}>
-                    Duração: 01h30
-                  </Text>
-                </View>
+                    </View>
               </View>
               <View style = {styles.InfosRows}>
-                <View style = {styles.Infos}>
+                  <View style = {styles.Infos}>
+                      <Image
+                      style={{ height: 27, width: 26 }}
+                      source={require('../../../../../assets/img/Programação Cultural/point.png')}
+                      />
+                      <Text style = {styles.InfosText}>
+                          Local: Teatro São Paulo/SP
+                      </Text>
+                  </View>
+                  <View style = {styles.Infos}>
                   <Image
-                    style={{ height: 25, width: 25 }}
-                    source={require('../../../../../assets/img/Evento/relogio.png')}
+                      style={{ height: 26, width: 26 }}
+                      source={require('../../../../../assets/img/Programação Cultural/relogio.png')}
                   />
                   <Text style = {styles.InfosText}>
-                    Sáb. 15 de jan, 14:00 – 15:30
+                      Turno: Verspetino
                   </Text>
-                </View>
-              </View>
-              <View style = {styles.InfosRows}>
-                <View style = {styles.Infos}>
-                    <Image
-                      style={{ height: 28, width: 18 }}
-                      source={require('../../../../../assets/img/Evento/poltrona.png')}
-                    />
-                    <Text style = {styles.InfosText}>
-                      Lugares disponiveis
-                    </Text>
-                </View>
-                <View style = {styles.Infos}>
-                  <Image
-                    style={{ height: 23, width: 35 }}
-                    source={require('../../../../../assets/img/Evento/dinheiro.png')}
-                  />
-                  <Text style = {styles.InfosText}>
-                    Gratuito
-                  </Text>
-                </View>
-              </View>
-              <View style = {styles.InfosRows}>
-                <View style = {styles.Infos}>
-                  <Image
-                    style={{ height: 27, width: 19 }}
-                    source={require('../../../../../assets/img/Evento/lugar.png')}
-                  />
-                  <Text style = {styles.InfosText}>
-                    Teatro - São Paulo/SP
-                  </Text>
-                </View>
+                  </View>
               </View>
             </View>
             
@@ -188,12 +167,12 @@ export default function Eventos({ navigation }) {
               </Text>
             </View>
             
-            <TouchableOpacity
+            <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate('Usuario')}
+              onPress={() => navigation.navigate('HomeUsuario')}
             >
               <Text style={styles.buttonText}>Abrir</Text>
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </View>
       </ScrollView>

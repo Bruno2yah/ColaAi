@@ -20,7 +20,7 @@
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.73.2",
+    "react-native": "^0.73.4",
     "react-native-animatable": "^1.4.0",
     "react-native-gesture-handler": "~2.14.0",
     "react-native-maps": "^1.10.3",
@@ -28,7 +28,8 @@
     "react-native-shadow-2": "^7.0.8",
     "react-native-svg": "14.1.0",
     "react-native-vector-icons": "^10.0.3",
-    "react-native-web": "~0.19.6"
+    "react-native-web": "~0.19.6",
+    "react-native-svg": "14.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
