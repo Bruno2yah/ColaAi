@@ -50,7 +50,7 @@ export default function UsuarioHome({ navigation }) {
         </View>
         {/* Elementos */}
         <View style={styles.background}>
-          <Shadow distance={10} startColor={'#000'} sides={'top'} stretch={true} style={{borderTopLeftRadius:40, borderTopRightRadius:40,}}>
+          <Shadow distance={10} startColor={'#CCCCCC'} sides={'top'} stretch={true} style={{borderTopLeftRadius:40, borderTopRightRadius:40,}}>
           <View style={styles.buttonsArea}>
             <View style={styles.buttons}>
               <View style={{ justifyContent: 'center', alignItems: 'center', height: '100%',}}>
