@@ -26,13 +26,13 @@ export default function Eventos({ navigation }) {
           <View style={{ justifyContent: 'flex-end', height: '94%' }}>
             <View style={{ position: 'absolute', alignSelf: 'flex-start' }}>
               <Image
-                style={{ height: 200, width: 57, marginBottom: 40 }}
+                style={{ height: 120, width: 35, marginBottom: 40 }}
                 source={require('../../../../../assets/img/Evento/inferiorEsquerdo.png')}
               />
             </View>
             <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
               <Image
-                style={{ height: 170, width: 40, marginBottom: 80}}
+                style={{ height: 130, width: 44, marginBottom: 80}}
                 source={require('../../../../../assets/img/Evento/inferiorDireito.png')}
               />
             </View>
@@ -171,7 +171,21 @@ export default function Eventos({ navigation }) {
               style={styles.button}
               onPress={() => navigation.navigate('HomeUsuario')}
             >
-              <Text style={styles.buttonText}>Abrir</Text>
+              <Text style={styles.buttonText}>Registre interesse</Text>
+            </Pressable>
+            <Pressable 
+              style = {styles.InfosRows}
+              onPress={() => navigation.navigate('HomeUsuario')}>
+              <Text style = {{
+                fontSize: 12,
+                textAlign: 'center',
+                color: '#6F9BAB',
+                marginBottom: 10,
+                textAlign: 'center',
+                textDecorationLine: 'underline'
+              }}>
+                Clique para obter Informações detalhadas
+              </Text>
             </Pressable>
           </View>
         </View>

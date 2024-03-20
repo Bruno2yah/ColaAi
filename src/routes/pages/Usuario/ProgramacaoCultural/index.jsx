@@ -25,14 +25,14 @@ export default function ProgramacaoCultural({ navigation }) {
           <View style={{ justifyContent: 'flex-end', height: '94%' }}>
             <View style={{ position: 'absolute', alignSelf: 'flex-start' }}>
               <Image
-                style={{ height: 174, width: 159 }}
-                source={require('../../../../../assets/img/Teatros/inferiorEsquerdo.png')}
+                style={{ height: 130, width: 66, marginBottom: 25 }}
+                source={require('../../../../../assets/img/Programação Cultural/inferiorEsquerdo.png')}
               />
             </View>
             <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
               <Image
-                style={{ height: 135, width: 125 }}
-                source={require('../../../../../assets/img/Teatros/inferiorDireito.png')}
+                style={{ height: 100, width: 70, }}
+                source={require('../../../../../assets/img/Programação Cultural/inferiorDireito.png')}
               />
             </View>
           </View>
@@ -58,43 +58,43 @@ export default function ProgramacaoCultural({ navigation }) {
               <View style = {styles.InfosArea}>
                 <View style = {styles.InfosRows}>
                     <View style = {styles.Infos}>
-                        <Image
-                        style={{ height: 26, width: 25 }}
-                        source={require('../../../../../assets/img/Programação Cultural/classificacao.png')}
-                        />
-                        <Text style = {styles.InfosText}>
-                        Faixa etária: +6
-                        </Text>
+                      <Image
+                      style={{ height: 26, width: 25 }}
+                      source={require('../../../../../assets/img/Programação Cultural/classificacao.png')}
+                      />
+                      <Text style = {styles.InfosText}>
+                      Faixa etária: +6
+                      </Text>
                     </View>
                     <View style = {styles.Infos}>
-                    <Image
-                        style={{ height: 26, width: 26 }}
-                        source={require('../../../../../assets/img/Programação Cultural/valor.png')}
-                    />
-                    <Text style = {styles.InfosText}>
-                        Valor: Gratuito
-                    </Text>
+                      <Image
+                          style={{ height: 26, width: 26 }}
+                          source={require('../../../../../assets/img/Programação Cultural/valor.png')}
+                      />
+                      <Text style = {styles.InfosText}>
+                          Valor: Gratuito
+                      </Text>
                     </View>
                 </View>
                 <View style = {styles.InfosRows}>
-                    <View style = {styles.Infos}>
-                        <Image
-                        style={{ height: 27, width: 26 }}
-                        source={require('../../../../../assets/img/Programação Cultural/point.png')}
-                        />
-                        <Text style = {styles.InfosText}>
-                            Local: Teatro São Paulo/SP
-                        </Text>
-                    </View>
-                    <View style = {styles.Infos}>
+                  <View style = {styles.Infos}>
                     <Image
-                        style={{ height: 26, width: 26 }}
-                        source={require('../../../../../assets/img/Programação Cultural/relogio.png')}
+                    style={{ height: 27, width: 26 }}
+                    source={require('../../../../../assets/img/Programação Cultural/point.png')}
                     />
                     <Text style = {styles.InfosText}>
-                        Turno: Verspetino
+                        Local: Teatro São Paulo/SP
                     </Text>
-                    </View>
+                  </View>
+                  <View style = {styles.Infos}>
+                    <Image
+                      style={{ height: 26, width: 26 }}
+                      source={require('../../../../../assets/img/Programação Cultural/relogio.png')}
+                    />
+                    <Text style = {styles.InfosText}>
+                      Turno: Verspetino
+                    </Text>
+                  </View>
                 </View>
               </View>
               <Pressable

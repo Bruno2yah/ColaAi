@@ -12,13 +12,13 @@ export default function Teatros({ navigation }) {
           <View style={{ justifyContent: 'flex-start' }}>
             <View style={{ position: 'absolute', alignSelf: 'flex-start', }}>
               <Image
-                style={{ height: 152, width: 128 }}
+                style={{ height: 152, width: 129 }}
                 source={require('../../../../../assets/img/Teatros/superiorEsquerdo.png')}
               />
             </View>
             <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
               <Image
-                style={{ height: 150, width: 100 }}
+                style={{ height: 165, width: 100 }}
                 source={require('../../../../../assets/img/Teatros/superiorDireito.png')}
               />
             </View>
@@ -26,13 +26,13 @@ export default function Teatros({ navigation }) {
           <View style={{ justifyContent: 'flex-end', height: '94%' }}>
             <View style={{ position: 'absolute', alignSelf: 'flex-start' }}>
               <Image
-                style={{ height: 174, width: 159 }}
+                style={{ height: 124, width: 109 }}
                 source={require('../../../../../assets/img/Teatros/inferiorEsquerdo.png')}
               />
             </View>
             <View style={{ position: 'absolute', alignSelf: 'flex-end' }}>
               <Image
-                style={{ height: 135, width: 125 }}
+                style={{ height: 75, width: 70 }}
                 source={require('../../../../../assets/img/Teatros/inferiorDireito.png')}
               />
             </View>
@@ -63,9 +63,11 @@ export default function Teatros({ navigation }) {
                 />
                 <Text
                     style={{
-                    fontSize: 20,
-                    textAlign: 'center',
-                    color: '#A6A6A6',
+                      fontSize: 20,
+                      textAlign: 'justify',
+                      color: '#A6A6A6',
+                      paddingLeft: 5,
+                      paddingRight: 5
                     }}
                 >
                   Av. Paulista, 900 - Bela Vista, 

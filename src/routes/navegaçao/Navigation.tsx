@@ -27,12 +27,12 @@ export default function Navigation() {
         <Stack.Screen name="AcessoSemLogin" component={HomeUsuario} options={{ headerShown: false }}/> 
 
         <Stack.Screen name="HomeUsuario" component={HomeUsuario} options={{ headerShown: false }}/>
-        <Stack.Screen name="Teatros" component={Teatros} />
-        <Stack.Screen name="Museus" component={Museus} />
-        <Stack.Screen name="Parques" component={Parques} />
-        <Stack.Screen name="Evento" component={Evento} />
+        <Stack.Screen name="Teatros" component={Teatros} options={{ headerShown: false }}/>
+        <Stack.Screen name="Museus" component={Museus} options={{ headerShown: false }}/>
+        <Stack.Screen name="Parques" component={Parques} options={{ headerShown: false }}/>
+        <Stack.Screen name="Evento" component={Evento} options={{ headerShown: false }}/>
         <Stack.Screen name="Perfil" component={Perfil}  options={{ headerShown: false }}/>
-        <Stack.Screen name="PerfilOrganizacao" component={PerfilOrg} />
+        <Stack.Screen name="PerfilOrganizacao" component={PerfilOrg} options={{ headerShown: false }}/>
         <Stack.Screen name="ProgramacaoCultural" component={ProgramacaoCult} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
