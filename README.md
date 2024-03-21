@@ -10,6 +10,8 @@ npm i react-native-shadow-2 <br>
 expo install react-native-gesture-handler <br>
 npm install react-native-gesture-handler <br>
 npm install @react-native-community/slider --save <br>
+npm install react-native-maps <br>
+npx expo install expo-location <br>
 <br>
 Importar no app.tsx: import 'react-native-gesture-handler'; <br>
 
