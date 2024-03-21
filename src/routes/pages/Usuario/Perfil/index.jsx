@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import { ScrollView, StatusBar, StyleSheet, Text, View, ImageBackground, Image, Pressable } from 'react-native';
+import { ScrollView, StatusBar, Text, View, ImageBackground, Image, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import NavBar from '../../../../Components/NavBar/navbar';
 import styles from '../../../../Components/Styles/Perfil/perfilStyle';
+import ModalConfigPerfil from '../../../../Components/PerfilConfig/modalConfigPerfil';
 
 export default function Perfil() {
   const navigation = useNavigation();
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [modalConfigVisu, setModalConfigVisu] = useState(false);
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-  };
+  function configPerfilModal() {
+    if(modalConfigVisu == false)
+    {
+      setModalConfigVisu(true);
+    }
+    else{
+      setModalConfigVisu(false);
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -41,7 +48,7 @@ export default function Perfil() {
       <ScrollView>
         <StatusBar style="auto" />
         {/* Botão do menu hamburguer */}
-        <Pressable style={styles.menuButton} onPress={toggleDrawer}>
+        <Pressable style={styles.menuButton} onPress={configPerfilModal}>
           <Image
             style={{ width: 30, height: 30 }}
             source={require('../../../../../assets/img/User/menu.png')}
@@ -65,24 +72,8 @@ export default function Perfil() {
           </View>
         </View>
 
-        {/* Renderizar o menu hamburguer somente se estiver aberto */}
-        {isDrawerOpen && (
-          <View style={styles.drawerContainer}>
-            {/* Conteúdo do menu hamburguer aqui */}
-            <View><Text>Conta</Text></View>
-            <View style={styles.dadoPessoal}>
-              <View>
-                <Image
-                  style={{ width: 30, height: 30 }}
-                  source={require('../../../../../assets/img/User/profile-user.png')}
-                />
-              </View>
-              <View>
-                <Text>Dados Pessoais</Text>
-              </View>
-            </View>
-          </View>
-        )}
+        {/* Renderizar o ModalConfigPerfil apenas quando modalConfigVisu for verdadeiro */}
+        {modalConfigVisu && <ModalConfigPerfil closeModal={() => setModalConfigVisu(false)} />}
       
       </ScrollView>
       <NavBar />
