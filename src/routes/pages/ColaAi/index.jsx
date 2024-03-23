@@ -86,7 +86,7 @@ const ColaAi = ({navigation}) => {
             />
             
             <Text style={styles.texto}>Descrição</Text>
-            <TextInput placeholder='Descreva o motivo do seu contato' placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
+            <TextInput placeholder='Descreva o motivo do seu contato' multiline={true} numberOfLines={5} placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
 
             <Text style={styles.texto}>Categoria da denúncia</Text>
             <DropDownPicker
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
       borderWidth: 2,
       borderRadius: 7,
       borderColor: 'grey',
-      paddingHorizontal: 2,
+      paddingHorizontal: 4,
       color: 'grey'
     },
     image: {
