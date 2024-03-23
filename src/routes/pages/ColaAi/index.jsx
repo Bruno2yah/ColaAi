@@ -1,6 +1,5 @@
 //Página de contato
 
-
 import React, {useState} from 'react';
 import { View, Text, Pressable, StyleSheet, Image, TextInput, Modal, StatusBar, ScrollView } from 'react-native';
 import * as Animado from 'react-native-animatable';
@@ -30,7 +29,8 @@ const ColaAi = ({navigation}) => {
 
   const [openCategoria, setOpenCategoria] = useState(false);
   const [openMotivo, setOpenMotivo] = useState(false);
-  const [value, setValue] = useState(null);
+  const [valueMotivo, setValueMotivo] = useState(null);
+  const [valueCategoria, setValueCategoria] = useState(null);
   
   //Vetor com as opções do menu dropdown do motivo do contato
   const [itemsMotivo, setItemsMotivo] = useState([
@@ -73,36 +73,34 @@ const ColaAi = ({navigation}) => {
             <Text style={styles.texto}>Motivo do contato</Text>
             <DropDownPicker
             defaultValue={selectedValue}
-            dropDownStyle={{ backgroundColor: 'grey' }}
             onChangeItem={itemsMotivo => setSelectedValue(itemsMotivo.value)}
-            style={{borderWidth: 2, borderColor: 'grey'}}
+            style={{borderWidth: 2, borderColor: 'grey', }}
             placeholder='Selecionar'
             open={openMotivo}
             setOpen={setOpenMotivo}
-            value={value}
+            value={valueMotivo}
             items={itemsMotivo}
             setItems={setItemsMotivo}
             textStyle={{color: 'grey'}}
-            setValue={setValue}
+            setValue={setValueMotivo}
             />
-
+            
             <Text style={styles.texto}>Descrição</Text>
             <TextInput placeholder='Descreva o motivo do seu contato' placeholderTextColor={'grey'} style={styles.comentario}></TextInput>
 
             <Text style={styles.texto}>Categoria da denúncia</Text>
             <DropDownPicker
             defaultValue={selectedValue}
-            dropDownStyle={{ backgroundColor: 'grey' }}
             onChangeItem={itemsCategoria => setSelectedValue(itemsCategoria.value)}
             style={{borderWidth: 2, borderColor: 'grey'}}
             placeholder='Selecionar'
             open={openCategoria}
             setOpen={setOpenCategoria}
-            value={value}
+            value={valueCategoria}
             items={itemsCategoria}
             setItems={setItemsCategoria}
             textStyle={{color: 'grey'}}
-            setValue={setValue}
+            setValue={setValueCategoria}
             />
 
             <Text style={styles.texto}>Inserir imagem</Text>
@@ -127,10 +125,10 @@ const ColaAi = ({navigation}) => {
             
             <View style={{alignItems: 'flex-end'}}>
             <Pressable style={styles.enviar}>
-              <Text style={{color: '#6d9eaf'}}>Enviar</Text>
+              <Text style={{color: '#6d9eaf', fontSize: 20}}>Enviar</Text>
             </Pressable>
             </View>
-
+          
           <Modal animationType="fade" transparent={true} visible={modalVisible}>
             <View style={styles.fundoModal}>
               <View style={styles.conteudoModal}>
@@ -195,7 +193,8 @@ const styles = StyleSheet.create({
     input: {
       marginBottom: 10,
       borderBottomWidth: 2,
-      borderColor: 'grey'
+      borderColor: 'grey',
+      color: 'grey'
     },
     input2: {
       borderWidth: 2,
@@ -210,9 +209,9 @@ const styles = StyleSheet.create({
     comentario: {
       borderWidth: 2,
       borderRadius: 7,
-      height: 200,
       borderColor: 'grey',
-      paddingHorizontal: 2
+      paddingHorizontal: 2,
+      color: 'grey'
     },
     image: {
       width: 200,
