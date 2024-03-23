@@ -59,16 +59,18 @@ const styles = StyleSheet.create({
         height: 100,
         alignSelf: 'center',
         alignItems: 'center',
-        margin: 10
+        margin: 10,
+        
     },
     Infos:
     {
+        flex: 1,
         alignSelf: 'center',
         alignItems: 'center',
         flexDirection:'row',
         marginLeft: 10,
         marginRight: 10,
-        width: '40%',
+        width: '50%',
     },
     InfosText:
     {

@@ -30,13 +30,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#E6AEB2',
         margin: 10,
         borderRadius: 17,
-        width: 215,
+        width: 200,
         height: 60,
         alignItems: 'center',
         justifyContent: 'center',
     },
     buttonText: {
-        fontSize: 35,
+        fontSize: 27,
         color: '#6D9EAF',
         textAlign: 'center',
         alignSelf: 'center'
@@ -74,12 +74,13 @@ const styles = StyleSheet.create({
     },
     Infos:
     {
+        flex: 1,
         alignSelf: 'center',
         alignItems: 'center',
         flexDirection:'row',
         marginLeft: 10,
         marginRight: 10,
-        width: '40%',
+        width: '50%',
     },
     InfosText:
     {
