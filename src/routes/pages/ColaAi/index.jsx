@@ -31,13 +31,15 @@ const ColaAi = ({navigation}) => {
   const [openCategoria, setOpenCategoria] = useState(false);
   const [openMotivo, setOpenMotivo] = useState(false);
   const [value, setValue] = useState(null);
-
+  
+  //Vetor com as opções do menu dropdown do motivo do contato
   const [itemsMotivo, setItemsMotivo] = useState([
     { label: 'Suporte técnico', value: 'Suporte técnico' },
     { label: 'Denúncia', value: 'Denúncia' },
     { label: 'Outros', value: 'OutrosMotivo' },
   ]);
 
+  //Vetor com as opções do menu dropdown da categoria da denúncia
   const [itemsCategoria, setItemsCategoria] = useState([
     { label: 'Organização', value: 'Organização' },
     { label: 'Publicação', value: 'Publicação' },
@@ -105,13 +107,22 @@ const ColaAi = ({navigation}) => {
 
             <Text style={styles.texto}>Inserir imagem</Text>
 
-            <Pressable onPress={() => setModalVisible(true)}>
-              <View style={styles.input2}>
-                <Text style={styles.texto}>Carregar imagem</Text>
-                <Text style={styles.texto}>+</Text>
-              </View>
-            </Pressable>
-
+            <View>
+              {image ? (
+                <View>
+                  <Image source={{ uri: image }} style={{ width: 200, height: 200, borderRadius: 10, borderWidth: 2, borderColor: 'black',}} />
+                  <Text style={{fontSize: 15, color: 'grey'}}>{image.substring(image.lastIndexOf('/') + 1)}</Text>
+                  <Text style={styles.trocarImagem} onPress={() => setModalVisible(true)}>TROCAR IMAGEM</Text>
+                </View>
+              ) : (
+                <Pressable onPress={() => setModalVisible(true)}>
+                <View style={styles.input2}>
+                  <Text style={styles.texto}>Carregar imagem</Text>
+                  <Text style={styles.texto}>+</Text>
+                </View>
+              </Pressable>
+              )}
+            </View>
             <Text style={{color: '#6d9eaf', marginBottom: 10}}>As imagens serão reservadas e sem fins lucrativas, serão apenas para auxílio na resolução dos problemas.</Text>
             
             <View style={{alignItems: 'flex-end'}}>
@@ -134,7 +145,7 @@ const ColaAi = ({navigation}) => {
                   </Pressable>
 
                   <Pressable style={styles.botao} onPress={pickImage}>
-                    <Text>TROCAR IMAGEM</Text>
+                    <Text>SELECIONAR IMAGEM</Text>
                   </Pressable>
               </View>
             </View>
@@ -193,7 +204,7 @@ const styles = StyleSheet.create({
       height: 40,
       justifyContent: 'space-between',
       flexDirection: 'row',
-      paddingHorizontal: 5,
+      paddingHorizontal: 10,
       alignItems: 'center'
     },
     comentario: {
@@ -251,6 +262,10 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       paddingHorizontal: 10,
       flex: 0.25,
+    },
+    trocarImagem: {
+      fontSize: 15,
+      color: 'red'
     }
   });
 
