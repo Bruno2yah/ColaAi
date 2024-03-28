@@ -1,6 +1,6 @@
 <?php 
     class UserAdm{
-        public $id, $nome, $cpf, $nasc, $email, $senha, $imagem, $token;
+        public $id, $nome, $sobrenome, $cpf, $nasc, $email, $senha, $imagem;
 
         public function getId(){
             return $this->id;
@@ -14,6 +14,13 @@
         }
         public function setNome($nome){
             $this-> nome = $nome;
+        }
+
+        public function getSobrenome(){
+            return $this->sobrenome;
+        }
+        public function setSobrenome($sobrenome){
+            $this-> sobrenome = $sobrenome;
         }
 
         public function getCpf(){
@@ -49,17 +56,6 @@
         }
         public function setImagem($imagem){
             $this-> imagem = $imagem;
-        }
-
-        public function getToken(){
-            return $this->token;
-        }
-        public function setToken($token){
-            $this-> token = $token;
-        }
-
-        public function generateToken(){
-            return bin2hex((random_bytes(16)));
         }
 
         public function salvarImagem($novo_nome){

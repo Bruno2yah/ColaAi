@@ -1,6 +1,6 @@
 <?php 
     class OrganizacaoEvento{
-        public $id, $nome, $cnpj, $cep, $log, $bairro, $num, $cidade, $uf, $email, $senha, $link, $tel, $imagem;
+        public $id, $nome, $cnpj, $cep, $log, $bairro, $num, $cidade, $uf, $email, $senha, $link, $tel, $imagem, $desc;
 
         public function getId(){
             return $this->id;
@@ -87,6 +87,12 @@
         }
         public function setImagem($imagem){
             $this-> imagem = $imagem;
+        }
+        public function getDesc(){
+            return $this->desc;
+        }
+        public function setDesc($desc){
+            $this-> desc = $desc;
         }
         public function salvarImagem($novo_nome){
             if(empty($_FILES['foto']['size']) != 1){

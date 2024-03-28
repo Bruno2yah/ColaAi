@@ -8,9 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 </head>
-  <body>
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
-</head>
 <body class="w-100">
     <div class="header d-flex justify-content-center align-items-center">
         <img src="../../img/Login/Cola AI logo.png" alt="">
@@ -22,9 +19,31 @@
                     <h1 class="fw-bold"><span style="color: #E6AEB2;">Lo</span><span style="color: #6D9EAF;">gin</span></h1>
                     <p class="fs-4 m-0 p-0 text-center">Administrador</p>
                 </div>
-                <form action="" method="post">
+                <form action="../valida_login.php" method="post">
+                <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "erro") {
+                    ?>
+                        <div class="text-danger" style="text-align: center;">
+                            Usuário ou senha Inválido(s)
+                        </div>
+
+                    <?php
+                    }
+
+                    ?>
+                    <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "erro2") {
+                    ?>
+                        <div class="text-danger" style="text-align: center;">
+                            Usuário não fez o login!
+                        </div>
+
+                    <?php
+                    }
+
+                    ?>
                     <div class="input-box mb-5 ps-md-5 pe-md-5 fs-5">
-                        <input type="email" class="input-group " placeholder="Digite o seu e-mail">
+                        <input type="email" class="input-group" id="email" name="email" placeholder="Digite o seu e-mail">
                     </div>
                     <div class="input-box mt-4 mb-3 ps-md-5 pe-md-5">
                         <div class="orgSenha d-flex">
@@ -38,28 +57,6 @@
                     <div class="w-100 h-25 justify-content-end align-items-end d-flex pe-md-5 mb-4" id="btn-box">
                         <button type="submit" class="border-0 rounded-3 fs-4">Entrar</button>
                     </div>
-                    <?php
-                    if (isset($_GET['login']) && $_GET['login'] == "erro") {
-                    ?>
-                        <div class="text-danger">
-                            Usuário ou senha Inválido(s)
-                        </div>
-
-                    <?php
-                    }
-
-                    ?>
-                    <?php
-                    if (isset($_GET['login']) && $_GET['login'] == "erro2") {
-                    ?>
-                        <div class="text-danger">
-                            Usuário não fez o login!
-                        </div>
-
-                    <?php
-                    }
-
-                    ?>
                 </form>
             </div>
         </div>

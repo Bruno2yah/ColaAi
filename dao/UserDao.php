@@ -107,14 +107,6 @@ require_once (__DIR__ . '../../model/Conexao.php');
     
             return $result['totalUsuários']; 
     }
-    /*public static function checkCredentials($email, $senha){
-        $conexao = Conexao::conectar();
-        $query = "SELECT * FROM tbcliente WHERE emailCliente = :email and senhaEmailCliente = :senha";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':senha', $senha);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }*/
+      
 }
 ?>

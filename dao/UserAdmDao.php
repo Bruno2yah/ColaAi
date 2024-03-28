@@ -3,8 +3,8 @@ require_once (__DIR__ . '../../model/Conexao.php');
 
     class UserAdmDao{
         public static function insert($userAdm){
-            $id = $userAdm->getId();
             $nome = $userAdm->getNome();
+            $sobrenome = $userAdm->getSobrenome();
             $cpf = $userAdm->getCpf();
             $nasc = $userAdm->getNasc();
             $email = $userAdm->getEmail();
@@ -14,17 +14,16 @@ require_once (__DIR__ . '../../model/Conexao.php');
             
             $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
             
-            $stmt = $conn->prepare("INSERT INTO tbadmin (idAdmin, nomeAdmin, cpfAdmin, dataNascAdmin, emailAdmin, senhaAdmin, imagemAdmin, tokenAdmin) 
-                            VALUES (:id, :nome, :cpf, :nasc, :email, :senha, :imagem, :token)");
+            $stmt = $conn->prepare("INSERT INTO tbadmin (nomeAdmin, sobrenomeAdmin, cpfAdmin, dataNascAdmin, emailAdmin, senhaAdmin, imagemAdmin) 
+                            VALUES (:id, :nome, :sobrenome, :cpf, :nasc, :email, :senha, :imagem)");
         
-            $stmt->bindParam(':id', $id);
             $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':sobrenome', $sobrenome);
             $stmt->bindParam(':cpf', $cpf);
             $stmt->bindParam(':nasc', $nasc);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
             $stmt->bindParam(':imagem', $imagem);
-            $stmt->bindParam(':token', $token);
         
             $result = $stmt->execute();
         
@@ -68,32 +67,32 @@ require_once (__DIR__ . '../../model/Conexao.php');
         
             $query = "UPDATE tbadmin SET 
                 nomeAdmin = :nome, 
+                sobrenomeAdmin = :sobrenome,
                 cpfAdmin = :cpf,
                 dataNascAdmin = :nasc, 
                 emailAdmin = :email, 
                 senhaAdmin = :senha, 
-                imagemAdmin = :imagem, 
-                tokenAdmin = :token 
+                imagemAdmin = :imagem 
                 WHERE idAdmin = :id";
             
             $stmt = $conexao->prepare($query);
         
             // Atribuir os valores a variáveis antes de chamar bindParam
             $nome = $userAdm->getNome();
+            $sobrenome = $userAdm->getSobrenome();
             $cpf = $userAdm->getCpf();
             $nasc = $userAdm->getNasc();
             $email = $userAdm->getEmail();
             $senha = $userAdm->getsenha();
             $imagem = $userAdm->getImagem();
-            $token = $userAdm->getToken();
         
             $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':sobrenome', $sobrenome);
             $stmt->bindParam(':cpf', $cpf);
             $stmt->bindParam(':nasc', $nasc);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
             $stmt->bindParam(':imagem', $imagem);
-            $stmt->bindParam(':token', $token);
             $stmt->bindParam(':id', $id);
         
             return $stmt->execute();

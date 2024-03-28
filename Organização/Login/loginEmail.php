@@ -17,7 +17,29 @@
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-10 col-sm-9 col-md-4  rounded-4">
-                <form action="" method="post">
+                <form action="../valida_login" method="post">
+                    <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "erro") {
+                    ?>
+                        <div class="text-danger" style="text-align: center;">
+                            Usuário ou senha Inválido(s)
+                        </div>
+
+                    <?php
+                    }
+
+                    ?>
+                    <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "erro2") {
+                    ?>
+                        <div class="text-danger" style="text-align: center;">
+                            Usuário não fez o login!
+                        </div>
+
+                    <?php
+                    }
+
+                    ?>
                     <div class="title-box h-25 p-md-5 pt-3 pb-3 text-center">
                         <h1 class="fw-bold"><span style="color: #E6AEB2;">Lo</span><span style="color: #6D9EAF;">gin</span></h1>
                         <p class="fs-4 m-0 p-0 text-center">Entre com o seu e-mail</p>

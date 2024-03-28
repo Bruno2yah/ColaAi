@@ -1,6 +1,6 @@
 <?php 
     class User{
-        public $id, $nome, $sobrenome, $email, $senha, $imagem;
+        public $id, $nome, $sobrenome, $email, $senha, $imagemPerfil, $imagemBanner;
 
         public function getId(){
             return $this->id;
@@ -36,11 +36,18 @@
             $this-> senha = $senha;
         }
 
-        public function getImagem(){
-            return $this->imagem;
+        public function getImagemPerfil(){
+            return $this->imagemPerfil;
         }
-        public function setImagem($imagem){
-            $this-> imagem = $imagem;
+        public function setImagemPerfil($imagemPerfil){
+            $this-> imagemPerfil = $imagemPerfil;
+        }
+
+        public function getImagemBanner(){
+            return $this->imagemBanner;
+        }
+        public function setImagemBanner($imagemBanner){
+            $this-> imagemBanner = $imagemBanner;
         }
 
         public function salvarImagem($novo_nome){

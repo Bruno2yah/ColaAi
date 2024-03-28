@@ -9,6 +9,22 @@
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 </head>
 <body>
+<?php
+  // Iniciar a sessão
+  session_start();
+
+  // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
+  if (!isset($_SESSION['AutenticaoAdm']) || $_SESSION['AutenticaoAdm'] != 'SIM') {
+    // Redirecionar para o login com um erro2 se não estiver autenticado
+    header('Location: login.php?login=erro2');
+    exit();
+  }
+
+  //o usuário está autenticado
+  $authUser = $_SESSION['userAdm'];
+
+  $nomeAdm = $authUser['nomeAdmin'];
+  ?>
     <?php
     include('../Componentes/header.php');
     ?>
