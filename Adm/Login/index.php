@@ -38,6 +38,28 @@
                     <div class="w-100 h-25 justify-content-end align-items-end d-flex pe-md-5 mb-4" id="btn-box">
                         <button type="submit" class="border-0 rounded-3 fs-4">Entrar</button>
                     </div>
+                    <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "erro") {
+                    ?>
+                        <div class="text-danger">
+                            Usuário ou senha Inválido(s)
+                        </div>
+
+                    <?php
+                    }
+
+                    ?>
+                    <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "erro2") {
+                    ?>
+                        <div class="text-danger">
+                            Usuário não fez o login!
+                        </div>
+
+                    <?php
+                    }
+
+                    ?>
                 </form>
             </div>
         </div>
