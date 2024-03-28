@@ -1,0 +1,89 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#painel{
+    background-color: #FFFBE7;
+}
+#title-acessar{
+    font-size: 3.2rem;
+}
+.text-acessar{
+    color: #A6A6A6;
+}
+
+.btn-org button {
+    background-color: #6F9BAB;
+    color: #E6AEB0;
+    height: 9vh;
+}
+.btn-adm button {
+    background-color:#E6AEB2;
+    color: #6DA2B1;
+    height: 9vh;
+}
+button:hover{
+    opacity: 0.8;
+    transition: 0.8s;
+}
+button:hover p{
+    transition: 0.5s;
+    font-size: 1.2em;
+}
+button:hover img{
+    transition: 0.5s;
+}
+button{
+    transition: 0.5s;
+    font-size: 35px;
+}
+button p {
+    transition: 0.5s;
+}
+.icon-org {
+    width: 60px;
+    height: 60px;
+}
+.icon-adm {
+    width: 55px;
+    height: 55px;
+}
+
+#bola{
+    width: 20%;
+    height: 60%;
+}
+#logo-box{
+    background-image: url("../img/Acesso/fundo-acesso.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#btn-cadastro {
+height: 11vh;
+}
+#title-org{
+    color: #A6A6A6; 
+}
+#c-bem{
+    color: #93CC4C;
+}
+#c-vin{
+    color: #6D9EAF;
+}
+#c-do{
+    color: #E6AEB2;
+} 
+#c-a{
+    color:  #FFD417;
+}
+#icon-email{
+    width: 50px;
+}
+#icon-tel{
+    width: 45px;;
+}
+a{
+    all: unset;
+}
