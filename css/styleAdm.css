@@ -1,0 +1,36 @@
+.header{
+    background-color: #FFF7D1;
+    width: 100vw;
+    height: 9vh;
+}
+.header img{
+    width: 150px;
+}
+.perfil-box{
+    width: 200px;
+}
+#icon-pfp {
+    width: 50px;
+    height: 50px;
+}
+#arrow-profile{
+    width: 20px;
+    height: 10px;
+}
+.menu-pos{
+    height: 91vh;
+}
+.menu{
+    font-size: 17pt;
+    color: #a6a6a6;
+}
+
+.menuItems{
+    cursor: pointer;
+    color: #a6a6a6;
+    transition: 0.5s;
+}
+
+.menuItems:hover span{
+    color: #F8DA39;
+}
