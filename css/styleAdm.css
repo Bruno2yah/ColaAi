@@ -34,3 +34,25 @@
 .menuItems:hover span{
     color: #F8DA39;
 }
+
+#info-box{
+    border: 3px solid #a6a6a6;
+}
+
+#menu-icon{
+    width: 30px;
+    max-height: 30px;
+}
+
+#data-box{
+    background-image: url('../img/Admin/fundo-adm.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#data-table{
+    border-bottom: 3px solid #a6a6a6
+}
+.text-data{
+    font-size: 1.2em;
+}

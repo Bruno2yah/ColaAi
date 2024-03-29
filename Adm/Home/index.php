@@ -17,6 +17,19 @@
                 <?php
                     include('../Componentes/menu.php')
                 ?>
+                <div class="col-9 text-center mt-4" style="color: #a6a6a6;">
+                    <h1>Boa tarde, Administrador! Bem-vindo ao Dashboard</h1>
+                    <div class="row justify-content-evenly h-25 mt-4">
+                        <div class="col-4 rounded-5" id="info-box">
+                            <h2 class="fs-4 p-3 pb-0">Novos Usuários Registrados (Últimos 30 dias)</h2>
+                            <p class="fs-5 p-0">+ 2 novos usuários</p>
+                        </div>
+                        <div class="col-4 rounded-5" id="info-box">
+                        <h2 class="fs-4 p-3 pb-0">Novos Eventos  Registrados (Últimos 30 dias)</h2>
+                            <p class="fs-5 p-0">+ 50 novos eventos</p>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
