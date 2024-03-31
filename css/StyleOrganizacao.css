@@ -1,0 +1,368 @@
+
+/* Começo header, menu */
+
+.header {
+    background-color: #FFF7D1;
+    width: 100vw;
+    height: 9vh;
+}
+
+.header img {
+    width: 150px;
+}
+
+.perfil-box {
+    width: 200px;
+}
+
+#icon-pfp {
+    width: 50px;
+    height: 50px;
+}
+
+#arrow-profile {
+    width: 20px;
+    height: 10px;
+}
+
+.menu-pos {
+    height: 91vh;
+    position: absolute;
+}
+
+.menu {
+    
+    font-size: 17pt;
+    color: #a6a6a6;
+}
+
+.menuItems {
+    cursor: pointer;
+    color: #a6a6a6;
+    transition: 0.5s;
+}
+
+.menuItems:hover span {
+    color: #F8DA39;
+}
+
+#info-box {
+    border: 3px solid #a6a6a6;
+}
+
+#menu-icon {
+    width: 30px;
+    max-height: 30px;
+}
+
+#data-box {
+    background-image: url('../img/Admin/fundo-adm.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#data-table {
+    border-bottom: 3px solid #a6a6a6;
+}
+
+.text-data {
+    font-size: 1.2em;
+}
+
+/* Fim header, menu  */
+
+
+
+
+/* Começo Cards */
+
+.wrapper {
+    padding: 15px;
+}
+
+h2 {
+    padding: 10px;
+    padding-left: 25px;
+    color: #ccc;
+    margin: 0;
+}
+
+h2 strong {
+    z-index: 2;
+    background:#24282f;
+    padding: 4px 8px;
+}
+
+h2 span {
+    font-size: 0.7em;
+    color: #aaa;
+    margin-left: 10px;
+}
+
+h2:after {
+    content: '';
+    z-index: 1;
+    bottom: 50%;
+    margin-bottom: -2px;
+    height: 2px;
+    left: 0;
+    right: 0;
+    background: lighten(#24282f, 10%);
+}
+
+.imgPublicacao{
+    width: 50px;
+    height: 50px;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+.cards .card {
+    position: relative;
+    margin: 20px;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(173, 173, 173, 0.8);
+    transform-origin: center top;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: 0.3s;
+    border-radius: 10%;
+    background-color: #effae7;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card img {
+    width: 80%;
+    min-height: 50%;
+    
+}
+
+.cards .card figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    background: none;
+    color: #fff;
+    transform: translateY(100%);
+    transition: 0.3s;
+}
+
+.cards .card:after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    width: 200%;
+    height: 100%;
+    top: -90%;
+    left: -20px;
+    opacity: 0.1;
+    transform: rotate(45deg);
+    background: linear-gradient(to top, transparent, #fff 15%, rgba(255, 255, 255, 0.5));
+    transition: 0.3s;
+}
+
+.cards .card:hover,
+.cards .card:focus,
+.cards .card:active {
+    box-shadow: 0 8px 16px 3px rgba(150, 150, 150, 0.6);
+    transform: translateY(-3px) scale(1.05) rotateX(15deg);
+}
+
+.cards .card:hover figcaption,
+.cards .card:focus figcaption,
+.cards .card:active figcaption {
+    transform: none;
+}
+
+.cards .card:hover:after,
+.cards .card:focus:after,
+.cards .card:active:after {
+    transform: rotate(25deg);
+    top: -40%;
+    opacity: 0.15;
+}
+
+.news {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.news .article {
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    height: 235px;
+    margin: 20px;
+}
+
+.news .article img {
+    width: 100%;
+    min-height: 100%;
+    transition: 0.2s;
+}
+
+.news .article figcaption {
+    position: absolute;
+    font-size: 14px;
+    text-shadow: 0 1px 0 rgba(51, 51, 51, 0.3);
+    color: #fff;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 40px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    background: rgba(6, 18, 53, 0.6);
+    opacity: 0;
+    transform: scale(1.15);
+    transition: 0.2s;
+}
+
+.news .article figcaption h3 {
+    color: #3792e3;
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.news .article:hover img,
+.news .article:focus img,
+.news .article:active img {
+    filter: blur(3px);
+    transform: scale(0.97);
+}
+
+.news .article:hover figcaption,
+.news .article:focus figcaption,
+.news .article:active figcaption {
+    opacity: 1;
+    transform: none;
+}
+
+/* Fim Cards */
+
+
+
+/* Começo botões */
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#painel{
+    background-color: #FFFBE7;
+}
+#title-acessar{
+    font-size: 3.2rem;
+}
+.text-acessar{
+    color: #A6A6A6;
+}
+
+.btn-adicionar button {
+    background-color:#E6AEB2;
+    color: #6DA2B1;
+    height: 6vh;
+    width:  6vh;
+}
+.btn-card button {
+    background-color:#E6AEB2;
+    color: #6DA2B1;
+    height: 6vh;
+    width:  20vh;
+}
+button:hover{
+    opacity: 0.8;
+    transition: 0.8s;
+}
+button:hover p{
+    transition: 0.5s;
+    font-size: 1.1em;
+}
+button:hover img{
+    transition: 0.5s;
+}
+button{
+    transition: 0.5s;
+    font-size: 35px;
+}
+button p {
+    transition: 0.5s;
+}
+.icon-org {
+    width: 35px;
+    height: 35px;
+}
+.icon-adm {
+    width: 55px;
+    height: 55px;
+}
+
+#bola{
+    width: 20%;
+    height: 60%;
+}
+#logo-box{
+    background-image: url("../img/Acesso/fundo-acesso.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#btn-cadastro {
+height: 11vh;
+}
+#title-org{
+    color: #A6A6A6; 
+}
+#c-bem{
+    color: #93CC4C;
+}
+#c-vin{
+    color: #6D9EAF;
+}
+#c-do{
+    color: #E6AEB2;
+} 
+#c-a{
+    color:  #FFD417;
+}
+#icon-email{
+    width: 50px;
+}
+#icon-tel{
+    width: 45px;;
+}
+a{
+    all: unset;
+}
+/* Fim botões */
+
+.select-small {
+    width: 15%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
