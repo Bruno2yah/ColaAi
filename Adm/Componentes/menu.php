@@ -4,7 +4,6 @@
         <li class="d-flex align-items-center">
           <img src="../../img/Admin/icon-home.png" alt="" id="menu-icon">
           <span class="ms-2">Home</span>
-          
         </li>
       
       </a>

@@ -15,7 +15,7 @@ $users = UserAdmDao::selectAll();
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 </head>
 
-<body>
+<body style="justify-content: center; align-items: center; height: 100vh ">
     <?php
     // Iniciar a sessão
     session_start();
@@ -33,7 +33,7 @@ $users = UserAdmDao::selectAll();
     <?php
     include('../Componentes/header.php');
     ?>
-    <div class="container-fluid vw-100">
+    <div class="container-fluid" style="height: 90vh">
         <div class="row vw-100">
             <?php
             include('../Componentes/menu.php')
@@ -69,7 +69,7 @@ $users = UserAdmDao::selectAll();
                                     <td class="text-center">
                                         <form action="process.php" method="POST">
                                             <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
-                                            <input type="hidden" class="form-control" id="id" name="id" value="<?= $User['idAdmin'] ?>">
+                                            <input type="hidden" class="form-control" id="id" name="id" value="<?= $User['idAdmin']?>">
                                             <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary"></i>
                                             </button>
                                         </form>

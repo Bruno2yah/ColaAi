@@ -56,3 +56,50 @@
 .text-data{
     font-size: 1.2em;
 }
+.card{
+    background-color: #e3f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: -15px 15px #d7d7d7;
+}
+.col-form-label{
+    font-weight: bold;
+    color: #a6a6a6;
+    font-size: 16pt;
+}
+.inputAdm{
+    border: 0px;
+    border-bottom: 2px solid #b6bbbd;
+    border-radius: 0;
+    outline: transparent;
+    background-color: transparent;
+    color: #a6a6a6;
+    font-size: 16pt;
+    font-weight: 600;
+}
+.inputAdm:focus{
+    background-color: transparent;
+    box-shadow: none;
+    border-color: #b6bbbd;
+    color: #a6a6a6;
+}
+.inputAdm::placeholder{
+    color: #a6a6a6;
+}
+.btn{
+    background-color: #FABDC1;
+    height: 120%;
+    width: 120px;
+    color: #6D9EAF;
+    font-size: 16pt;
+}
+.inputFile input{
+    display: none;
+}
+.inputFile label{
+    cursor: pointer;
+    color: skyblue;
+    text-decoration: underline;
+}
