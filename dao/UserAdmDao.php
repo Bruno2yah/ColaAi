@@ -13,8 +13,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
             
             $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
             
-            $stmt = $conn->prepare("INSERT INTO tbadmin (nomeAdmin, sobrenomeAdmin, cpfAdmin, dataNascAdmin, emailAdmin, senhaAdmin, fotoPerfilAdmin) 
-                            VALUES (:id, :nome, :sobrenome, :cpf, :nasc, :email, :senha, :imagem)");
+            $stmt = $conn->prepare("INSERT INTO tbadmin (nomeAdmin, sobrenomeAdmin, cpfAdmin, dataNascAdmin, emailAdmin, senhaAdmin, fotoPerfilAdmin) VALUES (:nome, :sobrenome, :cpf, :nasc, :email, :senha, :imagem)");
         
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':sobrenome', $sobrenome);
@@ -71,7 +70,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
                 dataNascAdmin = :nasc, 
                 emailAdmin = :email, 
                 senhaAdmin = :senha, 
-                imagemAdmin = :imagem 
+                fotoPerfilAdmin = :imagem 
                 WHERE idAdmin = :id";
             
             $stmt = $conexao->prepare($query);

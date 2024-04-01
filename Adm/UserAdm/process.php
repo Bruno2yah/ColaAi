@@ -6,6 +6,7 @@ require_once '../../model/Mensagem.php';
 $user = new UserAdm();
 $msg = new Mensagem();
 
+//var_dump($_POST);
 switch ($_POST["acao"]) {
     case 'DELETE':
      try {
@@ -23,14 +24,20 @@ switch ($_POST["acao"]) {
         $user->setEmail($_POST['emailAdmin']);
         $user->setSenha($_POST['senhaAdmin']);
         $user->setImagem($user->salvarImagem(($_POST['fotoPerfilAdmin'])));
+        
         try {
             $userAdmDao = UserAdmDao::insert($user);
-            $msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
+
+            // Adiciona uma mensagem para debug
+            $msg->setMensagem("Usuário inserido com sucesso no banco de dados.", "bg-success");
+
             header("Location: index.php");
         } catch (Exception $e) {
             // Se houver um erro na inserção, você pode lidar com isso aqui
-            echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-            $msg->setMensagem("Verifique os dados Digitados.", "bg-danger");
+
+            // Adiciona uma mensagem para debug
+            $msg->setMensagem("Erro ao inserir usuário no banco de dados: " . $e->getMessage(), "bg-danger");
+
             header("Location: register.php");
         } 
         break;
@@ -45,7 +52,7 @@ switch ($_POST["acao"]) {
               $user->setImagem($user->salvarImagem($_POST['fotoPerfilAdmin'])); 
               try {
                 $userAdmDao = UserAdmDao::update($_POST["idAdmin"], $user);
-                $msg->setMensagem("Usuário Atualizado com sucesso.", "bg-success");
+                $msg->setMensagem("Usuário atualizado com sucesso.", "bg-success");
                 header("Location: index.php");
               } catch (Exception $e) {
                echo 'Exceção capturada: ',  $e->getMessage(), "\n";

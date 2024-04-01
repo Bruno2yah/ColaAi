@@ -1,13 +1,10 @@
 <?php
 require_once(__DIR__ ."../../../model/Mensagem.php");
-  $mensagem = new Mensagem();
-  $flashMessage = $mensagem->getMensagem();
-  if(!empty($flashMessage["mensagem"])) {
-      $mensagem->clearMensagem();
-  }
+$mensagem = new Mensagem();
+$flashMessage = $mensagem->getMensagem();
+if(!empty($flashMessage["mensagem"])) {
+    $mensagem->clearMensagem();
 ?>
-
-<?php if(!empty($flashMessage["mensagem"])){ ?>
 <div class="modal fade" id="modalPadrao" role="dialog">
   <div class=" modal-dialog modal-dialog-centered">
     <div class="modal-content">
