@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { ScrollView, StatusBar, Text, View, ImageBackground, Image, Pressable } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import NavBar from '../../../../Components/NavBar/navbar';
 import styles from '../../../../Components/Styles/Perfil/perfilStyle';
 import ModalConfigPerfil from '../../../../Components/PerfilConfig/modalConfigPerfil';
 
-export default function Perfil() {
-  const navigation = useNavigation();
+export default function Perfil({ navigation }) {
   const [modalConfigVisu, setModalConfigVisu] = useState(false);
 
   function configPerfilModal() {
@@ -44,7 +42,7 @@ export default function Perfil() {
               />
             </View>
           </View>
-        </View>
+      </View>
       <ScrollView>
         <StatusBar style="auto" />
         {/* Botão do menu hamburguer */}

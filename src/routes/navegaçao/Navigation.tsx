@@ -14,6 +14,9 @@ import Evento from '../pages/Usuario/Evento';
 import Perfil from '../pages/Usuario/Perfil';
 import PerfilOrg from '../pages/Usuario/PerfilOrganizazao'
 import ProgramacaoCult from '../pages/Usuario/ProgramacaoCultural';
+import Contato from '../pages/Usuario/Contato';
+import Feedback from '../pages/Usuario/Feedback'
+import Sobre from '../pages/Usuario/Sobre'
 
 const Stack = createStackNavigator();
 
@@ -34,6 +37,9 @@ export default function Navigation() {
         <Stack.Screen name="Perfil" component={Perfil}  options={{ headerShown: false }}/>
         <Stack.Screen name="PerfilOrganizacao" component={PerfilOrg} options={{ headerShown: false }}/>
         <Stack.Screen name="ProgramacaoCultural" component={ProgramacaoCult} options={{ headerShown: false }}/>
+        <Stack.Screen name="Contato" component={Contato}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Feedback" component={Feedback}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Sobre" component={Sobre}  options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

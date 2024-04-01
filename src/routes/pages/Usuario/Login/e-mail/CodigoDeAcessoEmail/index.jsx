@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
+import { View, Text, TextInput, StyleSheet, Pressable, ImageBackground} from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 const CodigoDeAcessoEmail = ({ navigation }) => {
@@ -25,9 +25,9 @@ const CodigoDeAcessoEmail = ({ navigation }) => {
         </Animado.View>
         <Animado.Text style={styles.esqueci} animation="fadeInRight" delay={1000}>Reenviar código</Animado.Text>
         <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
-          <TouchableOpacity style={styles.button2}>
+          <Pressable style={styles.button2}>
             <Text style={styles.buttonText2} >Enviar</Text>
-          </TouchableOpacity>
+          </Pressable>
         </Animado.View>
       </View>
         <ImageBackground

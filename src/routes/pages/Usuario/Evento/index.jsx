@@ -114,36 +114,36 @@ export default function Eventos({ navigation }) {
 
             <View style = {styles.InfosArea}>
               <View style = {styles.InfosRows}>
-                    <View style = {styles.Infos}>
-                        <Image
-                        style={{ height: 26, width: 25 }}
-                        source={require('../../../../../assets/img/Programação Cultural/classificacao.png')}
-                        />
-                        <Text style = {styles.InfosText}>
-                        Faixa etária: +6
-                        </Text>
-                    </View>
-                    <View style = {styles.Infos}>
-                    <Image
-                        style={{ height: 26, width: 26 }}
-                        source={require('../../../../../assets/img/Programação Cultural/valor.png')}
-                    />
-                    <Text style = {styles.InfosText}>
-                        Valor: Gratuito
-                    </Text>
-                    </View>
+                <View style = {styles.Infos}>
+                  <Image
+                  style={{ height: 26, width: 25 }}
+                  source={require('../../../../../assets/img/Programação Cultural/classificacao.png')}
+                  />
+                  <Text style = {styles.InfosText}>
+                  Faixa etária: +6
+                  </Text>
+                </View>
+                <View style = {styles.Infos}>
+                  <Image
+                      style={{ height: 26, width: 26 }}
+                      source={require('../../../../../assets/img/Programação Cultural/valor.png')}
+                  />
+                  <Text style = {styles.InfosText}>
+                      Valor: Gratuito
+                  </Text>
+                </View>
               </View>
               <View style = {styles.InfosRows}>
-                  <View style = {styles.Infos}>
-                      <Image
-                      style={{ height: 27, width: 26 }}
-                      source={require('../../../../../assets/img/Programação Cultural/point.png')}
-                      />
-                      <Text style = {styles.InfosText}>
-                          Local: Teatro São Paulo/SP
-                      </Text>
-                  </View>
-                  <View style = {styles.Infos}>
+                <View style = {styles.Infos}>
+                  <Image
+                  style={{ height: 27, width: 26 }}
+                  source={require('../../../../../assets/img/Programação Cultural/point.png')}
+                  />
+                  <Text style = {styles.InfosText}>
+                      Local: Teatro São Paulo/SP
+                  </Text>
+                </View>
+                <View style = {styles.Infos}>
                   <Image
                       style={{ height: 26, width: 26 }}
                       source={require('../../../../../assets/img/Programação Cultural/relogio.png')}
@@ -151,7 +151,7 @@ export default function Eventos({ navigation }) {
                   <Text style = {styles.InfosText}>
                       Turno: Verspetino
                   </Text>
-                  </View>
+                </View>
               </View>
             </View>
             

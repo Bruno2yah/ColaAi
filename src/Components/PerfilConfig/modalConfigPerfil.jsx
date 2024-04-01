@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { View, Image, Text, Modal, Pressable } from 'react-native';
 import Perfil from '../../routes/pages/Usuario/Perfil'
 import styles from '../Styles/ModalConfig/modalConfigStyle'
+import { useNavigation } from '@react-navigation/native';
 
 export default function modalConfigPerfil() {
+  const navigation = useNavigation();
+
   const [modalConfigVisu, setModalConfigVisu] = useState(true);
 
   function configPerfilModal() {
@@ -124,7 +127,7 @@ export default function modalConfigPerfil() {
           <Text style={styles.subTitle}>Suporte</Text>
           <View style={styles.contentContainer}>
             <View style={styles.column}>
-              <Pressable style={styles.item}>
+              <Pressable style={styles.item} onPress={() => {configPerfilModal(); navigation.navigate('Feedback')}}>
                 <View style={styles.buttonContent}>
                   <Image
                     style={styles.icon}
@@ -137,7 +140,7 @@ export default function modalConfigPerfil() {
                   source={require('../../../assets/img/User/seta.png')}
                 />
               </Pressable>
-              <Pressable style={styles.item}>
+              <Pressable style={styles.item} onPress={() => {configPerfilModal(); navigation.navigate('Contato')}}>
                 <View style={styles.buttonContent}>
                   <Image
                     style={styles.icon}
@@ -150,7 +153,7 @@ export default function modalConfigPerfil() {
                   source={require('../../../assets/img/User/seta.png')}
                 />
               </Pressable>
-              <Pressable style={styles.item}>
+              <Pressable style={styles.item} onPress={() => {configPerfilModal(); navigation.navigate('Sobre')}}>
                 <View style={styles.buttonContent}>
                   <Image
                     style={styles.icon}
