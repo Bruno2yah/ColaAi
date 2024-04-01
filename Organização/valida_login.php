@@ -17,13 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // Login falhou
-        $_SESSION['AutenticaoAdm'] = "NÃO";
-        header('Location:../Organização/Login/index.php?login=erro');
+        $_SESSION['AutenticaoOrg'] = "NÃO";
+        header('Location:../Organização/Login/loginEmail.php?login=erro');
         exit();
     }
 } else {
     // Redirecionar se alguém tentar acessar diretamente este arquivo
-    header('Location:../Organização/Login/index.php?login=erro2');
+    header('Location:../Organização/Login/loginEmail.php?login=erro2');
     exit();
 }
 ?>

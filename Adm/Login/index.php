@@ -20,7 +20,16 @@
                     <p class="fs-4 m-0 p-0 text-center">Administrador</p>
                 </div>
                 <form action="../valida_login.php" method="post">
-                <?php
+                    <div class="input-box mb-5 ps-md-5 pe-md-5 fs-5">
+                        <input type="email" class="input-group" id="email" name="email" placeholder="Digite o seu e-mail">
+                    </div>
+                    <div class="input-box mt-4 mb-3 ps-md-5 pe-md-5">
+                        <div class="orgSenha d-flex">
+                            <input type="password" name="senha" id="password" class="inputSenha col-12 fs-5" placeholder="Digite a sua senha" required>
+                            <i class="bi bi-eye col1" id="btnSenha" onclick="MostrarSenha()"></i>
+                        </div>
+                    </div>
+                    <?php
                     if (isset($_GET['login']) && $_GET['login'] == "erro") {
                     ?>
                         <div class="text-danger" style="text-align: center;">
@@ -42,15 +51,6 @@
                     }
 
                     ?>
-                    <div class="input-box mb-5 ps-md-5 pe-md-5 fs-5">
-                        <input type="email" class="input-group" id="email" name="email" placeholder="Digite o seu e-mail">
-                    </div>
-                    <div class="input-box mt-4 mb-3 ps-md-5 pe-md-5">
-                        <div class="orgSenha d-flex">
-                            <input type="password" name="senha" id="password" class="inputSenha col-12 fs-5" placeholder="Digite a sua senha" required>
-                            <i class="bi bi-eye col1" id="btnSenha" onclick="MostrarSenha()"></i>
-                        </div>
-                    </div>
                     <div class="f-password w-100 text-end pe-md-5 mb-5">
                         <a href="" class="fs-5" id="text-senha">Esqueci a senha</a>
                     </div>

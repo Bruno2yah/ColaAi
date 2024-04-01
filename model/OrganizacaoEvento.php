@@ -1,6 +1,6 @@
 <?php 
     class OrganizacaoEvento{
-        public $id, $nome, $cnpj, $cep, $log, $bairro, $num, $cidade, $uf, $email, $senha, $link, $tel, $imagem, $desc;
+        public $id, $nome, $cnpj, $cep, $log,$num,$complemento, $bairro, $cidade, $uf, $email, $senha, $link, $imagem, $desc;
 
         public function getId(){
             return $this->id;
@@ -34,17 +34,23 @@
         public function setLog($log){
             $this-> log = $log;
         }
-        public function getBairro(){
-            return $this->bairro;
-        }
-        public function setBairro($bairro){
-            $this-> bairro = $bairro;
-        }
         public function getNum(){
             return $this->num;
         }
         public function setNum($num){
             $this-> num = $num;
+        }
+          public function getComplemento(){
+            return $this->complemento;
+        }
+        public function setComplemento($complemento){
+            $this-> complemento = $complemento;
+        }
+        public function getBairro(){
+            return $this->bairro;
+        }
+        public function setBairro($bairro){
+            $this-> bairro = $bairro;
         }
         public function getCidade(){
             return $this->cidade;
@@ -76,12 +82,6 @@
         public function setLink($link){
             $this-> link = $link;
         } 
-        public function getTel(){
-            return $this->tel;
-        }
-        public function setTel($tel){
-            $this-> tel = $tel;
-        }
         public function getImagem(){
             return $this->imagem;
         }
