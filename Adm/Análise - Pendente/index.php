@@ -18,32 +18,32 @@
                 include('../Componentes/menu.php')
             ?>
             <div class="info-box col-md-9 pt-4" style="color: #a6a6a6;" id="data-box">
-                <h1 class="text-center">Análise de registro - Pendente</h1>
-                <div class="container" style="height: 40px;">
+                <h1 class="text-center mt-4">Análise de registro - Pendente</h1>
+                <div class="container mt-5" style="height: 40px;">
                     
                 </div>
-                <div class="row ms-4 me-5 mt-5">
+                <div class="row ms-4 me-5 mt-4">
                     <table class="">
                         <thead>
                         <tr id="data-table">
-                            <th class="col-md-1 fs-5">ID</th>
-                            <th class="col-md-2 fs-5">Nome</th>
-                            <th class="col-md-3 fs-5">E-mail</th>
-                            <th class="col-md-1 fs-5">CNPJ</th>
-                            <th class="col-md-2 fs-5 text-center">Aceitar</th>
-                            <th class="text-center col-md-1 fs-5">Negar</th>
-                            <th class="text-end col-md-1 fs-5">Informações</th>
+                            <th class="col-md-1 fs-4">ID</th>
+                            <th class="col-md-2 fs-4">Nome</th>
+                            <th class="col-md-3 fs-4">E-mail</th>
+                            <th class="col-md-1 fs-4">CNPJ</th>
+                            <th class="col-md-2 fs-4 text-center">Aceitar</th>
+                            <th class="text-center col-md-1 fs-4">Negar</th>
+                            <th class="text-end col-md-1 fs-4">Informações</th>
                         </tr>
                         <tr>
-                            <td class="pt-3 col-md-1">01</td>
-                            <td class="pt-3 col-md-2">Organização</td>
-                            <td class="pt-3 col-md-2">Organização@teste.com</td>
-                            <td class="pt-3 col-md-3">XX. XXX. XXX/0001-XX.</td>
-                            <td class="pt-3 col-md-2 text-center"><img src="../../img/Admin/aceitar-icon.png" alt="" style="width: 35px;"></td>
-                            <td class="pt-3 col-md-2 text-center">
+                            <td class="pt-1 col-md-1 fs-5">01</td>
+                            <td class="pt-1 col-md-2 fs-5">Organização</td>
+                            <td class="pt-1 col-md-2 fs-5">Organização@teste.com</td>
+                            <td class="pt-1 col-md-3 fs-5">XX. XXX. XXX/0001-XX.</td>
+                            <td class="pt-1 col-md-2 text-center"><img src="../../img/Admin/aceitar-icon.png" alt="" style="width: 35px;"></td>
+                            <td class="pt-1 col-md-2 text-center">
                                 <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
                             </td>
-                            <td class="pt-3 col-md-3 text-center">
+                            <td class="pt-1 col-md-3 text-center">
                                 <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
                             </td>
                         </tr>

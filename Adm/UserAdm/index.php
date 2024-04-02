@@ -40,44 +40,44 @@ $users = UserAdmDao::selectAll();
             include('../Componentes/menu.php')
             ?>
             <div class="info-box col-md-9 pt-4" style="color: #a6a6a6;" id="data-box">
-                <h1 class="text-center">Administradores</h1>
+                <h1 class="text-center mt-4">Administradores</h1>
                 <div class="container d-flex w-100 h-auto pe-5 mt-5">
                     <a href="register.php" class="ms-auto me-2" style="width: 45px;">
                         <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
                     </a>
                 </div>
-                <div class="row ms-4 me-5 mt-3">
+                <div class="row ms-4 me-5 mt-4">
                     <table class="">
                         <thead>
                             <tr id="data-table">
-                                <th class="col-md-1 fs-5">ID</th>
-                                <th class="col-md-1 fs-5">Nome</th>
-                                <th class="col-md-2 fs-5">Sobrenome</th>
-                                <th class="col-md-3 fs-5">E-mail</th>
-                                <th class="col-md-2 fs-5">CPF</th>
-                                <th class="col-md-2 fs-5">Data de nasc</th>
-                                <th class="text-center col-md-1 fs-5">Editar</th>
-                                <th class="text-end col-md-1 fs-5">Excluir</th>
+                                <th class="col-md-1 fs-4">ID</th>
+                                <th class="col-md-1 fs-4">Nome</th>
+                                <th class="col-md-2 fs-4">Sobrenome</th>
+                                <th class="col-md-3 fs-4">E-mail</th>
+                                <th class="col-md-2 fs-4">CPF</th>
+                                <th class="col-md-2 fs-4">Data de nasc</th>
+                                <th class="text-center col-md-1 fs-4">Editar</th>
+                                <th class="text-end col-md-1 fs-4">Excluir</th>
                             </tr>
                             <?php foreach ($users as $User) : ?>
-                                <tr>
-                                    <td><?= $User['idAdmin']; ?></td>
-                                    <td><?= $User['nomeAdmin']; ?></td>
-                                    <td><?= $User['sobrenomeAdmin']; ?></td>
-                                    <td><?= $User['emailAdmin']; ?></td>
-                                    <td><?= $User['cpfAdmin']; ?></td>
-                                    <td><?= $User['dataNascAdmin']; ?></td>
+                                <tr class="mt-1">
+                                    <td class="fs-5 p-1"><?= $User['idAdmin']; ?></td>
+                                    <td class="fs-5 p-1"><?= $User['nomeAdmin']; ?></td>
+                                    <td class="fs-5 p-1"><?= $User['sobrenomeAdmin']; ?></td>
+                                    <td class="fs-5 p-1"><?= $User['emailAdmin']; ?></td>
+                                    <td class="fs-5 p-1"><?= $User['cpfAdmin']; ?></td>
+                                    <td class="fs-5 p-1"><?= $User['dataNascAdmin']; ?></td>
                                     <td class="text-center">
                                         <form action="process.php" method="POST">
                                             <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
                                             <input type="hidden" class="form-control" id="id" name="id" value="<?= $User['idAdmin']?>">
-                                            <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary"></i>
+                                            <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary fs-5"></i>
                                             </button>
                                         </form>
                                     </td>
                                     <td class="text-center">
                                         <a class="dropdown-item" onclick="modalRemover(<?= $User['idAdmin'] ?>,'idDeletar')">
-                                            <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                                        <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
                                         </a>
                                     </td>
                                 </tr>
