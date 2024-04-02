@@ -23,7 +23,7 @@
                         <p class="fs-5 ps-4 pe-4">Recomendamos que adicione nomes simples para melhor filtragem.</p>
                     </div>
                     <div class="input-box mt-4  mb-5 ps-4 pe-5">
-                        <input type="text" class="input-group " placeholder="Digite o nome da organização">
+                        <input type="text" class="input-group" name="nomeOrganizacaoEvento" placeholder="Digite o nome da organização">
                     </div>
                     <div class="w-100  justify-content-end align-items-end d-flex pe-md-5" id="btn-box">
                         <button type="submit" class="border-0 rounded-3 fs-4 mb-4">Prosseguir</button>
