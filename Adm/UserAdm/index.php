@@ -42,7 +42,7 @@ $users = UserAdmDao::selectAll();
             <div class="info-box col-md-9 pt-4" style="color: #a6a6a6;" id="data-box">
                 <h1 class="text-center mt-4">Administradores</h1>
                 <div class="container d-flex w-100 h-auto pe-5 mt-5">
-                    <a href="register.php" class="ms-auto me-2" style="width: 45px;">
+                    <a href="register.php" class="ms-auto me-0" style="width: 45px;">
                         <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
                     </a>
                 </div>
@@ -71,13 +71,13 @@ $users = UserAdmDao::selectAll();
                                         <form action="process.php" method="POST">
                                             <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
                                             <input type="hidden" class="form-control" id="id" name="id" value="<?= $User['idAdmin']?>">
-                                            <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary fs-5"></i>
+                                            <button type="submit" class="dropdown-item"><img src="../../img/Admin/editar-icon.png" alt="" style="width: 25px;">
                                             </button>
                                         </form>
                                     </td>
                                     <td class="text-center">
                                         <a class="dropdown-item" onclick="modalRemover(<?= $User['idAdmin'] ?>,'idDeletar')">
-                                        <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
+                                        <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 25px;">
                                         </a>
                                     </td>
                                 </tr>

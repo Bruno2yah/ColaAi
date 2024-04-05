@@ -1,3 +1,8 @@
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
 .header{
     background-color: #FFF7D1;
     width: 100vw;

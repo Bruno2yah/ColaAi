@@ -25,7 +25,7 @@
                 include('../Componentes/menu.php')
             ?>
             <div class="info-box col-md-9 pt-4" style="color: #a6a6a6;" id="data-box">
-                <h1 class="text-center mt-4">Análise de registro - Pendente</h1>
+                <h1 class="text-center mt-4">Organização - Dados do Perfil</h1>
                 <div class="container mt-5" style="height: 40px;">
                     
                 </div>
@@ -50,7 +50,7 @@
                                         <form action="process.php" method="POST">
                                             <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
                                             <input type="hidden" class="form-control" id="id" name="id" value="<?= $organizacao['idOrganizacaoEvento']?>">
-                                            <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary fs-5"></i>
+                                            <button type="submit" class="dropdown-item"><img src="../../img/Admin/editar-icon.png" alt="" style="width: 30px">
                                             </button>
                                         </form>
                                     </td>
