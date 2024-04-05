@@ -69,7 +69,7 @@ export default function modalConfigPerfil() {
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.column}>
-            <Pressable style={styles.item}>
+            <Pressable style={styles.item} onPress={() => {configPerfilModal(); navigation.navigate('DadosPessoais')}}>
               <View style={styles.buttonContent}>
                 <Image
                   style={styles.icon}

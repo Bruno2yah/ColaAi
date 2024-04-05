@@ -5,7 +5,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   ImageBackground,
-  ScrollView,
   Image,
 } from 'react-native';
 import * as Animado from 'react-native-animatable';

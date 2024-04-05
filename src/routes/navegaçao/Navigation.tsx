@@ -17,6 +17,7 @@ import ProgramacaoCult from '../pages/Usuario/ProgramacaoCultural';
 import Contato from '../pages/Usuario/Contato';
 import Feedback from '../pages/Usuario/Feedback'
 import Sobre from '../pages/Usuario/Sobre'
+import DadosPessoais from '../pages/Usuario/DadosPessoais'
 
 const Stack = createStackNavigator();
 
@@ -40,6 +41,7 @@ export default function Navigation() {
         <Stack.Screen name="Contato" component={Contato}  options={{ headerShown: false }}/>
         <Stack.Screen name="Feedback" component={Feedback}  options={{ headerShown: false }}/>
         <Stack.Screen name="Sobre" component={Sobre}  options={{ headerShown: false }}/>
+        <Stack.Screen name="DadosPessoais" component={DadosPessoais}  options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
