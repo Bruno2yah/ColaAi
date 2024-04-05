@@ -28,7 +28,7 @@
 
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Aceito</a></li>
-                        <li><a class="dropdown-item" href="#">Negado</a></li>
+                        <li><a class="dropdown-item" href="#">Negado</a></li>gi
                     </ul>
                     </div>
                 </div>
