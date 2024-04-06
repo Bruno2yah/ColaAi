@@ -22,7 +22,7 @@
                     <p class="fs-4 p-4">Suas informações serão analisadas, após a analise será enviado uma mensagem no seu e-mail para concluir o processo.</p>
                 </div>
                 <div class="w-100  justify-content-end align-items-end d-flex pe-md-5" id="btn-box">
-                    <button type="submit" class="border-0 rounded-3 fs-4">Concluir</button>
+                    <button type="submit" class="border-0 rounded-3 fs-4" onclick="window.location.href='../index.php'">Concluir</button>
                 </div>
             </div>
         </div>

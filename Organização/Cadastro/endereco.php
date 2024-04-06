@@ -15,7 +15,7 @@
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-11 col-sm-9 col-md-5 rounded-4">
-                <form action="complemento.html" method="post">
+                <form action="complemento.php" method="post">
                     <div class="title-box h-25 p-4 pb-0 pt-5 text-start">
                         <h1 class="fw-bold fs-3" id="title-cadastro">Qual é o endereço da Organização?</h1>
                     </div>

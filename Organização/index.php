@@ -28,7 +28,7 @@
                         </a>
                     </div>
                     <div class="btn-adm row w-100 justify-content-center mt-4 mb-md-0 mb-5">
-                        <a href="./Login/loginTel.html" class="d-flex justify-content-center">
+                        <a href="./Login/loginTel.php" class="d-flex justify-content-center">
                             <button class="border border-0 rounded-4 fs-3 d-flex align-items-center justify-content-evenly col-9">
                                 <img src="../img/Organização/icon-tel.png" alt="" id="icon-tel">
                                 <p class="m-0 fs-4">Entrar com o telefone</p>
@@ -44,7 +44,7 @@
                     <img src="../img/Acesso/Cola AI logo.png" alt="" id="cola-ai" class="col-7">
                     <h2 id="title-org">Organização</h2>
                     <div class="btn-org row w-100 justify-content-center">
-                        <a href="./Cadastro/index.html" class="d-flex justify-content-center">
+                        <a href="./Cadastro/index.php" class="d-flex justify-content-center">
                             <button class="border border-0 rounded-4 fs-3 d-flex align-items-center justify-content-evenly col-md-4 mt-5" id="btn-cadastro">
                                 <img src="../img/Acesso/ORG icon.png" alt="" class="icon-org">
                                 <p class="m-0 fs-2">Cadastre-se</p>   
