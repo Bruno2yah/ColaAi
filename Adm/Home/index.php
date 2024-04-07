@@ -33,7 +33,7 @@
                 <?php
                     include('../Componentes/menu.php')
                 ?>
-                <div class="col-9 text-center mt-4" style="color: #a6a6a6;">
+                <div class="col-9 text-center mt-4" style="color: #a6a6a6;" id="data-box">
                     <h1>Boa tarde, Administrador! Bem-vindo ao Dashboard</h1>
                     <div class="row justify-content-evenly h-25 mt-4">
                         <div class="col-4 rounded-5" id="info-box">

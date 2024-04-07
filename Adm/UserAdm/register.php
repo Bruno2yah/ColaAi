@@ -52,15 +52,25 @@ if (!empty($_POST)) {
       include('../../Adm/Componentes/menu.php')
       ?>
       <div class="col-md-9 p-4 justify-content-center align-items-center d-flex flex-column" id="data-box">
+        <div class="card w-75 mt-5" style="background-color: #FFFFFF;">
+        <?php
+        if ($id_Admin ==''){
+        ?>
         <h1 class="text-center mt-2" style="color: #a6a6a6;">Cadastrar Administrador</h1>
-        <div class="card h-75 w-75 mt-5">
+        <?php
+        }else{
+        ?>
+        <h1 class="text-center mt-2" style="color: #a6a6a6;">Editar Informações - ADM</h1>
+        <?php
+        }
+        ?>
           <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100" novalidate>
             <input type="hidden" name="idAdmin" id="idAdmin" placeholder="id" value="<?= $id_Admin ?>">
             <input type="hidden" name="fotoPerfilAdmin" id="fotoPerfilAdmin" placeholder="nome foto" value="<?= $imagem_Admin ?>">
             <input type="hidden" value="<?= $id_Admin ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">
-            <div class="w-100 h-100 row justify-content-center align-items-center d-flex p-2">
-              <div class="col-md-4 text-center justify-content-center align-items-center d-flex flex-column">
-                <div class="row">
+            <div class="w-100 h-100 row d-flex p-2">
+              <div class="col-md-4 text-center justify-content-center align-self-start d-flex flex-column">
+                <div class="row mt-4">
                   <div class="rounded">
                     <img id="preview" src="../../img/Admin/<?= $imagem_Admin!=""?$imagem_Admin:'userPadrao.png';?>" alt="imagem padrão" class="img-fluid rounded" style="width: 200px; height: 200px">
                   </div>
@@ -70,7 +80,7 @@ if (!empty($_POST)) {
                   <input type="file" id="foto" name="foto" accept="image/*" class="form-control mt-1 mb-4">
                 </div>
               </div>
-              <div class=" col-md-8">
+              <div class="col-md-8">
                 <div class="row">
                   <div class="col-md-6 mb-3 needs-validation">
                     <label for="nome" class="col-form-label">Nome:</label>

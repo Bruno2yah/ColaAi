@@ -34,12 +34,12 @@ $users = UserAdmDao::selectAll();
     <?php
     include('../Componentes/header.php');
     ?>
-    <div class="container-fluid" style="height: 90vh">
-        <div class="row vw-100">
+    <div class="container-fluid">
+        <div class="row vw-100 h-auto">
             <?php
             include('../Componentes/menu.php')
             ?>
-            <div class="info-box col-md-9 pt-4" style="color: #a6a6a6;" id="data-box">
+            <div class="info-box col-md-9 " style="color: #a6a6a6;" id="data-box">
                 <h1 class="text-center mt-4">Administradores</h1>
                 <div class="container d-flex w-100 h-auto pe-5 mt-5">
                     <a href="register.php" class="ms-auto me-0" style="width: 45px;">
@@ -85,6 +85,7 @@ $users = UserAdmDao::selectAll();
                         </thead>
                     </table>
                 </div>
+                
             </div>
             <div class="modal fade" id="modalExcluir" role="dialog">
                 <div class=" modal-dialog modal-dialog-centered">
@@ -109,6 +110,7 @@ $users = UserAdmDao::selectAll();
             <?= require '../../Adm/Componentes/modal.php' ?>
         </div>
     </div>
+
     <!-- Para usar Mascara  -->
     <script type="text/javascript" src="../../js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="../../js/personalizar.js"></script>

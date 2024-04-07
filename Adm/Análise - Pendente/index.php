@@ -34,12 +34,13 @@
                         <thead>
                         <tr id="data-table">
                             <th class="col-md-1 fs-4">ID</th>
-                            <th class="col-md-2 fs-4">Nome</th>
-                            <th class="col-md-3 fs-4">E-mail</th>
-                            <th class="col-md-1 fs-4">CNPJ</th>
+                            <th class="col-md-1 fs-4">Nome</th>
+                            <th class="col-md-2 fs-4">E-mail</th>
+                            <th class="col-md-2 fs-4">CNPJ</th>
+                            <th class="text-center col-md-1 fs-4">Informações</th>
                             <th class="col-md-2 fs-4 text-center">Aceitar</th>
                             <th class="text-center col-md-1 fs-4">Negar</th>
-                            <th class="text-center col-md-1 fs-4">Informações</th>
+
                         </tr>
                         <?php foreach ($organizacao as $organizacao) : ?>
                                 <tr class="mt-1">
@@ -48,14 +49,14 @@
                                     <td class="fs-5 p-1"><?= $organizacao['emailOrganizacaoEvento']; ?></td>
                                     <td class="fs-5 p-1"><?= $organizacao['cnpjOrganizacaoEvento']; ?></td>
                                     <td class="text-center">
-                                        <button type="submit" class="dropdown-item"><img src="../../img/Admin/aceitar-icon.png" alt="" style="width: 30px;" >
-                                            </button>
+                                    <img src="../../img/Admin/info-icon.png" alt="" style="width: 30px;">
                                     </td>
                                     <td class="text-center">
                                         <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
                                     </td>
                                     <td class="text-center">
-                                        <img src="../../img/Admin/info-icon.png" alt="" style="width: 30px;">
+                                    <button type="submit" class="dropdown-item"><img src="../../img/Admin/aceitar-icon.png" alt="" style="width: 30px;" >
+                                        </button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

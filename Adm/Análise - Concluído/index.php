@@ -19,8 +19,8 @@
             ?>
             <div class="info-box col-md-9 pt-4" style="color: #a6a6a6;" id="data-box">
                 <h1 class="text-center">Análise de registro - Concluídos</h1>
-                <div class="container pe-5 d-flex flex-column">
-                    <h1 class="fs-5 ms-auto me-4    ">Categoria</h1>
+                <div class="container pe-5 d-flex flex-column mt-5">
+                    <h1 class="fs-5 ms-auto me-4 ">Categoria</h1>
                     <div class="dropdown ms-auto">
                     <a class="btn btn-body-primary border-1 border dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Selecione
