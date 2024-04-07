@@ -1,3 +1,35 @@
+<?php
+require_once (__DIR__ . '../../../dao/TokenOrgEventoDao.php');
+
+// Inicializa a variável de erro
+$erroCodigoAcesso = "";
+
+// Verifica se o formulário foi submetido
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se o índice "valorTokenOrganizacaoEvento" está definido em $_POST
+    if (isset($_POST["valorTokenOrganizacaoEvento"]) && isset($_POST["emailOrganizacaoEvento"])) {
+        // Recupera os valores dos cinco campos de entrada
+        $codigoAcessoUsuario = implode("", $_POST["valorTokenOrganizacaoEvento"]);
+        $emailOrganizacaoEvento = $_POST["emailOrganizacaoEvento"];
+
+        // Consulta o banco de dados para recuperar o código de acesso associado ao e-mail fornecido
+        $codigoAcessoArmazenado = TokenOrgEventoDao::getCodigoAcessoByEmail($emailOrganizacaoEvento);
+
+        // Compara o código de acesso inserido pelo usuário com o código recuperado do banco de dados
+        if ($codigoAcessoUsuario === $codigoAcessoArmazenado) {
+            // O código de acesso é válido, redireciona para a próxima página
+            header("Location: telefone.php");
+            exit();
+        } else {
+            // O código de acesso é inválido
+            $erroCodigoAcesso = "Código de acesso inválido. Por favor, tente novamente.";
+        }
+    } else {
+        // Caso o índice "valorTokenOrganizacaoEvento" ou "emailOrganizacaoEvento" não esteja definido em $_POST
+        $erroCodigoAcesso = "Por favor, insira o código de acesso.";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +47,9 @@
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-11 col-sm-9 col-md-5  rounded-4">
-                <form action="telefone.php" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <!--campo oculto para enviar o e-mail do usuário -->
+                    <input type="hidden" name="emailOrganizacaoEvento" value="<?php echo htmlspecialchars($_POST['emailOrganizacaoEvento'] ?? ''); ?>">
                     <div class="title-box ps-4 pe-4 pt-5 text-start">
                         <h1 class="fw-bold fs-3" id="title-cadastro">Adicione o código de acesso</h1>
                     </div>
@@ -23,12 +57,17 @@
                         <p class="fs-5 ps-4 pe-4 lh-sm">Será enviado no seu e-mail um código de acesso para garantir um login seguro. <a href="">Reenviar código</a> </p>
                     </div>
                     <div class="row w-100 d-flex justify-content-center" id="verify">
-                        <input type="text" class="col-md-1 rounded-4" maxlength="1">
-                        <input type="text" class="col-md-1 ms-3 rounded-4"maxlength="1">
-                        <input type="text" class="col-md-1 ms-3 rounded-4"maxlength="1">
-                        <input type="text" class="col-md-1 ms-3 rounded-4"maxlength="1">
-                        <input type="text" class="col-md-1 ms-3 rounded-4"maxlength="1">
+                        <!-- Mantenha os cinco campos de entrada para o código de acesso -->
+                        <input type="text" class="col-md-1 rounded-4" name="valorTokenOrganizacaoEvento[]" maxlength="1">
+                        <input type="text" class="col-md-1 ms-3 rounded-4" name="valorTokenOrganizacaoEvento[]" maxlength="1">
+                        <input type="text" class="col-md-1 ms-3 rounded-4" name="valorTokenOrganizacaoEvento[]" maxlength="1">
+                        <input type="text" class="col-md-1 ms-3 rounded-4" name="valorTokenOrganizacaoEvento[]" maxlength="1">
+                        <input type="text" class="col-md-1 ms-3 rounded-4" name="valorTokenOrganizacaoEvento[]" maxlength="1">
                     </div>
+                    <!-- Exiba a mensagem de erro, se houver -->
+                    <?php if(!empty($erroCodigoAcesso)): ?>
+                        <div class="alert alert-danger mt-3" role="alert"><?php echo $erroCodigoAcesso; ?></div>
+                    <?php endif; ?>
                     <div class="w-100  justify-content-end align-items-end d-flex pe-md-4 p-4" id="btn-box">
                         <button type="submit" class="border-0 rounded-3 fs-4">Prosseguir</button>
                     </div>

@@ -156,6 +156,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
             return $stmt->fetchAll();
         }
         
+        
     }
 
 
