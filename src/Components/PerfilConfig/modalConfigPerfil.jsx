@@ -95,7 +95,7 @@ export default function modalConfigPerfil() {
                 source={require('../../../assets/img/User/seta.png')}
               />
             </Pressable>
-            <Pressable style={styles.item}>
+            <Pressable style={styles.item} onPress={() => {configPerfilModal(); navigation.navigate('NotifConfig')}}>
               <View style={styles.buttonContent}>
                 <Image
                   style={styles.icon}

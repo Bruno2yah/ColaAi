@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image, TextInput, Modal } from 'react-native';
+import { View, Text, Pressable, Image,} from 'react-native';
 import styles from '../../../../Components/Styles/Sobre/SobreStyle';
 
 export default function Sobre({ navigation }) {

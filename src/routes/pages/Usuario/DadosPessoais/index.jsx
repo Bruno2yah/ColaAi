@@ -47,7 +47,7 @@ export default function Feedback({ navigation }) {
               />
             </View>
           </View>
-      </View>
+        </View>
         
         <View style={{paddingHorizontal: 10}}>
             <View style={{ flexDirection: 'row', alignItems: 'center'}}>

@@ -15,9 +15,10 @@ import Perfil from '../pages/Usuario/Perfil';
 import PerfilOrg from '../pages/Usuario/PerfilOrganizazao'
 import ProgramacaoCult from '../pages/Usuario/ProgramacaoCultural';
 import Contato from '../pages/Usuario/Contato';
-import Feedback from '../pages/Usuario/Feedback'
-import Sobre from '../pages/Usuario/Sobre'
-import DadosPessoais from '../pages/Usuario/DadosPessoais'
+import Feedback from '../pages/Usuario/Feedback';
+import Sobre from '../pages/Usuario/Sobre';
+import DadosPessoais from '../pages/Usuario/DadosPessoais';
+import NotifConfig from '../pages/Usuario/NotifConfig';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,7 @@ export default function Navigation() {
         <Stack.Screen name="Feedback" component={Feedback}  options={{ headerShown: false }}/>
         <Stack.Screen name="Sobre" component={Sobre}  options={{ headerShown: false }}/>
         <Stack.Screen name="DadosPessoais" component={DadosPessoais}  options={{ headerShown: false }}/>
+        <Stack.Screen name="NotifConfig" component={NotifConfig}  options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
