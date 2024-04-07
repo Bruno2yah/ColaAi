@@ -1,5 +1,5 @@
 <?php
-    require_once('../../dao/OrganizacaoDao.php');
+    require_once '../../dao/OrganizacaoDao.php';
     require_once '../../model/Mensagem.php';
     $organizacao = OrganizacaoDao::selectAll(); 
 ?>

@@ -45,7 +45,7 @@
                         <p class="fs-4 m-0 p-0 text-center">Entre com o seu e-mail</p>
                     </div>
                     <div class="input-box mt-1 mb-5 ps-md-5 pe-md-5">
-                        <input type="email" class="input-group fs-5" placeholder="Digite o seu e-mail">
+                        <input type="email" class="input-group fs-5" name="email" placeholder="Digite o seu e-mail">
                     </div>
                     <div class="input-box mt-4 mb-3 ps-md-5 pe-md-5">
                         <div class="orgSenha d-flex">

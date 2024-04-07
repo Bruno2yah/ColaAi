@@ -84,7 +84,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
                nomeOrganizacaoEvento = :nome, 
                cnpjOrganizacaoEvento = :cnpj,
                cepOrganizacaoEvento = :cep, 
-               logradouroOrganizacaoEvento = :log,
+               enderecoOrganizacaoEvento = :log,
                numeroOrganizacaoEvento = :num,
                complementoOrganizacaoEvento = :complemento,
                bairroOrganizacaoEvento = :bairro,

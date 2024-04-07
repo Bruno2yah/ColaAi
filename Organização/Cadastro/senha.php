@@ -37,6 +37,19 @@
                             <input type="password" name="senha" id="password1" class="inputSenha col-12 fs-5" placeholder="Confirme a sua senha">
                             <i class="bi bi-eye col1" id="btnSenha1" onclick="MostrarSenha2()"></i>
                         </div>
+                        <script>
+                        function myFunction() {
+                        var x = document.getElementById("password");
+                        var y = document.getElementById("password1")
+                        if (x.type === "password") {
+                            x.type = "text";
+                            y.type = "text";
+                        } else {
+                            x.type = "password";
+                            y.type = "password";
+                        }
+                        }
+                    </script>
                     </div>
                     <div class="w-100  justify-content-end align-items-end d-flex pe-md-5 mt-5 mb-4" id="btn-box">
                         <button type="submit" class="border-0 rounded-3 fs-4">Prosseguir</button>

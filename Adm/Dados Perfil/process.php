@@ -1,7 +1,7 @@
 <?php
-require_once '../../model/OrganizacaoEvento.php';
-require_once '../../dao/OrganizacaoDao.php';
-require_once '../../model/Mensagem.php';
+require_once (__DIR__.'../../../model/OrganizacaoEvento.php');
+require_once (__DIR__.'../../../dao/OrganizacaoDao.php');
+require_once (__DIR__.'../../../model/Mensagem.php');
 
 $organizacao = new OrganizacaoEvento();
 $msg = new Mensagem();
@@ -10,7 +10,7 @@ $msg = new Mensagem();
 switch ($_POST["acao"]) {
     case 'DELETE':
      try {
-          $OrganizacaoDao = OrganizacaoDao::delete($_POST['id']);
+          $organizacaoDao = OrganizacaoDao::delete($_POST['id']);
           header("Location: index.php");
       } catch (Exception $e) {
         echo 'Exceção capturada: ',  $e->getMessage(), "\n";
@@ -20,7 +20,7 @@ switch ($_POST["acao"]) {
         $organizacao->setNome($_POST['nomeOrganizacaoEvento']); 
         $organizacao->setCnpj($_POST['cnpjOrganizacaoEvento']);  
         $organizacao->setCep($_POST['cepOrganizacaoEvento']);
-        $organizacao->setLog($_POST['logradouroOrganizacaoEvento']);
+        $organizacao->setLog($_POST['enderecoOrganizacaoEvento']);
         $organizacao->setNum($_POST['numeroOrganizacaoEvento']);
         $organizacao->setComplemento($_POST['complementoOrganizacaoEvento']);
         $organizacao->setBairro($_POST['bairroOrganizacaoEvento']);
@@ -28,12 +28,12 @@ switch ($_POST["acao"]) {
         $organizacao->setUf($_POST['ufOrganizacaoEvento']);
         $organizacao->setEmail($_POST['emailOrganizacaoEvento']);
         $organizacao->setSenha($_POST['senhaOrganizacaoEvento']);
-        $organizacao->setLink($_POST['linkOrganizacaoEvento']);
-        $organizacao->setImagem($organizacao->salvarImagem(($_POST['fotoPerfilOrganizacaoEvento'])));
+        $organizacao->setLink($_POST['linkSiteOrganizacaEvento']);
+        $organizacao->setImagem($organizacao->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
         $organizacao->setDesc($_POST['descOrganizacaoEvento']);
         
         try {
-            $OrganizacaoDao = OrganizacaoDao::insert($organizacao);
+            $organizacaoDao = OrganizacaoDao::insert($organizacao);
 
             // Adiciona uma mensagem para debug
             $msg->setMensagem("Usuário inserido com sucesso no banco de dados.", "bg-success");
@@ -53,7 +53,7 @@ switch ($_POST["acao"]) {
               $organizacao->setNome($_POST['nomeOrganizacaoEvento']); 
               $organizacao->setCnpj($_POST['cnpjOrganizacaoEvento']);  
               $organizacao->setCep($_POST['cepOrganizacaoEvento']);
-              $organizacao->setLog($_POST['logradouroOrganizacaoEvento']);
+              $organizacao->setLog($_POST['enderecoOrganizacaoEvento']);
               $organizacao->setNum($_POST['numeroOrganizacaoEvento']);
               $organizacao->setComplemento($_POST['complementoOrganizacaoEvento']);
               $organizacao->setBairro($_POST['bairroOrganizacaoEvento']);
@@ -61,11 +61,11 @@ switch ($_POST["acao"]) {
               $organizacao->setUf($_POST['ufOrganizacaoEvento']);
               $organizacao->setEmail($_POST['emailOrganizacaoEvento']);
               $organizacao->setSenha($_POST['senhaOrganizacaoEvento']);
-              $organizacao->setLink($_POST['linkOrganizacaoEvento']);
-              $organizacao->setImagem($organizacao->salvarImagem(($_POST['fotoPerfilOrganizacaoEvento'])));
+              $organizacao->setLink($_POST['linkSiteOrganizacaEvento']);
+              $organizacao->setImagem($organizacao->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
               $organizacao->setDesc($_POST['descOrganizacaoEvento']);
               try {
-                $OrganizacaoDao = OrganizacaoDao::update($_POST["idOrganizacaoEvento"], $user);
+                $organizacaoDao = OrganizacaoDao::update($_POST["idOrganizacaoEvento"], $organizacao);
                 $msg->setMensagem("Usuário atualizado com sucesso.", "bg-success");
                 header("Location: index.php");
               } catch (Exception $e) {
@@ -77,7 +77,7 @@ switch ($_POST["acao"]) {
         case 'SELECTID':
       
           try {
-              $OrganizacaoDao = OrganizacaoDao::selectById($_POST['id']);
+              $organizacaoDao = OrganizacaoDao::selectById($_POST['id']);
               // Configura as opções do contexto da solicitação
               include('register.php');
           } catch (Exception $e) {
