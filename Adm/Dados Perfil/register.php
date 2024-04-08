@@ -66,12 +66,12 @@ if (!empty($_POST)) {
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Editar Dados do perfil</h1>
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4" novalidate>
                 <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id" value="<?= $id_Org ?>">
-                <input type="hidden" name="imagemOrganizacaoEvento" id="imagemOrganizacaoEvento" placeholder="nome foto" value="<?= $fotoPerfil_Org ?>">
+                <input type="hidden" name="imagemOrganizacaoEvento" id="imagemOrganizacaoEvento" placeholder="nome foto" value="<?=$fotoPerfil_Org?>">
                 <input type="hidden" value="<?= $id_Org ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">
                     <div class="container-fluid w-100">
                         <div class="position-relative rounded">
-                            <!--<img src="../../img/Admin/eventoPadrao.png" alt="" style="width: 850px; height: 200px; z-index:0;" class="bannerOrg img-fluid ms-auto me-auto rounded rounded-4 position-absolute z-0">-->
-                            <img src="../../img/Admin/<?= $fotoPerfil_Org!=""?$fotoPerfil_Org:'userPadrao.png';?>" alt="foto da Org" class="pfpIconOrg position-absolute img-fluid" >
+                            <!-- <img src="../../img/Admin/eventoPadrao.png" alt="" style="width: 850px; height: 200px; z-index:0;" class="bannerOrg img-fluid ms-auto me-auto rounded rounded-4 position-absolute z-0"> -->
+                            <img id = "preview" src="../../img/Organizacao/<?=$fotoPerfil_Org!=""?$fotoPerfil_Org:'userPadrao.png';?>" alt="foto da Org" class="pfpIconOrg position-absolute img-fluid " style="width: 200px; height: 200px" >
                         </div>
                     </div>
 

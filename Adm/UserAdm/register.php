@@ -66,7 +66,7 @@ if (!empty($_POST)) {
         ?>
           <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100" novalidate>
             <input type="hidden" name="idAdmin" id="idAdmin" placeholder="id" value="<?= $id_Admin ?>">
-            <input type="hidden" name="fotoPerfilAdmin" id="fotoPerfilAdmin" placeholder="nome foto" value="<?= $imagem_Admin ?>">
+            <input type="text" name="fotoPerfilAdmin" id="fotoPerfilAdmin" placeholder="nome foto" value="<?= $imagem_Admin ?>">
             <input type="hidden" value="<?= $id_Admin ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">
             <div class="w-100 h-100 row d-flex p-2">
               <div class="col-md-4 text-center justify-content-center align-self-start d-flex flex-column">
