@@ -52,11 +52,11 @@
                                     <img src="../../img/Admin/info-icon.png" alt="" style="width: 30px;">
                                     </td>
                                     <td class="text-center">
-                                        <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
+                                        <button type="submit" class="dropdown-item"><img src="../../img/Admin/aceitar-icon.png" alt="" style="width: 30px;" >
+                                        </button>
                                     </td>
                                     <td class="text-center">
-                                    <button type="submit" class="dropdown-item"><img src="../../img/Admin/aceitar-icon.png" alt="" style="width: 30px;" >
-                                        </button>
+                                        <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

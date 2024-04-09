@@ -62,7 +62,7 @@ if (!empty($_POST)) {
             include('../../Adm/Componentes/menu.php')
         ?>
         <div class="col-md-9 p-4  align-items-center d-flex flex-column" id="data-box" style="background-blend-mode: darken; background-color: #E8E8E8;">
-            <div class="d-flex flex-column w-75 border border-1 rounded rounded-4 mt-5" style="background-color: #FFFFFF;">
+            <div class="d-flex flex-column w-75 border border-1 rounded rounded-4 mt-5 " style="background-color: #FFFFFF;" id="formBox">
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Editar Dados do perfil</h1>
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4" novalidate>
                 <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id" value="<?= $id_Org ?>">
