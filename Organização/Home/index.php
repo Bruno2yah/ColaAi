@@ -36,16 +36,16 @@
   session_start();
 
   // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
-  if (!isset($_SESSION['AutenticaoAdm']) || $_SESSION['AutenticaoAdm'] != 'SIM') {
+  if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
     // Redirecionar para o login com um erro2 se não estiver autenticado
-    header('Location: login.php?login=erro2');
+    header('Location: loginEmail.php?login=erro2');
     exit();
   }
 
   //o usuário está autenticado
-  $authUser = $_SESSION['userAdm'];
+  $authUser = $_SESSION['userOrg'];
 
-  $nomeAdm = $authUser['nomeAdmin'];
+  $nomeOrg = $authUser['nomeOrganizacaoEvento'];
 ?>
 <?php
 include('../Componentes/header.php');
