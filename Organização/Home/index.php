@@ -46,7 +46,20 @@
   $authUser = $_SESSION['userOrg'];
 
   $nomeOrg = $authUser['nomeOrganizacaoEvento'];
+
+  // Saudação com base no horário do dia
+  $horaAtual = time();
+  $saudacao = '';
+  if ($horaAtual < 12) {
+    $saudacao = 'Bom dia';
+  } elseif ($horaAtual < 18) {
+    $saudacao = 'Boa tarde';
+  } else {
+    $saudacao = 'Boa noite';
+  }
+  //echo($horaAtual)
 ?>
+
 <?php
 include('../Componentes/header.php');
 ?>
@@ -56,7 +69,7 @@ include('../Componentes/header.php');
         include('../Componentes/menu.php')
         ?>
         <div class="col-9 text-center mt-4" style="color: #a6a6a6;">
-            <h1>Boa tarde, Organização! Bem-vindo ao Dashboard</h1>
+        <h2><?php echo $saudacao . ', ' . $nomeOrg . '! Bem-vindo ao Dashboard'; ?></h2>
             <div class="row justify-content-evenly h-25 mt-4">
                 <div class="col-4 rounded-5" >
                     <h2 class="fs-4 p-3 pb-0">Visitas Perfil</h2> <!-- Alteração feita aqui -->

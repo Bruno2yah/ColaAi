@@ -24,6 +24,17 @@
   $authUser = $_SESSION['userAdm'];
 
   $nomeAdm = $authUser['nomeAdmin'];
+    // Saudação com base no horário do dia
+    $horaAtual = time();
+    $saudacao = '';
+    if ($horaAtual < 12) {
+    $saudacao = 'Bom dia';
+    } elseif ($horaAtual < 18) {
+    $saudacao = 'Boa tarde';
+    } else {
+    $saudacao = 'Boa noite';
+    }
+
   ?>
     <?php
     include('../Componentes/header.php');
@@ -34,7 +45,7 @@
                     include('../Componentes/menu.php')
                 ?>
                 <div class="col-9 text-center mt-4" style="color: #a6a6a6;" id="data-box">
-                    <h1>Boa tarde, Administrador! Bem-vindo ao Dashboard</h1>
+                <h1><?php echo $saudacao . ', ' . $nomeAdm . '! Bem-vindo ao Dashboard'; ?></h1>
                     <div class="row justify-content-evenly h-25 mt-4">
                         <div class="col-4 rounded-5" id="info-box">
                             <h2 class="fs-4 p-3 pb-0">Novos Usuários Registrados (Últimos 30 dias)</h2>

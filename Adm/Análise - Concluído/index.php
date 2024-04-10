@@ -1,3 +1,8 @@
+<?php
+    require_once('../../dao/OrganizacaoDao.php');
+    require_once '../../model/Mensagem.php';
+    $organizacao = OrganizacaoDao::selectAll(); 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,7 +33,8 @@
 
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Aceito</a></li>
-                        <li><a class="dropdown-item" href="#">Negado</a></li>gi
+                        <li><a class="dropdown-item" href="#">Negado</a></li>
+                        <li><a class="dropdown-item" href="#">Pendente</a></li>
                     </ul>
                     </div>
                 </div>
