@@ -74,6 +74,14 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="mt-1 ms-auto me-4"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
         </a>
       </p>
+      <div class="collapse" id="collapseUsuario">
+        <li class="menuItems w-100 p-1 ps-4">
+          <a class="" href="../User/" style="text-decoration: none; color: #a6a6a6;">
+          <img src="../../img/Admin/icon-analise.png" alt="" id="menu-icon">
+            <span>Dados do perfil</span>
+          </a>
+        </li>
+      </div>
       <p class="d-inline-flex menuItems w-100 p-1 ps-2" style="margin-bottom: 0">
         <a class="w-100 d-flex align-items-cente" data-bs-toggle="collapse" href="#collapseSuporte" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
         <img src="../../img/Admin/icon-suporte.png" alt="" id="menu-icon">
@@ -81,5 +89,25 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="mt-1 ms-auto me-4"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
         </a>
       </p>
+      <div class="collapse" id="collapseSuporte">
+        <li class="menuItems w-100 p-1 ps-4">
+          <a class="" href="../Feedback/" style="text-decoration: none; color: #a6a6a6;">
+          <img src="../../img/Admin/icon-analise.png" alt="" id="menu-icon">
+            <span>Feedback</span>
+          </a>
+        </li>
+        <li class="menuItems w-100 p-1 ps-4">
+          <a class="" href="../Contato/" style="text-decoration: none; color: #a6a6a6;">
+          <img src="../../img/Admin/icon-analise.png" alt="" id="menu-icon">
+            <span>Contato</span>
+          </a>
+        </li>
+        <li class="menuItems w-100 p-1 ps-4">
+          <a class="" href="../Denuncia/" style="text-decoration: none; color: #a6a6a6;">
+          <img src="../../img/Admin/icon-analise.png" alt="" id="menu-icon">
+            <span>Denúncia</span>
+          </a>
+        </li>
+      </div>
     </ul>
   </div>
