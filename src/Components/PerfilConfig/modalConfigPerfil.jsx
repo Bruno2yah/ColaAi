@@ -82,7 +82,7 @@ export default function modalConfigPerfil() {
                 source={require('../../../assets/img/User/seta.png')}
               />
             </Pressable>
-            <Pressable style={styles.item}>
+            <Pressable style={styles.item} onPress={() => {configPerfilModal(); navigation.navigate('Seguindo')}}>
               <View style={styles.buttonContent}>
                 <Image
                   style={styles.icon}
@@ -108,7 +108,7 @@ export default function modalConfigPerfil() {
                 source={require('../../../assets/img/User/seta.png')}
               />
             </Pressable>
-            <Pressable style={styles.item}>
+            <Pressable style={styles.item} onPress={() => {configPerfilModal(); navigation.navigate('Interesse')}}>
               <View style={styles.buttonContent}>
                 <Image
                   style={styles.icon}

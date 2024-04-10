@@ -19,6 +19,8 @@ import Feedback from '../pages/Usuario/Feedback';
 import Sobre from '../pages/Usuario/Sobre';
 import DadosPessoais from '../pages/Usuario/DadosPessoais';
 import NotifConfig from '../pages/Usuario/NotifConfig';
+import Seguindo from '../pages/Usuario/Seguindo';
+import Interesse from '../pages/Usuario/Interesse';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +46,8 @@ export default function Navigation() {
         <Stack.Screen name="Sobre" component={Sobre}  options={{ headerShown: false }}/>
         <Stack.Screen name="DadosPessoais" component={DadosPessoais}  options={{ headerShown: false }}/>
         <Stack.Screen name="NotifConfig" component={NotifConfig}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Seguindo" component={Seguindo}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Interesse" component={Interesse}  options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
