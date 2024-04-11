@@ -86,7 +86,7 @@ export default function NavBar() {
                             source={require('../../../assets/img/NavBar/local.png')}
                         />
                     </Pressable>
-                    <Pressable style={styles.buttonNav} onPress={() => { setColor(3) }}>
+                    <Pressable style={styles.buttonNav} onPress={() => { setColor(3); navigation.navigate('Notificacoes', { selected: 3 }) }}>
                         <Image
                             style={{ width: 61, height: 61, tintColor: notifColor }}
                             source={require('../../../assets/img/NavBar/notif.png')}

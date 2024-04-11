@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         flex:1,
         overflow: "hidden",
-        heigh: '100%',
+        height: '100%',
     },
     cards: {
         //backgroundColor: '#ff1',
