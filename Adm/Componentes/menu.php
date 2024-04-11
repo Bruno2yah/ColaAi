@@ -92,19 +92,19 @@
       <div class="collapse" id="collapseSuporte">
         <li class="menuItems w-100 p-1 ps-4">
           <a class="" href="../Feedback/" style="text-decoration: none; color: #a6a6a6;">
-          <img src="../../img/Admin/icon-analise.png" alt="" id="menu-icon">
+          <img src="../../img/Admin/feedback-icon.png" alt="" id="menu-icon">
             <span>Feedback</span>
           </a>
         </li>
         <li class="menuItems w-100 p-1 ps-4">
           <a class="" href="../Contato/" style="text-decoration: none; color: #a6a6a6;">
-          <img src="../../img/Admin/icon-analise.png" alt="" id="menu-icon">
+          <img src="../../img/Admin/contato-icon.png" alt="" id="menu-icon">
             <span>Contato</span>
           </a>
         </li>
         <li class="menuItems w-100 p-1 ps-4">
           <a class="" href="../Denuncia/" style="text-decoration: none; color: #a6a6a6;">
-          <img src="../../img/Admin/icon-analise.png" alt="" id="menu-icon">
+          <img src="../../img/Admin/denuncia-icon.png" alt="" id="menu-icon">
             <span>Denúncia</span>
           </a>
         </li>
