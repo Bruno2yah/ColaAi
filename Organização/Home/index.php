@@ -43,9 +43,9 @@
   }
 
   //o usuário está autenticado
-  $authUser = $_SESSION['userOrg'];
+  $authUserOrg = $_SESSION['userOrg'];
 
-  $nomeOrg = $authUser['nomeOrganizacaoEvento'];
+  $nomeOrg = $authUserOrg['nomeOrganizacaoEvento'];
 
   // Saudação com base no horário do dia
   $horaAtual = time();

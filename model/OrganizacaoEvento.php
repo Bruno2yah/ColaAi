@@ -1,6 +1,6 @@
 <?php 
     class OrganizacaoEvento{
-        public $id, $nome, $cnpj, $cep, $log,$num,$complemento, $bairro, $cidade, $uf, $email, $senha, $link, $imagem, $desc;
+        public $id, $nome, $cnpj, $cep, $log,$num,$complemento, $bairro, $cidade, $uf, $tel, $email, $senha, $link, $imagem, $desc;
 
         public function getId(){
             return $this->id;
@@ -63,6 +63,12 @@
         }
         public function setUf($uf){
             $this-> uf = $uf;
+        }
+        public function getTel(){
+            return $this->tel;
+        }
+        public function setTel($tel){
+            $this-> tel = $tel;
         }
         public function getEmail(){
             return $this->email;

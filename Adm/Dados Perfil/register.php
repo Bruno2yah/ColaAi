@@ -14,6 +14,7 @@ if (!empty($_POST)) {
   $bairro_Org = $organizacaoDao['bairroOrganizacaoEvento'];
   $cidade_Org = $organizacaoDao['cidadeOrganizacaoEvento'];
   $uf_Org = $organizacaoDao['ufOrganizacaoEvento'];
+  $tel_Org = $organizacaoDao['telOrganizacaoEvento'];
   $email_Org = $organizacaoDao['emailOrganizacaoEvento'];
   $senha_Org = $organizacaoDao['senhaOrganizacaoEvento'];
   $link_Org = $organizacaoDao['linkSiteOrganizacaoEvento'];
@@ -29,6 +30,7 @@ if (!empty($_POST)) {
   $bairro_Org = '';
   $cidade_Org = '';
   $uf_Org = '';
+  $tel_Org = '';
   $email_Org = '';
   $senha_Org = '';
   $link_Org = '';
@@ -84,7 +86,7 @@ if (!empty($_POST)) {
                     <div class="row">
                     <div class="col-md-6 mb-3 needs-validation">
                         <label for="nomeOrganizacao" class="col-form-label">Nome da Organização*</label>
-                        <input type="text" class="form-control inputGeral " placeholder="" name="nomeOrganizacaoEvento" maxlength="50" id="nomeOrganizacaoEvento" value="<?= $nome_Org ?>" required>
+                        <input type="text" class="form-control inputGeral " placeholder="" name="nomeOrganizacaoEvento" maxlength="50" id="nomeOrganizacaoEvento" value="<?=$nome_Org ?>" required>
                         <div class="invalid-feedback">
                         Preencha este campo
                         </div>
@@ -110,30 +112,33 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-md-10 needs-validation">
                             <label for="endereco" class="col-form-label">Endereço da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="ufOrganizacaoEvento" maxlength="100" id="" value="<?=$uf_Org?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="enderecoOrganizacaoEvento" maxlength="100" id="" value="<?=$endereco_Org?>" required>
                         </div>
                         <div class="col-md-2 needs-validation">
                             <label for="numero" class="col-form-label">N°*</label>
                             <input type="text" class="form-control inputGeral" placeholder=""  name="numeroOrganizacaoEvento" maxlength="100" id="numeroOrganizacaoEvento" value="<?=$num_Org?>" required>
                         </div>
                     </div>
-
+                    <div class="row">
                         <div class="col-md-12 needs-validation">
                             <label for="complemento" class="col-form-label">Complemento da organização*</label>
                             <input type="text" class="form-control inputGeral" placeholder=""  name="complementoOrganizacaoEvento" maxlength="100" id="" value="<?=$complemento_Org?>" required>
                         </div>
-
-
-                        <div class="col-md-12 needs-validation">
-                            <label for="complemento" class="col-form-label">UF da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="<?=$uf_Org?>" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 needs-validation">
+                            <label for="complemento" class="col-form-label">Cidade da Organização*</label>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="cidadeOrganizacaoEvento" maxlength="20" id="" value="<?=$cidade_Org?>" required>
                         </div>
-
-                    
+                        <div class="col-md-6 needs-validation">
+                            <label for="complemento" class="col-form-label">UF da Organização*</label>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="ufOrganizacaoEvento" maxlength="20" id="" value="<?=$uf_Org?>" required>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12 needs-validation">
                             <label for="telefone" class="col-form-label">Telefone da Organização*</label>
-                            <input type="telefone" class="form-control inputGeral" placeholder="" name="" maxlength="100" id="" value="" required>
+                            <input type="telefone" class="form-control inputGeral" placeholder="" name="telOrganizacaoEvento" data-mask="00-00000-0000" maxlength="20" id="" value="<?=$tel_Org?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -151,7 +156,7 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-md-12 needs-validation">
                             <label for="link" class="col-form-label">Link do Site Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder="" name="linkSiteOrganizacaoEvento" maxlength="10" id="linkSiteOrganizacaoEvento" value="<?=$link_Org?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder="" name="linkSiteOrganizacaoEvento" maxlength="2000" id="linkSiteOrganizacaoEvento" value="<?=$link_Org?>" required>
                         </div>
                     </div>
                     <div class="row">

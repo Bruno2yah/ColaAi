@@ -4,10 +4,10 @@ session_start();
 require_once (__DIR__ . '/../dao/OrganizacaoDao.php'); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $telefone = $_POST["telefone"];
+    $tel = $_POST["telefone"];
     $senha = $_POST["senha"];
 
-    $org = OrganizacaoDao::checkCredentials($telefone, $senha);
+    $org = OrganizacaoDao::checkCredentialsTel($tel, $senha);
 
     if ($org) {
         // Login bem-sucedido

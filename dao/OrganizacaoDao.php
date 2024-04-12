@@ -12,6 +12,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $bairro = $org->getBairro();
             $cidade = $org->getCidade();
             $uf = $org->getUf();
+            $tel = $org->getTel();
             $email = $org->getEmail();
             $senha = $org->getSenha(); 
             $link = $org->getLink();          
@@ -20,9 +21,9 @@ require_once (__DIR__ . '../../model/Conexao.php');
             
             $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
         
-            $stmt = $conn->prepare("INSERT INTO tborganizacaoevento (nomeOrganizacaoEvento, cnpjOrganizacaoEvento, cepOrganizacaoEvento, enderecoOrganizacaoEvento, numeroOrganizacaoEvento, complementoOrganizacaoEvento, bairroOrganizacaoEvento, cidadeOrganizacaoEvento, ufOrganizacaoEvento, 
+            $stmt = $conn->prepare("INSERT INTO tborganizacaoevento (nomeOrganizacaoEvento, cnpjOrganizacaoEvento, cepOrganizacaoEvento, enderecoOrganizacaoEvento, numeroOrganizacaoEvento, complementoOrganizacaoEvento, bairroOrganizacaoEvento, cidadeOrganizacaoEvento, ufOrganizacaoEvento,telOrganizacaoEvento, 
             emailOrganizacaoEvento, senhaOrganizacaoEvento, linkSiteOrganizacaoEvento, imagemOrganizacaoEvento, descOrganizacaoEvento) 
-                            VALUES (:nome, :cnpj, :cep, :log, :num, :complemento, :bairro, :cidade, :uf, :email, :senha, :link, :imagem, :desc)");
+                            VALUES (:nome, :cnpj, :cep, :log, :num, :complemento, :bairro, :cidade, :uf, :tel, :email, :senha, :link, :imagem, :desc)");
         
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':cnpj', $cnpj);
@@ -33,6 +34,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $stmt->bindParam(':bairro', $bairro);
             $stmt->bindParam(':cidade', $cidade);
             $stmt->bindParam(':uf', $uf);
+            $stmt->bindParam(':tel', $tel);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
             $stmt->bindParam(':link', $link);
@@ -90,6 +92,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
                bairroOrganizacaoEvento = :bairro,
                cidadeOrganizacaoEvento = :cidade,
                ufOrganizacaoEvento = :uf,
+               telOrganizacaoEvento = :tel,
                emailOrganizacaoEvento = :email, 
                senhaOrganizacaoEvento = :senha, 
                linkSiteOrganizacaoEvento = :link,
@@ -109,6 +112,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $bairro = $org->getBairro();
             $cidade = $org->getCidade();
             $uf = $org->getUf();
+            $tel = $org->getTel();
             $email = $org->getEmail();
             $senha = $org->getSenha(); 
             $link = $org->getLink();
@@ -124,6 +128,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $stmt->bindParam(':bairro', $bairro);
             $stmt->bindParam(':cidade', $cidade);
             $stmt->bindParam(':uf', $uf);
+            $stmt->bindParam(':tel', $tel);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
             $stmt->bindParam(':link', $link);
@@ -138,6 +143,16 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $query = "SELECT * FROM tborganizacaoevento WHERE emailOrganizacaoEvento = :email and senhaOrganizacaoEvento = :senha";
             $stmt = $conexao->prepare($query);
             $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':senha', $senha);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        public static function checkCredentialsTel($tel, $senha){
+            $conexao = Conexao::conectar();
+            $query = "SELECT * FROM tborganizacaoevento WHERE telOrganizacaoEvento = :tel and senhaOrganizacaoEvento = :senha";
+            $stmt = $conexao->prepare($query);
+            $stmt->bindParam(':tel', $tel);
             $stmt->bindParam(':senha', $senha);
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
