@@ -43,21 +43,23 @@
   }
 
   //o usuário está autenticado
-  $authUser = $_SESSION['userOrg'];
+  $authUserOrg = $_SESSION['userOrg'];
 
-  $nomeOrg = $authUser['nomeOrganizacaoEvento'];
+  $nomeOrg = $authUserOrg['nomeOrganizacaoEvento'];
 
   // Saudação com base no horário do dia
-  $horaAtual = time();
+  date_default_timezone_set('America/Sao_Paulo');
+
+  $horaAtual = date('H');
   $saudacao = '';
   if ($horaAtual < 12) {
-    $saudacao = 'Bom dia';
+  $saudacao = 'Bom dia';
   } elseif ($horaAtual < 18) {
-    $saudacao = 'Boa tarde';
+  $saudacao = 'Boa tarde';
   } else {
-    $saudacao = 'Boa noite';
+  $saudacao = 'Boa noite';
   }
-  //echo($horaAtual)
+ //echo (date('H'));
 ?>
 
 <?php

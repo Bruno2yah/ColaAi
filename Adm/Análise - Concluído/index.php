@@ -45,7 +45,7 @@
                             <th class="col-md-1 fs-5">ID</th>
                             <th class="col-md-2 fs-5">Nome</th>
                             <th class="col-md-3 fs-5">E-mail</th>
-                            <th class="col-md-2 fs-5">CNPJ</th>
+                            <th class="col-md-3 fs-5">CNPJ</th>
                             <th class="col-md-5 text-end fs-5 pe-3">Situação</th>
                         </tr>
                         <tr>

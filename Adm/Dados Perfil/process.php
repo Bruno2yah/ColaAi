@@ -26,9 +26,10 @@ switch ($_POST["acao"]) {
         $organizacao->setBairro($_POST['bairroOrganizacaoEvento']);
         $organizacao->setCidade($_POST['cidadeOrganizacaoEvento']);
         $organizacao->setUf($_POST['ufOrganizacaoEvento']);
+        $organizacao->setTel($_POST['telOrganizacaoEvento']);
         $organizacao->setEmail($_POST['emailOrganizacaoEvento']);
         $organizacao->setSenha($_POST['senhaOrganizacaoEvento']);
-        $organizacao->setLink($_POST['linkSiteOrganizacaEvento']);
+        $organizacao->setLink($_POST['linkSiteOrganizacaoEvento']);
         $organizacao->setImagem($organizacao->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
         $organizacao->setDesc($_POST['descOrganizacaoEvento']);
         
@@ -59,9 +60,10 @@ switch ($_POST["acao"]) {
               $organizacao->setBairro($_POST['bairroOrganizacaoEvento']);
               $organizacao->setCidade($_POST['cidadeOrganizacaoEvento']);
               $organizacao->setUf($_POST['ufOrganizacaoEvento']);
+              $organizacao->setTel($_POST['telOrganizacaoEvento']);
               $organizacao->setEmail($_POST['emailOrganizacaoEvento']);
               $organizacao->setSenha($_POST['senhaOrganizacaoEvento']);
-              $organizacao->setLink($_POST['linkSiteOrganizacaEvento']);
+              $organizacao->setLink($_POST['linkSiteOrganizacaoEvento']);
               $organizacao->setImagem($organizacao->salvarImagem(($_POST['imagemOrganizacaoEvento'])));
               $organizacao->setDesc($_POST['descOrganizacaoEvento']);
               try {

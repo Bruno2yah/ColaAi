@@ -121,6 +121,7 @@ if (!empty($_POST)) {
                 </div>
                 <div class="row mt-3">
                   <div class=" text-end p-3">
+                    <a class=" btn px-3" role="button" aria-disabled="true" href="index.php">Voltar</i></a>
                     <input type="submit" class="btn" value="Cadastrar">
                   </div>
                 </div>
