@@ -1,12 +1,27 @@
-// LoginTelefone.jsx
 import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginTelefone({ navigation }) {
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [telefone, setTelefone] = useState('');
 
-  const formatPhoneNumber = (inputNumber) => {
+  const salvarTelefone = async () => {
+    if(telefone != '')
+    {
+      try {
+        AsyncStorage.setItem('Telefone', telefone)
+        .then(() => {
+        console.log('Telefone armazendo com sucesso!');
+        navigation.navigate('CodigoDeAcessoTelefoneRegistro')})
+      } catch (error) {
+        console.error('Erro ao criar nome', error );
+        return false;
+      }
+    }
+  }
+
+  /*const formatPhoneNumber = (inputNumber) => {
     // Remove non-numeric characters
     const numericValue = inputNumber.replace(/[^\d]/g, '');
 
@@ -14,7 +29,8 @@ export default function LoginTelefone({ navigation }) {
     const formattedNumber = numericValue.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
 
     setPhoneNumber(formattedNumber);
-  };
+  };*/
+  
 
   return (
     <View style={styles.container}>
@@ -31,12 +47,11 @@ export default function LoginTelefone({ navigation }) {
           style={styles.input}
           placeholder="(xx) xxxxx-xxxx"
           keyboardType="numeric"
-          value={phoneNumber}
           maxLength={15}
-          onChangeText={(text) => formatPhoneNumber(text)}
+          onChangeText={setTelefone}
         />
         <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
-          <Pressable style={styles.button2} onPress={() => navigation.navigate('CodigoDeAcessoTelefoneRegistro')}>
+          <Pressable style={styles.button2} onPress={() => salvarTelefone()}>
             <Text style={styles.buttonText2}>Prosseguir</Text>
           </Pressable>
         </Animado.View>
@@ -95,6 +110,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#aaa',
     fontSize: 18,
     marginBottom: 20,
+    paddingLeft: 15,
     width: 320,
     height: 50,
   },

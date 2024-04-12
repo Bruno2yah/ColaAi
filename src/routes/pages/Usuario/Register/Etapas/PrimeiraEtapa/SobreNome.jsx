@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text,  Pressable, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function SobreNome({ navigation }) {
+
+  const [sobrenome, setSobrenome] = useState('')
+
+  const salvarSobrenome = async () => {
+    if(sobrenome != '')
+    {
+      try {
+        AsyncStorage.setItem('Sobrenome', sobrenome)
+        .then(() => {
+        console.log('SobreNome armazendo com sucesso!');
+        navigation.navigate('Email')})
+      } catch (error) {
+        console.error('Erro ao criar nome', error );
+        return false;
+      }
+    }
+  }
+
   return (
     <View style={styles.container}>
        <ImageBackground
@@ -16,11 +35,11 @@ export default function SobreNome({ navigation }) {
           <TextInput
             style={styles.input}
             placeholder="Digite o seu SobreNome"
-            onChangeText={(text) => setEmail(text)}
+            onChangeText={setSobrenome}
           />
           <View style={styles.buttonColumn}>
           <Pressable style={styles.button2}>
-            <Text style={styles.buttonText2} onPress={() => navigation.navigate('Email')}>Prosseguir</Text>
+            <Text style={styles.buttonText2} onPress={() => salvarSobrenome()}>Prosseguir</Text>
           </Pressable>
           </View>
         </View>
@@ -104,6 +123,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#aaa',
     fontSize: 16,
     marginBottom: 20,
+    paddingLeft: 15,
     width: '90%',
     height: 50,
   },

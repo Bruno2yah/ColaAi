@@ -22,7 +22,7 @@ export default function Usuario({ navigation }) {
       navigation.navigate('Register');
     } else if (buttonNumber === 0) {
       setSelectedForm(0);
-      navigation.navigate('Google');
+      navigation.navigate('HomeUsuario');
     } else {
       setShowLoginForm(false);
     }

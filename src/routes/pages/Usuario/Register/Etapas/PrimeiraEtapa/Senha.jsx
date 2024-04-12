@@ -2,10 +2,27 @@ import React, { useState } from 'react';
 import { View, Text, Pressable, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import * as Animado from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Senha({ navigation }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [password, setPassword] = useState('');
+
+  const [senha, setSenha] = useState('');
+
+  const salvarSenha = async () => {
+    if(senha != '')
+    {
+      try {
+        AsyncStorage.setItem('Senha', senha)
+        .then(() => {
+        console.log('Senha armazenda com sucesso!');
+        navigation.navigate('TelaFinal')})
+      } catch (error) {
+        console.error('Erro ao criar senha', error );
+        return false;
+      }
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -24,7 +41,7 @@ export default function Senha({ navigation }) {
           style={styles.input}
           placeholder="Digite sua senha"
           secureTextEntry={!passwordVisible}
-          onChangeText={(text) => setPassword(text)}
+          onChangeText={setSenha}
           keyboardType="numeric"
           />
         <Pressable
@@ -40,7 +57,7 @@ export default function Senha({ navigation }) {
       </View>
       <View style={styles.buttonColumn}>
         <Pressable style={styles.button2}>
-          <Text style={styles.buttonText2} onPress={() => navigation.navigate('TelaFinal')}>Enviar</Text>
+          <Text style={styles.buttonText2} onPress={() => salvarSenha()}>Enviar</Text>
         </Pressable>
       </View>
       </View>
@@ -122,6 +139,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#aaa',
     fontSize: 16,
     marginBottom: 20,
+    paddingLeft: 15,
     width: '77%',
     height: 50,
   },

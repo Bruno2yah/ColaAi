@@ -10,15 +10,20 @@ export default function TelaFinal2({ navigation }) {
             style={styles.superiorDireito}
           />
         <View style={styles.contentContainer}>
-        <View style={styles.Text}>
-          <Text style={styles.title}>A sua conta foi criada {'\n'}com sucesso! </Text>
-          <Text style={styles.description}>Agora vamos atualizar o seu perfil, para deixar o Cola Aí com a sua melhor identidade.</Text>
-        </View>
-          <View style={styles.buttonColumn}>
-          <Pressable style={styles.button2}>
-            <Text style={styles.buttonText2} onPress={() => navigation.navigate('Foto')}>Vamos lá</Text>
-          </Pressable>
+          <View style={styles.Text}>
+            <Text style={styles.title}>A sua conta foi criada {'\n'}com sucesso! </Text>
+            <Text style={styles.description}>Agora vamos atualizar o seu perfil, para deixar o Cola Aí com a sua melhor identidade.</Text>
           </View>
+          <View style={styles.buttonColumn}>
+            <Pressable style={styles.button2} onPress={() => navigation.navigate('Foto')}>
+              <Text style={styles.buttonText2}>Vamos lá</Text>
+            </Pressable>
+          </View>
+        </View>
+        <View style={styles.buttonPular}>
+          <Pressable onPress={() => navigation.navigate('TelaFinal2')}>
+            <Text style={styles.linkText}>adicionar mais tarde</Text>
+          </Pressable>
         </View>
         <ImageBackground
         style={styles.inferiorDireito}
@@ -122,6 +127,14 @@ const styles = StyleSheet.create({
     right: -10,
     width: 140,
     height: 140,
+  },
+  buttonPular:{
+    justifyContent:'flex-end',
+    alignItems:'center',
+    width:'100%',
+    height:'100%',
+    position:'absolute', 
+    bottom:20
   },
 
   });

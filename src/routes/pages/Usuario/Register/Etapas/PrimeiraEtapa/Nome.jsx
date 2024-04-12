@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text,  Pressable, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Nome({ navigation }) {
+  const [nome, setNome] = useState('')
+
+  const salvarNome = async () => {
+    if(nome != '')
+    {
+      try {
+        AsyncStorage.setItem('nome', nome)
+        .then(() => {
+        console.log('Nome armazendo com sucesso!');
+        navigation.navigate('SobreNome')})
+      } catch (error) {
+        console.error('Erro ao criar nome', error );
+        return false;
+      }
+    }
+  }
+
   return (
     <View style={styles.container}>
        <ImageBackground
@@ -16,11 +34,11 @@ export default function Nome({ navigation }) {
           <TextInput
             style={styles.input}
             placeholder="Digite o seu Nome"
-            onChangeText={(text) => setEmail(text)}
+            onChangeText={setNome}
           />
           <View style={styles.buttonColumn}>
           <Pressable style={styles.button2}>
-            <Text style={styles.buttonText2} onPress={() => navigation.navigate('SobreNome')}>Prosseguir</Text>
+            <Text style={styles.buttonText2} onPress={() => salvarNome()}>Prosseguir</Text>
           </Pressable>
           </View>
         </View>
@@ -104,6 +122,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#aaa',
     fontSize: 16,
     marginBottom: 20,
+    paddingLeft: 15,
     width: '90%',
     height: 50,
   },

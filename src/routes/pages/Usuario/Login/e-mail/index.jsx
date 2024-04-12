@@ -3,16 +3,47 @@ import { View, Text, TextInput, Pressable, StyleSheet, ImageBackground, Alert } 
 import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; // Importa o ícone do Expo
 import * as Animado from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginEmail() {
   const navigation = useNavigation();
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [selectedForm, setSelectedForm] = useState(0);
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleButtonPress = () => {
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
+  const [emailInStorage, setEmailInStorage] = useState('')
+  const [senhaInStorage, setSenhaInStorage] = useState('')
+
+  if(emailInStorage === '')
+    {
+      AsyncStorage.getItem('Email')
+      .then(value => {
+        if(value != null)
+        {
+          //console.log('Email encontrado! ', value);
+          setEmailInStorage(value);
+        } else {
+          console.log('Nenhum email encontrado');
+        }
+      });
+  }
+  if(senhaInStorage === '')
+    {
+      AsyncStorage.getItem('Senha')
+      .then(value => {
+        if(value != null)
+        {
+          //console.log('Senha encontrada! ', value);
+          setSenhaInStorage(value);
+        } else {
+          console.log('Nenhuma senha encontrada');
+        }
+      });
+  }
+
+  const checkCredentials = () => {
     setShowLoginForm(true);
     navigation.navigate('CodigoDeAcessoEmail');
 
@@ -23,6 +54,24 @@ export default function LoginEmail() {
       setShowLoginForm(false);
     }
   };
+
+  const salvarEmail = async () => {
+    
+    if(email === emailInStorage && senha === senhaInStorage)
+    {
+      try {
+        console.log('Usuário Encontrado!');
+        navigation.navigate('CodigoDeAcessoEmail');
+      } catch (error) {
+        console.error('Erro ao criar nome');
+        return false;
+      }
+    }
+    else{
+      console.error('Usuario não encontrado');
+      return false;
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -39,14 +88,14 @@ export default function LoginEmail() {
           <TextInput
             style={styles.input}
             placeholder="Digite seu e-mail"
-            onChangeText={(text) => setEmail(text)}
+            onChangeText={setEmail}
           />
           <View style={styles.passwordContainer}>
             <TextInput
               style={styles.input}
               placeholder="Digite sua senha"
               secureTextEntry={!passwordVisible}
-              onChangeText={(text) => setPassword(text)}
+              onChangeText={setSenha}
               keyboardType="numeric"
             ></TextInput>
             <Pressable
@@ -64,7 +113,7 @@ export default function LoginEmail() {
             <Text style={styles.esqueci}>Esqueci a senha</Text>
           </Pressable>
           <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={500}>
-            <Pressable style={styles.button2} onPress={handleButtonPress}>
+            <Pressable style={styles.button2} onPress={() => salvarEmail()}>
               <Text style={styles.buttonText2}>Prosseguir</Text>
             </Pressable>
           </Animado.View>

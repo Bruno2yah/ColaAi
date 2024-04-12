@@ -1,37 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text,  Pressable, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Email({ navigation }) {
+  const [email, setEmail] = useState('')
+
+  const salvarEmail = async () => {
+    if(email != '')
+    {
+      try {
+        AsyncStorage.setItem('Email', email)
+        .then(() => {
+        console.log('Email armazendo com sucesso!');
+        navigation.navigate('CodigoDeAcessoEmailRegistro')})
+      } catch (error) {
+        console.error('Erro ao criar nome', error );
+        return false;
+      }
+    }
+  }
+
   return (
     <View style={styles.container}>
-       <ImageBackground
-            source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
-            style={styles.superiorDireito}
-          />
-        <View style={styles.contentContainer}>
+      <ImageBackground
+          source={require('../../../../../../../assets/img/cadastro/login/superiorDireita.png')}
+          style={styles.superiorDireito}
+        />
+      <View style={styles.contentContainer}>
         <View style={styles.text}>
           <Animado.Text style={styles.title} animation="zoomIn" duration={800}>Qual é o seu e-mail?</Animado.Text>
-          <Animado.Text style={styles.description} animation="zoomIn"  duration={2000} delay={1000}>Escolha um usual e-mail usual e verifique de {'\n'}que os dados digitados estão corretos.
-
-
-
-</Animado.Text>
-          </View>
-          <TextInput
-            style={styles.input}
-            placeholder="Digite o seu e-mail"
-            onChangeText={(text) => setEmail(text)}
-          />
-          <View style={styles.buttonColumn}>
-          <Pressable style={styles.button2}>
-            <Text style={styles.buttonText2} onPress={() => navigation.navigate('CodigoDeAcessoEmailRegistro')}>Prosseguir</Text>
-          </Pressable>
-          </View>
+          <Animado.Text style={styles.description} animation="zoomIn"  duration={2000} delay={1000}>Escolha um usual e-mail usual e verifique de {'\n'}que os dados digitados estão corretos.</Animado.Text>
         </View>
-        <ImageBackground
-        style={styles.inferiorDireito}
-        source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
+        <TextInput
+          style={styles.input}
+          placeholder="Digite o seu e-mail"
+          onChangeText={setEmail}
+        />
+        <View style={styles.buttonColumn}>
+          <Pressable style={styles.button2}>
+            <Text style={styles.buttonText2} onPress={() => salvarEmail()}>Prosseguir</Text>
+          </Pressable>
+        </View>
+      </View>
+      <ImageBackground
+      style={styles.inferiorDireito}
+      source={require('../../../../../../../assets/img/cadastro/login/inferiorDireito.png')}
       />
     </View>
   );
@@ -109,6 +123,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#aaa',
     fontSize: 16,
     marginBottom: 20,
+    paddingLeft: 15,
     width: '90%',
     height: 50,
   },
