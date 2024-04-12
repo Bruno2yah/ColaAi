@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text,  TouchableOpacity, StyleSheet, TextInput, ImageBackground} from 'react-native';
+import { View, Text,  Pressable, StyleSheet, TextInput, ImageBackground} from 'react-native';
 
 
 export default function TelaFinal2({ navigation }) {
@@ -12,12 +12,12 @@ export default function TelaFinal2({ navigation }) {
         <View style={styles.contentContainer}>
         <View style={styles.Text}>
           <Text style={styles.title}>A sua conta foi criada {'\n'}com sucesso! </Text>
-          <Text style={styles.description}>Agora vamos atualizar o perfil da sua{'\n'}Organização. </Text>
+          <Text style={styles.description}>Agora vamos atualizar o seu perfil, para deixar o Cola Aí com a sua melhor identidade.</Text>
         </View>
           <View style={styles.buttonColumn}>
-          <TouchableOpacity style={styles.button2}>
-            <Text style={styles.buttonText2} onPress={() => navigation.navigate('Home')}>Acessar</Text>
-          </TouchableOpacity>
+          <Pressable style={styles.button2}>
+            <Text style={styles.buttonText2} onPress={() => navigation.navigate('Foto')}>Vamos lá</Text>
+          </Pressable>
           </View>
         </View>
         <ImageBackground

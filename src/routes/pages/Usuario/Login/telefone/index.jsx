@@ -1,6 +1,6 @@
 // LoginTelefone.jsx
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, TextInput, Pressable, StyleSheet, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 export default function LoginTelefone({ navigation }) {
@@ -36,9 +36,9 @@ export default function LoginTelefone({ navigation }) {
           onChangeText={(text) => formatPhoneNumber(text)}
         />
         <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
-          <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('CodigoDeAcessoTelefone')}>
+          <Pressable style={styles.button2} onPress={() => navigation.navigate('CodigoDeAcessoTelefone')}>
             <Text style={styles.buttonText2}>Prosseguir</Text>
-          </TouchableOpacity>
+          </Pressable>
         </Animado.View>
       </View>
       <ImageBackground

@@ -2,8 +2,6 @@
 
 import React, {useState} from 'react';
 import { View, Text, Pressable, Image, TextInput, Modal } from 'react-native';
-import * as Animado from 'react-native-animatable';
-import NavBar from '../../../../Components/NavBar/navbar';
 import DropDownPicker from 'react-native-dropdown-picker';
 import * as ImagePicker from 'expo-image-picker';
 import styles from '../../../../Components/Styles/Contato/ContatoStyle';

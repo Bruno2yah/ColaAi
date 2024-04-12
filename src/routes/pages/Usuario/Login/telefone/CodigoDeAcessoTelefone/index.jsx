@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
+import { View, Text, TextInput, StyleSheet, Pressable, ImageBackground} from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 const CodigoDeAcessoTelefone = ({ navigation }) => {
@@ -17,17 +17,17 @@ const CodigoDeAcessoTelefone = ({ navigation }) => {
           </Animado.Text>
         </Animado.View>
         <Animado.View style={styles.inputContainer} animation="zoomIn" delay={500}>
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
         </Animado.View>
         <Animado.Text style={styles.esqueci} animation="fadeInRight" delay={1000}>Reenviar código</Animado.Text>
         <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
-          <TouchableOpacity style={styles.button2}>
+          <Pressable style={styles.button2} onPress={() => navigation.navigate('HomeUsuario')}>
             <Text style={styles.buttonText2} >Enviar</Text>
-          </TouchableOpacity>
+          </Pressable>
         </Animado.View>
       </View>
         <ImageBackground
@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
     width: '15%',
     height: 70,
     textAlign: 'center',
-    keyboardType: 'numeric',
   },
   esqueci: {
     width: 300,

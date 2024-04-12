@@ -1,7 +1,6 @@
 //npm install react-native-vector-icons
-
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import * as Animado from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -45,32 +44,32 @@ export default function Usuario({ navigation }) {
         <View style={styles.buttonContainer}>
           <View style={styles.buttonColumn}>
             <Animado.View animation="fadeInRight" delay={500} duration={800}>
-              <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress(0)}>
+              <Pressable style={styles.button2} onPress={() => handleButtonPress(0)}>
                 <View style={styles.buttonContent}>
                   <Icon name="google" size={30} color="#6D9EAF" marginRight="10%" />
                   <Text style={styles.buttonText}>Entrar com Google</Text>
                 </View>
-              </TouchableOpacity>
+              </Pressable>
             </Animado.View>
             <Animado.View animation="fadeInRight" delay={1000} duration={800}>
-              <TouchableOpacity style={styles.button1} onPress={() => handleButtonPress(1)}>
+              <Pressable style={styles.button1} onPress={() => handleButtonPress(1)}>
                 <View style={styles.buttonContent}>
                   <Icon name="envelope" size={30} color="#E6AEB2" marginRight="10%" />
                   <Text style={styles.buttonText}>Entrar com e-mail</Text>
                 </View>
-              </TouchableOpacity>
+              </Pressable>
             </Animado.View>
             <Animado.View animation="fadeInRight" delay={1500} duration={800}>
-              <TouchableOpacity style={styles.button2} onPress={() => handleButtonPress(2)}>
+              <Pressable style={styles.button2} onPress={() => handleButtonPress(2)}>
                 <View style={styles.buttonContent}>
                   <Icon name="phone" size={30} color="#6D9EAF" marginRight="10%" />
                   <Text style={styles.buttonText}>Entrar com telefone</Text>
                 </View>
-              </TouchableOpacity>
+              </Pressable>
             </Animado.View>
-            <TouchableOpacity onPress={() => handleButtonPress(3)}>
+            <Pressable onPress={() => handleButtonPress(3)}>
               <Text style={styles.linkText}>Cadastre-se</Text>
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </View>
       </View>

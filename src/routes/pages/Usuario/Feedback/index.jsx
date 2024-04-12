@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image, TextInput, Modal } from 'react-native';
+import { View, Text, Pressable, Image, TextInput } from 'react-native';
 import styles from '../../../../Components/Styles/Feedback/FeedbackStyle';
 
 export default function Feedback({ navigation }) {

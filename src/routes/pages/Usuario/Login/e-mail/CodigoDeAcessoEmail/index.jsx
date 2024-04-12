@@ -17,15 +17,15 @@ const CodigoDeAcessoEmail = ({ navigation }) => {
           </Animado.Text>
         </Animado.View>
         <Animado.View style={styles.inputContainer} animation="zoomIn" delay={500}>
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
-          <TextInput style={styles.inputCode} keyboardType="default" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
+          <TextInput style={styles.inputCode} keyboardType="numeric" maxLength={1} />
         </Animado.View>
         <Animado.Text style={styles.esqueci} animation="fadeInRight" delay={1000}>Reenviar código</Animado.Text>
         <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={850}>
-          <Pressable style={styles.button2}>
+          <Pressable style={styles.button2} onPress={() => navigation.navigate('HomeUsuario')}>
             <Text style={styles.buttonText2} >Enviar</Text>
           </Pressable>
         </Animado.View>
@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
     width: '15%',
     height: 70,
     textAlign: 'center',
-    keyboardType: 'numeric',
   },
   esqueci: {
     width: 300,

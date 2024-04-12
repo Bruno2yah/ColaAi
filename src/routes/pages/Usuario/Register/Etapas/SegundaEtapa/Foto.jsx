@@ -1,7 +1,7 @@
 //npx expo install expo-image-picker
 
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
 export default function Foto({ navigation }) {
@@ -24,21 +24,21 @@ export default function Foto({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Adicione uma foto ao perfil</Text>
       <Text style={styles.description}>
-        A imagem ficará visível aos usuários e administradores do Cola Aí.
+        A imagem ficará visível para os perfis de organizações e administradores do Cola Aí.
       </Text>
       {image && <Image source={{ uri: image }} style={styles.image} />}
       {!image && (
-        <TouchableOpacity style={styles.imageButton} onPress={pickImage}>
+        <Pressable style={styles.imageButton} onPress={pickImage}>
           <Image source={require('../../../../../../../assets/img/adicionarFoto.png')} style={styles.icon} />
-        </TouchableOpacity>
+        </Pressable>
       )}
-        <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('Banner')}>
+        <Pressable style={styles.button2} onPress={() => navigation.navigate('Banner')}>
             <Text style={styles.buttonText2}>Prosseguir</Text>
-        </TouchableOpacity>
+        </Pressable>
         <View style={styles.buttonPular}>
-          <TouchableOpacity onPress={() => navigation.navigate('Banner')}>
+          <Pressable onPress={() => navigation.navigate('TelaFinal2')}>
             <Text style={styles.linkText}>adicionar mais tarde</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
     </View>
   );
@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   icon: {
-    width: 100,
-    height: 100,
+    width: 200,
+    height: 200,
     resizeMode: 'contain',
   },
   buttonPular:{

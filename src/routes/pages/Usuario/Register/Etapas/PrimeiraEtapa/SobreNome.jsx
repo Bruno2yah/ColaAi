@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text,  TouchableOpacity, StyleSheet, TextInput, ImageBackground } from 'react-native';
+import { View, Text,  Pressable, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 export default function SobreNome({ navigation }) {
@@ -19,9 +19,9 @@ export default function SobreNome({ navigation }) {
             onChangeText={(text) => setEmail(text)}
           />
           <View style={styles.buttonColumn}>
-          <TouchableOpacity style={styles.button2}>
+          <Pressable style={styles.button2}>
             <Text style={styles.buttonText2} onPress={() => navigation.navigate('Email')}>Prosseguir</Text>
-          </TouchableOpacity>
+          </Pressable>
           </View>
         </View>
         <ImageBackground

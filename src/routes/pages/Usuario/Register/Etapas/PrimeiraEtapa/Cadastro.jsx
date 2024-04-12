@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
+import { View, Text,  Pressable, StyleSheet, ImageBackground} from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 export default function Cadastro({ navigation }){
@@ -15,9 +15,9 @@ export default function Cadastro({ navigation }){
           <Animado.Text style={styles.description} animation="fadeInRight" delay={700} duration={1500}>Ao clicar em Cadastre-se, você aceita {'\n'} o Contrato do Usuário, a Política de {'\n'} Privacidade e a Política de Cookies do {'\n'} Cola Aí.</Animado.Text>
         </View>
           <Animado.View style={styles.buttonColumn} animation="fadeInRight" duration={2000} delay={1000}>
-          <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('Nome')}>
+          <Pressable style={styles.button2} onPress={() => navigation.navigate('Nome')}>
             <Text style={styles.buttonText2}>Cadastre-se</Text>
-          </TouchableOpacity>
+          </Pressable>
           </Animado.View>
         </View>
         <ImageBackground

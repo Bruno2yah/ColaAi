@@ -4,7 +4,7 @@ import {  GoogleSignin,  GoogleSigninButton,  statusCodes,
 import {View, Text, Button, ScrollView, SafeAreaView, StatusBar,
 } from 'react-native';
 
-const Googl = () => {
+const Google = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
 

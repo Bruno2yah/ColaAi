@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text,  TouchableOpacity, StyleSheet, TextInput, ImageBackground } from 'react-native';
+import { View, Text,  Pressable, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import * as Animado from 'react-native-animatable';
 
 export default function Email({ navigation }) {
@@ -24,9 +24,9 @@ export default function Email({ navigation }) {
             onChangeText={(text) => setEmail(text)}
           />
           <View style={styles.buttonColumn}>
-          <TouchableOpacity style={styles.button2}>
-            <Text style={styles.buttonText2} onPress={() => navigation.navigate('CodigoDeAcessoEmail')}>Prosseguir</Text>
-          </TouchableOpacity>
+          <Pressable style={styles.button2}>
+            <Text style={styles.buttonText2} onPress={() => navigation.navigate('CodigoDeAcessoEmailRegistro')}>Prosseguir</Text>
+          </Pressable>
           </View>
         </View>
         <ImageBackground

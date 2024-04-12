@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Alert } from 'react-native';
+import { View, Text, TextInput, Pressable, StyleSheet, ImageBackground, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; // Importa o ícone do Expo
 import * as Animado from 'react-native-animatable';
@@ -49,7 +49,7 @@ export default function LoginEmail() {
               onChangeText={(text) => setPassword(text)}
               keyboardType="numeric"
             ></TextInput>
-            <TouchableOpacity
+            <Pressable
               style={styles.eyeIcon}
               onPress={() => setPasswordVisible(!passwordVisible)}
             >
@@ -58,15 +58,15 @@ export default function LoginEmail() {
                 size={24}
                 color="#6D9EAF"
               />
-            </TouchableOpacity>
+            </Pressable>
           </View>
-          <TouchableOpacity>
+          <Pressable>
             <Text style={styles.esqueci}>Esqueci a senha</Text>
-          </TouchableOpacity>
+          </Pressable>
           <Animado.View style={styles.buttonColumn} animation="fadeInRight" delay={500}>
-            <TouchableOpacity style={styles.button2} onPress={handleButtonPress}>
+            <Pressable style={styles.button2} onPress={handleButtonPress}>
               <Text style={styles.buttonText2}>Prosseguir</Text>
-            </TouchableOpacity>
+            </Pressable>
           </Animado.View>
         </Animado.View>
       </Animado.View>

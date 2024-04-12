@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TextInput, ImageBackground } from 'react-native';
+import { View, Text, Pressable, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import * as Animado from 'react-native-animatable';
 
@@ -27,7 +27,7 @@ export default function Senha({ navigation }) {
           onChangeText={(text) => setPassword(text)}
           keyboardType="numeric"
           />
-        <TouchableOpacity
+        <Pressable
           style={styles.eyeIcon}
           onPress={() => setPasswordVisible(!passwordVisible)}
         >
@@ -36,12 +36,12 @@ export default function Senha({ navigation }) {
             size={24}
             color="#6D9EAF"
           />
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <View style={styles.buttonColumn}>
-        <TouchableOpacity style={styles.button2}>
+        <Pressable style={styles.button2}>
           <Text style={styles.buttonText2} onPress={() => navigation.navigate('TelaFinal')}>Enviar</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
       </View>
       <ImageBackground

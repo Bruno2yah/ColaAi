@@ -12,7 +12,7 @@ import Register from '../Register/Register';
 import Usuario from '../Usuario';
 const Stack = createStackNavigator();
 
-export default function Navigation() {
+/*export default function Navigation() {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator>
@@ -27,5 +27,5 @@ export default function Navigation() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+}*/
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
+  Pressable,
   StyleSheet,
   ImageBackground,
   Image,
@@ -35,30 +35,30 @@ const ColaAi = ({ navigation }) => {
 
       <Animado.View animation="fadeInRight" delay={500}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity
+          <Pressable
             style={styles.buttonOrganizacao}
             onPress={() => navigation.navigate('Organizacao')}
           >
             <Text style={styles.buttonTextOrganizacao}>Organização</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </Animado.View>
 
       <Animado.View animation="fadeInRight" delay={1000}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity
+          <Pressable
             style={styles.buttonUsuario}
             onPress={() => navigation.navigate('Usuario')}
           >
             <Text style={styles.buttonTextUsuario}>Usuario</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </Animado.View>
 
       <View style={styles.linkContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('AcessoSemLogin')}>
+        <Pressable onPress={() => navigation.navigate('AcessoSemLogin')}>
           <Text style={styles.linkText}>Acesso sem login</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );

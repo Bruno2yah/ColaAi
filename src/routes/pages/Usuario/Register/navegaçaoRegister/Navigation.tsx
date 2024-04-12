@@ -19,7 +19,7 @@ import Banner from '../Etapas/SegundaEtapa/Banner';
 import TelaFinal2 from '../Etapas/SegundaEtapa/Telafinal2';
 const Stack = createStackNavigator();
 
-export default function Navigation() {
+/*export default function Navigation() {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator initialRouteName="Cadastro" >
@@ -39,6 +39,6 @@ export default function Navigation() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+}*/
 
 

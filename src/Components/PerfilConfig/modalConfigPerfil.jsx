@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Image, Text, Modal, Pressable } from 'react-native';
-import Perfil from '../../routes/pages/Usuario/Perfil'
 import styles from '../Styles/ModalConfig/modalConfigStyle'
 import { useNavigation } from '@react-navigation/native';
 
@@ -11,7 +10,6 @@ export default function modalConfigPerfil() {
 
   function configPerfilModal() {
     setModalConfigVisu(false);
-    <Perfil configPerfilModal/>
   }
 
   return (

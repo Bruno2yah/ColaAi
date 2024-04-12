@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image, ScrollView, } from 'react-native';
+import { View, Text, Image, ScrollView, } from 'react-native';
 import styles from '../../../../Components/Styles/Notificacoes/notificacoesStyle';
 import NavBar from '../../../../Components/NavBar/navbar';
 
