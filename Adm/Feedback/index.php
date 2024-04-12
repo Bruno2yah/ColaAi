@@ -37,10 +37,7 @@
             ?>
             <div class="info-box col-md-9 " style="color: #a6a6a6;" id="data-box">
                 <h1 class="text-center mt-4">Suporte Técnico - Feedback</h1>
-                <div class="container d-flex w-100 h-auto pe-5 mt-5">
-                    <a href="register.php" class="ms-auto me-0" style="width: 45px;">
-                        <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
-                    </a>
+                <div class="container d-flex w-100 pe-5 mt-5" style="height: 50px;">
                 </div>
                 <div class="row ms-4 me-5 mt-4">
                     <table class="">
@@ -52,39 +49,48 @@
                                 <th class="text-end col-md-2 fs-4">Informações</th>
                             </tr>
                                 <tr class=" ">
-                                    <td class="fs-5 p-1">1</td>
-                                    <td class="fs-5 p-1">Teste da silva</td>
-                                    <td class="fs-5 p-1">teste@gmail.com</td>
-                                    <td class="text-end">
-                                        <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;" class="me-5 mt-2">
+                                    <td class="fs-5 p-1 pt-3">1</td>
+                                    <td class="fs-5 p-1 pt-3">Teste da silva</td>
+                                    <td class="fs-5 p-1 pt-3">teste@gmail.com</td>
+                                    <td class="text-end pt-3">
+                                    <a class="dropdown-item" onclick="modalInfo(1,1)">
+                                                <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;" class="me-5 mt-2">
+                                        </a>
                                     </td>
                                 </tr>
                         </thead>
                     </table>
                 </div>
-                
-            </div>
-            <div class="modal fade" id="modalExcluir" role="dialog">
-                <div class=" modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header bg-danger text-white">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Usuário</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body  ">
-                            <form action="process.php" method="post">
-                                <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
-                                <p>Tem certeza que deseja excluir o item selcionado?
-                                <div class=" text-end"> 
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
-                                    <button type="submit" class="btn btn-warning ms-3" value="DELETE" name="acao">Sim </button>
+                <div class="modal fade" id="modalInfo" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-header infoModalHeader">
+                                    <h1 class="modal-title fs-3" id="exampleModalLabel">Informações do Feedback</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                            </form>
-                        </div>
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Nome do Usuário: </p> <p class="ms-2 fs-5" >aa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">E-mail: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Título: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <p class="m-0 fw-bold fs-5">Descrição: </p>
+                                        <div class="desc-box w-100 rounded rounded-3 mb-1 p-1">
+                                            <p>aaa</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                     </div>
-                </div>
+
+                    <?= require '../../Adm/Componentes/modal.php' ?>
             </div>
-            <?= require '../../Adm/Componentes/modal.php' ?>
         </div>
     </div>
 

@@ -44,19 +44,24 @@
                         </tr>
                         <?php foreach ($organizacao as $organizacao) : ?>
                                 <tr class="mt-1">
-                                    <td class="fs-5 p-1"><?= $organizacao['idOrganizacaoEvento']; ?></td>
-                                    <td class="fs-5 p-1"><?= $organizacao['nomeOrganizacaoEvento']; ?></td>
-                                    <td class="fs-5 p-1"><?= $organizacao['emailOrganizacaoEvento']; ?></td>
-                                    <td class="fs-5 p-1"><?= $organizacao['cnpjOrganizacaoEvento']; ?></td>
-                                    <td class="text-center">
-                                    <img src="../../img/Admin/info-icon.png" alt="" style="width: 30px;">
+                                    <td class="fs-5 pt-3"><?= $organizacao['idOrganizacaoEvento']; ?></td>
+                                    <td class="fs-5 pt-3"><?= $organizacao['nomeOrganizacaoEvento']; ?></td>
+                                    <td class="fs-5 pt-3"><?= $organizacao['emailOrganizacaoEvento']; ?></td>
+                                    <td class="fs-5 pt-3"><?= $organizacao['cnpjOrganizacaoEvento']; ?></td>
+                                    <td class="text-center pt-3">
+                                        <a class="dropdown-item" onclick="modalInfo(1,1)">
+                                            <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
+                                        </a>
                                     </td>
-                                    <td class="text-center">
-                                        <button type="submit" class="dropdown-item"><img src="../../img/Admin/aceitar-icon.png" alt="" style="width: 30px;" >
-                                        </button>
+                                    <td class="text-center pt-3">
+                                    <a class="dropdown-item" onclick="modalAceitar(1,1)">
+                                        <img src="../../img/Admin/aceitar-icon.png" alt="" style="width: 30px;">
+                                        </a>
                                     </td>
-                                    <td class="text-center">
+                                    <td class="text-center pt-3">
+                                    <a class="dropdown-item" onclick="modalRemover(<?= $organizacao['idOrganizacaoEvento']?>,'idDeletar')">
                                         <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
+                                        </a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -64,26 +69,90 @@
                     </table>
                 </div>
             </div>
-            <div class="modal fade" id="modalExcluir" role="dialog">
-                <div class=" modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header bg-danger text-white">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Usuário</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body  ">
-                            <form action="process.php" method="post">
-                                <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
-                                <p>Tem certeza que deseja excluir o item selcionado?
-                                <div class=" text-end">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
-                                    <button type="submit" class="btn btn-warning ms-3" value="DELETE" name="acao">Sim </button>
+            <div class="modal fade" id="modalInfo" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-header infoModalHeader">
+                                    <h1 class="modal-title fs-3" id="exampleModalLabel">Informações da Organização</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                            </form>
-                        </div>
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Nome da Organização: </p> <p class="ms-2 fs-5" >aa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">CNPJ: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">CEP: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0 justify-content-between" style="height: 30px;">
+                                            <div class="d-flex">
+                                                <p class="m-0 fw-bold fs-5">Endereço: </p><p class="ms-2 fs-5">aaa</p>
+                                            </div>
+                                            <div class="me-auto ms-auto d-flex">
+                                                <p class="m-0 fw-bold fs-5">Nº: </p><p class="ms-2 fs-5">000</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Complemento: </p><p class="ms-2 fs-5">Rua dos coitados</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Bairro: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0 justify-content-between" style="height: 30px;">
+                                            <div class="d-flex">
+                                                <p class="m-0 fw-bold fs-5">Cidade: </p><p class="ms-2 fs-5">aaa</p>
+                                            </div>
+                                            <div class="me-auto ms-auto d-flex">
+                                                <p class="m-0 fw-bold fs-5">UF: </p><p class="ms-2 fs-5">000</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">E-mail: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                     </div>
-                </div>
             </div>
+            <div class="modal fade" id="modalAceitar" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <h1 class="text-center fs-2 fw-bold">Aceitar o cadastro<br> da organização?</h1>
+                                        <p class="fs-5 m-0">Quando clicar em <span style="text-decoration: underline; color:#93CC4C">aceitar</span> 
+                                        a organização receberá um e-mail de acesso para concluír o seu cadastro.</p>
+                                            <div class="d-flex justify-content-between mt-5"> 
+                                            <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
+                                            <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4 col-3" value="?" name="acao">Aceitar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <div class="modal fade" id="modalExcluir" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <h1 class="text-center fs-2 fw-bold">Negar cadastro<br> da organização?</h1>
+                                        <p class="fs-5 m-0">Quando clicar em <span style="text-decoration: underline; color:#FF3131">negar</span> a
+                                         ação não poderá ser desfeita, deixando a organização impossibilitada de  se registrar no site.</p>
+                                            <div class="d-flex justify-content-between mt-5"> 
+                                            <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
+                                            <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4 col-3" value="DELETE" name="acao">Excluir</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
             <?= require '../../Adm/Componentes/modal.php' ?>
         </div>
     </div>

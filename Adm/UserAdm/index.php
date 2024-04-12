@@ -61,13 +61,13 @@ $users = UserAdmDao::selectAll();
                             </tr>
                             <?php foreach ($users as $User) : ?>
                                 <tr class="mt-1">
-                                    <td class="fs-5 p-1"><?= $User['idAdmin']; ?></td>
-                                    <td class="fs-5 p-1"><?= $User['nomeAdmin']; ?></td>
-                                    <td class="fs-5 p-1"><?= $User['sobrenomeAdmin']; ?></td>
-                                    <td class="fs-5 p-1"><?= $User['emailAdmin']; ?></td>
-                                    <td class="fs-5 p-1"><?= $User['cpfAdmin']; ?></td>
-                                    <td class="fs-5 p-1"><?= $User['dataNascAdmin']; ?></td>
-                                    <td class="text-center">
+                                    <td class="fs-5 p-1 pt-3"><?= $User['idAdmin']; ?></td>
+                                    <td class="fs-5 p-1 pt-3"><?= $User['nomeAdmin']; ?></td>
+                                    <td class="fs-5 p-1 pt-3"><?= $User['sobrenomeAdmin']; ?></td>
+                                    <td class="fs-5 p-1 pt-3"><?= $User['emailAdmin']; ?></td>
+                                    <td class="fs-5 p-1 pt-3"><?= $User['cpfAdmin']; ?></td>
+                                    <td class="fs-5 p-1 pt-3"><?= $User['dataNascAdmin']; ?></td>
+                                    <td class="text-center pt-3">
                                         <form action="process.php" method="POST">
                                             <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
                                             <input type="hidden" class="form-control" id="id" name="id" value="<?= $User['idAdmin']?>">
@@ -75,7 +75,7 @@ $users = UserAdmDao::selectAll();
                                             </button>
                                         </form>
                                     </td>
-                                    <td class="text-center">
+                                    <td class="text-center pt-3">
                                         <a class="dropdown-item" onclick="modalRemover(<?= $User['idAdmin'] ?>,'idDeletar')">
                                         <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 25px;">
                                         </a>
@@ -87,26 +87,23 @@ $users = UserAdmDao::selectAll();
                 </div>
                 
             </div>
-            <div class="modal fade" id="modalExcluir" role="dialog">
-                <div class=" modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header bg-danger text-white">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Usuário</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body  ">
-                            <form action="process.php" method="post">
-                                <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
-                                <p>Tem certeza que deseja excluir o item selcionado?
-                                <div class=" text-end"> 
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
-                                    <button type="submit" class="btn btn-warning ms-3" value="DELETE" name="acao">Sim </button>
+            <div class="modal fade" id="modalExcluir" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <h1 class="text-center fs-2 fw-bold">Excluir Usuário?</h1>
+                                        <p class="fs-5 m-0">Quando clicar em <span style="text-decoration: underline; color:#FF3131">excluir</span> a
+                                         ação não poderá ser desfeita, deixando o usuário impossibilitado de se registrar no site.</p>
+                                            <div class="d-flex justify-content-between mt-5"> 
+                                            <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
+                                            <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4 col-3" value="DELETE" name="acao">Excluir</button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
                     </div>
-                </div>
-            </div>
             <?= require '../../Adm/Componentes/modal.php' ?>
         </div>
     </div>

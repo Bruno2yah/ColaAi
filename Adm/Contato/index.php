@@ -55,7 +55,9 @@
                                     <td class="fs-5 p-1"></td>
                                     <td class="fs-5 p-1"></td>
                                     <td class="text-center">
-                                        <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
+                                        <a class="dropdown-item" onclick="modalInfo(1,1)">
+                                                <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
+                                        </a>
                                     </td>
                                     <td class="text-center">
                                         <p class="fs-4 fw-bold" style="color: #FFD417;">Pendente</p>
@@ -67,6 +69,42 @@
                         </thead>
                     </table>
                 </div>
+                <div class="modal fade" id="modalInfo" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-header infoModalHeader">
+                                    <h1 class="modal-title fs-3" id="exampleModalLabel">Informações de Contato</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Nome do Usuário: </p> <p class="ms-2 fs-5" >aa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">E-mail: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Título: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex  m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Motivo do Contato: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <p class="m-0 fw-bold fs-5">Descrição: </p>
+                                        <div class="desc-box w-100 rounded rounded-3 mb-3 p-1">
+                                            <p>aaa</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between"> 
+                                            <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
+                                            <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4" value="" name="acao">Validar denúncia</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+
+                    <?= require '../../Adm/Componentes/modal.php' ?>
             </div>
         </div>
     </div>
