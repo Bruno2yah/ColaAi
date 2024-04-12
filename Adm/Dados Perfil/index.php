@@ -36,7 +36,7 @@
                             <th class="col-md-1 fs-4">ID</th>
                             <th class="col-md-2 fs-4">Nome</th>
                             <th class="col-md-3 fs-4">E-mail</th>
-                            <th class="col-md-1 fs-4">CNPJ</th>
+                            <th class="col-md-2 fs-4">CNPJ</th>
                             <th class="col-md-2 fs-4 text-center">Editar</th>
                             <th class="text-center col-md-1 fs-4">Excluir</th>
                         </tr>

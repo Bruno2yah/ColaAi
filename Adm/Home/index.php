@@ -25,7 +25,9 @@
 
   $nomeAdm = $authUser['nomeAdmin'];
     // Saudação com base no horário do dia
-    $horaAtual = time();
+    date_default_timezone_set('America/Sao_Paulo');
+
+    $horaAtual = date('H');
     $saudacao = '';
     if ($horaAtual < 12) {
     $saudacao = 'Bom dia';
@@ -34,7 +36,7 @@
     } else {
     $saudacao = 'Boa noite';
     }
-
+   //echo (date('H'));
   ?>
     <?php
     include('../Componentes/header.php');
