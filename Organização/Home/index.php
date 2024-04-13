@@ -66,14 +66,42 @@
 include('../Componentes/header.php');
 ?>
 <div class="container-fluid vw-100">
+<div class="hamburger-wrapper">
+            <div class="hamburger" onclick="toggleSidebar()">
+                <input class="checkbox" type="checkbox" />
+                <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
+                    <path
+                        class="lineTop line"
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="black"
+                        d="M6 11L44 11"
+                    ></path>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="black"
+                        d="M6 24H43"
+                        class="lineMid line"
+                    ></path>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="black"
+                        d="M6 37H43"
+                        class="lineBottom line"
+                    ></path>
+                </svg>
+            </div>
+        </div>
     <div class="row vw-100">
         <?php
         include('../Componentes/menu.php')
         ?>
-        <div class="col-9 text-center mt-4" style="color: #a6a6a6;">
+        <div class=" text-center mt-4" style="color: #a6a6a6; " id="data-box">
         <h2><?php echo $saudacao . ', ' . $nomeOrg . '! Bem-vindo ao Dashboard'; ?></h2>
             <div class="row justify-content-evenly h-25 mt-4">
-                <div class="col-4 rounded-5" >
+                <div class="col-3 rounded-5" >
                     <h2 class="fs-4 p-3 pb-0">Visitas Perfil</h2> <!-- Alteração feita aqui -->
                     <p class="fs-5 p-0">+ 5000 visitas</p>
                     <canvas id="graficoBarras" width="800" height="800"></canvas> <!-- Gráfico de barras será renderizado aqui -->
@@ -86,10 +114,10 @@ include('../Componentes/header.php');
                     </div>
                     <h5 class="fs-5 p-3 pb-0">+30 Seguidores</h5> <!-- Alteração feita aqui -->
                 </div>
-                <div class="col-4 rounded-5" >
+                <div class="col-3 rounded-5" >
                     <h2 class="fs-4 p-3 pb-0">Alcance das Publicações</h2>
                     <p class="fs-5 p-0">+ 10000 alcance</p>
-                    <canvas id="graficoPizza"></canvas> <!-- Gráfico de pizza será renderizado aqui -->
+                    <canvas id="graficoRosca" width="400" height="400"></canvas> <!-- Gráfico de rosca será renderizado aqui -->
                     <h2 class="fs-4 p-3 pb-0">Acessos ao Link</h2> <!-- Alteração feita aqui -->
                     <div class="progress mt-3">
                         <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
@@ -106,67 +134,65 @@ include('../Componentes/header.php');
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Dados para o gráfico de barras (Alcance de Perfil)
-    var dadosBarras = {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
-        datasets: [{
-            label: 'Visitas (Últimos 30 dias)', // Alteração feita aqui
-            backgroundColor: 'rgba(255, 206, 86)',
-            borderColor: 'rgba(255, 206, 86, 0.2)',
-            borderWidth: 1,
-            data: [1000, 2000, 3000, 4000, 5000, 6600] // Dados de visitas
-        }]
-    };
-
-    // Dados para o gráfico de pizza (Alcance das Publicações)
-    var dadosPizza = {
-        labels: ['Publicação 1', 'Publicação 2', 'Publicação 3', 'Publicação 4'],
-        datasets: [{
-            data: [2000, 1800, 2200, 2500,], // Dados de alcance das publicações
-            backgroundColor: [
-                'rgba(255, 99, 132)',
-                'rgba(54, 162, 235)',
-                'rgba(255, 206, 86)',
-                'rgba(80, 219, 100)',
-                'rgba(153, 102, 255)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 1
-        }]
-    };
-
-    // Opções comuns para ambos os gráficos
-    var opcoes = {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('show');
         }
-    };
+    </script>
+<script>
+            // Dados para o gráfico de barras (Alcance de Perfil)
+            var dadosBarras = {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+                datasets: [{
+                    backgroundColor: [
+                        'rgb(230, 174, 178)',
+                        'rgb(111, 155, 171)'
+                    ],
 
-    // Criar o gráfico de barras (Alcance de Perfil)
-    var ctxBarras = document.getElementById('graficoBarras').getContext('2d');
-    var graficoBarras = new Chart(ctxBarras, {
-        type: 'bar',
-        data: dadosBarras,
-        options: opcoes
-    });
+                    borderColor: 'rgba(255, 206, 86, 0.2)',
+                    borderWidth: 1,
+                    data: [1000, 2000, 3000, 4000, 5000, 6600], // Dados de visitas
+                    label: '(Últimos 30 dias)', // Alteração feita aqui
+                }]
+            };
 
-    // Criar o gráfico de pizza (Alcance das Publicações)
-    var ctxPizza = document.getElementById('graficoPizza').getContext('2d');
-    var graficoPizza = new Chart(ctxPizza, {
-        type: 'pie',
-        data: dadosPizza,
-        options: opcoes
-    });
-</script>
+            // Dados para o gráfico de rosca (Alcance das Publicações)
+            var dadosRosca = {
+                datasets: [{
+                    data: [2000, 1800, 2200, 2200, ], // Dados de alcance das publicações
+                    backgroundColor: [
+                        'rgb(147 204 76)',
+                        'rgb(109 158 175)',
+                        'rgb(255 212 23)',
+                        'rgb(230 174 178)',
+
+                    ],
+                    borderColor: [
+                        'rgb(147 204 76)',
+                        'rgb(109 158 175)',
+                        'rgb(255 212 23)',
+                        'rgb(230 174 178)',
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            // Opções comuns para ambos os gráficos
+
+
+            // Criar o gráfico de barras (Alcance de Perfil)
+            var ctxBarras = document.getElementById('graficoBarras').getContext('2d');
+            var graficoBarras = new Chart(ctxBarras, {
+                type: 'bar',
+                data: dadosBarras,
+            });
+
+            // Criar o gráfico de rosca (Alcance das Publicações)
+            var ctxRosca = document.getElementById('graficoRosca').getContext('2d');
+            var graficoRosca = new Chart(ctxRosca, {
+                type: 'doughnut',
+                data: dadosRosca,
+            });
+        </script>
 </body>
 </html>

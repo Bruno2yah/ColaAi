@@ -50,14 +50,12 @@ body{
 }
 
 #data-box{
-    min-height: 91vh;
+    width: 100%;
+    height: 100%;
     background-image: url('../img/Admin/fundo-adm.png');
     background-size:cover;
     background-position:inherit;
     background-repeat:no-repeat;
-    height:91vh;
-    vertical-align:top;
-    overflow-y: scroll;
 }
 
 
@@ -195,6 +193,86 @@ body{
 #modalAceitar{
     background-color: rgba(0, 0, 0, 0.2); /* Cor de fundo semi-transparente */
 }
+.hamburger {
+    height: 50px;
+    width: 50px;
+    position: relative;
+  }
+  .hamburger-wrapper {
+    position: absolute;
+    top: 90px; /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Garante que esteja acima de outros elementos */
+}
+
+  .hamburger .checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+  .line {
+    transition: 0.5s;
+    stroke-width: 6px;
+    stroke: black;
+  }
+  .lineTop {
+    stroke-dasharray: 40 40;
+    stroke-dashoffset: 25;
+  }
+  .lineBottom {
+    stroke-dasharray: 40 40;
+    stroke-dashoffset: 60;
+  }
+  .lineMid {
+    stroke-dasharray: 40 40;
+  }
+  .hamburger .checkbox:checked + svg .line {
+    stroke: crimson;
+  }
+  .hamburger .checkbox:checked + svg .lineTop {
+    stroke-dashoffset: 0;
+    transform-origin: left;
+    transform: rotateZ(45deg) translate(-7px, -5px);
+  }
+  .hamburger .checkbox:checked + svg .lineMid {
+    stroke-dashoffset: 40;
+  }
+  .hamburger .checkbox:checked + svg .lineBottom {
+    stroke-dashoffset: 0;
+    transform-origin: left;
+    transform: rotateZ(-45deg) translate(-5px, 5px);
+  }
+     /* Adicione o estilo para o sidebar */
+     .sidebar {
+        position: absolute;
+        top: 20;
+        left: -300px; /* Inicia oculto */
+        height: 92%;
+        width: 150px;
+        background-color: #FFF7D1;
+        padding-top: 60px;
+        transition: all 0.3s;
+        z-index: 1000;
+    }
+
+    
+
+    .show {
+        left: 0; /* Mostra quando a classe show é adicionada */
+    }
+    .first-div {
+        width:100%;
+        height: 35%;
+        background-color: #FFD700; /* Amarelo */
+    }
+    .second-div {
+        width:100%;
+        height: 65%;
+        background-color: #00FFFF; /* Azul claro */
+    }
+  
 
 
 

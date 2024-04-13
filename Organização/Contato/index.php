@@ -1,15 +1,11 @@
-<?php
-require_once '../../dao/UserDao.php';
-require_once '../../model/Mensagem.php';
-$users = UserDao::selectAll();
-?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuários</title>
+    <title>Feedback de Usuários</title>
     <link rel="stylesheet" href="../../css/styleAdm.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
@@ -17,7 +13,7 @@ $users = UserDao::selectAll();
 </head>
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
-    <?php
+<?php
     // Iniciar a sessão
     session_start();
 
@@ -68,11 +64,8 @@ $users = UserDao::selectAll();
             include('../Componentes/menu.php')
             ?>
             <div class="info-box col-md-9 " style="color: #a6a6a6;" id="data-box">
-                <h1 class="text-center mt-4">Usuários</h1>
-                <div class="container d-flex w-100 h-auto pe-5 mt-5">
-                    <a href="register.php" class="ms-auto me-0" style="width: 45px;">
-                        <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
-                    </a>
+                <h1 class="text-center mt-4">Suporte Técnico - Contato</h1>
+                <div class="container d-flex w-100 pe-5 mt-5" style="height: 50px">
                 </div>
                 <div class="row ms-4 me-5 mt-4">
                     <table class="">
@@ -80,54 +73,29 @@ $users = UserDao::selectAll();
                             <tr id="data-table">
                                 <th class="col-md-1 fs-4">ID</th>
                                 <th class="col-md-2 fs-4">Nome</th>
-                                <th class="col-md-3 fs-4">Sobrenome</th>
-                                <th class="col-md-4 fs-4">E-mail</th>
-                                <th class="text-center col-md-3 fs-4">Editar</th>
-                                <th class="text-end col-md-2 fs-4">Excluir</th>
+                                <th class="col-md-3 fs-4">E-mail</th>
+                                <th class="col-md-3 fs-4 text-center">Informações</th>
+                                <th class="col-md-3 fs-4 text-center">Status</th>
+                                <th class="col-md-2 fs-4 text-center">Devolutiva</th>
                             </tr>
-                            <?php foreach ($users as $User) : ?>
                                 <tr class="mt-1">
-                                    <td class="fs-5 p-1 pt-3"><?= $User['idUsuario']; ?></td>
-                                    <td class="fs-5 p-1 pt-3"><?= $User['nomeUsuario']; ?></td>
-                                    <td class="fs-5 p-1 pt-3"><?= $User['sobrenomeUsuario']; ?></td>
-                                    <td class="fs-5 p-1 pt-3"><?= $User['emailUsuario']; ?></td>
-                                    <td class="text-center pt-3">
-                                        <form action="process.php" method="POST">
-                                            <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
-                                            <input type="hidden" class="form-control" id="id" name="id" value="<?= $User['idUsuario']?>">
-                                            <button type="submit" class="dropdown-item"><img src="../../img/Admin/editar-icon.png" alt="" style="width: 25px;">
-                                            </button>
-                                        </form>
+                                    <td class="fs-5 p-1"></td>
+                                    <td class="fs-5 p-1"></td>
+                                    <td class="fs-5 p-1"></td>
+                                    <td class="text-center">
+                                        <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
                                     </td>
-                                    <td class="text-center pt-3">
-                                        <a class="dropdown-item" onclick="modalRemover(<?= $User['idUsuario'] ?>,'idDeletar')">
-                                        <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 25px;">
-                                        </a>
+                                    <td class="text-center">
+                                        <p class="fs-4 fw-bold" style="color: #FFD417;">Pendente</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <img src="../../img/Admin/contato-icon.png" alt="" style="width: 40px;" >
                                     </td>
                                 </tr>
-                            <?php endforeach; ?>
                         </thead>
                     </table>
                 </div>
             </div>
-            <div class="modal fade" id="modalExcluir" role="dialog"data-bs-backdrop="false"    >
-                        <div class=" modal-dialog modal-dialog-centered">
-                            <div class="modal-content ">
-                                <div class="modal-body" style="color: #a6a6a6;">
-                                    <form action="process.php" method="post">
-                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
-                                        <h1 class="text-center fs-2 fw-bold">Excluir Usuário?</h1>
-                                        <p class="fs-5 m-0">Quando clicar em <span style="text-decoration: underline; color:#FF3131">excluir</span> a
-                                         ação não poderá ser desfeita, deixando o usuário impossibilitado de se registrar no site.</p>
-                                            <div class="d-flex justify-content-between mt-5"> 
-                                            <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
-                                            <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4 col-3" value="DELETE" name="acao">Excluir</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                    </div>
-            <?= require '../../Adm/Componentes/modal.php' ?>
         </div>
     </div>
 

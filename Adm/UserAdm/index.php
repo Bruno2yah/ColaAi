@@ -34,14 +34,42 @@ $users = UserAdmDao::selectAll();
     <?php
     include('../Componentes/header.php');
     ?>
-    <div class="container-fluid">
+    <div class="container-fluid" >
+        <div class="hamburger-wrapper">
+                <div class="hamburger" onclick="toggleSidebar()">
+                    <input class="checkbox" type="checkbox" />
+                    <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
+                        <path
+                            class="lineTop line"
+                            stroke-linecap="round"
+                            stroke-width="4"
+                            stroke="black"
+                            d="M6 11L44 11"
+                        ></path>
+                        <path
+                            stroke-linecap="round"
+                            stroke-width="4"
+                            stroke="black"
+                            d="M6 24H43"
+                            class="lineMid line"
+                        ></path>
+                        <path
+                            stroke-linecap="round"
+                            stroke-width="4"
+                            stroke="black"
+                            d="M6 37H43"
+                            class="lineBottom line"
+                        ></path>
+                    </svg>
+                </div>
+            </div>
         <div class="row vw-100 h-auto">
             <?php
             include('../Componentes/menu.php')
             ?>
-            <div class="info-box col-md-9 " style="color: #a6a6a6;" id="data-box">
+            <div class="info-box  " style="color: #a6a6a6;" id="data-box" >
                 <h1 class="text-center mt-4">Administradores</h1>
-                <div class="container d-flex w-100 h-auto pe-5 mt-5">
+                <div class="container d-flex w-100 p-2 mb-3">
                     <a href="register.php" class="ms-auto me-0" style="width: 45px;">
                         <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
                     </a>
@@ -109,6 +137,12 @@ $users = UserAdmDao::selectAll();
     </div>
 
     <!-- Para usar Mascara  -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('show');
+        }
+    </script>
     <script type="text/javascript" src="../../js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="../../js/personalizar.js"></script>
     <script type="text/javascript" src="../../js/modal.js"></script>

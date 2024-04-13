@@ -1,6 +1,11 @@
-<div class="col-md-3 p-0 linha pt-1 menu-pos h-auto" style="background-color:#E6F4D6;" id="menu">
-    <ul class="nav flex-column menu linha ps-2 pt-5">
-      <a class="menuItems w-100 p-1 ps-2 " href="../Home/" style="text-decoration: none; color: #a6a6a6;">
+<div class="sidebar d-flex flex-column flex-shrink-0 p-3" style="width: 280px;"  id="sidebar">
+    <a href="../Home/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">Admistrador</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+    <a class="menuItems w-100 p-1 ps-2 " href="../Home/" style="text-decoration: none; color: #a6a6a6;">
         <li class="d-flex align-items-center">
           <img src="../../img/Admin/icon-home.png" alt="" id="menu-icon">
           <span class="ms-2">Home</span>
@@ -48,24 +53,7 @@
             <span>Dados do perfil</span>
           </a>
         </li>
-        <li class="menuItems w-100 p-1 ps-4">
-          <a class="" href="../Eventos/" style="text-decoration: none; color: #a6a6a6;">
-          <img src="../../img/Admin/icon-eventos.png" alt="" id="menu-icon">
-            <span>Eventos</span>
-          </a>
-        </li>
-        <li class="menuItems w-100 p-1 ps-4">
-          <a class="" href="../Publicações/" style="text-decoration: none; color: #a6a6a6;">
-          <img src="../../img/Admin/icon-publicacoes.png" alt="" id="menu-icon">
-            <span>Publicações</span>
-          </a>
-        </li>
-        <li class="menuItems w-100 p-1 ps-4">
-          <a class="" href="../Arquivados/" style="text-decoration: none; color: #a6a6a6;">
-          <img src="../../img/Admin/itens-arquivados.png" alt="" id="menu-icon">
-            <span>Itens Arquivados</span>
-          </a>
-        </li>
+        
       </div>
       <p class="d-inline-flex menuItems w-100 p-1 ps-2" style="margin-bottom: 0">
         <a class="w-100 d-flex align-items-cente" data-bs-toggle="collapse" href="#collapseUsuario" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
@@ -110,4 +98,16 @@
         </li>
       </div>
     </ul>
+    <hr>
+    <div class="dropdown">
+    <a href="#" class="text-white d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="../../img/Admin/<?=$authUser['fotoPerfilAdmin']? $authUser['fotoPerfilAdmin']: 'icon-padrao.png';?>" width="50" height="50" alt="" class="rounded-circle" id="icon-pfp">
+    </a>
+    <ul class="dropdown-menu text-small">
+          <li><a class="dropdown-item" href="../Perfil/">Perfil</a></li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="logoff.php">Sair</a></li>
+        </ul>
+    </div>
   </div>

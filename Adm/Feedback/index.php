@@ -31,11 +31,40 @@
     include('../Componentes/header.php');
     ?>
     <div class="container-fluid">
+    <div class="hamburger-wrapper">
+                <div class="hamburger" onclick="toggleSidebar()">
+                    <input class="checkbox" type="checkbox" />
+                    <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
+                        <path
+                            class="lineTop line"
+                            stroke-linecap="round"
+                            stroke-width="4"
+                            stroke="black"
+                            d="M6 11L44 11"
+                        ></path>
+                        <path
+                            stroke-linecap="round"
+                            stroke-width="4"
+                            stroke="black"
+                            d="M6 24H43"
+                            class="lineMid line"
+                        ></path>
+                        <path
+                            stroke-linecap="round"
+                            stroke-width="4"
+                            stroke="black"
+                            d="M6 37H43"
+                            class="lineBottom line"
+                        ></path>
+                    </svg>
+                </div>
+            </div>
         <div class="row vw-100 h-auto">
             <?php
             include('../Componentes/menu.php')
             ?>
             <div class="info-box col-md-9 " style="color: #a6a6a6;" id="data-box">
+            
                 <h1 class="text-center mt-4">Suporte Técnico - Feedback</h1>
                 <div class="container d-flex w-100 pe-5 mt-5" style="height: 50px;">
                 </div>
@@ -93,7 +122,12 @@
             </div>
         </div>
     </div>
-
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('show');
+        }
+    </script>
     <!-- Para usar Mascara  -->
     <script type="text/javascript" src="../../js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="../../js/personalizar.js"></script>
