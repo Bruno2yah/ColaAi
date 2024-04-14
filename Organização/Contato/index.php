@@ -14,19 +14,18 @@
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
 <?php
-    // Iniciar a sessão
-    session_start();
+  // Iniciar a sessão
+  session_start();
 
-    // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
-    if (!isset($_SESSION['AutenticaoAdm']) || $_SESSION['AutenticaoAdm'] != 'SIM') {
-        // Redirecionar para o login com um erro2 se não estiver autenticado
-        header('Location: login.php?login=erro2');
-        exit();
-    }
-
-    // Agora, o usuário está autenticado, então você pode acessar as informações do usuário na sessão
-    $authUser = $_SESSION['userAdm'];
-    ?>
+  // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
+  if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
+    // Redirecionar para o login com um erro2 se não estiver autenticado
+    header('Location: index.php?login=erro2');
+    exit();
+  }
+  //o usuário está autenticado
+  $authUserOrg = $_SESSION['userOrg'];
+  ?>
     <?php
     include('../Componentes/header.php');
     ?>

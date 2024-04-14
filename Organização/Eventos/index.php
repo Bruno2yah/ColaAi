@@ -11,7 +11,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> <!-- CSS Projeto -->
 </head>
 <body>
-    
+<?php
+  // Iniciar a sessão
+  session_start();
+
+  // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
+  if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
+    // Redirecionar para o login com um erro2 se não estiver autenticado
+    header('Location: index.php?login=erro2');
+    exit();
+  }
+  //o usuário está autenticado
+  $authUserOrg = $_SESSION['userOrg'];
+  ?>
     <?php
     include('../Componentes/header.php');
     ?>

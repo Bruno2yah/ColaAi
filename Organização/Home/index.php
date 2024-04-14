@@ -38,7 +38,7 @@
   // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
   if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
     // Redirecionar para o login com um erro2 se não estiver autenticado
-    header('Location: loginEmail.php?login=erro2');
+    header('Location: index.php?login=erro2');
     exit();
   }
 

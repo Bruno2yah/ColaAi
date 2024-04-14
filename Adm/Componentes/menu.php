@@ -107,7 +107,7 @@
           <li><a class="dropdown-item" href="../Perfil/">Perfil</a></li>
             <hr class="dropdown-divider">
           </li>
-          <li><a class="dropdown-item" href="logoff.php">Sair</a></li>
+          <li><a class="dropdown-item" href="../logoff.php">Sair</a></li>
         </ul>
     </div>
   </div>

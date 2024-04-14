@@ -2,11 +2,11 @@
 session_start();
 
 // Destruir a sessão
-unset($_SESSION['AutenticaoOrg']);
-unset($_SESSION['userOrg']);
+unset($_SESSION['AutenticaoAdm']);
+unset($_SESSION['userAdm']);
 session_destroy();
 
 // Redirecionar para a página de login
-header('Location: ../Organização/index.php');
+header('Location: ../index.php');
 exit();
 ?>

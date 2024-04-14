@@ -15,7 +15,7 @@
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-10 col-sm-9 col-md-4  rounded-4">
-                <form action="../validaLoginTel.php" method="post">
+                <form action="../valida_login.php" method="post">
                 
                     <div class="title-box h-25 p-md-5 pt-3 pb-3 text-center">
                         <h1 class="fw-bold"><span style="color: #E6AEB2;">Lo</span><span style="color: #6D9EAF;">gin</span></h1>
