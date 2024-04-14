@@ -166,20 +166,7 @@ body{
 }
 
 @media only screen and (min-width: 758px) {
-    #modalInfo{ 
-        top: 9vh;
-        left: 25vw;
-    }
-    #modalExcluir{ 
-        top: 9vh;
-        left: 25vw;
-    }
-    #modalAceitar{ 
-        top: 9vh;
-        left: 25vw;
-    }
     .modal-content{
-        right: 35%;
         box-shadow: -9px 10px 0px 0px rgba(166,166,166,1);
     }
   }
@@ -273,6 +260,3 @@ body{
         background-color: #00FFFF; /* Azul claro */
     }
   
-
-
-
