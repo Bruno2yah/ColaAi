@@ -12,12 +12,14 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $cidade = $evento->getCidade();
             $uf = $evento->getUf();
             $data = $evento->getData();
+            $desc = $evento->getDesc();
             $idOrganizacaoEvento = $evento->getIdOrganizacaoEvento(); 
+            $imagem = $evento->getImagemEvento();
             
             $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
         
             $stmt = $conn->prepare("INSERT INTO tbevento (nomeEvento, cepEvento, enderecoEvento, numeroEvento, complementoEvento, bairroEvento, cidadeEvento, ufEvento,
-            dataEvento, idOrganizacaoEvento)  VALUES (:nome, :cep, :endereco, :numero, :complemento, :bairro, :cidade, :uf, :data, :idOrgEvento)");
+            dataEvento, descEvento, idOrganizacaoEvento, imagemEvento)  VALUES (:nome, :cep, :endereco, :numero, :complemento, :bairro, :cidade, :uf, :data, :desc, :idOrgEvento, :imagem)");
         
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':cep', $cep);
@@ -28,7 +30,9 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $stmt->bindParam(':cidade', $cidade);
             $stmt->bindParam(':uf', $uf);
             $stmt->bindParam(':data', $data);
+            $stmt->bindParam(':desc', $desc);
             $stmt->bindParam(':idOrgEvento', $idOrganizacaoEvento);
+            $stmt->bindParam(':imagem', $imagem);
         
             $result = $stmt->execute();
         
@@ -80,8 +84,10 @@ require_once (__DIR__ . '../../model/Conexao.php');
                bairroEvento = :bairro,
                cidadeEvento = :cidade,
                ufEvento = :uf,
-               dataEvento = :data, 
-               idOrganizacaoEvento = :idOrgEvento
+               dataEvento = :data,
+               descEvento = :desc, 
+               idOrganizacaoEvento = :idOrgEvento,
+               imagemEvento = :imagem
                 WHERE idEvento = :id";
             
             $stmt = $conexao->prepare($query);
@@ -96,7 +102,9 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $cidade = $evento->getCidade();
             $uf = $evento->getUf();
             $data = $evento->getData();
+            $desc = $evento->getDesc();
             $idOrganizacaoEvento = $evento->getIdOrganizacaoEvento();
+            $imagem = $evento->getImagemEvento();
 
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':cep', $cep);
@@ -107,7 +115,9 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $stmt->bindParam(':cidade', $cidade);
             $stmt->bindParam(':uf', $uf);
             $stmt->bindParam(':data', $data);
+            $stmt->bindParam(':desc', $desc);
             $stmt->bindParam(':idOrgEvento', $idOrganizacaoEvento);
+            $stmt->bindParam(':imagem', $imagem);
             $stmt->bindParam(':id', $id);
         
             return $stmt->execute();

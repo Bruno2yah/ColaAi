@@ -1,4 +1,38 @@
+<?php
+session_start(); // Inicia a sessão
+require_once(__DIR__ . '../../../Adm/Componentes/modal.php');
+require_once(__DIR__ . '../../../dao/EventoDao.php');
 
+if (!empty($_POST)) {
+  $id_Evento = $eventoDao['idEvento'];
+  $nome_Evento =  $eventoDao['nomeEvento'];
+  $cep_Evento = $eventoDao['cepEvento'];
+  $endereco_Evento = $eventooDao['enderecoEvento'];
+  $num_Evento = $eventoDao['numeroEvento'];
+  $complemento_Evento = $eventoDao['complementoEvento'];
+  $bairro_Evento = $eventoDao['bairroEvento'];
+  $cidade_Evento = $eventoDao['cidadeEvento'];
+  $uf_Evento = $eventoDao['ufEvento'];
+  $data_Evento = $eventoDao['dataEvento'];
+  $desc_Evento = $eventoDao['descEvento'];
+  $idOrg_Evento = $eventoDao['idOrganizacaoEvento'];
+  $imagem_Evento = $eventoDao['imagemEvento'];
+} else {
+  $nome_Evento = '';
+  $cep_Evento = '';
+  $endereco_Evento = '';
+  $num_Evento = '';
+  $complemento_Evento = '';
+  $bairro_Evento = '';
+  $cidade_Evento = '';
+  $uf_Evento = '';
+  $data_Evento = '';
+  $desc_Evento = '';
+  $idOrg_Evento = '';
+  $imagem_Evento = '';
+  $id_Evento = '';
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,9 +50,6 @@
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
 <?php
-  // Iniciar a sessão
-  session_start();
-
   // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
   if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
     // Redirecionar para o login com um erro2 se não estiver autenticado
@@ -68,87 +99,72 @@
             <div class="d-flex flex-column w-75 border border-1 rounded rounded-4 mt-5 " style="background-color: #FFFFFF;" id="formBox">
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Criar Evento</h1>
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4" novalidate>
-                    <img src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid ms-auto me-auto rounded rounded-3">
+                    <input type="hidden" name="idEvento" id="idEvento" placeholder="id" value="<?= $id_Evento ?>">
+                    <input type="text" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id da organização" value="<?= $idOrg_Evento ?>">
+                    <input type="hidden" name="imagemEvento" id="imagemEvento" placeholder="nome foto" value="<?=$imagem_Evento?>">
+                    <input type="hidden" value="<?= $id_Evento ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">    
+                    <img id="preview" src="../../img/Organizacao/Evento/<?=$imagem_Evento!=""?$imagem_Evento:'eventoPadrao.png';?>" alt="imagem do evento" class="img-fluid ms-auto me-auto rounded rounded-3">
                     <div class="row text-end inputFile">
                         <label for="foto" class="form-label fs-5 mt-2">Alterar Imagem</label>
                         <input type="file" id="foto" name="foto" accept="image/*" class="form-control mt-1 mb-4">
                     </div>
-                    <div class="row">
-                    <div class="col-md-6 mb-3 needs-validation">
-                        <label for="nomeEvento" class="col-form-label">Nome do Evento*</label>
-                        <input type="text" class="form-control inputGeral " placeholder="" name="" maxlength="50" id="" value="" required>
-                        <div class="invalid-feedback">
-                        Preencha este campo
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3 needs-validation">
-                        <label for="CNPJ" class="col-form-label">CNPJ da organização*</label>
-                        <input type="text" class="form-control inputGeral" placeholder="" name="" maxlength="50" id="" value="" required>
-                        <div class="invalid-feedback">
-                        Preencha este campo
-                        </div>
-                    </div>
-                    </div>
+            
                     <div class="row">
                         <div class="col-md-6 needs-validation">
-                            <label for="nomeOrg" class="col-form-label">Nome da organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
+                            <label for="nome" class="col-form-label">Nome do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="nomeEvento" maxlength="100" id="" value="<?=$nome_Evento?>" required>
                         </div>
                         <div class="col-md-6 needs-validation">
-                            <label for="cep" class="col-form-label">CEP da organização*</label>
-                            <input type="text" class="form-control inputGeral" name="" id="" value="" required>
+                            <label for="cep" class="col-form-label">CEP do Evento*</label>
+                            <input type="text" class="form-control inputGeral" name="cepEvento" data-mask="00000-000" id="" value="<?=$cep_Evento?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-10 needs-validation">
-                            <label for="endereco" class="col-form-label">Endereço da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
+                            <label for="endereco" class="col-form-label">Endereço do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="enderecoEvento" maxlength="100" id="" value="<?=$endereco_Evento?>" required>
                         </div>
                         <div class="col-md-2 needs-validation">
                             <label for="numero" class="col-form-label">N°*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="numeroEvento" maxlength="5" id="" value="<?=$num_Evento?>" required>
                         </div>
                     </div>
-
-                        <div class="col-md-12 needs-validation">
-                            <label for="complemento" class="col-form-label">Complemento da organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
+                    <div class="row">
+                    <div class="col-md-6 needs-validation">
+                            <label for="bairro" class="col-form-label">Bairro do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="bairroEvento" maxlength="100" id="" value="<?=$bairro_Evento?>">
                         </div>
-
-
-                        <div class="col-md-12 needs-validation">
-                            <label for="complemento" class="col-form-label">UF da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
+                        <div class="col-md-6 needs-validation">
+                            <label for="complemento" class="col-form-label">Complemento do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="complementoEvento" maxlength="100" id="" value="<?=$complemento_Evento?>">
                         </div>
-
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 needs-validation">
+                            <label for="complemento" class="col-form-label">Cidade do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="cidadeEvento" maxlength="100" id="" value="<?=$cidade_Evento?>" required>
+                        </div>
+                        <div class="col-md-6 needs-validation">
+                            <label for="complemento" class="col-form-label">UF do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="ufEvento" maxlength="100" id="" value="<?=$uf_Evento?>" required>
+                        </div>
+                    </div>
                     
                     <div class="row">
                         <div class="col-md-12 needs-validation">
-                            <label for="email" class="col-form-label">Email da Organização*</label>
-                            <input type="email" class="form-control inputGeral" placeholder="" name="" maxlength="100" id="" value="" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-md-12 needs-validation">
-                        <label for="telefone" class="col-form-label">Telefone da Organização*</label>
-                        <input type="email" class="form-control inputGeral" placeholder="" name="" maxlength="100" id="" value="" required>
-                    </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 needs-validation">
-                            <label for="senha" class="col-form-label">Senha da Organização*</label>
-                            <input type="password" class="form-control inputGeral" placeholder="" name="" maxlength="10" id="senha" value="" required>
+                            <label for="date" class="col-form-label">Data do Evento*</label>
+                            <input type="date" class="form-control inputGeral" placeholder="" name="dataEvento" maxlength="100" id="" value="<?=$data_Evento?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 needs-validation ">
                             <label for="descricao" class="col-form-label">Descrição do Evento*</label>
-                            <textarea class="form-control inputGeral" name="" id="" cols="30" rows="10" style="max-height: 400px;"></textarea>
+                            <textarea class="form-control inputGeral" name="descEvento" id="" cols="30" maxlength="500" rows="10" style="max-height: 400px;"><?=$desc_Evento?></textarea>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class=" text-end p-3">
-                            <input type="submit" class="btn" value="Editar">
+                            <input type="submit" class="btn" value="Salvar">
                         </div>
                     </div>
                 </form>

@@ -1,6 +1,6 @@
 <?php
 class Evento {
-    public $id, $nome, $cep, $endereco, $numero, $complemento, $bairro, $cidade, $uf, $data, $idOrganizacaoEvento;
+    public $id, $nome, $cep, $endereco, $numero, $complemento, $bairro, $cidade, $uf, $data, $desc, $idOrganizacaoEvento, $imagemEvento;
 
     // Getters e Setters
     public function getId() {
@@ -83,12 +83,43 @@ class Evento {
         $this->data = $data;
     }
 
+    public function getDesc() {
+        return $this->desc;
+    }
+
+    public function setDesc($desc) {
+        $this->desc = $desc;
+    }
+
     public function getIdOrganizacaoEvento() {
         return $this->idOrganizacaoEvento;
     }
 
     public function setIdOrganizacaoEvento($idOrganizacaoEvento) {
         $this->idOrganizacaoEvento = $idOrganizacaoEvento;
+    }
+
+    public function getImagemEvento() {
+        return $this->imagemEvento;
+    }
+
+    public function setImagemEvento($imagemEvento) {
+        $this->imagemEvento = $imagemEvento;
+    }
+
+    public function salvarImagem($novo_nome){
+        if(empty($_FILES['foto']['size']) != 1){
+            if($novo_nome == ""){
+                $novo_nome = md5(time()). ".jpg";
+            }
+            $diretorio = "../../img/Organizacao/";
+            $nomeCompleto = $diretorio.$novo_nome;
+            move_uploaded_file($_FILES['foto']['tmp_name'], $nomeCompleto);
+            return $novo_nome;
+        }
+        else{
+            return $novo_nome;
+        }
     }
 }
 ?>
