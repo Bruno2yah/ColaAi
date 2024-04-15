@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Evento</title>
+    <title>Registrar Evento</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- icon -->
@@ -108,7 +108,7 @@
                         <div class="col-md-12 needs-validation mb-4">
                             <label for="complemento" class="col-form-label">Cidade do Evento*</label>
                             <select class="form-select inputGeral" aria-label="Default select example">
-                                <option selected>Selecione o bairro do evento</option>
+                                <option selected>Selecione a cidade do evento</option>
                                 <option value="1">Jardim miriam</option>
                             </select>
                         </div>

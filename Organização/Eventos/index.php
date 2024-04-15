@@ -68,8 +68,8 @@
 
                         </tr>
                                 <tr class="mt-1">
-                                    <td class="fs-5 pt-3"></td>
-                                    <td class="fs-5 pt-3"></td>
+                                    <td class="fs-5 pt-3">01</td>
+                                    <td class="fs-5 pt-3">Brincadeira legal</td>
                                     <td class="text-center pt-3">
                                         <a class="dropdown-item" onclick="modalInfo(1,1)">
                                             <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
@@ -151,24 +151,7 @@
                             </div>
                     </div>
             </div>
-            <div class="modal fade" id="modalAceitar" role="dialog"data-bs-backdrop="false"    >
-                        <div class=" modal-dialog modal-dialog-centered">
-                            <div class="modal-content ">
-                                <div class="modal-body" style="color: #a6a6a6;">
-                                    <form action="process.php" method="post">
-                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
-                                        <h1 class="text-center fs-2 fw-bold">Aceitar o cadastro<br> da organização?</h1>
-                                        <p class="fs-5 m-0">Quando clicar em <span style="text-decoration: underline; color:#93CC4C">aceitar</span> 
-                                        a organização receberá um e-mail de acesso para concluír o seu cadastro.</p>
-                                        <div class="d-flex justify-content-between mt-5"> 
-                                            <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
-                                            <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4 col-3" value="?" name="acao">Aceitar</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                    </div>
-            </div>
+            
             <div class="modal fade" id="modalExcluir" role="dialog"data-bs-backdrop="false"    >
                         <div class=" modal-dialog modal-dialog-centered">
                             <div class="modal-content ">
@@ -186,7 +169,7 @@
                                 </div>
                             </div>
                     </div>
-            <?= require '../../Adm/Componentes/modal.php' ?>
+            <?= require '../Componentes/modal.php' ?>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

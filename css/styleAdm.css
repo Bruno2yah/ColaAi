@@ -188,6 +188,9 @@ body{
 #modalAceitar{
     background-color: rgba(0, 0, 0, 0.2); /* Cor de fundo semi-transparente */
 }
+#modalRestaurar{
+    background-color: rgba(0, 0, 0, 0.2); /* Cor de fundo semi-transparente */
+}
 .hamburger {
     height: 50px;
     width: 50px;
@@ -308,4 +311,3 @@ body{
         font-size: 28px; /* Tamanho da fonte */
         text-align: center; /* Alinhamento central */
     }
-
