@@ -98,8 +98,8 @@ include('../Componentes/header.php');
         <?php
         include('../Componentes/menu.php')
         ?>
-        <div class=" text-center mt-4" style="color: #a6a6a6; " id="data-box">
-        <h2><?php echo $saudacao . ', ' . $nomeOrg . '! Bem-vindo ao Dashboard'; ?></h2>
+        <div class=" text-center" style="color: #a6a6a6; " id="data-box">
+        <h2 class="mt-4"><?php echo $saudacao . ', ' . $nomeOrg . '! Bem-vindo ao Dashboard'; ?></h2>
             <div class="row justify-content-evenly h-25 mt-4">
                 <div class="col-3 rounded-5" >
                     <h2 class="fs-4 p-3 pb-0">Visitas Perfil</h2> <!-- Alteração feita aqui -->
