@@ -27,7 +27,7 @@
     <?php
     include('../Componentes/header.php');
     ?>
-    <div class="container-fluid vw-100">
+    <div class="container-fluid vw-100 ">
     <div class="hamburger-wrapper">
             <div class="hamburger" onclick="toggleSidebar()">
                 <input class="checkbox" type="checkbox" />
@@ -56,7 +56,7 @@
                 </svg>
             </div>
         </div>
-        <div class="row vw-100">
+        <div class="row vw-100 vh-100">
         <?php
         include('../Componentes/menu.php')
         ?>

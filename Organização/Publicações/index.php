@@ -44,7 +44,7 @@
                 </svg>
             </div>
         </div>
-        <div class="row vw-100">
+        <div class="row vw-100 vh-100">
         <?php
         include('../Componentes/menu.php')
         ?>

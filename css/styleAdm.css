@@ -51,7 +51,6 @@ body{
 
 #data-box{
     width: 100%;
-    height: 100%;
     background-image: url('../img/Admin/fundo-adm.png');
     background-size:cover;
     background-position:inherit;
@@ -250,13 +249,54 @@ body{
         left: 0; /* Mostra quando a classe show é adicionada */
     }
     .first-div {
-        width:100%;
-        height: 35%;
-        background-color: #FFD700; /* Amarelo */
+        width: 100%;
+        height: 20vw; /* Altura igual à altura da janela de visualização */
+        background-color: #453c96; /* Azul claro */
+        overflow: hidden; /* Para garantir que a imagem não ultrapasse os limites do círculo */
+
     }
     .second-div {
         width:100%;
-        height: 65%;
-        background-color: #00FFFF; /* Azul claro */
+        height:50vw;
+        background-color: #ffffff; /* Azul claro */
+
     }
-  
+    .third-div {
+        width: 40vh; /* Largura do círculo */
+        height: 40vh; /* Altura do círculo (será definida pelo padding) */
+        position: absolute; 
+        border-radius: 50%; /* Para fazer um círculo */
+        margin: 0 auto; /* Para centralizar horizontalmente */
+        position: absolute;
+        top:25vh; 
+        left: 15vh;
+        background-color: #191824; /* Azul claro */
+        overflow: hidden; /* Para garantir que a imagem não ultrapasse os limites do círculo */
+    }
+    .four-div {
+        width: 40vw; /* Largura do círculo */
+        height: 50vh; /* Altura do círculo (será definida pelo padding) */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: absolute;
+
+
+    }
+    .five-div {
+        width: 100%; /* Largura do círculo */
+        height: 50%; /* Altura do círculo (será definida pelo padding) */
+        margin-top: auto;
+
+    }
+    .organization-name {
+        font-size: 44px; /* Tamanho da fonte */
+        font-weight: bold; /* Negrito */
+        text-align: center; /* Alinhamento central */
+    }
+
+    .organization-description {
+        font-size: 28px; /* Tamanho da fonte */
+        text-align: center; /* Alinhamento central */
+    }
+
