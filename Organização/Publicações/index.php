@@ -44,53 +44,21 @@
                 </svg>
             </div>
         </div>
-        <div class="row vw-100">
-            <?php
-                include('../Componentes/menu.php')
-            ?>
-            <div class="info-box col-md-9 pt-4" style="color: #a6a6a6;" id="data-box">
-                <h1 class="text-center mt-4">Veja aqui todos os seus eventos!</h1>
-                <div class="container d-flex w-100 h-auto mt-5 me-5">
-                    <a href="register.php" class="ms-auto me-0" style="width: 45px;">
-                        <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto" style="width: 45px;">
-                    </a>
-                </div>  
-                <div class="row ms-4 me-5 mt-4">
-                    <table class="">
-                        <thead>
-                        <tr id="data-table">
-                            <th class="col-md-1 fs-4">ID</th>
-                            <th class="col-md-4 fs-4">Nome do Evento</th>
-                            <th class="text-center col-md-1 fs-4">Informações</th>
-                            <th class="text-center col-md-1 fs-4">Arquivar</th>
-                            <th class="text-center col-md-1 fs-4 text-center">Alterar</th>
-                            <th class="text-center col-md-1 fs-4">Excluir</th>
-
-                        </tr>
-                                <tr class="mt-1">
-                                    <td class="fs-5 pt-3"></td>
-                                    <td class="fs-5 pt-3"></td>
-                                    <td class="text-center pt-3">
-                                        <a class="dropdown-item" onclick="">
-                                            <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
-                                        </a>
-                                    </td>
-                                    <td class="text-center fs-5 pt-3">
-                                    <a class="dropdown-item" onclick="">
-                                        <img src="../../img/Organizacao/arquivar-icon.png" alt="" style="width: 40px;">
-                                        </a>
-                                    </td>
-                                    <td class="text-center pt-3">
-                                        <img src="../../img/Admin/editar-icon.png" alt="" style="width: 35px;">
-                                    </td>
-                                    <td class="text-center pt-3">
-                                    <a class="dropdown-item" onclick="modalRemover(1, 1)">
-                                        <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
-                                        </a>
-                                    </td>
-                                </tr>
-                        </thead>
-                    </table>
+        <div class="row vw-100 vh-100">
+        <?php
+        include('../Componentes/menu.php')
+        ?>
+            <div class="info-box col-md-9  d-flex flex-column" style="color: #a6a6a6; background-blend-mode: darken; background-color: #E8E8E8;" id="data-box">
+                <h1 class="text-center mt-4">Organização - Publicações</h1>
+                <div class="row h-auto me-auto ms-auto g-5 mt-3" style="width: 80%;">
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <div class="bg-white text-center rounded rounded-4" id="event-card">
+                            <img src="../../img/Admin/userPadrao.png" alt="" class="p-2 rounded rounded-4 img-fluid" style="width: 250px;">
+                            <h2 class="fs-3 fw-normal">Nome do post</h2>
+                            <button class="border border-0 rounded-2 fs-4 m-4 mt-5 col-8">Saiba mais</button>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             <div class="modal fade" id="modalInfo" role="dialog"data-bs-backdrop="false"    >

@@ -15,7 +15,7 @@
     session_start();
     include('../Componentes/header.php');
     ?>
-    <div class="container-fluid vw-100">
+    <div class="container-fluid vw-100 ">
     <div class="hamburger-wrapper">
             <div class="hamburger" onclick="toggleSidebar()">
                 <input class="checkbox" type="checkbox" />
