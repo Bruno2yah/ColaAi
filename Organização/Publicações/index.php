@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organização - Publicações</title>
+    <title>Eventos - Organização</title>
     <link rel="stylesheet" href="../../css/styleAdm.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> <!-- CSS Projeto -->
 </head>
 <body>
-    
     <?php
+    session_start();
     include('../Componentes/header.php');
     ?>
     <div class="container-fluid vw-100">
@@ -45,32 +45,149 @@
             </div>
         </div>
         <div class="row vw-100">
-        <?php
-        include('../Componentes/menu.php')
-        ?>
-            <div class="info-box col-md-9  d-flex flex-column" style="color: #a6a6a6; background-blend-mode: darken; background-color: #E8E8E8;" id="data-box">
-                <h1 class="text-center mt-4">Organização - Publicações</h1>
-                <div class="row h-auto me-auto ms-auto g-5 mt-3" style="width: 80%;">
-                    <div class="col-md-4 d-flex justify-content-center">
-                        <div class="bg-white text-center rounded rounded-4" id="event-card">
-                            <img src="../../img/Admin/userPadrao.png" alt="" class="p-2 rounded rounded-4 img-fluid" style="width: 250px;">
-                            <h2 class="fs-3 fw-normal">Nome do post</h2>
-                            <button class="border border-0 rounded-2 fs-4 m-4 mt-5 col-8">Saiba mais</button>
-                        </div>
-                    </div>
-                    
+            <?php
+                include('../Componentes/menu.php')
+            ?>
+            <div class="info-box col-md-9 pt-4" style="color: #a6a6a6;" id="data-box">
+                <h1 class="text-center mt-4">Veja aqui todos os seus eventos!</h1>
+                <div class="container d-flex w-100 h-auto mt-5 me-5">
+                    <a href="register.php" class="ms-auto me-0" style="width: 45px;">
+                        <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto" style="width: 45px;">
+                    </a>
+                </div>  
+                <div class="row ms-4 me-5 mt-4">
+                    <table class="">
+                        <thead>
+                        <tr id="data-table">
+                            <th class="col-md-1 fs-4">ID</th>
+                            <th class="col-md-4 fs-4">Nome do Evento</th>
+                            <th class="text-center col-md-1 fs-4">Informações</th>
+                            <th class="text-center col-md-1 fs-4">Arquivar</th>
+                            <th class="text-center col-md-1 fs-4 text-center">Alterar</th>
+                            <th class="text-center col-md-1 fs-4">Excluir</th>
+
+                        </tr>
+                                <tr class="mt-1">
+                                    <td class="fs-5 pt-3"></td>
+                                    <td class="fs-5 pt-3"></td>
+                                    <td class="text-center pt-3">
+                                        <a class="dropdown-item" onclick="">
+                                            <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
+                                        </a>
+                                    </td>
+                                    <td class="text-center fs-5 pt-3">
+                                    <a class="dropdown-item" onclick="">
+                                        <img src="../../img/Organizacao/arquivar-icon.png" alt="" style="width: 40px;">
+                                        </a>
+                                    </td>
+                                    <td class="text-center pt-3">
+                                        <img src="../../img/Admin/editar-icon.png" alt="" style="width: 35px;">
+                                    </td>
+                                    <td class="text-center pt-3">
+                                    <a class="dropdown-item" onclick="modalRemover(1, 1)">
+                                        <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
+                                        </a>
+                                    </td>
+                                </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
+            <div class="modal fade" id="modalInfo" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-header infoModalHeader">
+                                    <h1 class="modal-title fs-3" id="exampleModalLabel">Informações da Organização</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Nome da Organização: </p> <p class="ms-2 fs-5" >aa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">CNPJ: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">CEP: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0 justify-content-between" style="height: 30px;">
+                                            <div class="d-flex">
+                                                <p class="m-0 fw-bold fs-5">Endereço: </p><p class="ms-2 fs-5">aaa</p>
+                                            </div>
+                                            <div class="me-auto ms-auto d-flex">
+                                                <p class="m-0 fw-bold fs-5">Nº: </p><p class="ms-2 fs-5">000</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Complemento: </p><p class="ms-2 fs-5">Rua dos coitados</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Bairro: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0 justify-content-between" style="height: 30px;">
+                                            <div class="d-flex">
+                                                <p class="m-0 fw-bold fs-5">Cidade: </p><p class="ms-2 fs-5">aaa</p>
+                                            </div>
+                                            <div class="me-auto ms-auto d-flex">
+                                                <p class="m-0 fw-bold fs-5">UF: </p><p class="ms-2 fs-5">000</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">E-mail: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <div class="modal fade" id="modalAceitar" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <h1 class="text-center fs-2 fw-bold">Aceitar o cadastro<br> da organização?</h1>
+                                        <p class="fs-5 m-0">Quando clicar em <span style="text-decoration: underline; color:#93CC4C">aceitar</span> 
+                                        a organização receberá um e-mail de acesso para concluír o seu cadastro.</p>
+                                        <div class="d-flex justify-content-between mt-5"> 
+                                            <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
+                                            <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4 col-3" value="?" name="acao">Aceitar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <div class="modal fade" id="modalExcluir" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <h1 class="text-center fs-2 fw-bold">Excluir evento<br> da organização?</h1>
+                                        <p class="fs-5 m-0">Quando clicar em <span style="text-decoration: underline; color:#FF3131">excluir</span>
+                                            a ação não poderá ser desfeita, na qual fará o evento deixar de existir.</p>
+                                        <div class="d-flex justify-content-between mt-5"> 
+                                            <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
+                                            <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4 col-3" value="DELETE" name="acao">Excluir</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+            <?= require '../../Adm/Componentes/modal.php' ?>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
     <script>
         function toggleSidebar() {
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="../../js/personalizar.js"></script>
     <script type="text/javascript" src="../../js/modal.js"></script>

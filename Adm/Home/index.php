@@ -47,7 +47,7 @@
     
 
     <!-- Conteúdo Principal -->
-    <div class="text-center mt-4 " style="color: #a6a6a6;" id="data-box">
+    <div class="text-center m-0" style="color: #a6a6a6;" id="data-box">
         <div class="hamburger-wrapper">
             <div class="hamburger" onclick="toggleSidebar()">
                 <input class="checkbox" type="checkbox" />

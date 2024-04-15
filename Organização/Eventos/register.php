@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Administradores</title>
+    <title>Criar Evento</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- icon -->
@@ -65,7 +65,7 @@
             include('../Componentes/menu.php')
         ?>
         <div class="col-md-9 p-4  align-items-center d-flex flex-column" id="data-box" style="background-blend-mode: darken; background-color: #E8E8E8;">
-            <div class="d-flex flex-column w-75 border border-1 rounded rounded-4 mt-5 " style="background-color: #FFFFFF;" id="formBox">
+            <div class="d-flex w-75 flex-column border border-1 rounded rounded-4 mt-5 " style="background-color: #FFFFFF;" id="formBox">
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Criar Evento</h1>
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4" novalidate>
                     <img src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid ms-auto me-auto rounded rounded-3">
@@ -74,35 +74,21 @@
                         <input type="file" id="foto" name="foto" accept="image/*" class="form-control mt-1 mb-4">
                     </div>
                     <div class="row">
-                    <div class="col-md-6 mb-3 needs-validation">
+                    <div class="col-md-6 mb-4 needs-validation">
                         <label for="nomeEvento" class="col-form-label">Nome do Evento*</label>
-                        <input type="text" class="form-control inputGeral " placeholder="" name="" maxlength="50" id="" value="" required>
+                        <input type="text" class="form-control inputGeral " placeholder="Digite o nome do evento" name="" maxlength="50" id="" value="" required>
                         <div class="invalid-feedback">
                         Preencha este campo
                         </div>
                     </div>
-                    <div class="col-md-6 mb-3 needs-validation">
-                        <label for="CNPJ" class="col-form-label">CNPJ da organização*</label>
-                        <input type="text" class="form-control inputGeral" placeholder="" name="" maxlength="50" id="" value="" required>
-                        <div class="invalid-feedback">
-                        Preencha este campo
-                        </div>
-                    </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 needs-validation">
-                            <label for="nomeOrg" class="col-form-label">Nome da organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
-                        </div>
-                        <div class="col-md-6 needs-validation">
-                            <label for="cep" class="col-form-label">CEP da organização*</label>
+                    <div class="col-md-6 needs-validation">
+                            <label for="cep" class="col-form-label">CEP do Evento*</label>
                             <input type="text" class="form-control inputGeral" name="" id="" value="" required>
                         </div>
-                    </div>
-                    <div class="row">
+                    <div class="row mb-4 m-0 p-0">
                         <div class="col-md-10 needs-validation">
-                            <label for="endereco" class="col-form-label">Endereço da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
+                            <label for="endereco" class="col-form-label">Endereço do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder="Digite o endereço do Evento"  name="" maxlength="100" id="" value="" required>
                         </div>
                         <div class="col-md-2 needs-validation">
                             <label for="numero" class="col-form-label">N°*</label>
@@ -110,45 +96,65 @@
                         </div>
                     </div>
 
-                        <div class="col-md-12 needs-validation">
-                            <label for="complemento" class="col-form-label">Complemento da organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
+                        <div class="col-md-12 needs-validation mb-4">
+                            <label for="complemento" class="col-form-label">Complemento do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder="Digite o complemento do Evento"  name="" maxlength="100" id="" value="" required>
                         </div>
 
+                        <div class="col-md-12 needs-validation mb-4">
+                            <label for="complemento" class="col-form-label">Bairro do Evento*</label>
+                            <input type="text" class="form-control inputGeral" placeholder="Digite o bairro do Evento"  name="" maxlength="100" id="" value="" required>
+                        </div>
+                        <div class="col-md-12 needs-validation mb-4">
+                            <label for="complemento" class="col-form-label">Cidade do Evento*</label>
+                            <select class="form-select inputGeral" aria-label="Default select example">
+                                <option selected>Selecione o bairro do evento</option>
+                                <option value="1">Jardim miriam</option>
+                            </select>
+                        </div>
 
-                        <div class="col-md-12 needs-validation">
-                            <label for="complemento" class="col-form-label">UF da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="" maxlength="100" id="" value="" required>
+                        <div class="col-md-12 needs-validation mb-4">
+                            <label for="complemento" class="col-form-label">UF do Evento*</label>
+                            <select class="form-select inputGeral" aria-label="Default select example">
+                                <option selected>Selecione a UF</option>
+                                <option value="1">SP</option>
+                            </select>
                         </div>
 
                     
-                    <div class="row">
-                        <div class="col-md-12 needs-validation">
-                            <label for="email" class="col-form-label">Email da Organização*</label>
-                            <input type="email" class="form-control inputGeral" placeholder="" name="" maxlength="100" id="" value="" required>
+                    <div class="row mb-4 m-0 p-0">
+                        <div class="col-md-6 needs-validation">
+                            <label for="faixaetaria" class="col-form-label">Faixa etária do Evento*</label>
+                            <select class="form-select inputGeral" aria-label="Default select example">
+                                <option selected>Selecione a faixa etária</option>
+                                <option value="1">+0</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 needs-validation">
+                            <label for="turno" class="col-form-label">Turno do Evento*</label>
+                            <select class="form-select inputGeral" aria-label="Default select example">
+                                <option selected>Selecione o turno</option>
+                                <option value="1">Turnos</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="row">
-                    <div class="col-md-12 needs-validation">
-                        <label for="telefone" class="col-form-label">Telefone da Organização*</label>
-                        <input type="email" class="form-control inputGeral" placeholder="" name="" maxlength="100" id="" value="" required>
-                    </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 needs-validation">
-                            <label for="senha" class="col-form-label">Senha da Organização*</label>
-                            <input type="password" class="form-control inputGeral" placeholder="" name="" maxlength="10" id="senha" value="" required>
+                   
+                        <div class="col-md-12 needs-validation mb-4">
+                        <label for="valor" class="col-form-label">Valor do Evento*</label>
+                            <select class="form-select inputGeral" aria-label="Default select example">
+                            <option selected>Selecione o valor</option>
+                                <option value="1">Grátis</option>
+                            </select>
                         </div>
+
+                    <div class="col-md-12 needs-validation ">
+                        <label for="descricao" class="col-form-label">Descrição do Evento*</label>
+                        <textarea class="form-control inputGeral" name="" id="" cols="30" rows="10" style="max-height: 400px;"></textarea>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 needs-validation ">
-                            <label for="descricao" class="col-form-label">Descrição do Evento*</label>
-                            <textarea class="form-control inputGeral" name="" id="" cols="30" rows="10" style="max-height: 400px;"></textarea>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class=" text-end p-3">
-                            <input type="submit" class="btn" value="Editar">
+ 
+                    <div class="row mt-4 mb-3">
+                        <div class=" text-end">
+                            <input type="submit" class="btn" value="Criar">
                         </div>
                     </div>
                 </form>
