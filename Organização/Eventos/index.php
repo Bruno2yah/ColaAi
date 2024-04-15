@@ -82,20 +82,7 @@
                             <button class="border border-0 rounded-2 fs-4 m-4 mt-5 col-8">Saiba mais</button>
                         </div>
                     </div>
-                    <div class="col-md-4 d-flex justify-content-center">
-                        <div class="bg-white text-center rounded rounded-4" id="event-card">
-                            <img src="../../img/Admin/userPadrao.png" alt="" class="p-2 rounded rounded-4 img-fluid" style="width: 250px;">
-                            <h2 class="fs-3 fw-normal">Nome do evento</h2>
-                            <button class="border border-0 rounded-2 fs-4 m-4 mt-5 col-8">Saiba mais</button>
-                        </div>
-                    </div>
-                    <div class="col-md-4 d-flex justify-content-center">
-                        <div class="bg-white text-center rounded rounded-4" id="event-card">
-                            <img src="../../img/Admin/userPadrao.png" alt="" class="p-2 rounded rounded-4 img-fluid" style="width: 250px;">
-                            <h2 class="fs-3 fw-normal">Nome do evento</h2>
-                            <button class="border border-0 rounded-2 fs-4 m-4 mt-5 col-8">Saiba mais</button>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
