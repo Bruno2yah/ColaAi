@@ -70,9 +70,7 @@ $users = UserDao::selectAll();
             <div class="info-box col-md-9 " style="color: #a6a6a6;" id="data-box">
                 <h1 class="text-center mt-4">Usuários</h1>
                 <div class="container d-flex w-100 h-auto pe-5 mt-5">
-                    <a href="register.php" class="ms-auto me-0" style="width: 45px;">
-                        <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
-                    </a>
+
                 </div>
                 <div class="row ms-4 me-5 mt-4">
                     <table class="">

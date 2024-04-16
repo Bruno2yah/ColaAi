@@ -73,7 +73,9 @@
                             <td class="pt-3 col-md-1">01</td>
                             <td class="pt-3 col-md-1">Organização</td>
                             <td class="pt-3 col-md-1 text-center">
-                                <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
+                                 <a class="dropdown-item" onclick="modalInfoPubli(1,1)"><!--  mudar de acordo com tipo (evento ou publi) -->
+                                    <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
+                                </a>
                             </td>
                             <td class="pt-3 col-md-1 text-center">
                                 <a class="dropdown-item" onclick="modalRestaurar(1,1)">
@@ -84,7 +86,114 @@
                         </thead>
                     </table>
                 </div>
+                <div class="modal fade" id="modalInfoEvento" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-header infoModalHeader">
+                                    <h1 class="modal-title fs-3" id="exampleModalLabel">Informações do Evento</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Nome do Evento: </p> <p class="ms-2 fs-5" >aa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">CEP: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0 justify-content-between" style="height: 30px;">
+                                            <div class="d-flex">
+                                                <p class="m-0 fw-bold fs-5">Endereço: </p><p class="ms-2 fs-5">aaa</p>
+                                            </div>
+                                            <div class="me-auto ms-auto d-flex">
+                                                <p class="m-0 fw-bold fs-5">Nº: </p><p class="ms-2 fs-5">000</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Complemento: </p><p class="ms-2 fs-5">Rua dos coitados</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Bairro: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        
+                                        <div class="d-flex m-0 justify-content-between" style="height: 30px;">
+                                            <div class="d-flex">
+                                                <p class="m-0 fw-bold fs-5">Cidade: </p><p class="ms-2 fs-5">aaa</p>
+                                            </div>
+                                            <div class="me-auto ms-auto d-flex">
+                                                <p class="m-0 fw-bold fs-5">UF: </p><p class="ms-2 fs-5">000</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Faixa etária: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Turno: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Bairro: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <p class="m-0 fw-bold fs-5">Descrição: </p>
+                                        <div class="desc-box w-100 rounded rounded-3 mb-3 p-1">
+                                            <p>aaa</p>
+                                        </div>
 
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <div class="modal fade" id="modalInfoPubli" role="dialog"data-bs-backdrop="false"    >
+                    <div class=" modal-dialog modal-dialog-centered">
+                        <div class="modal-content ">
+                            <div class="modal-header infoModalHeader">
+                                <h1 class="modal-title fs-3" id="exampleModalLabel">Informações da Publicação</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="color: #a6a6a6;">
+                                <form action="process.php" method="post">
+                                    <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                    <div class="d-flex m-0" style="height: 35px;">
+                                        <p class="m-0 fw-bold fs-5">Nome da publicação: </p> <p class="ms-2 fs-5" >aa</p>
+                                    </div> 
+
+                                    <div class="d-flex m-0">
+                                        <p class="m-0 fw-bold fs-5">Arquívos de mídia: </p>
+                                    </div> 
+                                    <div id="carouselExample" class="carousel slide mb-2">
+                                        <div class="carousel-inner rounded rounded-3">
+                                            <div class="carousel-item active">
+                                            <img src="../../img/Admin/eventoPadrao.png" class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                            <img src="../../img/Admin/eventoPadrao.png" class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                            <img src="../../img/Admin/eventoPadrao.png" class="d-block w-100" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                        </div>
+
+
+                                    <p class="m-0 fw-bold fs-5">Descrição: </p>
+                                    <div class="desc-box w-100 rounded rounded-3 mb-3 p-1">
+                                        <p>aaa</p>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
                 <div class="modal fade" id="modalRestaurar" role="dialog" data-bs-backdrop="false">
                         <div class=" modal-dialog modal-dialog-centered">
                             <div class="modal-content ">

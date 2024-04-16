@@ -69,8 +69,8 @@ $users = UserAdmDao::selectAll();
             ?>
             <div class="info-box  " style="color: #a6a6a6;" id="data-box" >
                 <h1 class="text-center mt-4">Administradores</h1>
-                <div class="container d-flex w-100 p-2 mb-3">
-                    <a href="register.php" class="ms-auto me-0" style="width: 45px;">
+                <div class=" d-flex w-100 p-2 mb-3 mt-5">
+                    <a href="register.php" class="ms-auto me-5" style="width: 45px;">
                         <img src="../../img/Admin/add-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
                     </a>
                 </div>
