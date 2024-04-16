@@ -95,7 +95,64 @@ $eventos = EventoDao::selectAll();
                         </thead>
                     </table>
                 </div>
-            
+                <div class="modal fade" id="modalInfo" role="dialog"data-bs-backdrop="false"    >
+                        <div class=" modal-dialog modal-dialog-centered">
+                            <div class="modal-content ">
+                                <div class="modal-header infoModalHeader">
+                                    <h1 class="modal-title fs-3" id="exampleModalLabel">Informações do Evento</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" style="color: #a6a6a6;">
+                                    <form action="process.php" method="post">
+                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Nome do Evento: </p> <p class="ms-2 fs-5" >aa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">CEP: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0 justify-content-between" style="height: 30px;">
+                                            <div class="d-flex">
+                                                <p class="m-0 fw-bold fs-5">Endereço: </p><p class="ms-2 fs-5">aaa</p>
+                                            </div>
+                                            <div class="me-auto ms-auto d-flex">
+                                                <p class="m-0 fw-bold fs-5">Nº: </p><p class="ms-2 fs-5">000</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Complemento: </p><p class="ms-2 fs-5">Rua dos coitados</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Bairro: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        
+                                        <div class="d-flex m-0 justify-content-between" style="height: 30px;">
+                                            <div class="d-flex">
+                                                <p class="m-0 fw-bold fs-5">Cidade: </p><p class="ms-2 fs-5">aaa</p>
+                                            </div>
+                                            <div class="me-auto ms-auto d-flex">
+                                                <p class="m-0 fw-bold fs-5">UF: </p><p class="ms-2 fs-5">000</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Faixa etária: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Turno: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <div class="d-flex m-0" style="height: 30px;">
+                                            <p class="m-0 fw-bold fs-5">Bairro: </p><p class="ms-2 fs-5">aaa</p>
+                                        </div>
+                                        <p class="m-0 fw-bold fs-5">Descrição: </p>
+                                        <div class="desc-box w-100 rounded rounded-3 mb-3 p-1">
+                                            <p>aaa</p>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+            </div>
             <div class="modal fade" id="modalExcluir" role="dialog"data-bs-backdrop="false"    >
                         <div class=" modal-dialog modal-dialog-centered">
                             <div class="modal-content ">

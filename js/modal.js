@@ -14,6 +14,18 @@
 		document.getElementById($elemento).value = $id;
 		//window.location.href = "./registro.php";
 		}
+	function modalInfoPubli($id, $elemento){
+		const myModal = new bootstrap.Modal('#modalInfoPubli');
+		myModal.show();
+		document.getElementById($elemento).value = $id;
+		//window.location.href = "./registro.php";
+		}
+	function modalInfoEvento($id, $elemento){
+		const myModal = new bootstrap.Modal('#modalInfoEvento');
+		myModal.show();
+		document.getElementById($elemento).value = $id;
+		//window.location.href = "./registro.php";
+		}
 
 	function modalAceitar($id, $elemento){
 		const myModal = new bootstrap.Modal('#modalAceitar');
