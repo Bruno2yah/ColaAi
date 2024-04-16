@@ -7,7 +7,7 @@ if (!empty($_POST)) {
   $id_Evento = $eventoDao['idEvento'];
   $nome_Evento =  $eventoDao['nomeEvento'];
   $cep_Evento = $eventoDao['cepEvento'];
-  $endereco_Evento = $eventooDao['enderecoEvento'];
+  $endereco_Evento = $eventoDao['enderecoEvento'];
   $num_Evento = $eventoDao['numeroEvento'];
   $complemento_Evento = $eventoDao['complementoEvento'];
   $bairro_Evento = $eventoDao['bairroEvento'];
@@ -99,7 +99,7 @@ if (!empty($_POST)) {
             <div class="d-flex w-75 flex-column border border-1 rounded rounded-4 mt-5 " style="background-color: #FFFFFF;" id="formBox">
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Criar Evento</h1>
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4" novalidate>
-                    <input type="hidden" name="idEvento" id="idEvento" placeholder="id" value="<?= $id_Evento ?>">
+                    <input type="hidden" name="idEvento" id="idEvento" placeholder="id" value="<?=$id_Evento?>">
                     <input type="text" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id da organização" value="<?= $idOrg_Evento ?>">
                     <input type="hidden" name="imagemEvento" id="imagemEvento" placeholder="nome foto" value="<?=$imagem_Evento?>">
                     <input type="hidden" value="<?= $id_Evento ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">    
@@ -112,11 +112,11 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-md-6 needs-validation">
                             <label for="nome" class="col-form-label">Nome do Evento*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="nomeEvento" maxlength="100" id="" value="<?=$nome_Evento?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="nomeEvento" maxlength="100" id="nomeEvento" value="<?=$nome_Evento?>" required>
                         </div>
                         <div class="col-md-6 needs-validation">
                             <label for="cep" class="col-form-label">CEP do Evento*</label>
-                            <input type="text" class="form-control inputGeral" name="cepEvento" data-mask="00000-000" id="" value="<?=$cep_Evento?>" required>
+                            <input type="text" class="form-control inputGeral" name="cepEvento" data-mask="00000-000" id="cepEvento" value="<?=$cep_Evento?>" required>
                         </div>
                     <div class="row mb-4 m-0 p-0">
                         <div class="col-md-10 needs-validation">
@@ -155,25 +155,29 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-md-6 needs-validation">
                             <label for="faixaetaria" class="col-form-label">Faixa etária do Evento*</label>
-                            <select class="form-select inputGeral" aria-label="Default select example">
+                            <select class="form-select inputGeral" name="idadeFaixaEtaria" aria-label="Default select example">
                                 <option selected>Selecione a faixa etária</option>
                                 <option value="1">+0</option>
                             </select>
                         </div>
                         <div class="col-md-6 needs-validation">
                             <label for="turno" class="col-form-label">Turno do Evento*</label>
-                            <select class="form-select inputGeral" aria-label="Default select example">
+                            <select class="form-select inputGeral" name="periodoTurnoEvento" aria-label="Default select example">
                                 <option selected>Selecione o turno</option>
-                                <option value="1">Turnos</option>
+                                <option value="1">Manhã</option>
+                                <option value="2">Tarde</option>
+                                <option value="3">Noite</option>
                             </select>
                         </div>
                     </div>
                    
                         <div class="col-md-12 needs-validation mb-4">
                         <label for="valor" class="col-form-label">Valor do Evento*</label>
-                            <select class="form-select inputGeral" aria-label="Default select example">
+                            <select class="form-select inputGeral" name="valorEvento" aria-label="Default select example">
                             <option selected>Selecione o valor</option>
                                 <option value="1">Grátis</option>
+                                <option value="1">Pago</option>
+                                <option value="1">Outros</option>
                             </select>
                         </div>
                     <div class="row">

@@ -63,16 +63,19 @@ $eventos = EventoDao::selectAll();
                         <thead>
                         <tr id="data-table">
                             <th class="col-md-1 fs-4">ID</th>
-                            <th class="col-md-4 fs-4">Nome do Evento</th>
-                            <th class="text-center col-md-1 fs-4">Informações</th>
+                            <th class="col-md-3 fs-4">Nome do Evento</th>
+                            <th class="col-md-4 fs-4">Descrição do Evento</th>
+                            <th class="text-center col-md-2 fs-4">Informações</th>
                             <th class="text-center col-md-1 fs-4">Arquivar</th>
                             <th class="text-center col-md-1 fs-4 text-center">Alterar</th>
                             <th class="text-center col-md-1 fs-4">Excluir</th>
 
                         </tr>
+                        <?php foreach ($eventos as $Eventos) : ?>  
                                 <tr class="mt-1">
-                                    <td class="fs-5 pt-3">01</td>
-                                    <td class="fs-5 pt-3">Brincadeira legal</td>
+                                    <td class="fs-5 pt-3"><?= $Eventos['idEvento']; ?></td>
+                                    <td class="fs-5 pt-3"><?= $Eventos['nomeEvento']; ?></td>
+                                    <td class="fs-5 pt-3"><?= $Eventos['descEvento']; ?></td>
                                     <td class="text-center pt-3">
                                         <a class="dropdown-item" onclick="modalInfo(1,1)">
                                             <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
@@ -84,14 +87,20 @@ $eventos = EventoDao::selectAll();
                                         </a>
                                     </td>
                                     <td class="text-center pt-3">
-                                        <img src="../../img/Admin/editar-icon.png" alt="" style="width: 35px;">
+                                        <form action="process.php" method="POST">
+                                            <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
+                                            <input type="hidden" class="form-control" id="id" name="id" value="<?=$Eventos['idEvento']?>">
+                                            <button type="submit" class="dropdown-item"><img src="../../img/Admin/editar-icon.png" alt="" style="width: 35px;">
+                                            </button>
+                                        </form>
                                     </td>
                                     <td class="text-center pt-3">
-                                    <a class="dropdown-item" onclick="modalRemover(1, 1)">
+                                    <a class="dropdown-item" onclick="modalRemover(<?=$Eventos['idEvento'] ?>,'idDeletar')">
                                         <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
                                         </a>
                                     </td>
                                 </tr>
+                        <?php endforeach; ?>    
                         </thead>
                     </table>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 
 class FeedBackApp {
-    public $id, $titulo, $descricao,$idUsuario;
+    public $id, $titulo, $descricao, $idUsuario;
 
     // Getters e Setters
     public function getId() {
