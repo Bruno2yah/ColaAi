@@ -8,18 +8,22 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $sobrenome = $user->getSobrenome();
             $email = $user->getEmail();
             $senha = $user->getSenha(); 
-            $imagem = $user->getImagem();
+            $tel = $user->getTel(); 
+            $imagemP = $user->getImagemPerfil();
+            $imagemB = $user->getImagemBanner();
             
             $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
             
-            $stmt = $conn->prepare("INSERT INTO tbusuario (nomeUsuario, sobrenomeUsuario, emailUsuario, senhaUsuario, imagemUsuario) 
-                            VALUES (:nome, :sobrenome, :email, :senha, :imagem)");
+            $stmt = $conn->prepare("INSERT INTO tbusuario (nomeUsuario, sobrenomeUsuario, emailUsuario, senhaUsuario, telUsuario, imagemPerfilUsuario, ImagemBannerUsuario) 
+                            VALUES (:nome, :sobrenome, :email, :senha, :tel, :imagemPerfil, :imagemBanner)");
             
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':sobrenome', $sobrenome);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
-            $stmt->bindParam(':imagem', $imagem);
+            $stmt->bindParam(':tel', $tel);
+            $stmt->bindParam(':imagemPerfil', $imagemP);
+            $stmt->bindParam(':imagemBanner', $imagemB);
             
             $result = $stmt->execute();
             
@@ -67,7 +71,9 @@ require_once (__DIR__ . '../../model/Conexao.php');
                 sobrenomeUsuario = :sobrenome,
                 emailUsuario = :email, 
                 senhaUsuario = :senha, 
-                imagemUsuario = :imagem
+                telUsuario = :tel,
+                imagemPerfilUsuario = :imagemPerfil,
+                imagemBannerUsuario = :imagemBanner
                 WHERE idUsuario = :id";
             
             $stmt = $conexao->prepare($query);
@@ -76,17 +82,19 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $nome = $user->getNome();
             $sobrenome = $user->getSobrenome();
             $email = $user->getEmail();
-            $senha = $user->getsenha();
-            $imagem = $user->getImagem();
-
+            $senha = $user->getSenha(); 
+            $tel = $user->getTel(); 
+            $imagemP = $user->getImagemPerfil();
+            $imagemB = $user->getImagemBanner();
         
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':sobrenome', $sobrenome);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
-            $stmt->bindParam(':imagem', $imagem);
-            $stmt->bindParam(':id', $id);
-        
+            $stmt->bindParam(':tel', $tel);
+            $stmt->bindParam(':imagemPerfil', $imagemP);
+            $stmt->bindParam(':imagemBanner', $imagemB);
+            
             return $stmt->execute();
         }
         public static function checkCredentials($email, $senha){

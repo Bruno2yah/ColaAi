@@ -1,6 +1,6 @@
 <?php 
     class User{
-        public $id, $nome, $sobrenome, $email, $senha, $imagemPerfil, $imagemBanner;
+        public $id, $nome, $sobrenome, $email, $senha, $tel, $imagemPerfil, $imagemBanner;
 
         public function getId(){
             return $this->id;
@@ -34,6 +34,13 @@
         }
         public function setSenha($senha){
             $this-> senha = $senha;
+        }
+
+        public function getTel(){
+            return $this->tel;
+        }
+        public function setTel($tel){
+            $this-> tel = $tel;
         }
 
         public function getImagemPerfil(){

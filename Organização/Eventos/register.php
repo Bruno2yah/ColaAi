@@ -158,6 +158,7 @@ if (!empty($_POST)) {
                             <select class="form-select inputGeral" name="idadeFaixaEtaria" aria-label="Default select example">
                                 <option selected>Selecione a faixa etária</option>
                                 <option value="1">+0</option>
+                                <option value="1">Livre para todos os públicos</option>
                             </select>
                         </div>
                         <div class="col-md-6 needs-validation">

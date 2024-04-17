@@ -9,6 +9,7 @@ if (!empty($_POST)) {
   $sobrenome_Usuario =  $userDao['sobrenomeUsuario'];
   $email_Usuario = $userDao['emailUsuario'];
   $senha_Usuario = $userDao['senhaUsuario'];
+  $tel_Usuario = $userDao['telUsuario'];
   $ImagemPerfil_Usuario = $userDao['imagemPerfilUsuario'];
   $ImagemBanner_Usuario = $userDao['imagemBannerUsuario'];
 } else {
@@ -16,6 +17,7 @@ if (!empty($_POST)) {
   $sobrenome_Usuario = '';
   $email_Usuario = '';
   $senha_Usuario = '';
+  $tel_Usuario = '';
   $ImagemPerfil_Usuario = '';
   $ImagemBanner_Usuario = '';
   $id_Usuario = '';
@@ -102,7 +104,7 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-md-12 needs-validation">
                             <label for="telefone" class="col-form-label">Telefone do Usuário*</label>
-                            <input type="text" class="form-control inputGeral" placeholder="" name="" maxlength="10" id="" value="" required>
+                            <input type="text" class="form-control inputGeral" placeholder="" name="telUsuario" data-mask="00-00000-0000" maxlength="10" id="" value="<?=$tel_Usuario?>" required>
                         </div>
                     </div>
                     <div class="col-md-12 needs-validation">

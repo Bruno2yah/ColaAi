@@ -21,6 +21,7 @@ switch ($_POST["acao"]) {
         $user->setSobrenome($_POST['sobrenomeUsuario']);  
         $user->setEmail($_POST['emailUsuario']);
         $user->setSenha($_POST['senhaUsuario']);
+        $user->setTel($_POST['telUsuario']);
         $user->setImagemPerfil($user->salvarImagem(($_POST['imagemPerfilUsuario'])));
         $user->setImagemBanner($user->salvarImagem(($_POST['imagemBannerUsuario'])));
         
@@ -46,6 +47,7 @@ switch ($_POST["acao"]) {
               $user->setSobrenome($_POST['sobrenomeUsuario']);  
               $user->setEmail($_POST['emailUsuario']);
               $user->setSenha($_POST['senhaUsuario']);
+              $user->setTel($_POST['telUsuario']);
               $user->setImagemPerfil($user->salvarImagem(($_POST['imagemPerfilUsuario'])));
               $user->setImagemBanner($user->salvarImagem(($_POST['imagemBannerUsuario'])));
               try {
