@@ -77,7 +77,7 @@ $eventos = EventoDao::selectAll();
                                     <td class="fs-5 pt-3"><?= $Eventos['nomeEvento']; ?></td>
                                     <td class="fs-5 pt-3"><?= $Eventos['descEvento']; ?></td>
                                     <td class="text-center pt-3">
-                                        <a class="dropdown-item" onclick="modalInfo(1,1)">
+                                        <a class="dropdown-item" onclick="modalInfo(<?=$Eventos['idEvento'] ?>,'modalInfo')">
                                             <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
                                         </a>
                                     </td>

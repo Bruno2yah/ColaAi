@@ -1,4 +1,22 @@
+<?php
+session_start(); // Inicia a sessão
+require_once(__DIR__ . '../../../Adm/Componentes/modal.php');
+require_once(__DIR__ . '../../../dao/PublicacaoDao.php');
 
+if (!empty($_POST)) {
+  $id_Publicacao = $publicacaoDao['idPublicacao'];
+  $titulo_Publicacao =  $publicacaoDao['tituloPublicacao'];
+  $desc_Publicacao =  $publicacaoDao['descPublicacao'];
+  $link_Publicacao = $publicacaoDao['linkOrganizacaoEvento'];
+  $id_Evento = $publicacaoDao['idEvento'];
+} else {
+  $titulo_Publicacao = '';
+  $desc_Publicacao = '';
+  $link_Publicacao = '';
+  $id_Evento = '';
+  $id_Publicacao = '';
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,9 +35,6 @@
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
 <?php
-  // Iniciar a sessão
-  session_start();
-
   // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
   if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
     // Redirecionar para o login com um erro2 se não estiver autenticado
@@ -85,14 +100,14 @@
                     <div class="row">
                     <div class="col-12 mb-4 needs-validation">
                         <label for="nomeEvento" class="col-form-label">Nome da publicação*</label>
-                        <input type="text" class="form-control inputGeral " placeholder="Digite o título da publicação" name="" maxlength="50" id="" value="" required>
+                        <input type="text" class="form-control inputGeral " placeholder="Digite o título da publicação" name="tituloPublicacao" maxlength="50" id="" value="<?=$titulo_Publicacao?>" required>
                         <div class="invalid-feedback">
                         Preencha este campo
                         </div>
                     </div>
                     <div class="col-12 needs-validation ">
                         <label for="descricao" class="col-form-label">Descrição do Evento*</label>
-                        <textarea class="form-control inputGeral" placeholder="Faça uma breve descrição sobre a publicação " name="" id="" cols="30" rows="10" style="max-height: 400px;"></textarea>
+                        <textarea class="form-control inputGeral" placeholder="Faça uma breve descrição sobre a publicação " name="descPublicacao" id="" cols="30" rows="10" style="max-height: 400px;"><?=$desc_Publicacao?></textarea>
                     </div>
  
 

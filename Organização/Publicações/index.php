@@ -1,4 +1,7 @@
-
+<?php
+require_once '../../dao/PublicacaoDao.php';
+$publicacoes = PublicacaoDao::selectAll();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -60,16 +63,17 @@
                         <thead>
                         <tr id="data-table">
                             <th class="col-md-1 fs-4">ID</th>
-                            <th class="col-md-4 fs-4">Nome do Evento</th>
+                            <th class="col-md-4 fs-4">Nome da Publicação</th>
                             <th class="text-center col-md-1 fs-4">Informações</th>
                             <th class="text-center col-md-1 fs-4">Arquivar</th>
                             <th class="text-center col-md-1 fs-4 text-center">Alterar</th>
                             <th class="text-center col-md-1 fs-4">Excluir</th>
 
                         </tr>
+                             <?php foreach ($publicacoes as $Publicacao) : ?>
                                 <tr class="mt-1">
-                                    <td class="fs-5 pt-3"></td>
-                                    <td class="fs-5 pt-3"></td>
+                                    <td class="fs-5 pt-3"><?= $Publicacao['idPublicacao']; ?></td>
+                                    <td class="fs-5 pt-3"><?= $Publicacao['nomePublicacao']; ?></td>
                                     <td class="text-center pt-3">
                                         <a class="dropdown-item" onclick="modalInfo(1,1)">
                                             <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
@@ -81,14 +85,20 @@
                                         </a>
                                     </td>
                                     <td class="text-center pt-3">
-                                        <img src="../../img/Admin/editar-icon.png" alt="" style="width: 35px;">
+                                    <form action="process.php" method="POST">
+                                            <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
+                                            <input type="hidden" class="form-control" id="id" name="id" value="<?=$Publicacao['idPublicacao']?>">
+                                            <button type="submit" class="dropdown-item"><img src="../../img/Admin/editar-icon.png" alt="" style="width: 35px;">
+                                            </button>
+                                        </form>
                                     </td>
                                     <td class="text-center pt-3">
-                                    <a class="dropdown-item" onclick="modalRemover(1, 1)">
+                                    <a class="dropdown-item" onclick="modalRemover(<?=$Publicacao['idPublicacao'] ?>,'idDeletar')">
                                         <img src="../../img/Admin/excluir-icon.png" alt="" style="width: 30px;">
                                         </a>
                                     </td>
                                 </tr>
+                            <?php endforeach; ?>  
                         </thead>
                     </table>
                 </div>
