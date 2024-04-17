@@ -88,13 +88,10 @@ if (!empty($_POST)) {
                     <a href="" style="color: #6F9BAB; text-decoration:none"><i class="bi bi-geo-alt fs-4 me-1"></i>Adicionar localização da publicação</a><br>
                     <a href="" style="color: #6F9BAB; text-decoration:none"><i class="bi bi-person-add fs-4 me-1"></i>Marcar pessoas</a>
                     <div class="row g-2" id="publiGrid">
-                        <img src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid col-md-8 rounded rounded-4">
-                        <img src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid col-md-4 rounded rounded-4">
-                        <img src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid col-md-4 rounded rounded-4">
-                        <img src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid col-md-8 rounded rounded-4">
+                        <img id="preview" src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid col-md-12 rounded rounded-4">
                     </div>
                     <div class="row text-end inputFile">
-                        <label for="foto" class="form-label fs-5 mt-2"style="color: #6F9BAB;">Inserir imagens</label>
+                        <label for="foto" class="form-label fs-5 mt-2"style="color: #6F9BAB;">Inserir imagem</label>
                         <input type="file" id="foto" name="foto" accept="image/*" class="form-control mt-1 mb-4">
                     </div>
                     <div class="row">

@@ -26,6 +26,9 @@ switch ($_POST["acao"]) {
         $evento->setCidade($_POST['cidadeEvento']);
         $evento->setUf($_POST['ufEvento']);
         $evento->setData($_POST['dataEvento']);
+        $evento->setFaixaEtaria($_POST['faixaEtariaEvento']);
+        $evento->setPeriodoEvento($_POST['periodoEvento']);
+        $evento->setValor($_POST['valorEvento']);
         $evento->setDesc($_POST['descEvento']);
         $evento->setIdOrganizacaoEvento($_POST['idOrganizacaoEvento']);
         $evento->setImagemEvento($evento->salvarImagem(($_POST['imagemEvento'])));  
@@ -56,6 +59,9 @@ switch ($_POST["acao"]) {
           $evento->setCidade($_POST['cidadeEvento']);
           $evento->setUf($_POST['ufEvento']);
           $evento->setData($_POST['dataEvento']);
+          $evento->setFaixaEtaria($_POST['faixaEtariaEvento']);
+          $evento->setPeriodoEvento($_POST['periodoEvento']);
+          $evento->setValor($_POST['valorEvento']);
           $evento->setDesc($_POST['descEvento']);
           $evento->setIdOrganizacaoEvento($_POST['idOrganizacaoEvento']);
           $evento->setImagemEvento($evento->salvarImagem(($_POST['imagemEvento'])));  

@@ -1,6 +1,6 @@
 <?php
 class Evento {
-    public $id, $nome, $cep, $endereco, $numero, $complemento, $bairro, $cidade, $uf, $data, $desc, $idOrganizacaoEvento, $imagemEvento;
+    public $id, $nome, $cep, $endereco, $numero, $complemento, $bairro, $cidade, $uf, $data, $faixaEtaria,$periodoEvento,$valor, $desc, $idOrganizacaoEvento, $imagemEvento;
 
     // Getters e Setters
     public function getId() {
@@ -81,6 +81,26 @@ class Evento {
 
     public function setData($data) {
         $this->data = $data;
+    }
+    public function getFaixaEtaria() {
+        return $this->faixaEtaria;
+    }
+    public function setFaixaEtaria($faixaEtaria) {
+        $this->faixaEtaria = $faixaEtaria;
+    }
+    public function getPeriodoEvento() {
+        return $this->periodoEvento;
+    }
+
+    public function setPeriodoEvento($periodoEvento) {
+        $this->periodoEvento = $periodoEvento;
+    }
+    public function getValor() {
+        return $this->valor;
+    }
+
+    public function setValor($valor) {
+        $this->valor = $valor;
     }
 
     public function getDesc() {

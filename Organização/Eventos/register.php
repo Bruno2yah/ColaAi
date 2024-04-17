@@ -14,6 +14,9 @@ if (!empty($_POST)) {
   $cidade_Evento = $eventoDao['cidadeEvento'];
   $uf_Evento = $eventoDao['ufEvento'];
   $data_Evento = $eventoDao['dataEvento'];
+  $periodo_Evento = $eventoDao['faixaEtariaEvento'];
+  $faixa_Evento = $eventoDao['periodoEvento'];
+  $valor_Evento = $eventoDao['valorEvento'];
   $desc_Evento = $eventoDao['descEvento'];
   $idOrg_Evento = $eventoDao['idOrganizacaoEvento'];
   $imagem_Evento = $eventoDao['imagemEvento'];
@@ -27,6 +30,9 @@ if (!empty($_POST)) {
   $cidade_Evento = '';
   $uf_Evento = '';
   $data_Evento = '';
+  $periodo_Evento = '';
+  $faixa_Evento = '';
+  $valor_Evento = '';
   $desc_Evento = '';
   $idOrg_Evento = '';
   $imagem_Evento = '';
@@ -100,7 +106,7 @@ if (!empty($_POST)) {
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Criar Evento</h1>
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4" novalidate>
                     <input type="hidden" name="idEvento" id="idEvento" placeholder="id" value="<?=$id_Evento?>">
-                    <input type="text" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id da organização" value="<?= $idOrg_Evento ?>">
+                    <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id da organização" value="<?= isset($authUserOrg['idOrganizacaoEvento']) ? $authUserOrg['idOrganizacaoEvento'] : '' ?>" readonly>
                     <input type="hidden" name="imagemEvento" id="imagemEvento" placeholder="nome foto" value="<?=$imagem_Evento?>">
                     <input type="hidden" value="<?= $id_Evento ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">    
                     <img id="preview" src="../../img/Organizacao/Evento/<?=$imagem_Evento!=""?$imagem_Evento:'eventoPadrao.png';?>" alt="imagem do evento" class="img-fluid ms-auto me-auto rounded rounded-3">
@@ -155,7 +161,7 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-md-6 needs-validation">
                             <label for="faixaetaria" class="col-form-label">Faixa etária do Evento*</label>
-                            <select class="form-select inputGeral" name="idadeFaixaEtaria" aria-label="Default select example">
+                            <select class="form-select inputGeral" name="faixaEtariaEvento" value="<?=$faixa_Evento?>" aria-label="Default select example">
                                 <option selected>Selecione a faixa etária</option>
                                 <option value="1">+0</option>
                                 <option value="1">Livre para todos os públicos</option>
@@ -163,7 +169,7 @@ if (!empty($_POST)) {
                         </div>
                         <div class="col-md-6 needs-validation">
                             <label for="turno" class="col-form-label">Turno do Evento*</label>
-                            <select class="form-select inputGeral" name="periodoTurnoEvento" aria-label="Default select example">
+                            <select class="form-select inputGeral" name="periodoEvento" value="<?=$periodo_Evento?>" aria-label="Default select example">
                                 <option selected>Selecione o turno</option>
                                 <option value="1">Manhã</option>
                                 <option value="2">Tarde</option>
@@ -174,7 +180,7 @@ if (!empty($_POST)) {
                    
                         <div class="col-md-12 needs-validation mb-4">
                         <label for="valor" class="col-form-label">Valor do Evento*</label>
-                            <select class="form-select inputGeral" name="valorEvento" aria-label="Default select example">
+                            <select class="form-select inputGeral" name="valorEvento" value="<?=$valor_Evento?>" aria-label="Default select example">
                             <option selected>Selecione o valor</option>
                                 <option value="1">Grátis</option>
                                 <option value="1">Pago</option>

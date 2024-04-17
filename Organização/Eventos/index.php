@@ -64,7 +64,6 @@ $eventos = EventoDao::selectAll();
                         <tr id="data-table">
                             <th class="col-md-1 fs-4">ID</th>
                             <th class="col-md-3 fs-4">Nome do Evento</th>
-                            <th class="col-md-4 fs-4">Descrição do Evento</th>
                             <th class="text-center col-md-2 fs-4">Informações</th>
                             <th class="text-center col-md-1 fs-4">Arquivar</th>
                             <th class="text-center col-md-1 fs-4 text-center">Alterar</th>
@@ -75,7 +74,6 @@ $eventos = EventoDao::selectAll();
                                 <tr class="mt-1">
                                     <td class="fs-5 pt-3"><?= $Eventos['idEvento']; ?></td>
                                     <td class="fs-5 pt-3"><?= $Eventos['nomeEvento']; ?></td>
-                                    <td class="fs-5 pt-3"><?= $Eventos['descEvento']; ?></td>
                                     <td class="text-center pt-3">
                                         <a class="dropdown-item" onclick="modalInfo(<?=$Eventos['idEvento'] ?>,'modalInfo')">
                                             <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
