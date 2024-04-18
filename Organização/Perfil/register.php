@@ -4,39 +4,39 @@ require_once(__DIR__ . '../../../Adm/Componentes/modal.php');
 require_once(__DIR__ . '../../../dao/OrganizacaoDao.php');
 
 if (!empty($_POST)) {
-  $id_Org = $organizacaoDao['idOrganizacaoEvento'];
-  $nome_Org =  $organizacaoDao['nomeOrganizacaoEvento'];
-  $cnpj_Org =  $organizacaoDao['cnpjOrganizacaoEvento'];
-  $cep_Org = $organizacaoDao['cepOrganizacaoEvento'];
-  $endereco_Org = $organizacaoDao['enderecoOrganizacaoEvento'];
-  $num_Org = $organizacaoDao['numeroOrganizacaoEvento'];
-  $complemento_Org = $organizacaoDao['complementoOrganizacaoEvento'];
-  $bairro_Org = $organizacaoDao['bairroOrganizacaoEvento'];
-  $cidade_Org = $organizacaoDao['cidadeOrganizacaoEvento'];
-  $uf_Org = $organizacaoDao['ufOrganizacaoEvento'];
-  $tel_Org = $organizacaoDao['telOrganizacaoEvento'];
-  $email_Org = $organizacaoDao['emailOrganizacaoEvento'];
-  $senha_Org = $organizacaoDao['senhaOrganizacaoEvento'];
-  $link_Org = $organizacaoDao['linkSiteOrganizacaoEvento'];
-  $fotoPerfil_Org = $organizacaoDao['imagemOrganizacaoEvento'];
-  $desc_Org = $organizacaoDao['descOrganizacaoEvento'];
+  $id_Orgs = $organizacaoDao['idOrganizacaoEvento'];
+  $nome_Orgs =  $organizacaoDao['nomeOrganizacaoEvento'];
+  $cnpj_Orgs =  $organizacaoDao['cnpjOrganizacaoEvento'];
+  $cep_Orgs = $organizacaoDao['cepOrganizacaoEvento'];
+  $endereco_Orgs = $organizacaoDao['enderecoOrganizacaoEvento'];
+  $num_Orgs = $organizacaoDao['numeroOrganizacaoEvento'];
+  $complemento_Orgs = $organizacaoDao['complementoOrganizacaoEvento'];
+  $bairro_Orgs = $organizacaoDao['bairroOrganizacaoEvento'];
+  $cidade_Orgs = $organizacaoDao['cidadeOrganizacaoEvento'];
+  $uf_Orgs = $organizacaoDao['ufOrganizacaoEvento'];
+  $tel_Orgs = $organizacaoDao['telOrganizacaoEvento'];
+  $email_Orgs = $organizacaoDao['emailOrganizacaoEvento'];
+  $senha_Orgs = $organizacaoDao['senhaOrganizacaoEvento'];
+  $link_Orgs = $organizacaoDao['linkSiteOrganizacaoEvento'];
+  $fotoPerfil_Orgs = $organizacaoDao['imagemOrganizacaoEvento'];
+  $desc_Orgs = $organizacaoDao['descOrganizacaoEvento'];
 } else {
-  $nome_Org = '';
-  $cnpj_Org = '';
-  $cep_Org = '';
-  $endereco_Org = '';
-  $num_Org = '';
-  $complemento_Org = '';
-  $bairro_Org = '';
-  $cidade_Org = '';
-  $uf_Org = '';
-  $tel_Org = '';
-  $email_Org = '';
-  $senha_Org = '';
-  $link_Org = '';
-  $fotoPerfil_Org = '';
-  $desc_Org = '';
-  $id_Org = '';
+  $nome_Orgs = '';
+  $cnpj_Orgs = '';
+  $cep_Orgs = '';
+  $endereco_Orgs = '';
+  $num_Orgs = '';
+  $complemento_Orgs = '';
+  $bairro_Orgs = '';
+  $cidade_Orgs = '';
+  $uf_Orgs = '';
+  $tel_Orgs = '';
+  $email_Orgs = '';
+  $senha_Orgs = '';
+  $link_Orgs = '';
+  $fotoPerfil_Orgs = '';
+  $desc_Orgs = '';
+  $id_Orgs = '';
 }
 ?>
 <!DOCTYPE html>
@@ -95,13 +95,13 @@ if (!empty($_POST)) {
             <div class="d-flex flex-column w-75 border border-1 rounded rounded-4 mt-5 " style="background-color: #FFFFFF;" id="formBox">
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Editar Dados do perfil</h1>
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4" novalidate>
-                <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id" value="<?= $id_Org ?>">
-                <input type="hidden" name="imagemOrganizacaoEvento" id="imagemOrganizacaoEvento" placeholder="nome foto" value="<?=$fotoPerfil_Org?>">
+                <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id" value="<?= $id_Orgs ?>">
+                <input type="hidden" name="imagemOrganizacaoEvento" id="imagemOrganizacaoEvento" placeholder="nome foto" value="<?=$fotoPerfil_Orgs?>">
                 <input type="hidden" value="<?= $id_Org ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">
                     <div class="container-fluid w-100">
                         <div class="position-relative rounded">
                             <!-- <img src="../../img/Admin/eventoPadrao.png" alt="" style="width: 850px; height: 200px; z-index:0;" class="bannerOrg img-fluid ms-auto me-auto rounded rounded-4 position-absolute z-0"> -->
-                            <img id = "preview" src="../../img/Organizacao/<?=$fotoPerfil_Org!=""?$fotoPerfil_Org:'userPadrao.png';?>" alt="foto da Org" class="pfpIconOrg position-absolute img-fluid " style="width: 200px; height: 200px" >
+                            <img id = "preview" src="../../img/Organizacao/<?=$fotoPerfil_Orgs!=""?$fotoPerfil_Orgs:'userPadrao.png';?>" alt="foto da Org" class="pfpIconOrg position-absolute img-fluid " style="width: 200px; height: 200px" >
                         </div>
                     </div>
 
@@ -114,14 +114,14 @@ if (!empty($_POST)) {
                     <div class="row">
                     <div class="col-md-6 mb-3 needs-validation">
                         <label for="nomeOrganizacao" class="col-form-label">Nome da Organização*</label>
-                        <input type="text" class="form-control inputGeral " placeholder="" name="nomeOrganizacaoEvento" maxlength="50" id="nomeOrganizacaoEvento" value="<?=$nome_Org ?>" required>
+                        <input type="text" class="form-control inputGeral " placeholder="" name="nomeOrganizacaoEvento" maxlength="50" id="nomeOrganizacaoEvento" value="<?=$nome_Orgs ?>" required>
                         <div class="invalid-feedback">
                         Preencha este campo
                         </div>
                     </div>
                     <div class="col-md-6 mb-3 needs-validation">
                         <label for="CNPJ" class="col-form-label">CNPJ da organização*</label>
-                        <input type="text" class="form-control inputGeral" placeholder="" name="cnpjOrganizacaoEvento" data-mask="00.000.000/0000-00" maxlength="50" id="cnpjOrganizacaoEvento" value="<?= $cnpj_Org ?>" required>
+                        <input type="text" class="form-control inputGeral" placeholder="" name="cnpjOrganizacaoEvento" data-mask="00.000.000/0000-00" maxlength="50" id="cnpjOrganizacaoEvento" value="<?= $cnpj_Orgs ?>" required>
                         <div class="invalid-feedback">
                         Preencha este campo
                         </div>
@@ -130,67 +130,67 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-md-6 needs-validation">
                             <label for="nomeOrg" class="col-form-label">CEP da organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="cepOrganizacaoEvento" data-mask="00000-000" maxlength="10" id="cepOrganizacaoEvento" value="<?= $cep_Org ?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="cepOrganizacaoEvento" data-mask="00000-000" maxlength="10" id="cepOrganizacaoEvento" value="<?= $cep_Orgs ?>" required>
                         </div>
                         <div class="col-md-6 needs-validation">
                             <label for="cep" class="col-form-label">Bairro da organização*</label>
-                            <input type="text" class="form-control inputGeral" name="bairroOrganizacaoEvento" id="bairroOrganizacaoEvento" value="<?=$bairro_Org?>" required>
+                            <input type="text" class="form-control inputGeral" name="bairroOrganizacaoEvento" id="bairroOrganizacaoEvento" value="<?=$bairro_Orgs?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-10 needs-validation">
                             <label for="endereco" class="col-form-label">Endereço da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="enderecoOrganizacaoEvento" maxlength="100" id="" value="<?=$endereco_Org?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="enderecoOrganizacaoEvento" maxlength="100" id="" value="<?=$endereco_Orgs?>" required>
                         </div>
                         <div class="col-md-2 needs-validation">
                             <label for="numero" class="col-form-label">N°*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="numeroOrganizacaoEvento" maxlength="100" id="numeroOrganizacaoEvento" value="<?=$num_Org?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="numeroOrganizacaoEvento" maxlength="100" id="numeroOrganizacaoEvento" value="<?=$num_Orgs?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 needs-validation">
                             <label for="complemento" class="col-form-label">Complemento da organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="complementoOrganizacaoEvento" maxlength="100" id="" value="<?=$complemento_Org?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="complementoOrganizacaoEvento" maxlength="100" id="" value="<?=$complemento_Orgs?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 needs-validation">
                             <label for="complemento" class="col-form-label">Cidade da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="cidadeOrganizacaoEvento" maxlength="20" id="" value="<?=$cidade_Org?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="cidadeOrganizacaoEvento" maxlength="20" id="" value="<?=$cidade_Orgs?>" required>
                         </div>
                         <div class="col-md-6 needs-validation">
                             <label for="complemento" class="col-form-label">UF da Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder=""  name="ufOrganizacaoEvento" maxlength="20" id="" value="<?=$uf_Org?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder=""  name="ufOrganizacaoEvento" maxlength="20" id="" value="<?=$uf_Orgs?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 needs-validation">
                             <label for="telefone" class="col-form-label">Telefone da Organização*</label>
-                            <input type="telefone" class="form-control inputGeral" placeholder="" name="telOrganizacaoEvento" data-mask="00-00000-0000" maxlength="20" id="" value="<?=$tel_Org?>" required>
+                            <input type="telefone" class="form-control inputGeral" placeholder="" name="telOrganizacaoEvento" data-mask="00-00000-0000" maxlength="20" id="" value="<?=$tel_Orgs?>" required>
                         </div>
                     </div>
                     <div class="row">
                     <div class="col-md-12 needs-validation">
                         <label for="email" class="col-form-label">E-mail  da Organização*</label>
-                        <input type="email" class="form-control inputGeral" placeholder="" name="emailOrganizacaoEvento" maxlength="100" id="" value="<?=$email_Org?>" required>
+                        <input type="email" class="form-control inputGeral" placeholder="" name="emailOrganizacaoEvento" maxlength="100" id="" value="<?=$email_Orgs?>" required>
                     </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 needs-validation">
                             <label for="senha" class="col-form-label">Senha da Organização*</label>
-                            <input type="password" class="form-control inputGeral" placeholder="" name="senhaOrganizacaoEvento" maxlength="10" id="senhaOrganizacaoEvento" value="<?=$senha_Org?>" required>
+                            <input type="password" class="form-control inputGeral" placeholder="" name="senhaOrganizacaoEvento" maxlength="10" id="senhaOrganizacaoEvento" value="<?=$senha_Orgs?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 needs-validation">
                             <label for="link" class="col-form-label">Link do Site Organização*</label>
-                            <input type="text" class="form-control inputGeral" placeholder="" name="linkSiteOrganizacaoEvento" maxlength="2000" id="linkSiteOrganizacaoEvento" value="<?=$link_Org?>" required>
+                            <input type="text" class="form-control inputGeral" placeholder="" name="linkSiteOrganizacaoEvento" maxlength="2000" id="linkSiteOrganizacaoEvento" value="<?=$link_Orgs?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 needs-validation ">
                             <label for="descricao" class="col-form-label">Descrição do Evento*</label>
-                            <textarea class="form-control inputGeral" name="descOrganizacaoEvento" id="descOrganizacaoEvento" cols="30" rows="10" style="max-height: 400px;"><?=$desc_Org?></textarea>
+                            <textarea class="form-control inputGeral" name="descOrganizacaoEvento" id="descOrganizacaoEvento" cols="30" rows="10" style="max-height: 400px;"><?=$desc_Orgs?></textarea>
                         </div>
                     </div>
                     <div class="row mt-3">

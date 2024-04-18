@@ -22,8 +22,7 @@ require_once (__DIR__ . '../../model/Conexao.php');
             $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
         
             $stmt = $conn->prepare("INSERT INTO tborganizacaoevento (nomeOrganizacaoEvento, cnpjOrganizacaoEvento, cepOrganizacaoEvento, enderecoOrganizacaoEvento, numeroOrganizacaoEvento, complementoOrganizacaoEvento, bairroOrganizacaoEvento, cidadeOrganizacaoEvento, ufOrganizacaoEvento,telOrganizacaoEvento, 
-            emailOrganizacaoEvento, senhaOrganizacaoEvento, linkSiteOrganizacaoEvento, imagemOrganizacaoEvento, descOrganizacaoEvento) 
-                            VALUES (:nome, :cnpj, :cep, :log, :num, :complemento, :bairro, :cidade, :uf, :tel, :email, :senha, :link, :imagem, :desc)");
+            emailOrganizacaoEvento, senhaOrganizacaoEvento, linkSiteOrganizacaoEvento, imagemOrganizacaoEvento, descOrganizacaoEvento) VALUES (:nome, :cnpj, :cep, :log, :num, :complemento, :bairro, :cidade, :uf, :tel, :email, :senha, :link, :imagem, :desc)");
         
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':cnpj', $cnpj);

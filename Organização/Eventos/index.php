@@ -111,7 +111,7 @@ $eventos = EventoDao::selectAll();
                                 </div>
                                 <div class="modal-body" style="color: #a6a6a6;">
                                     <form action="process.php" method="post">
-                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <input type="hidden" class="form-control" id="" name="id" type="text">
                                         <div class="d-flex m-0" style="height: 30px;">
                                             <p class="m-0 fw-bold fs-5">Nome do Evento: </p> <p class="ms-2 fs-5" >aa</p>
                                         </div>

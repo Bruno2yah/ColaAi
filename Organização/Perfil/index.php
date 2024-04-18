@@ -56,35 +56,32 @@ $organizacaoDao = new OrganizacaoDao();
         <!-- Hamburger -->
     </div>
     <div class="first-div">
-        <img src="../../img/Organizacao/<?=$authUserOrg['imagemOrganizacaoEvento']? $authUserOrg['imagemOrganizacaoEvento']: 'userPadrao.png';?>"style="width:100% ;heigh:100%"> 
+        <img src="../../img/Organizacao/<?= $authUserOrg['imagemOrganizacaoEvento'] ? $authUserOrg['imagemOrganizacaoEvento'] : 'userPadrao.png'; ?>" style="width:100% ;heigh:100%">
     </div>
     <div class="second-div">
         <div class="third-div">
-        <img src="../../img/Organizacao/<?=$authUserOrg['imagemOrganizacaoEvento']? $authUserOrg['imagemOrganizacaoEvento']: 'userPadrao.png';?>"style="width:100% ;heigh:100%"> 
+            <img src="../../img/Organizacao/<?= $authUserOrg['imagemOrganizacaoEvento'] ? $authUserOrg['imagemOrganizacaoEvento'] : 'userPadrao.png'; ?>" style="width:100% ;heigh:100%">
 
         </div>
         <div class="four-div">
             <div class="five-div">
-                <?php if ($organizacao !== false): ?>
-                    <h4 class="organization-name"><?php echo $organizacao['nomeOrganizacaoEvento']; ?></h4>
+                <?php if ($organizacao !== false) : ?>
+                    <h4 class="organization-name justify-content-center"><?php echo $organizacao['nomeOrganizacaoEvento']; ?></h4>
                     <h2 class="organization-description"><?php echo $organizacao['descOrganizacaoEvento']; ?></h2>
-                    <?php else: ?>
-                        <p>Não foi possível carregar os dados da organização.</p>
-                    <?php endif; ?>
+                <?php else : ?>
+                    <p>Não foi possível carregar os dados da organização.</p>
+                <?php endif; ?>
             </div>
         </div>
         <div class="dropdown">
-            <div class=" d-flex h-auto p-2 mb-3">
-                <a href="" class="ms-auto me-0" style="width: 45px;" class="text-white d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../../img/Admin/editar-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
-                </a>
-                <ul class="dropdown-menu text-small">
-                    <li>
-                        <a class="dropdown-item" href="./register.php">Alterar Dados</a>
-                    </li>
-                    
-                </ul>
-            </div>
+            <form action="process.php" method="POST" >
+                <div class="d-flex h-auto p-2 mb-3">
+                    <input type="hidden" class="form-control" id="acao" name="acao" value="SELECTID">
+                    <input type="hidden" class="form-control" id="id" name="id" value="<?= $organizacao['idOrganizacaoEvento'] ?>">
+                    <button type="submit" class="dropdown-item"><img src="../../img/Admin/editar-icon.png" alt="" class="ms-auto me-2" style="width: 45px;">
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -99,11 +96,11 @@ $organizacaoDao = new OrganizacaoDao();
     </script>
     <script>
         function toggleHamburger() {
-                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
-                hamburger.classList.toggle('showHamburger');
-            }
+            var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+            hamburger.classList.toggle('showHamburger');
+        }
     </script>
-    
+
 </body>
 
 </html>

@@ -101,7 +101,7 @@ if (!empty($_POST)) {
                     <div class="container-fluid w-100">
                         <div class="position-relative rounded">
                             <!-- <img src="../../img/Admin/eventoPadrao.png" alt="" style="width: 850px; height: 200px; z-index:0;" class="bannerOrg img-fluid ms-auto me-auto rounded rounded-4 position-absolute z-0"> -->
-                            <img id = "preview" src="../../img/Organizacao/<?=$fotoPerfil_Org!=""?$fotoPerfil_Org:'userPadrao.png';?>" alt="foto da Org" class="pfpIconOrg position-absolute img-fluid " style="width: 200px; height: 200px" >
+                            <img id="preview" src="../../img/Organizacao/<?=$fotoPerfil_Org!=""?$fotoPerfil_Org:'userPadrao.png';?>" alt="foto da Org" class="pfpIconOrg position-absolute img-fluid " style="width: 200px; height: 200px" >
                         </div>
                     </div>
 
