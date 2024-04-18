@@ -9,7 +9,7 @@ $organizacaoDao = new OrganizacaoDao();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../../css/StyleOrganizacao.css">
+    <link rel="stylesheet" href="../../css/styleAdm.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 
@@ -39,17 +39,34 @@ $organizacaoDao = new OrganizacaoDao();
     ?>
     <div class="container-fluid vw-100">
 
-        <!-- Hamburger -->
-        <div class="hamburger-wrapper">
-            <div class="hamburger" onclick="toggleSidebar()">
-                <input class="checkbox" type="checkbox" />
-                <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
-                    <path class="lineTop line" stroke-linecap="round" stroke-width="4" stroke="black" d="M6 11L44 11"></path>
-                    <path stroke-linecap="round" stroke-width="4" stroke="black" d="M6 24H43" class="lineMid line"></path>
-                    <path stroke-linecap="round" stroke-width="4" stroke="black" d="M6 37H43" class="lineBottom line"></path>
-                </svg>
-            </div>
-        </div>
+    <div class="hamburger-wrapper">
+                    <div class="hamburger" onclick="toggleSidebar(),  toggleHamburger()">
+                        <input class="checkbox" type="checkbox" />
+                        <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
+                            <path
+                                class="lineTop line"
+                                stroke-linecap="round"
+                                stroke-width="4"
+                                stroke="black"
+                                d="M6 11L44 11"
+                            ></path>
+                            <path
+                                stroke-linecap="round"
+                                stroke-width="4"
+                                stroke="black"
+                                d="M6 24H43"
+                                class="lineMid line"
+                            ></path>
+                            <path
+                                stroke-linecap="round"
+                                stroke-width="4"
+                                stroke="black"
+                                d="M6 37H43"
+                                class="lineBottom line"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
         <?php
         include('../Componentes/menu.php')
         ?>
@@ -96,6 +113,12 @@ $organizacaoDao = new OrganizacaoDao();
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
+    </script>
+     <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
     </script>
 </body>
 

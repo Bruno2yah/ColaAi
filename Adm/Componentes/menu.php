@@ -1,7 +1,6 @@
 <div class="sidebar d-flex flex-column flex-shrink-0 p-3" style="width: 280px;"  id="sidebar">
     <a href="../Home/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-4">Admistrador</span>
+      <span class="fs-4" style=" color: #a6a6a6;" >Admistrador</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
@@ -15,15 +14,17 @@
       <a class="menuItems w-100 p-1 ps-2" href="../UserAdm/" style="text-decoration: none; color: #a6a6a6;">
         <li class="d-flex align-items-center">
         <img src="../../img/Admin/icon-adm.png" alt="" id="menu-icon">
-          <span class="ms-2">Administrador</span>
+          <span class="ms-2" >Administrador</span>
         </li>
       </a>
       <p class="d-inline-flex menuItems w-100 p-1 ps-2 "  style="margin-bottom: 0">
         <a class="w-100 d-flex align-items-center" data-bs-toggle="collapse" href="#collapseAnalise" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
         <img src="../../img/Admin/icon-analise.png" alt="" id="menu-icon">
           <span class="ms-2">Análise</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="mt-1 ms-auto me-4"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
-        </a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 ms-auto me-4" id="menu-icon">
+            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+          </svg>        
+          </a>
       </p>
       <div class="collapse" id="collapseAnalise">
         <li class="menuItems w-100 p-1 ps-4">
@@ -43,7 +44,9 @@
         <a class="w-100 d-flex align-items-center" data-bs-toggle="collapse" href="#collapseOrg" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
         <img src="../../img/Admin/icon-org.png" alt="" id="menu-icon">
           <span class="ms-2">Organização</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="mt-1 ms-auto me-4"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 ms-auto me-4" id="menu-icon">
+            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+          </svg>          
         </a>
       </p>
       <div class="collapse" id="collapseOrg">
@@ -59,7 +62,9 @@
         <a class="w-100 d-flex align-items-cente" data-bs-toggle="collapse" href="#collapseUsuario" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
         <img src="../../img/Admin/icon-usuario.png" alt="" id="menu-icon">
           <span class="ms-2">Úsuario</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="mt-1 ms-auto me-4"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 ms-auto me-4" id="menu-icon">
+            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+          </svg>          
         </a>
       </p>
       <div class="collapse" id="collapseUsuario">
@@ -74,7 +79,9 @@
         <a class="w-100 d-flex align-items-cente" data-bs-toggle="collapse" href="#collapseSuporte" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none; color: #a6a6a6;">
         <img src="../../img/Admin/icon-suporte.png" alt="" id="menu-icon">
           <span class="ms-2">Suporte</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="mt-1 ms-auto me-4"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 ms-auto me-4" id="menu-icon">
+            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+          </svg>          
         </a>
       </p>
       <div class="collapse" id="collapseSuporte">

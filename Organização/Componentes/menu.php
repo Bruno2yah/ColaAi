@@ -1,7 +1,6 @@
 <div class="sidebar d-flex flex-column flex-shrink-0 p-3 " style="width: 280px;"  id="sidebar">
     <a href="../Home/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-4">Organização</span>
+      <span class="fs-4" style=" color: #a6a6a6;">Organização</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
@@ -39,7 +38,7 @@
     <hr>
     <div class="dropdown">
     <a href="#" class="text-white d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="../../img/Organizacao/<?=$authUserOrg['imagemOrganizacaoEvento']? $authUserOrg['imagemOrganizacaoEvento']: 'userPadrao.png';?>" width="50" height="50" alt="foto perfil" class="rounded-circle" id="icon-pfp">
+        <img src="../../img/Organizacao/<?=$authUserOrg['imagemOrganizacaoEvento']? $authUserOrg['imagemOrganizacaoEvento']: 'userPadrao.png';?>" width="50" height="50" alt="" class="rounded-circle" id="icon-pfp">
     </a>
     <ul class="dropdown-menu text-small">
           <li><a class="dropdown-item" href="../Perfil/">Perfil</a></li>

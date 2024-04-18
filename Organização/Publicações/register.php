@@ -8,12 +8,12 @@ if (!empty($_POST)) {
   $titulo_Publicacao =  $publicacaoDao['tituloPublicacao'];
   $desc_Publicacao =  $publicacaoDao['descPublicacao'];
   $link_Publicacao = $publicacaoDao['linkOrganizacaoEvento'];
-  $imagem_Publicacao = $publicacaoDao['imagemPublicacao'];
+  $id_Evento = $publicacaoDao['idEvento'];
 } else {
   $titulo_Publicacao = '';
   $desc_Publicacao = '';
   $link_Publicacao = '';
-  $imagem_Publicacao = '';
+  $id_Evento = '';
   $id_Publicacao = '';
 }
 ?>
@@ -49,7 +49,7 @@ if (!empty($_POST)) {
     ?>
     <div class="container-fluid" style="height: 90vh">
     <div class="hamburger-wrapper">
-            <div class="hamburger" onclick="toggleSidebar()">
+            <div class="hamburger" onclick="toggleSidebar(), toggleHamburger()">
                 <input class="checkbox" type="checkbox" />
                 <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
                     <path
@@ -85,14 +85,10 @@ if (!empty($_POST)) {
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Criar Publicação</h1>
                 
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4 pt-1" novalidate>
-                    <input type="hidden" name="idPublicacao" id="idPublicacao" placeholder="id" value="<?=$id_Publicacao?>">
-                    <input type="hidden" name="imagemPublicacao" id="imagemPublicacao" placeholder="nome foto" value="<?=$imagem_Publicacao?>">
-                    <input type="hidden" value="<?= $id_Publicacao ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">    
                     <a href="" style="color: #6F9BAB; text-decoration:none"><i class="bi bi-geo-alt fs-4 me-1"></i>Adicionar localização da publicação</a><br>
                     <a href="" style="color: #6F9BAB; text-decoration:none"><i class="bi bi-person-add fs-4 me-1"></i>Marcar pessoas</a>
                     <div class="row g-2" id="publiGrid">
-                    <img id="preview" src="../../img/Organizacao/<?= $imagem_Publicacao!=""?$imagem_Publicacao:'eventoPadrao.png';?>" alt="imagem" class="img-fluid col-md-12 rounded rounded-4">
-
+                        <img id="preview" src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid col-md-12 rounded rounded-4">
                     </div>
                     <div class="row text-end inputFile">
                         <label for="foto" class="form-label fs-5 mt-2"style="color: #6F9BAB;">Inserir imagem</label>
@@ -100,7 +96,7 @@ if (!empty($_POST)) {
                     </div>
                     <div class="row">
                     <div class="col-12 mb-4 needs-validation">
-                        <label for="nome" class="col-form-label">Nome da publicação*</label>
+                        <label for="nomeEvento" class="col-form-label">Nome da publicação*</label>
                         <input type="text" class="form-control inputGeral " placeholder="Digite o título da publicação" name="tituloPublicacao" maxlength="50" id="" value="<?=$titulo_Publicacao?>" required>
                         <div class="invalid-feedback">
                         Preencha este campo
@@ -129,6 +125,12 @@ if (!empty($_POST)) {
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
+    </script>
+    <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
     </script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer>

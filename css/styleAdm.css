@@ -195,12 +195,14 @@ body{
     height: 50px;
     width: 50px;
     position: relative;
+    left: 0px;
+    transition: all 0.3s;
   }
   .hamburger-wrapper {
     position: absolute;
-    top: 90px; /* Ajuste conforme necessário */
-    right: 10px; /* Ajuste conforme necessário */
-    z-index: 1000; /* Garante que esteja acima de outros elementos */
+    top: 80px; /* Ajuste conforme necessário */
+    left: 10px; /* Ajuste conforme necessário */
+    z-index: 1001; /* Garante que esteja acima de outros elementos */
 }
 
   .hamburger .checkbox {
@@ -213,7 +215,7 @@ body{
   .line {
     transition: 0.5s;
     stroke-width: 6px;
-    stroke: black;
+    stroke: #a6a6a6;
   }
   .lineTop {
     stroke-dasharray: 40 40;
@@ -249,7 +251,7 @@ body{
         left: -300px; /* Inicia oculto */
         height: 91%;
         width: 150px;
-        background-color: #FFF7D1;
+        background-color: #dcf4ca;
         padding-top: 60px;
         transition: all 0.3s;
         z-index: 1000;
@@ -259,6 +261,9 @@ body{
 
     .show {
         left: 0; /* Mostra quando a classe show é adicionada */
+    }
+    .showHamburger {
+        left: 200px; /* Mostra quando a classe show é adicionada */
     }
     .first-div {
         width: 100%;
@@ -310,4 +315,11 @@ body{
     .organization-description {
         font-size: 28px; /* Tamanho da fonte */
         text-align: center; /* Alinhamento central */
+    }
+    .menuItems:hover #menu-icon {
+        filter: saturate(200%) contrast(200%) sepia(100) hue-rotate(1deg)  drop-shadow(1px 1px  #ffc107); 
+      }
+
+    .menuItems:active #menu-icon {
+        filter: saturate(200%) contrast(200%) sepia(100) hue-rotate(1deg)  drop-shadow(1px 1px  #ffc107);  
     }

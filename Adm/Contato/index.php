@@ -32,33 +32,33 @@
     ?>
     <div class="container-fluid">
     <div class="hamburger-wrapper">
-                <div class="hamburger" onclick="toggleSidebar()">
-                    <input class="checkbox" type="checkbox" />
-                    <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
-                        <path
-                            class="lineTop line"
-                            stroke-linecap="round"
-                            stroke-width="4"
-                            stroke="black"
-                            d="M6 11L44 11"
-                        ></path>
-                        <path
-                            stroke-linecap="round"
-                            stroke-width="4"
-                            stroke="black"
-                            d="M6 24H43"
-                            class="lineMid line"
-                        ></path>
-                        <path
-                            stroke-linecap="round"
-                            stroke-width="4"
-                            stroke="black"
-                            d="M6 37H43"
-                            class="lineBottom line"
-                        ></path>
-                    </svg>
-                </div>
+            <div class="hamburger" onclick="toggleSidebar() , toggleHamburger()">
+                <input class="checkbox" type="checkbox" />
+                <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
+                    <path
+                        class="lineTop line"
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="black"
+                        d="M6 11L44 11"
+                    ></path>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="black"
+                        d="M6 24H43"
+                        class="lineMid line"
+                    ></path>
+                    <path
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke="black"
+                        d="M6 37H43"
+                        class="lineBottom line"
+                    ></path>
+                </svg>
             </div>
+        </div>
         <div class="row vw-100 h-auto">
             <?php
             include('../Componentes/menu.php')
@@ -141,6 +141,12 @@
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
+    </script>
+    <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
     </script>
     <!-- Para usar Mascara  -->
     <script type="text/javascript" src="../../js/jquery.mask.min.js"></script>

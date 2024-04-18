@@ -20,20 +20,20 @@
                 <div class="btn-box w-100 justify-content-center d-flex flex-column mt-5">
                     <div class="btn-org row w-100 justify-content-center mb-3">
                         <a href="./Login/loginEmail.php" class="d-flex justify-content-center">
-                            <button class="border border-0 rounded-4 fs-3 d-flex align-items-center justify-content-evenly col-9">
-                                <img src="../img/Organização/e-mail.png" alt="" id="icon-email">
-                                <p class="m-0 fs-4">Entrar com o e-mail</p>
-                                <div class=""></div>    
-                            </button>
+                        <button class="border border-0 rounded-4 fs-3 d-flex align-items-center justify-content-evenly col-9">
+                            <img src="../img/Organizacao/e-mail.png" alt="" class="icon-email">
+                            <p class="m-0 fs-4">Entrar com o e-mail</p>
+                            <div></div>    
+                        </button>
                         </a>
                     </div>
                     <div class="btn-adm row w-100 justify-content-center mt-4 mb-md-0 mb-5">
                         <a href="./Login/loginTel.php" class="d-flex justify-content-center">
-                            <button class="border border-0 rounded-4 fs-3 d-flex align-items-center justify-content-evenly col-9">
-                                <img src="../img/Organização/icon-tel.png" alt="" id="icon-tel">
-                                <p class="m-0 fs-4">Entrar com o telefone</p>
-                                <div class=""></div>
-                            </button>
+                        <button class="border border-0 rounded-4 fs-3 d-flex align-items-center justify-content-evenly col-9">
+                            <img src="../img/Organizacao/icon-tel.png" alt="" class="icon-telefone">
+                            <p class="m-0 fs-4">Entrar com o telefone</p>
+                            <div></div>
+                        </button>
                         </a>
                     </div>
                 </div>

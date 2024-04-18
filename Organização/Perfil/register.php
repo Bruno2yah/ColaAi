@@ -55,26 +55,12 @@ if (!empty($_POST)) {
 </head>
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
-<?php
-    // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
-    if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
-        // Redirecionar para o login com um erro2 se não estiver autenticado
-        header('Location: loginEmail.php?login=erro2');
-        exit();
-    }
-
-    //o usuário está autenticado
-    $authUserOrg = $_SESSION['userOrg'];
-    // Buscar dados da organização pelo ID (você precisa passar o ID da organização)
-    $idOrganizacao = $_SESSION['userOrg']['idOrganizacaoEvento']; 
-    $organizacao = $organizacaoDao->selectById($idOrganizacao);
-    ?>
     <?php
     include('../../Adm/Componentes/header.php');
     ?>
     <div class="container-fluid" style="height: 90vh">
     <div class="hamburger-wrapper">
-                <div class="hamburger" onclick="toggleSidebar()">
+                <div class="hamburger" onclick="toggleSidebar(), toggleHamburger()">
                     <input class="checkbox" type="checkbox" />
                     <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
                         <path
@@ -224,6 +210,12 @@ if (!empty($_POST)) {
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
+    </script>
+    <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
     </script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer>

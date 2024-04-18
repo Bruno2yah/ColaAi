@@ -87,3 +87,11 @@ height: 11vh;
 a{
     all: unset;
 }
+.icon-email {
+    width: 40px;
+    height: 30px;
+}
+.icon-telefone {
+    width: 35px;
+    height: 35px;
+}

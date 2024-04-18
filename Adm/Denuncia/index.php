@@ -32,7 +32,7 @@
     ?>
     <div class="container-fluid">
     <div class="hamburger-wrapper">
-                <div class="hamburger" onclick="toggleSidebar()">
+                <div class="hamburger" onclick="toggleSidebar(), toggleHamburger()">
                     <input class="checkbox" type="checkbox" />
                     <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
                         <path
@@ -140,6 +140,12 @@
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
+    </script>
+    <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
     </script>
     <!-- Para usar Mascara  -->
     <script type="text/javascript" src="../../js/jquery.mask.min.js"></script>

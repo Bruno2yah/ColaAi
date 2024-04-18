@@ -70,7 +70,7 @@ if (!empty($_POST)) {
     ?>
     <div class="container-fluid" style="height: 90vh">
     <div class="hamburger-wrapper">
-            <div class="hamburger" onclick="toggleSidebar()">
+            <div class="hamburger" onclick="toggleSidebar(), toggleHamburger()">
                 <input class="checkbox" type="checkbox" />
                 <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
                     <path
@@ -109,7 +109,7 @@ if (!empty($_POST)) {
                     <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id da organização" value="<?= isset($authUserOrg['idOrganizacaoEvento']) ? $authUserOrg['idOrganizacaoEvento'] : '' ?>" readonly>
                     <input type="hidden" name="imagemEvento" id="imagemEvento" placeholder="nome foto" value="<?=$imagem_Evento?>">
                     <input type="hidden" value="<?= $id_Evento ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">    
-                    <img id="preview" src="../../img/Organizacao/<?= $imagem_Evento!=""?$imagem_Evento:'eventoPadrao.png';?>" alt="imagem do evento" class="img-fluid ms-auto me-auto rounded rounded-3">
+                    <img id="preview" src="../../img/Organizacao/Evento/<?=$imagem_Evento!=""?$imagem_Evento:'eventoPadrao.png';?>" alt="imagem do evento" class="img-fluid ms-auto me-auto rounded rounded-3">
                     <div class="row text-end inputFile">
                         <label for="foto" class="form-label fs-5 mt-2">Alterar Imagem</label>
                         <input type="file" id="foto" name="foto" accept="image/*" class="form-control mt-1 mb-4">
@@ -209,6 +209,12 @@ if (!empty($_POST)) {
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
+    </script>
+    <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
     </script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" defer>

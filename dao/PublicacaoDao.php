@@ -6,17 +6,17 @@ class PublicacaoDao {
         $titulo = $publicacao->getTitulo();
         $descricao = $publicacao->getDescricao();
         $link = $publicacao->getLink();
-        $imagem = $publicacao->getImagem();
+        $idEvento = $publicacao->getIdEvento(); 
 
         $conn = Conexao::conectar();
         
-        $stmt = $conn->prepare("INSERT INTO tbpublicacao (tituloPublicacao, descPublicacao, linkOrganizacaoEvento, imagemPublicacao)  
-                                VALUES (:titulo, :descricao, :link, :imagem)");
+        $stmt = $conn->prepare("INSERT INTO tbpublicacao (tituloPublicacao, descPublicacao, linkOrganizacaoEvento, idEvento)  
+                                VALUES (:titulo, :descricao, :link, :idEvento)");
         
         $stmt->bindParam(':titulo', $titulo);
         $stmt->bindParam(':descricao', $descricao);
         $stmt->bindParam(':link', $link);
-        $stmt->bindParam(':imagem', $imagem);
+        $stmt->bindParam(':idEvento', $idEvento);
         
         $result = $stmt->execute();
         
@@ -59,20 +59,21 @@ class PublicacaoDao {
                    tituloPublicacao = :titulo, 
                    descPublicacao = :descricao, 
                    linkOrganizacaoEvento = :link,
-                   imagemPublicacao = :imagem
+                   idEvento = :idEvento
                    WHERE idPublicacao = :id";
         
         $stmt = $conexao->prepare($query);
         
+        // Atribuir os valores a variáveis antes de chamar bindParam
         $titulo = $publicacao->getTitulo();
         $descricao = $publicacao->getDescricao();
         $link = $publicacao->getLink();
-        $imagem = $publicacao->getImagem();
+        $idEvento = $publicacao->getIdEvento();
         
         $stmt->bindParam(':titulo', $titulo);
         $stmt->bindParam(':descricao', $descricao);
         $stmt->bindParam(':link', $link);
-        $stmt->bindParam(':imagem', $imagem);
+        $stmt->bindParam(':idEvento', $idEvento);
         $stmt->bindParam(':id', $id);
         
         return $stmt->execute();

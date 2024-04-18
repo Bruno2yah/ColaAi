@@ -10,23 +10,12 @@
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 </head>
 <body>
-<?php
-    session_start();
-  // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
-  if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
-    // Redirecionar para o login com um erro2 se não estiver autenticado
-    header('Location: index.php?login=erro2');
-    exit();
-  }
-  //o usuário está autenticado
-  $authUserOrg = $_SESSION['userOrg'];
-  ?>
     <?php
     include('../Componentes/header.php');
     ?>
     <div class="container-fluid vw-100">
     <div class="hamburger-wrapper">
-            <div class="hamburger" onclick="toggleSidebar()">
+            <div class="hamburger" onclick="toggleSidebar(), toggleHamburger()">
                 <input class="checkbox" type="checkbox" />
                 <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
                     <path
@@ -235,6 +224,12 @@
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
+    </script>
+    <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
     </script>
     <script type="text/javascript" src="../../js/personalizar.js"></script>
     <script type="text/javascript" src="../../js/modal.js"></script>

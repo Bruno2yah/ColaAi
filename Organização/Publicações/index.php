@@ -14,24 +14,13 @@ $publicacoes = PublicacaoDao::selectAll();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> <!-- CSS Projeto -->
 </head>
 <body>
-<?php
-    session_start();
-    // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
-    if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
-        // Redirecionar para o login com um erro2 se não estiver autenticado
-        header('Location: loginEmail.php?login=erro2');
-        exit();
-    }
-
-    //o usuário está autenticado
-    $authUserOrg = $_SESSION['userOrg'];
-    ?>
     <?php
+    session_start();
     include('../Componentes/header.php');
     ?>
     <div class="container-fluid vw-100 ">
     <div class="hamburger-wrapper">
-            <div class="hamburger" onclick="toggleSidebar()">
+            <div class="hamburger" onclick="toggleSidebar(), toggleHamburger()">
                 <input class="checkbox" type="checkbox" />
                 <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
                     <path
@@ -84,9 +73,9 @@ $publicacoes = PublicacaoDao::selectAll();
                              <?php foreach ($publicacoes as $Publicacao) : ?>
                                 <tr class="mt-1">
                                     <td class="fs-5 pt-3"><?= $Publicacao['idPublicacao']; ?></td>
-                                    <td class="fs-5 pt-3"><?= $Publicacao['tituloPublicacao']; ?></td>
+                                    <td class="fs-5 pt-3"><?= $Publicacao['nomePublicacao']; ?></td>
                                     <td class="text-center pt-3">
-                                        <a class="dropdown-item" onclick="modalInfo(<?=$Publicacao['idPublicacao'] ?>,'idInfo')">
+                                        <a class="dropdown-item" onclick="modalInfo(1,1)">
                                             <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
                                         </a>
                                     </td>
@@ -114,7 +103,7 @@ $publicacoes = PublicacaoDao::selectAll();
                     </table>
                 </div>
             </div>
-            <div class="modal fade" id="modalInfo" role="dialog" data-bs-backdrop="false">
+            <div class="modal fade" id="modalInfo" role="dialog"data-bs-backdrop="false"    >
                     <div class=" modal-dialog modal-dialog-centered">
                         <div class="modal-content ">
                             <div class="modal-header infoModalHeader">
@@ -123,7 +112,7 @@ $publicacoes = PublicacaoDao::selectAll();
                             </div>
                             <div class="modal-body" style="color: #a6a6a6;">
                                 <form action="process.php" method="post">
-                                    <input type="hidden" class="form-control" id="idInfo" name="id" type="text">
+                                    <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
                                     <div class="d-flex m-0" style="height: 35px;">
                                         <p class="m-0 fw-bold fs-5">Nome da publicação: </p> <p class="ms-2 fs-5" >aa</p>
                                     </div> 
@@ -213,6 +202,12 @@ $publicacoes = PublicacaoDao::selectAll();
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('show');
         }
+    </script>
+    <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
     </script>
     <script type="text/javascript" src="../../js/personalizar.js"></script>
     <script type="text/javascript" src="../../js/modal.js"></script>

@@ -9,7 +9,7 @@ $organizacaoDao = new OrganizacaoDao();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../../css/StyleOrganizacao.css">
+    <link rel="stylesheet" href="../../css/styleAdm.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 
@@ -30,7 +30,7 @@ $organizacaoDao = new OrganizacaoDao();
     //o usuário está autenticado
     $authUserOrg = $_SESSION['userOrg'];
     // Buscar dados da organização pelo ID (você precisa passar o ID da organização)
-    $idOrganizacao = $_SESSION['userOrg']['idOrganizacaoEvento']; 
+    $idOrganizacao = $_SESSION['userOrg']['idOrganizacaoEvento']; // Supondo que o ID da organização esteja na sessão
     $organizacao = $organizacaoDao->selectById($idOrganizacao);
     ?>
 
@@ -41,7 +41,7 @@ $organizacaoDao = new OrganizacaoDao();
 
         <!-- Hamburger -->
         <div class="hamburger-wrapper">
-            <div class="hamburger" onclick="toggleSidebar()">
+            <div class="hamburger" onclick="toggleSidebar(), toggleHamburger()">
                 <input class="checkbox" type="checkbox" />
                 <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
                     <path class="lineTop line" stroke-linecap="round" stroke-width="4" stroke="black" d="M6 11L44 11"></path>
@@ -97,6 +97,13 @@ $organizacaoDao = new OrganizacaoDao();
             sidebar.classList.toggle('show');
         }
     </script>
+    <script>
+        function toggleHamburger() {
+                var hamburger = document.querySelector('.hamburger'); // Selecionando o ícone do hambúrguer corretamente
+                hamburger.classList.toggle('showHamburger');
+            }
+    </script>
+    
 </body>
 
 </html>
