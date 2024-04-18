@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['enderecoOrganizacaoEvento']) && isset($_POST['numeroOrganizacaoEvento'])) {
+        $_SESSION['enderecoOrganizacaoEvento'] = trim($_POST['enderecoOrganizacaoEvento']);
+        $_SESSION['numeroOrganizacaoEvento'] = trim($_POST['numeroOrganizacaoEvento']);
+        header("Location:complemento.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +25,7 @@
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-11 col-sm-9 col-md-5 rounded-4">
-                <form action="complemento.php" method="post">
+                <form action="" method="post">
                     <div class="title-box h-25 p-4 pb-0 pt-5 text-start">
                         <h1 class="fw-bold fs-3" id="title-cadastro">Qual é o endereço da Organização?</h1>
                     </div>
@@ -24,10 +34,10 @@
                     </div>
                     <div class="row mb-5 ps-md-4 pe-md-5 g-5">
                         <div class="input-box col-sm-8">
-                            <input type="text" class="input-group" name="enderecoOrganizacaoEvento" placeholder="Digite o endereço">
+                            <input type="text" class="input-group" name="enderecoOrganizacaoEvento" placeholder="Digite o endereço" maxlength = "40">
                         </div>
                         <div class="col-sm-4">
-                            <input type="text" class="input-group " placeholder="N°">
+                            <input type="text" class="input-group " placeholder="N°" maxlength="5" name = "numeroOrganizacaoEvento">
                         </div>
                     </div>
     
@@ -42,5 +52,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
+    <script type="text/javascript" src="../../js/jquery.mask.min.js"></script>
 </body>
 </html>

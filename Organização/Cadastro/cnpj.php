@@ -1,3 +1,13 @@
+<?php
+     session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cnpjOrganizacaoEvento'])) {
+        $_SESSION['cnpjOrganizacaoEvento'] = trim($_POST['cnpjOrganizacaoEvento']);
+        header("Location:nomeOrg.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +25,7 @@
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-11 col-sm-9 col-md-5 rounded-4">
-                <form action="nomeOrg.php" method="post">
+                <form action="" method="post">
                     <div class="title-box p-4 pt-5 pb-1 text-start">
                         <h1 class="fw-bold fs-3" id="title-cadastro">Qual é o CNPJ da Organização?</h1>
                     </div>
@@ -23,7 +33,7 @@
                         <p class="fs-4 ps-4 pe-4"> Informe apenas números.</p>
                     </div>
                     <div class="input-box mt-4 mb-5 ps-4 pe-5">
-                        <input type="cnpj" class="input-group fs-5" name="cpnjOrganizacaoEvento" placeholder="00.000.000/0000-00" data-mask="00.000.000/0000-00" required>
+                        <input type="cnpj" class="input-group fs-5" name="cnpjOrganizacaoEvento" placeholder="00.000.000/0000-00" data-mask="00.000.000/0000-00" required>
                     </div>
                     <div class="w-100  justify-content-end align-items-end d-flex pe-md-5" id="btn-box">
                         <button type="submit" class="border-0 rounded-3 fs-4 mb-4">Prosseguir</button>

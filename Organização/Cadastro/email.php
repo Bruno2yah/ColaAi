@@ -1,4 +1,12 @@
 <?php
+    session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['emailOrganizacaoEvento'])) {
+    $_SESSION['emailOrganizacaoEvento'] = trim($_POST['emailOrganizacaoEvento']);
+
+    header("Location:telefone.php");
+    exit;
+    }
 require_once (__DIR__ . '../../../dao/TokenOrgEventoDao.php');
 ?>
 <!DOCTYPE html>
@@ -18,7 +26,7 @@ require_once (__DIR__ . '../../../dao/TokenOrgEventoDao.php');
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-11 col-sm-9 col-md-5 rounded-4">
-                <form action="codigoAcesso.php" method="post">
+                <form action="" method="post">
                     <div class="title-box h-25 p-4 pt-5 pb-2 text-start">
                         <h1 class="fw-bold fs-3" id="title-cadastro">Qual é o e-mail da Organização?</h1>
                     </div>

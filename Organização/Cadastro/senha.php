@@ -1,3 +1,15 @@
+<?php
+    session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['senhaOrganizacaoEvento'])) {
+    $_SESSION['senhaOrganizacaoEvento'] = trim($_POST['senhaOrganizacaoEvento']);
+
+    header("Location:analise.php");
+    exit;
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +27,8 @@
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-11 col-sm-9 col-md-5 rounded-4">
-                <form action="analise.php" method="post">
+                <form action="process.php" method="post">
+                    <input type="hidden" value="CADASTRAR" name="acao">
                     <div class="title-box p-4 pb-0 pt-5 text-start">
                         <h1 class="fw-bold fs-3" id="title-cadastro">Crie uma senha para a Organização</h1>
                     </div>
@@ -25,16 +38,13 @@
                     
                     <div class="input-box mb-5 ps-md-4 pe-md-5">
                         <div class="orgSenha d-flex">
-                            <input type="password" name="senha" id="password" class="inputSenha col-12 fs-5" placeholder="Digite a sua senha">
+                            <input type="password" name="senhaOrganizacaoEvento" id="password" class="inputSenha col-12 fs-5" placeholder="Digite a sua senha">
                             <i class="bi bi-eye col1" id="btnSenha" onclick="MostrarSenha()"></i>
                         </div>
                     </div>
-                    <div class="text-termos">
-                        <p class="fs-5 ps-4">Digite a mesma senha que a anterior para prosseguir com os próximos passos</p>
-                    </div>
                     <div class="input-box  mb-3 ps-md-4 pe-md-5">
                         <div class="orgSenha d-flex">
-                            <input type="password" name="senha" id="password1" class="inputSenha col-12 fs-5" placeholder="Confirme a sua senha">
+                            <input type="password" name="senhaOrganizacaoEvento" id="password1" class="inputSenha col-12 fs-5" placeholder="Confirme a sua senha">
                             <i class="bi bi-eye col1" id="btnSenha1" onclick="MostrarSenha2()"></i>
                         </div>
                         <script>
@@ -52,7 +62,7 @@
                     </script>
                     </div>
                     <div class="w-100  justify-content-end align-items-end d-flex pe-md-5 mt-5 mb-4" id="btn-box">
-                        <button type="submit" class="border-0 rounded-3 fs-4">Prosseguir</button>
+                        <button type="submit" class="border-0 rounded-3 fs-4" value="CADASTRAR">Prosseguir</button>
                     </div>
                 </form>
             </div>

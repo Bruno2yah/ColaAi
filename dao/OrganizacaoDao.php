@@ -49,6 +49,53 @@ require_once (__DIR__ . '../../model/Conexao.php');
                 return false; // Erro na inserção
             }
         }
+        public static function insertCadastro($org){
+            $nome = $org->getNome();
+            $cnpj = $org->getCnpj();
+            $cep = $org->getCep();
+            $log = $org->getLog();
+            $num = $org->getNum();
+            $complemento = $org->getComplemento();
+            $bairro = $org->getBairro();
+            $cidade = $org->getCidade();
+            $uf = $org->getUf();
+            $tel = $org->getTelefone();
+            $email = $org->getEmail();
+            $senha = $org->getSenha(); 
+            $link = $org->getLink();          
+            $imagem = $org->getImagem();
+            $desc = $org->getDesc(); 
+            
+            $conn = Conexao::conectar(); // Estabeleça a conexão com o banco de dados
+        
+            $stmt = $conn->prepare("INSERT INTO tborganizacaoevento (nomeOrganizacaoEvento, cnpjOrganizacaoEvento, cepOrganizacaoEvento, enderecoOrganizacaoEvento, numeroOrganizacaoEvento, complementoOrganizacaoEvento, bairroOrganizacaoEvento, cidadeOrganizacaoEvento, ufOrganizacaoEvento,telOrganizacaoEvento, 
+            emailOrganizacaoEvento, senhaOrganizacaoEvento, linkSiteOrganizacaoEvento, imagemOrganizacaoEvento, descOrganizacaoEvento) 
+                            VALUES (:nome, :cnpj, :cep, :log, :num, :complemento, :bairro, :cidade, :uf, :tel, :email, :senha, :link, :imagem, :desc)");
+        
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':cnpj', $cnpj);
+            $stmt->bindParam(':cep', $cep);
+            $stmt->bindParam(':log', $log);
+            $stmt->bindParam(':num', $num);
+            $stmt->bindParam(':complemento', $complemento);
+            $stmt->bindParam(':bairro', $bairro);
+            $stmt->bindParam(':cidade', $cidade);
+            $stmt->bindParam(':uf', $uf);
+            $stmt->bindParam(':tel', $tel);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':senha', $senha);
+            $stmt->bindParam(':link', $link);
+            $stmt->bindParam(':imagem', $imagem);
+            $stmt->bindParam(':desc', $desc);
+        
+            $result = $stmt->execute();
+        
+            if ($result) {
+                return true; // Inserção bem-sucedida
+            } else {
+                return false; // Erro na inserção
+            }
+        }
         
         
         public static function selectAll(){

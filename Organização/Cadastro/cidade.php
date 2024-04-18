@@ -1,3 +1,14 @@
+<?php
+     session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cidadeOrganizacaoEvento']) && isset($_POST['ufOrganizacaoEvento'])) {
+        $_SESSION['cidadeOrganizacaoEvento'] = trim($_POST['cidadeOrganizacaoEvento']);
+        $_SESSION['ufOrganizacaoEvento'] = trim($_POST['ufOrganizacaoEvento']);
+        header("Location:email.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +26,7 @@
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
             <div class="form-box col-11 col-sm-9 col-md-5 rounded-4">
-                <form action="email.php" method="post">
+                <form action="" method="post">
                     <div class="title-box h-25 p-4 pt-5 pb-0 text-start">
                         <h1 class="fw-bold fs-3" id="title-cadastro">Qual é a Cidade da Organização?</h1>
                     </div>

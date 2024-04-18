@@ -2,6 +2,7 @@
 require_once '../../model/OrganizacaoEvento.php';
 require_once '../../dao/OrganizacaoDao.php';
 require_once '../../model/Mensagem.php';
+session_start();
 
 $org = new OrganizacaoEvento();
 $msg = new Mensagem();
@@ -37,6 +38,33 @@ switch ($_POST["acao"]) {
             $organizacaoDao = OrganizacaoDao::insert($org);
             $msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
             header("Location: index.php");
+        } catch (Exception $e) {
+            echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+            $msg->setMensagem("Verifique os dados Digitados.", "bg-danger");
+            // header("Location: register.php");
+        } 
+        break;
+    case 'CADASTRAR':
+        $org->setNome($_SESSION['nomeOrganizacaoEvento']);  
+        $org->setCnpj($_SESSION['cnpjOrganizacaoEvento']);
+        $org->setCep($_SESSION['cepOrganizacaoEvento']);
+        $org->setLog($_SESSION['enderecoOrganizacaoEvento']);
+        $org->setNum($_SESSION['numeroOrganizacaoEvento']);
+        $org->setComplemento($_SESSION['complementoOrganizacaoEvento']);
+        $org->setBairro($_SESSION['bairroOrganizacaoEvento']);
+        $org->setCidade($_SESSION['cidadeOrganizacaoEvento']);
+        $org->setUf($_SESSION['ufOrganizacaoEvento']); 
+        $org->setEmail($_SESSION['emailOrganizacaoEvento']);
+        $org->setSenha($_POST['senhaOrganizacaoEvento']);
+        $org->setTelefone($_SESSION['telefoneOrganizacaoEvento']);
+        $org->setLink(null);
+        $org->setImagem(null);
+        $org->setDesc(null);
+        var_dump($org);
+        try {
+            $organizacaoDao = OrganizacaoDao::insertCadastro($org);
+            $msg->setMensagem("Usuário Salvo com sucesso.", "bg-success");
+            header("Location: ../");
         } catch (Exception $e) {
             echo 'Exceção capturada: ',  $e->getMessage(), "\n";
             $msg->setMensagem("Verifique os dados Digitados.", "bg-danger");

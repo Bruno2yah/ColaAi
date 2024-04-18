@@ -1,6 +1,6 @@
 <?php 
     class OrganizacaoEvento{
-        public $id, $nome, $cnpj, $cep, $log,$num,$complemento, $bairro, $cidade, $uf, $tel, $email, $senha, $link, $imagem, $desc;
+        public $id, $nome, $cnpj, $cep, $log,$num,$complemento, $bairro, $cidade, $uf, $tel, $email, $senha, $link, $imagem, $desc, $telefone;
 
         public function getId(){
             return $this->id;
@@ -81,6 +81,12 @@
         }
         public function setSenha($senha){
             $this-> senha = $senha;
+        }
+        public function getTelefone(){
+            return $this->telefone;
+        }
+        public function setTelefone($telefone){
+            $this-> telefone = $telefone;
         }
         public function getLink(){
             return $this->link;
