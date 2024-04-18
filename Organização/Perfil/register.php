@@ -55,6 +55,20 @@ if (!empty($_POST)) {
 </head>
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
+<?php
+    // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
+    if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
+        // Redirecionar para o login com um erro2 se não estiver autenticado
+        header('Location: loginEmail.php?login=erro2');
+        exit();
+    }
+
+    //o usuário está autenticado
+    $authUserOrg = $_SESSION['userOrg'];
+    // Buscar dados da organização pelo ID (você precisa passar o ID da organização)
+    $idOrganizacao = $_SESSION['userOrg']['idOrganizacaoEvento']; 
+    $organizacao = $organizacaoDao->selectById($idOrganizacao);
+    ?>
     <?php
     include('../../Adm/Componentes/header.php');
     ?>

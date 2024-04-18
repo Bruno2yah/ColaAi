@@ -109,7 +109,7 @@ if (!empty($_POST)) {
                     <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id da organização" value="<?= isset($authUserOrg['idOrganizacaoEvento']) ? $authUserOrg['idOrganizacaoEvento'] : '' ?>" readonly>
                     <input type="hidden" name="imagemEvento" id="imagemEvento" placeholder="nome foto" value="<?=$imagem_Evento?>">
                     <input type="hidden" value="<?= $id_Evento ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">    
-                    <img id="preview" src="../../img/Organizacao/Evento/<?=$imagem_Evento!=""?$imagem_Evento:'eventoPadrao.png';?>" alt="imagem do evento" class="img-fluid ms-auto me-auto rounded rounded-3">
+                    <img id="preview" src="../../img/Organizacao/<?= $imagem_Evento!=""?$imagem_Evento:'eventoPadrao.png';?>" alt="imagem do evento" class="img-fluid ms-auto me-auto rounded rounded-3">
                     <div class="row text-end inputFile">
                         <label for="foto" class="form-label fs-5 mt-2">Alterar Imagem</label>
                         <input type="file" id="foto" name="foto" accept="image/*" class="form-control mt-1 mb-4">

@@ -14,8 +14,19 @@ $eventos = EventoDao::selectAll();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> <!-- CSS Projeto -->
 </head>
 <body>
-    <?php
+<?php
     session_start();
+  // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
+  if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
+    // Redirecionar para o login com um erro2 se não estiver autenticado
+    header('Location: index.php?login=erro2');
+    exit();
+  }
+  //o usuário está autenticado
+  $authUserOrg = $_SESSION['userOrg'];
+  ?>
+    <?php
+   
     include('../Componentes/header.php');
     ?>
     <div class="container-fluid vw-100 ">
@@ -75,7 +86,7 @@ $eventos = EventoDao::selectAll();
                                     <td class="fs-5 pt-3"><?= $Eventos['idEvento']; ?></td>
                                     <td class="fs-5 pt-3"><?= $Eventos['nomeEvento']; ?></td>
                                     <td class="text-center pt-3">
-                                        <a class="dropdown-item" onclick="modalInfo(<?=$Eventos['idEvento'] ?>,'modalInfo')">
+                                        <a class="dropdown-item" onclick="modalInfo(<?=$Eventos['idEvento'] ?>,'idInfo')">
                                             <img src="../../img/Admin/info-icon.png" alt="" style="width: 40px;">
                                         </a>
                                     </td>
@@ -111,7 +122,7 @@ $eventos = EventoDao::selectAll();
                                 </div>
                                 <div class="modal-body" style="color: #a6a6a6;">
                                     <form action="process.php" method="post">
-                                        <input type="hidden" class="form-control" id="idDeletar" name="id" type="text">
+                                        <input type="hidden" class="form-control" id="idInfo" name="id" type="text">
                                         <div class="d-flex m-0" style="height: 30px;">
                                             <p class="m-0 fw-bold fs-5">Nome do Evento: </p> <p class="ms-2 fs-5" >aa</p>
                                         </div>

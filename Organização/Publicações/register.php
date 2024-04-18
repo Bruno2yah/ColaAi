@@ -8,12 +8,12 @@ if (!empty($_POST)) {
   $titulo_Publicacao =  $publicacaoDao['tituloPublicacao'];
   $desc_Publicacao =  $publicacaoDao['descPublicacao'];
   $link_Publicacao = $publicacaoDao['linkOrganizacaoEvento'];
-  $id_Evento = $publicacaoDao['idEvento'];
+  $imagem_Publicacao = $publicacaoDao['imagemPublicacao'];
 } else {
   $titulo_Publicacao = '';
   $desc_Publicacao = '';
   $link_Publicacao = '';
-  $id_Evento = '';
+  $imagem_Publicacao = '';
   $id_Publicacao = '';
 }
 ?>
@@ -85,10 +85,14 @@ if (!empty($_POST)) {
                 <h1 class="text-center mt-5 fs-2" style="color: #a6a6a6;">Organização - Criar Publicação</h1>
                 
                 <form method="post" action="process.php" enctype="multipart/form-data" class="needs-validation w-100 h-100 p-4 pt-1" novalidate>
+                    <input type="hidden" name="idPublicacao" id="idPublicacao" placeholder="id" value="<?=$id_Publicacao?>">
+                    <input type="hidden" name="imagemPublicacao" id="imagemPublicacao" placeholder="nome foto" value="<?=$imagem_Publicacao?>">
+                    <input type="hidden" value="<?= $id_Publicacao ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">    
                     <a href="" style="color: #6F9BAB; text-decoration:none"><i class="bi bi-geo-alt fs-4 me-1"></i>Adicionar localização da publicação</a><br>
                     <a href="" style="color: #6F9BAB; text-decoration:none"><i class="bi bi-person-add fs-4 me-1"></i>Marcar pessoas</a>
                     <div class="row g-2" id="publiGrid">
-                        <img id="preview" src="../../img/Admin/eventoPadrao.png" alt="" class="img-fluid col-md-12 rounded rounded-4">
+                    <img id="preview" src="../../img/Organizacao/<?= $imagem_Publicacao!=""?$imagem_Publicacao:'eventoPadrao.png';?>" alt="imagem" class="img-fluid col-md-12 rounded rounded-4">
+
                     </div>
                     <div class="row text-end inputFile">
                         <label for="foto" class="form-label fs-5 mt-2"style="color: #6F9BAB;">Inserir imagem</label>
@@ -96,7 +100,7 @@ if (!empty($_POST)) {
                     </div>
                     <div class="row">
                     <div class="col-12 mb-4 needs-validation">
-                        <label for="nomeEvento" class="col-form-label">Nome da publicação*</label>
+                        <label for="nome" class="col-form-label">Nome da publicação*</label>
                         <input type="text" class="form-control inputGeral " placeholder="Digite o título da publicação" name="tituloPublicacao" maxlength="50" id="" value="<?=$titulo_Publicacao?>" required>
                         <div class="invalid-feedback">
                         Preencha este campo

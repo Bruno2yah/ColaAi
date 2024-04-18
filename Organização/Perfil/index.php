@@ -30,7 +30,7 @@ $organizacaoDao = new OrganizacaoDao();
     //o usuário está autenticado
     $authUserOrg = $_SESSION['userOrg'];
     // Buscar dados da organização pelo ID (você precisa passar o ID da organização)
-    $idOrganizacao = $_SESSION['userOrg']['idOrganizacaoEvento']; // Supondo que o ID da organização esteja na sessão
+    $idOrganizacao = $_SESSION['userOrg']['idOrganizacaoEvento']; 
     $organizacao = $organizacaoDao->selectById($idOrganizacao);
     ?>
 
