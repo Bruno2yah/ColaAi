@@ -33,7 +33,7 @@
                     <div class="text-termos">
                         <p class="fs-4 ps-4 pe-4 mb-5">Recomendamos que envie dados atualizados.</p>
                     </div>
-                    <div class="row mb-5 ps-4 pe-5 g-5">
+                    <div class="row mb-5 ps-4 pe-4 g-5">
                         <div class="input-box col-md-8">
                             <input type="text" class="input-group fs-4" name="cidadeOrganizacaoEvento" placeholder="Digite a cidade">
                         </div>
@@ -41,8 +41,10 @@
                             <input type="text" class="input-group fs-4" name="ufOrganizacaoEvento" placeholder="UF">
                         </div>
                     </div>
-                    <div class="w-100  justify-content-end align-items-end d-flex pe-md-5" id="btn-box">
-                        <button type="submit" class="border-0 rounded-3 fs-4 mb-4">Prosseguir</button>
+                    <div class="d-flex justify-content-between mt-2 mb-4 ps-4 pe-4"> 
+                    <a href="bairro.php" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Voltar</a>
+                    <div class="w-100  justify-content-end align-items-end d-flex" id="btn-box">
+                        <a href="email.php"><button type="submit" class="border-0 rounded-3 fs-4">Prosseguir</button></a>
                     </div>
                 </form>
             </div>

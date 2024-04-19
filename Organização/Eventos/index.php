@@ -16,7 +16,19 @@ $eventos = EventoDao::selectAll();
 <body>
     <?php
     session_start();
-    include('../Componentes/header.php');
+
+    // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
+    if (!isset($_SESSION['AutenticaoOrg']) || $_SESSION['AutenticaoOrg'] != 'SIM') {
+        // Redirecionar para o login com um erro2 se não estiver autenticado
+        header('Location: index.php?login=erro2');
+        exit();
+    }
+    
+    //o usuário está autenticado
+    $authUserOrg = $_SESSION['userOrg'];
+    
+    $nomeOrg = $authUserOrg['nomeOrganizacaoEvento'];
+        include('../Componentes/header.php');
     ?>
     <div class="container-fluid vw-100 ">
     <div class="hamburger-wrapper">

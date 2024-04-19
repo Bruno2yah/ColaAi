@@ -14,15 +14,18 @@
     </div>
     <div class="box-center container-fluid w-100">
         <div class="row h-100 justify-content-center vw-100 align-items-center">
-            <div class="form-box col-11 col-sm-9 col-md-5 rounded-4">
-                <div class="title-box h-25 p-4 pt-5 text-start">
+            <div class="form-box col-11 col-sm-9 col-md-5 rounded-4 p-4">
+                <div class="title-box h-25 p-4 pt-4 text-start">
                     <h1 class="fw-bold fs-3" id="title-cadastro">Vamos iniciar o seu cadastro?</h1>
                 </div>
                 <div class="text-termos">
                     <p class="fs-4 p-4 pt-2">Ao clicar em Cadastre-se, você aceita o <a href="">Contrato do Usuário</a>, a <a href="">Política de Privacidade</a> e a <a href="">Política de Cookies</a> do Cola Aí.</p>
                 </div>
-                <div class="w-100  justify-content-end align-items-end d-flex pe-md-4" id="btn-box">
-                    <a href="cnpj.php"><button type="submit" class="border-0 rounded-3 fs-4 mb-4">Cadastre-se</button></a>
+                <div class="d-flex justify-content-between mt-2 mb-4 ps-4 pe-4"> 
+                <a href="../index.php" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Voltar</a>
+                    <div class="w-100  justify-content-end align-items-end d-flex" id="btn-box">
+                        <a href="cnpj.php"><button type="submit" class="border-0 rounded-3 fs-4">Cadastre-se</button></a>
+                    </div>
                 </div>
             </div>
         </div>

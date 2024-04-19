@@ -1,5 +1,17 @@
-body{
+@font-face {
+    font-family: OpenSans;
+    src: url(../Fonts/static/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: Negrito;
+    src: url(../Fonts/static/OpenSans-Bold.ttf);
+    font-weight: bold;
+  }
+html, body{
     overflow-x: hidden;
+}
+h1, h2, h3{
+    font-family: Negrito;
 }
 .header{
     background-color: #FFF7D1;
@@ -58,6 +70,7 @@ body{
     background-repeat:no-repeat;
     overflow-y: scroll;
     overflow-x: hidden;
+    font-family: OpenSans;
 }
 #data-box::-webkit-scrollbar{
     opacity: 0;

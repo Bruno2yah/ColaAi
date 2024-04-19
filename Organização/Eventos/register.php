@@ -109,7 +109,7 @@ if (!empty($_POST)) {
                     <input type="hidden" name="idOrganizacaoEvento" id="idOrganizacaoEvento" placeholder="id da organização" value="<?= isset($authUserOrg['idOrganizacaoEvento']) ? $authUserOrg['idOrganizacaoEvento'] : '' ?>" readonly>
                     <input type="hidden" name="imagemEvento" id="imagemEvento" placeholder="nome foto" value="<?=$imagem_Evento?>">
                     <input type="hidden" value="<?= $id_Evento ? 'ATUALIZAR' : 'SALVAR' ?>" name="acao">    
-                    <img id="preview" src="../../img/Organizacao/<?=$imagem_Evento!=""?$imagem_Evento:'eventoPadrao.png';?>" alt="imagem do evento" class="img-fluid ms-auto me-auto rounded rounded-3">
+                    <img id="preview" src="../../img/Organizacao/<?=$imagem_Evento!=""?$imagem_Evento:'eventoPadrao.png';?>" alt="imagem do evento" class="img-fluid col-md-12 ms-auto me-auto rounded rounded-3">
                     <div class="row text-end inputFile">
                         <label for="foto" class="form-label fs-5 mt-2">Alterar Imagem</label>
                         <input type="file" id="foto" name="foto" accept="image/*" class="form-control mt-1 mb-4">
@@ -124,7 +124,8 @@ if (!empty($_POST)) {
                             <label for="cep" class="col-form-label">CEP do Evento*</label>
                             <input type="text" class="form-control inputGeral" name="cepEvento" data-mask="00000-000" id="cepEvento" value="<?=$cep_Evento?>" required>
                         </div>
-                    <div class="row mb-4 m-0 p-0">
+                    </div>  
+                    <div class="row">
                         <div class="col-md-10 needs-validation">
                             <label for="endereco" class="col-form-label">Endereço do Evento*</label>
                             <input type="text" class="form-control inputGeral" placeholder=""  name="enderecoEvento" maxlength="100" id="" value="<?=$endereco_Evento?>" required>

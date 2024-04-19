@@ -17,6 +17,18 @@
 <body>
     <?php
     session_start();
+
+    // Verificar se o índice 'Autenticado' existe ou é igual a 'SIM'
+    if (!isset($_SESSION['AutenticaoAdm']) || $_SESSION['AutenticaoAdm'] != 'SIM') {
+      // Redirecionar para o login com um erro2 se não estiver autenticado
+      header('Location: login.php?login=erro2');
+      exit();
+    }
+  
+    //o usuário está autenticado
+    $authUser = $_SESSION['userAdm'];
+  
+    $nomeAdm = $authUser['nomeAdmin'];
     include('../Componentes/header.php');
     ?>
     <div class="container-fluid vw-100">
@@ -155,7 +167,7 @@
                                         <h1 class="text-center fs-2 fw-bold">Aceitar o cadastro<br> da organização?</h1>
                                         <p class="fs-5 m-0">Quando clicar em <span style="text-decoration: underline; color:#93CC4C">aceitar</span> 
                                         a organização receberá um e-mail de acesso para concluír o seu cadastro.</p>
-                                            <div class="d-flex justify-content-between mt-5"> 
+                                        <div class="d-flex justify-content-between mt-5"> 
                                             <a href="" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Cancelar</a>
                                             <button type="submit" class="btn-adm rounded rounded-3 border-0 fs-4 col-3" value="?" name="acao">Aceitar</button>
                                         </div>

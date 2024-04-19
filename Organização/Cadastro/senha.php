@@ -61,8 +61,10 @@
                         }
                     </script>
                     </div>
-                    <div class="w-100  justify-content-end align-items-end d-flex pe-md-5 mt-5 mb-4" id="btn-box">
-                        <button type="submit" class="border-0 rounded-3 fs-4" value="CADASTRAR">Prosseguir</button>
+                    <div class="d-flex justify-content-between align-items-center mt-2 mb-4 ps-4 pe-4"> 
+                    <a href="senha.php" class="fs-4" style="color: #6D9EAF">Voltar</a>
+                    <div class="w-100  justify-content-end align-items-end d-flex pe-md-4 mt-4 mb-4" id="btn-box">
+                        <a href="analise.php"><button type="submit" class="border-0 rounded-3 fs-4">Prosseguir</button></a>
                     </div>
                 </form>
             </div>

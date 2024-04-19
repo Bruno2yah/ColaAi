@@ -76,15 +76,15 @@
                 </svg>
             </div>
         </div>
-        <h1><?php echo $saudacao . ', ' . $nomeAdm . '! Bem-vindo ao Dashboard'; ?></h1>
-              <div class="row justify-content-evenly h-25 mt-4">
+        <h1 class="mt-2 fs-3"><?php echo $saudacao . ', ' . $nomeAdm . '! Bem-vindo ao Dashboard'; ?></h1>
+              <div class="row justify-content-evenly mt-4">
                   <div class="col-md-3 rounded-5" id="info-box">
-                      <h2 class="fs-4 p-3 pb-0">Novos Usuários Registrados (Últimos 30 dias)</h2>
+                      <h2 class="fs-5 p-3 pb-0">Novos Usuários Registrados (Últimos 30 dias)</h2>
                       <p class="fs-5 p-0">+ 2 novos usuários</p>
                   </div>
 
                   <div class="col-md-3 rounded-5" id="info-box">
-                      <h2 class="fs-4 p-3 pb-0">Novos Eventos Registrados (Últimos 30 dias)</h2>
+                      <h2 class="fs-5 p-3 pb-0">Novos Eventos Registrados (Últimos 30 dias)</h2>
                       <p class="fs-5 p-0">+ 50 novos eventos</p>
                   </div>
               </div>

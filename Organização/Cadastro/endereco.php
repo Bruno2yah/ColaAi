@@ -32,7 +32,7 @@
                     <div class="text-termos">
                         <p class="fs-4 ps-4 pe-4 mb-5">Recomendamos que envie dados atualizados.</p>
                     </div>
-                    <div class="row mb-5 ps-md-4 pe-md-5 g-5">
+                    <div class="row mb-5 ps-md-4 pe-md-4 g-5">
                         <div class="input-box col-sm-8">
                             <input type="text" class="input-group" name="enderecoOrganizacaoEvento" placeholder="Digite o endereço" maxlength = "40">
                         </div>
@@ -40,9 +40,10 @@
                             <input type="text" class="input-group " placeholder="N°" maxlength="5" name = "numeroOrganizacaoEvento">
                         </div>
                     </div>
-    
-                    <div class="w-100  justify-content-end align-items-end d-flex pe-md-5" id="btn-box">
-                        <button type="submit" class="border-0 rounded-3 fs-4 mb-4">Prosseguir</button>
+                    <div class="d-flex justify-content-between mt-2 mb-4 ps-4 pe-4"> 
+                    <a href="cep.php" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Voltar</a>
+                    <div class="w-100  justify-content-end align-items-end d-flex" id="btn-box">
+                        <a href="complemento.php"><button type="submit" class="border-0 rounded-3 fs-4">Prosseguir</button></a>
                     </div>
                 </form>
             </div>

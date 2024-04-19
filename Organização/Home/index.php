@@ -99,13 +99,13 @@ include('../Componentes/header.php');
         include('../Componentes/menu.php')
         ?>
         <div class=" text-center" style="color: #a6a6a6; " id="data-box">
-        <h2 class="mt-4"><?php echo $saudacao . ', ' . $nomeOrg . '! Bem-vindo ao Dashboard'; ?></h2>
-            <div class="row justify-content-evenly h-25 mt-4">
+        <h2 class="mt-4 fs-4 "><?php echo $saudacao . ', ' . $nomeOrg . '! Bem-vindo ao Dashboard'; ?></h2>
+            <div class="row justify-content-evenly h-25 mt-2">
                 <div class="col-3 rounded-5" >
-                    <h2 class="fs-4 p-3 pb-0">Visitas Perfil</h2> <!-- Alteração feita aqui -->
+                    <h2 class="fs-5 p-3 pb-0">Visitas Perfil</h2> <!-- Alteração feita aqui -->
                     <p class="fs-5 p-0">+ 5000 visitas</p>
                     <canvas id="graficoBarras" width="800" height="800"></canvas> <!-- Gráfico de barras será renderizado aqui -->
-                    <h2 class="fs-4 p-3 pb-0">Novos Seguidores</h2> <!-- Alteração feita aqui -->
+                    <h2 class="fs-5 p-3 pb-0">Novos Seguidores</h2> <!-- Alteração feita aqui -->
                     <div class="progress mt-3">
                         <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                             <span class="progress-bar-icon"></span>
@@ -115,10 +115,10 @@ include('../Componentes/header.php');
                     <h5 class="fs-5 p-3 pb-0">+30 Seguidores</h5> <!-- Alteração feita aqui -->
                 </div>
                 <div class="col-3 rounded-5" >
-                    <h2 class="fs-4 p-3 pb-0">Alcance das Publicações</h2>
+                    <h2 class="fs-5 p-3 pb-0">Alcance das Publicações</h2>
                     <p class="fs-5 p-0">+ 10000 alcance</p>
                     <canvas id="graficoRosca" width="400" height="400"></canvas> <!-- Gráfico de rosca será renderizado aqui -->
-                    <h2 class="fs-4 p-3 pb-0">Acessos ao Link</h2> <!-- Alteração feita aqui -->
+                    <h2 class="fs-5 p-3 pb-0">Acessos ao Link</h2> <!-- Alteração feita aqui -->
                     <div class="progress mt-3">
                         <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
                            <span class="progress-bar-icon"></span>

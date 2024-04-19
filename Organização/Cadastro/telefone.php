@@ -32,11 +32,13 @@
                     <div class="text-termos">
                         <p class="fs-5 ps-4 pe-4">Recomendamos que disponha um telefone usual.</p>
                     </div>
-                    <div class="input-box mt-5 mb-5 ps-md-4 pe-md-5">
+                    <div class="input-box mt-5 mb-5 ps-md-4 pe-md-4">
                         <input type="text" class="input-group " placeholder="(00)00000-0000" name = "telefoneOrganizacaoEvento" data-mask = "(00)00000-0000">
                     </div>
-                    <div class="w-100  justify-content-end align-items-end d-flex pe-md-5 mt-5 mb-4" id="btn-box">
-                        <button type="submit" class="border-0 rounded-3 fs-4">Prosseguir</button>
+                    <div class="d-flex justify-content-between mt-2 mb-4 ps-4 pe-4"> 
+                    <a href="codigoAcesso.php" class="fs-4 mt-auto mb-2" style="color: #6D9EAF">Voltar</a>
+                    <div class="w-100  justify-content-end align-items-end d-flex" id="btn-box">
+                        <a href="senha.php"><button type="submit" class="border-0 rounded-3 fs-4">Prosseguir</button></a>
                     </div>
                 </form>
                 
